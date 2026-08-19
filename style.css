@@ -11,49 +11,32 @@ html {
 }
 
 body {
-
     margin: 0;
-
     padding: 16px 10px 30px;
 
     background: #ece7d8;
-
     color: #111;
 
     font-family: "Courier New", Courier, monospace;
-
     font-size: 14px;
-
     line-height: 1.45;
 }
 
-
-/* LINKS */
-
 a {
-
     color: #0000ee;
-
     text-decoration: underline;
 }
 
 a:visited {
-
     color: #551a8b;
 }
 
 a:hover {
-
     color: #cc0000;
 }
 
-
-/* MAIN PAGE */
-
 .page {
-
     width: 980px;
-
     max-width: 100%;
 
     margin: 0 auto;
@@ -69,11 +52,8 @@ a:hover {
 ================================== */
 
 .site-header {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 
     gap: 25px;
@@ -83,64 +63,53 @@ a:hover {
     border-bottom: 1px solid #111;
 }
 
-
 .site-header h1 {
-
     margin: 0;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
+    font-family: "Times New Roman", Times, serif;
     font-size: 42px;
-
     letter-spacing: 2px;
 
     line-height: 1;
 }
 
-
 .subtitle {
-
     margin: 9px 0 0;
-
     font-size: 13px;
 }
 
 
-/* STATUS */
+/* ==================================
+   STATUS BOX
+================================== */
 
 .status-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    position: relative;
+    gap: 16px;
 
-    min-width: 210px;
+    min-width: 255px;
 
     border: 1px solid #777;
 
-    padding: 10px 44px 10px 12px;
+    padding: 8px 10px 8px 12px;
 
     background: #fffef8;
 
     font-size: 11px;
 }
 
-
 .status-title {
-
     margin-bottom: 5px;
-
     font-size: 10px;
 }
 
-
 .online-dot {
-
     display: inline-block;
 
     width: 9px;
-
     height: 9px;
 
     margin-right: 5px;
@@ -152,24 +121,195 @@ a:hover {
     border: 1px solid #006000;
 }
 
-
 .tiny-status {
-
     margin-top: 3px;
-
     font-size: 10px;
 }
 
 
-.hourglass {
+/* ==================================
+   PIXEL HOURGLASS
+================================== */
+
+.pixel-hourglass {
+    width: 32px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    image-rendering: pixelated;
+
+    animation: hourglass-turn 8s steps(1, end) infinite;
+}
+
+.hourglass-frame {
+    position: relative;
+
+    width: 24px;
+    height: 34px;
+
+    border-top: 4px solid #222;
+    border-bottom: 4px solid #222;
+}
+
+.hourglass-frame::before,
+.hourglass-frame::after {
+    content: "";
 
     position: absolute;
 
-    right: 12px;
+    left: 3px;
 
-    top: 17px;
+    width: 18px;
+    height: 12px;
 
-    font-size: 25px;
+    border-left: 3px solid #555;
+    border-right: 3px solid #555;
+}
+
+.hourglass-frame::before {
+    top: 1px;
+
+    transform: skewX(18deg);
+}
+
+.hourglass-frame::after {
+    bottom: 1px;
+
+    transform: skewX(-18deg);
+}
+
+.hourglass-top,
+.hourglass-bottom {
+    position: absolute;
+
+    left: 6px;
+
+    width: 12px;
+    height: 9px;
+
+    overflow: hidden;
+}
+
+.hourglass-top {
+    top: 4px;
+}
+
+.hourglass-bottom {
+    bottom: 4px;
+}
+
+.sand {
+    position: absolute;
+
+    left: 1px;
+
+    width: 10px;
+
+    background: #c59b38;
+}
+
+.sand-top {
+    top: 0;
+
+    height: 8px;
+
+    animation: sand-empty 4s steps(8, end) infinite;
+}
+
+.sand-bottom {
+    bottom: 0;
+
+    height: 1px;
+
+    animation: sand-fill 4s steps(8, end) infinite;
+}
+
+.hourglass-middle {
+    position: absolute;
+
+    left: 11px;
+    top: 13px;
+
+    width: 2px;
+    height: 8px;
+}
+
+.falling-sand {
+    display: block;
+
+    width: 2px;
+    height: 6px;
+
+    background: #c59b38;
+
+    animation: sand-stream 4s steps(4, end) infinite;
+}
+
+@keyframes sand-empty {
+
+    0% {
+        height: 8px;
+    }
+
+    85% {
+        height: 1px;
+    }
+
+    100% {
+        height: 1px;
+    }
+
+}
+
+@keyframes sand-fill {
+
+    0% {
+        height: 1px;
+    }
+
+    85% {
+        height: 8px;
+    }
+
+    100% {
+        height: 8px;
+    }
+
+}
+
+@keyframes sand-stream {
+
+    0%,
+    85% {
+        opacity: 1;
+    }
+
+    86%,
+    100% {
+        opacity: 0;
+    }
+
+}
+
+@keyframes hourglass-turn {
+
+    0%,
+    47% {
+        transform: rotate(0deg);
+    }
+
+    50%,
+    97% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
 }
 
 
@@ -178,9 +318,7 @@ a:hover {
 ================================== */
 
 .main-nav {
-
     display: flex;
-
     justify-content: space-around;
 
     gap: 15px;
@@ -192,19 +330,13 @@ a:hover {
     font-size: 13px;
 }
 
-
 .main-nav a::before {
-
     content: "[ ";
-
     color: #111;
 }
 
-
 .main-nav a::after {
-
     content: " ]";
-
     color: #111;
 }
 
@@ -214,7 +346,6 @@ a:hover {
 ================================== */
 
 main {
-
     padding: 15px 20px 0;
 }
 
@@ -224,56 +355,47 @@ main {
 ================================== */
 
 .hero {
-
     padding-bottom: 13px;
 }
 
-
 .hero-visual {
-
     display: grid;
 
     grid-template-columns:
-        1.05fr
+        0.8fr
+        0.75fr
         0.9fr
-        1.05fr
         1.35fr;
 
     align-items: center;
 
-    min-height: 285px;
+    min-height: 255px;
 
     border: 1px solid #111;
 
-    padding: 20px;
+    padding: 18px;
 
     background: #fffef8;
 }
 
 
 /* ==================================
-   WINDOWS XP COMPUTER
+   COMPUTER
 ================================== */
 
 .computer-area {
-
     display: flex;
-
-    justify-content: center;
-
     align-items: center;
+    justify-content: center;
 }
 
-
 .xp-computer {
-
-    width: 190px;
-
+    width: 105px;
     max-width: 100%;
 
     display: block;
 
-    image-rendering: auto;
+    image-rendering: pixelated;
 }
 
 
@@ -284,117 +406,110 @@ main {
 .cycle-area {
     display: flex;
     flex-direction: column;
+
     justify-content: center;
-    gap: 38px;
+
+    gap: 42px;
+
     color: #000080;
 }
 
 .cycle-arrow {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 4px;
+    justify-content: center;
 
-    font-family: "Courier New", Courier, monospace;
-    font-weight: bold;
+    gap: 2px;
+
+    white-space: nowrap;
 }
 
-.top-arrow {
-    transform: translateY(-12px);
+.top-cycle-arrow {
+    transform: translateY(-8px);
 }
 
-.bottom-arrow {
-    transform: translateY(12px);
+.bottom-cycle-arrow {
+    transform: translateY(8px);
 }
 
-.curve-symbol {
+.curve-arrow {
     font-family: "Times New Roman", Times, serif;
-    font-size: 34px;
+
+    font-size: 31px;
+    font-weight: bold;
+
     line-height: 1;
+
     color: #000080;
 }
 
-.arrow-text {
-    font-size: 9px;
+.cycle-word {
+    color: #777;
+
+    font-size: 8px;
+
     letter-spacing: 1px;
-    color: #666;
 }
+
 
 /* ==================================
    FLOATING ORGANOID
 ================================== */
 
 .organoid-area {
-
     position: relative;
 
-    min-height: 210px;
+    min-height: 175px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 }
 
-
 .floating-organoid {
-
     position: relative;
 
     z-index: 2;
 
     animation:
         float-organoid
-        3.4s
+        4.5s
         ease-in-out
         infinite;
 }
 
-
 .organoid-gif {
-
-    width: 145px;
-
+    width: 125px;
     max-width: 100%;
 
     display: block;
+
+    image-rendering: pixelated;
 }
-
-
-/* FLOAT UP + DOWN */
 
 @keyframes float-organoid {
 
     0% {
-
         transform: translateY(0);
     }
 
     50% {
-
-        transform: translateY(-12px);
+        transform: translateY(-9px);
     }
 
     100% {
-
         transform: translateY(0);
     }
 
 }
 
-
-/* SHADOW */
-
 .organoid-shadow {
-
     position: absolute;
 
-    bottom: 24px;
+    bottom: 15px;
 
-    width: 95px;
-
-    height: 10px;
+    width: 75px;
+    height: 8px;
 
     border-radius: 50%;
 
@@ -405,87 +520,32 @@ main {
             transparent 1px 3px
         );
 
-    opacity: 0.45;
+    opacity: 0.35;
 
     animation:
         shadow-animation
-        3.4s
+        4.5s
         ease-in-out
         infinite;
 }
 
-
 @keyframes shadow-animation {
 
     0% {
-
         transform: scaleX(1);
-
-        opacity: 0.45;
+        opacity: 0.35;
     }
 
     50% {
-
-        transform: scaleX(0.78);
-
-        opacity: 0.25;
+        transform: scaleX(0.8);
+        opacity: 0.2;
     }
 
     100% {
-
         transform: scaleX(1);
-
-        opacity: 0.45;
+        opacity: 0.35;
     }
 
-}
-
-
-/* RANDOM OLD-WEB SPARKS */
-
-.spark {
-
-    position: absolute;
-
-    z-index: 1;
-
-    color: #003e9a;
-
-    font-weight: bold;
-
-    font-size: 15px;
-}
-
-
-.spark-1 {
-
-    left: 17px;
-
-    top: 24px;
-}
-
-
-.spark-2 {
-
-    right: 16px;
-
-    top: 17px;
-}
-
-
-.spark-3 {
-
-    right: 10px;
-
-    bottom: 62px;
-}
-
-
-.spark-4 {
-
-    left: 24px;
-
-    bottom: 45px;
 }
 
 
@@ -494,7 +554,6 @@ main {
 ================================== */
 
 .question-window {
-
     align-self: stretch;
 
     border: 1px solid #111;
@@ -502,17 +561,13 @@ main {
     background: #fffef8;
 }
 
-
 .window-title {
-
     display: flex;
-
     justify-content: space-between;
 
     padding: 4px 7px;
 
     background: #000080;
-
     color: white;
 
     border-bottom: 1px solid #111;
@@ -520,48 +575,33 @@ main {
     font-size: 11px;
 }
 
-
 .window-x {
-
     background: #c0c0c0;
-
     color: black;
 
     border-top: 1px solid white;
-
     border-left: 1px solid white;
-
     border-right: 1px solid #444;
-
     border-bottom: 1px solid #444;
 
     padding: 0 4px;
 }
 
-
 .window-content {
-
     padding: 14px;
 }
 
-
 .window-content h2 {
-
     margin: 0;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "Times New Roman", Times, serif;
 
     font-size: 26px;
 
     line-height: 1.08;
 }
 
-
 .window-content hr {
-
     border: 0;
 
     border-top: 1px solid #111;
@@ -569,9 +609,7 @@ main {
     margin: 12px 0;
 }
 
-
 .window-content p {
-
     margin: 0;
 
     font-size: 12px;
@@ -581,11 +619,10 @@ main {
 
 
 /* ==================================
-   ABOUT / INTEREST PANELS
+   PANELS
 ================================== */
 
 .two-column {
-
     display: grid;
 
     grid-template-columns:
@@ -595,17 +632,13 @@ main {
     gap: 14px;
 }
 
-
 .panel {
-
     border: 1px solid #777;
 
     background: #fffef8;
 }
 
-
 .panel-title {
-
     padding: 5px 8px;
 
     border-bottom: 1px solid #777;
@@ -617,64 +650,44 @@ main {
     font-weight: bold;
 }
 
-
 .panel-icon {
-
     margin-right: 6px;
 }
 
-
 .panel-body {
-
     padding: 12px;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "Times New Roman", Times, serif;
 
     font-size: 15px;
 
     line-height: 1.35;
 }
 
-
 .panel-body p {
-
     margin: 0 0 14px;
 }
 
-
 .panel-body p:last-child {
-
     margin-bottom: 0;
 }
 
-
 .read-more {
-
-    font-family:
-        "Courier New",
-        Courier,
-        monospace;
+    font-family: "Courier New", Courier, monospace;
 }
 
 
-/* INTERESTS */
+/* ==================================
+   CURRENT INTERESTS
+================================== */
 
 .interests-list {
-
-    font-family:
-        "Courier New",
-        Courier,
-        monospace;
+    font-family: "Courier New", Courier, monospace;
 
     font-size: 13px;
 }
 
-
 .interests-list p {
-
     margin: 0 0 6px;
 }
 
@@ -684,15 +697,12 @@ main {
 ================================== */
 
 .terminal {
-
     margin-top: 13px;
 
     border: 1px solid #111;
 }
 
-
 .terminal-title {
-
     padding: 4px 7px;
 
     background: #d8d8d8;
@@ -702,9 +712,7 @@ main {
     font-size: 11px;
 }
 
-
 .terminal-body {
-
     padding: 10px 12px;
 
     background: #000;
@@ -714,122 +722,147 @@ main {
     font-size: 11px;
 }
 
-
 .terminal-body p {
+    margin: 3px 0 8px;
+}
 
-    margin: 3px 0;
+.terminal-body p:last-child {
+    margin-bottom: 0;
 }
 
 
 /* ==================================
-   TRAJECTORY
+   RESEARCH TRAJECTORY
 ================================== */
 
 .trajectory-panel {
-
     margin-top: 14px;
 }
 
-
 .trajectory {
-
     display: flex;
 
     align-items: stretch;
 
-    gap: 10px;
+    gap: 8px;
 
-    font-family:
-        "Courier New",
-        Courier,
-        monospace;
+    font-family: "Courier New", Courier, monospace;
 }
 
-
 .trajectory-box {
-
     position: relative;
 
     flex: 1;
 
     min-width: 0;
 
-    padding: 10px;
+    padding: 9px;
 
     border: 1px solid #777;
 
-    font-size: 11px;
+    font-size: 10px;
 }
 
-
 .trajectory-box strong {
-
     display: block;
 
     margin: 7px 0;
 
-    font-size: 12px;
+    font-size: 11px;
 }
 
-
 .trajectory-box p {
-
     margin: 2px 0;
 }
 
-
 .trajectory-label {
-
     color: #0000aa;
 
     font-weight: bold;
-}
 
+    text-transform: uppercase;
+}
 
 .trajectory-arrow {
-
     align-self: center;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "Times New Roman", Times, serif;
 
-    font-size: 35px;
+    font-size: 28px;
 }
 
-
-.next-box {
-
-    border-style: dashed;
+.now-box {
+    border-color: #000080;
 }
-
 
 .tiny-fish,
 .tiny-organoid {
-
     position: absolute;
 
-    right: 8px;
+    right: 7px;
+    bottom: 5px;
 
-    bottom: 6px;
-
-    font-size: 13px;
+    font-size: 11px;
 }
 
-
 .tiny-organoid {
-
-    font-size: 22px;
+    font-size: 20px;
 }
 
 
 /* ==================================
-   QUESTIONS + VISITOR
+   ANIMATED DOTS
+================================== */
+
+.trajectory-dots {
+    align-self: center;
+
+    display: flex;
+
+    gap: 1px;
+
+    min-width: 25px;
+
+    color: #000080;
+
+    font-size: 25px;
+
+    font-weight: bold;
+}
+
+.trajectory-dots span {
+    opacity: 0.15;
+
+    animation: dot-pulse 1.8s infinite;
+}
+
+.trajectory-dots span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.trajectory-dots span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes dot-pulse {
+
+    0%,
+    100% {
+        opacity: 0.15;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+/* ==================================
+   QUESTIONS / VISITOR
 ================================== */
 
 .bottom-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -842,36 +875,26 @@ main {
     margin-top: 14px;
 }
 
-
 .questions {
-
-    font-family:
-        "Courier New",
-        Courier,
-        monospace;
+    font-family: "Courier New", Courier, monospace;
 
     font-size: 11px;
 }
 
-
 .questions p {
-
-    margin: 0 0 7px;
+    margin: 0 0 8px;
 }
-
 
 .questions span {
-
     color: #0000aa;
+
+    margin-right: 4px;
 }
 
-
 .question-icon {
-
     display: inline-block;
 
     width: 18px;
-
     height: 18px;
 
     margin-right: 7px;
@@ -888,60 +911,46 @@ main {
 }
 
 
-/* EVOLVING */
+/* ==================================
+   EVOLVING
+================================== */
 
 .evolving-box {
-
     text-align: center;
 }
 
-
 .pixel-globe {
-
     margin-bottom: 10px;
 
     font-size: 48px;
 }
 
-
 .evolving-message {
-
     display: inline-block;
 
     border: 1px dashed #777;
 
     padding: 11px 16px;
 
-    font-family:
-        "Courier New",
-        Courier,
-        monospace;
-
     font-size: 12px;
 }
 
-
 .blue-cursor {
-
     color: #0000aa;
 }
 
 
-/* VISITOR */
+/* ==================================
+   VISITOR
+================================== */
 
 .visitor-body {
-
     text-align: center;
 
-    font-family:
-        "Courier New",
-        Courier,
-        monospace;
+    font-family: "Courier New", Courier, monospace;
 }
 
-
 .counter {
-
     display: inline-block;
 
     padding: 5px 8px;
@@ -957,9 +966,7 @@ main {
     letter-spacing: 4px;
 }
 
-
 .cat {
-
     margin: 12px 0;
 
     font-size: 10px;
@@ -969,15 +976,13 @@ main {
 
 
 /* ==================================
-   OLD WEB ICON STRIP
+   ICON STRIP
 ================================== */
 
 .icon-strip {
-
     display: flex;
 
     justify-content: space-around;
-
     align-items: center;
 
     gap: 12px;
@@ -989,9 +994,7 @@ main {
     border-top: 1px solid #777;
 }
 
-
 .icon-item {
-
     display: flex;
 
     align-items: center;
@@ -1003,49 +1006,36 @@ main {
     font-size: 10px;
 }
 
-
 .icon-large {
-
     font-size: 28px;
 }
 
-
 .icon-divider {
-
     height: 38px;
 
     border-left: 1px solid #777;
 }
 
-
 .mini-computer {
-
     font-size: 26px;
 }
 
-
 .html-badge {
-
     border: 2px outset #999;
 
     background: #eee;
 
     padding: 6px 5px;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "Times New Roman", Times, serif;
 
     font-weight: bold;
 
     font-size: 15px;
 }
 
-
 .mail-icon,
 .dna-icon {
-
     font-size: 25px;
 }
 
@@ -1055,7 +1045,6 @@ main {
 ================================== */
 
 footer {
-
     padding: 10px 15px 15px;
 
     text-align: center;
@@ -1067,405 +1056,204 @@ footer {
 
 
 /* ==================================
+   ABOUT-ME.HTML SUPPORT
+================================== */
+
+.site-wrapper {
+    width: 860px;
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    background: #fffdf5;
+
+    border: 1px solid #111;
+
+    padding: 18px;
+}
+
+.top-nav {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #777;
+}
+
+.page-header {
+    padding: 24px 0;
+
+    border-bottom: 1px solid #777;
+}
+
+.page-header h1 {
+    margin: 5px 0;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 34px;
+}
+
+.terminal-label {
+    color: #777;
+
+    font-size: 11px;
+}
+
+.content-box {
+    margin-top: 15px;
+
+    padding: 16px;
+
+    border: 1px solid #777;
+
+    background: #fffef8;
+}
+
+.content-box h2 {
+    margin-top: 0;
+
+    font-family: "Courier New", Courier, monospace;
+
+    font-size: 14px;
+}
+
+.content-box p {
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+.image-placeholder {
+    margin-top: 15px;
+
+    padding: 28px;
+
+    border: 1px dashed #777;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 11px;
+}
+
+.terminal-note {
+    margin-top: 18px;
+
+    padding: 12px;
+
+    background: #000;
+
+    color: #00cf3c;
+
+    border: 1px solid #111;
+
+    font-size: 11px;
+}
+
+.back-home {
+    margin: 20px 0;
+
+    text-align: center;
+}
+
+
+/* ==================================
    MOBILE
 ================================== */
 
 @media (max-width: 760px) {
 
     body {
-
         padding: 5px;
     }
 
-
     .site-header {
-
         display: block;
     }
 
-
     .status-box {
-
         margin-top: 15px;
+
+        width: 100%;
     }
 
-
     .site-header h1 {
-
         font-size: 32px;
     }
 
-
     .main-nav {
-
         flex-wrap: wrap;
 
         justify-content: flex-start;
     }
 
-
     .hero-visual {
-
         grid-template-columns:
             1fr
             1fr;
     }
 
-
     .computer-area {
-
         grid-column: 1;
     }
 
-
     .cycle-area {
-
         display: none;
     }
 
-
     .organoid-area {
-
         grid-column: 2;
     }
 
-
     .question-window {
-
         grid-column:
             1 / -1;
     }
 
-
     .two-column {
-
         grid-template-columns:
             1fr;
     }
 
-
     .trajectory {
-
         display: block;
     }
 
-
     .trajectory-box {
-
         margin-bottom: 8px;
     }
 
-
     .trajectory-arrow {
-
-        text-align: center;
-
-        transform:
-            rotate(90deg);
-    }
-
-
-    .bottom-grid {
-
-        grid-template-columns:
-            1fr;
-    }
-
-
-    .icon-strip {
-
-        flex-wrap: wrap;
-    }
-
-
-    .icon-divider {
-
-        display: none;
-    }
-
-}
-
-/* ==================================
-   ORGANOID INTELLIGENCE PAGE
-================================== */
-
-.oi-intro {
-    margin-bottom: 14px;
-}
-
-
-/* MAIN TITLE AREA */
-
-.oi-title-area {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 30px;
-
-    padding: 25px;
-}
-
-
-.oi-title-area h2 {
-
-    margin: 4px 0;
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-size: 37px;
-
-    letter-spacing: 1px;
-}
-
-
-.file-path {
-
-    margin: 0;
-
-    color: #777;
-
-    font-size: 10px;
-}
-
-
-.oi-subtitle {
-
-    margin: 5px 0 0;
-
-    font-size: 12px;
-}
-
-
-.oi-page-organoid {
-
-    width: 135px;
-
-    animation:
-        float-organoid
-        3.4s
-        ease-in-out
-        infinite;
-}
-
-
-/* PAGE SECTIONS */
-
-.oi-section {
-
-    margin-bottom: 14px;
-}
-
-
-/* BASIC CLOSED LOOP */
-
-.oi-loop {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    margin: 22px 0;
-
-    font-family:
-        "Courier New",
-        Courier,
-        monospace;
-}
-
-
-.oi-loop-box {
-
-    flex: 1;
-
-    padding: 13px 10px;
-
-    border: 1px solid #777;
-
-    text-align: center;
-
-    color: #000080;
-
-    font-weight: bold;
-
-    font-size: 12px;
-}
-
-
-.oi-loop-box span {
-
-    display: block;
-
-    margin-top: 6px;
-
-    color: #111;
-
-    font-weight: normal;
-
-    font-size: 9px;
-}
-
-
-.oi-loop-arrow {
-
-    color: #000080;
-
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
-
-    font-size: 30px;
-
-    font-weight: bold;
-}
-
-
-/* PERSONAL BOX */
-
-.personal-section {
-
-    border-color: #000080;
-}
-
-
-/* QUESTIONS */
-
-.oi-questions {
-
-    font-family:
-        "Courier New",
-        Courier,
-        monospace;
-
-    font-size: 12px;
-}
-
-
-.oi-questions p {
-
-    margin-bottom: 8px;
-}
-
-
-.oi-questions span {
-
-    color: #0000aa;
-
-    margin-right: 7px;
-}
-
-
-/* BUILDING BLOCKS */
-
-.oi-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr
-        1fr
-        1fr;
-
-    gap: 9px;
-}
-
-
-.oi-card {
-
-    min-height: 120px;
-
-    padding: 11px;
-
-    border: 1px solid #777;
-
-    font-family:
-        "Courier New",
-        Courier,
-        monospace;
-
-    font-size: 11px;
-}
-
-
-.oi-card strong {
-
-    color: #000080;
-}
-
-
-.oi-card p {
-
-    margin: 8px 0;
-}
-
-
-/* PAGE NAVIGATION */
-
-.page-navigation {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    margin: 20px 0;
-
-    font-size: 11px;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 760px) {
-
-    .oi-title-area {
-
-        display: block;
-    }
-
-
-    .oi-page-organoid {
-
-        display: block;
-
-        margin: 20px auto 0;
-    }
-
-
-    .oi-loop {
-
-        display: block;
-    }
-
-
-    .oi-loop-box {
-
-        margin-bottom: 7px;
-    }
-
-
-    .oi-loop-arrow {
-
         text-align: center;
 
         transform: rotate(90deg);
     }
 
+    .trajectory-dots {
+        justify-content: center;
 
-    .oi-grid {
+        margin-bottom: 10px;
+    }
 
-        grid-template-columns: 1fr;
+    .bottom-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .icon-strip {
+        flex-wrap: wrap;
+    }
+
+    .icon-divider {
+        display: none;
     }
 
 }
