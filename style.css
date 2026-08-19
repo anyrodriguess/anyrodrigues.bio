@@ -474,60 +474,91 @@ main {
 }
 
 /* ==================================
-   RESEARCH ARCHIVE MEDIA
+   90s RESEARCH MEDIA ARCHIVE
 ================================== */
 
 .archive-media {
-    width: 520px;
-    max-width: 92%;
+    width: 300px;
+    max-width: 85%;
 
-    margin: 24px auto;
-
-    border-top: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
-    border-right: 2px solid #555;
-    border-bottom: 2px solid #555;
+    margin: 22px auto;
 
     background: #c0c0c0;
 
-    box-shadow: 4px 4px 0 #888;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #444;
+    border-bottom: 2px solid #444;
+
+    box-shadow:
+        1px 1px 0 #000,
+        4px 4px 0 #999;
 
     font-family: "Courier New", Courier, monospace;
 }
 
+
+/* Transcendence slightly smaller */
+
 .archive-media-small {
-    width: 420px;
+    width: 260px;
 }
+
+
+/* Video same compact size */
+
+.archive-video {
+    width: 320px;
+}
+
+
+/* ----------------------------------
+   WINDOWS 95 TITLE BAR
+---------------------------------- */
 
 .archive-titlebar {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding: 4px 6px;
+    min-height: 19px;
+
+    padding: 2px 3px 2px 5px;
 
     background: #000080;
     color: #ffffff;
 
-    font-size: 11px;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
     font-weight: bold;
+
+    image-rendering: pixelated;
 }
 
 .archive-controls {
-    color: #000;
+    display: inline-block;
+
+    padding: 0 3px;
 
     background: #c0c0c0;
-
-    padding: 0 4px;
+    color: #000;
 
     border-top: 1px solid #fff;
     border-left: 1px solid #fff;
-    border-right: 1px solid #555;
-    border-bottom: 1px solid #555;
+    border-right: 1px solid #444;
+    border-bottom: 1px solid #444;
+
+    font-size: 9px;
+    line-height: 13px;
 }
 
+
+/* ----------------------------------
+   MEDIA VIEWER
+---------------------------------- */
+
 .archive-screen {
-    padding: 7px;
+    padding: 5px;
 
     background: #c0c0c0;
 }
@@ -539,22 +570,42 @@ main {
     width: 100%;
     height: auto;
 
-    border: 1px solid #222;
+    border-top: 1px solid #444;
+    border-left: 1px solid #444;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
 
     background: #000;
 }
 
+
+/* Make images feel slightly more
+   like old compressed web images */
+
+.archive-screen img {
+    image-rendering: auto;
+}
+
+
+/* ----------------------------------
+   OLD FILE INFO BAR
+---------------------------------- */
+
 .archive-caption {
-    padding: 7px 9px 9px;
+    padding: 5px 6px;
+
+    background: #c0c0c0;
 
     border-top: 1px solid #777;
 
-    background: #e5e5e5;
-
     color: #111;
 
-    font-size: 10px;
-    line-height: 1.5;
+    font-family: "Courier New", Courier, monospace;
+
+    font-size: 9px;
+    line-height: 1.35;
+
+    text-align: left;
 }
 
 .archive-label {
@@ -563,8 +614,38 @@ main {
     font-weight: bold;
 }
 
-.archive-video {
-    width: 560px;
+
+/* ----------------------------------
+   MAKE LAB FILES FEEL SCATTERED
+---------------------------------- */
+
+.content-box .archive-media:nth-of-type(odd) {
+    margin-left: 8%;
+    margin-right: auto;
+}
+
+.content-box .archive-media:nth-of-type(even) {
+    margin-left: auto;
+    margin-right: 8%;
+}
+
+
+/* ----------------------------------
+   MOBILE
+---------------------------------- */
+
+@media (max-width: 600px) {
+
+    .archive-media,
+    .archive-media-small,
+    .archive-video {
+        width: 270px;
+        max-width: 95%;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
 }
 
 /* ==================================
