@@ -75,6 +75,7 @@ a:hover {
 
 .subtitle {
     margin: 9px 0 0;
+
     font-size: 13px;
 }
 
@@ -88,7 +89,7 @@ a:hover {
     align-items: center;
     justify-content: space-between;
 
-    gap: 16px;
+    gap: 18px;
 
     min-width: 255px;
 
@@ -103,6 +104,7 @@ a:hover {
 
 .status-title {
     margin-bottom: 5px;
+
     font-size: 10px;
 }
 
@@ -123,183 +125,14 @@ a:hover {
 
 .tiny-status {
     margin-top: 3px;
+
     font-size: 10px;
 }
 
+.status-construction {
+    font-size: 29px;
 
-/* ==================================
-   PIXEL HOURGLASS
-================================== */
-
-.pixel-hourglass {
-    width: 32px;
-    height: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    image-rendering: pixelated;
-
-    animation: hourglass-turn 8s steps(1, end) infinite;
-}
-
-.hourglass-frame {
-    position: relative;
-
-    width: 24px;
-    height: 34px;
-
-    border-top: 4px solid #222;
-    border-bottom: 4px solid #222;
-}
-
-.hourglass-frame::before,
-.hourglass-frame::after {
-    content: "";
-
-    position: absolute;
-
-    left: 3px;
-
-    width: 18px;
-    height: 12px;
-
-    border-left: 3px solid #555;
-    border-right: 3px solid #555;
-}
-
-.hourglass-frame::before {
-    top: 1px;
-    transform: skewX(18deg);
-}
-
-.hourglass-frame::after {
-    bottom: 1px;
-    transform: skewX(-18deg);
-}
-
-.hourglass-top,
-.hourglass-bottom {
-    position: absolute;
-
-    left: 6px;
-
-    width: 12px;
-    height: 9px;
-
-    overflow: hidden;
-}
-
-.hourglass-top {
-    top: 4px;
-}
-
-.hourglass-bottom {
-    bottom: 4px;
-}
-
-.sand {
-    position: absolute;
-
-    left: 1px;
-
-    width: 10px;
-
-    background: #c59b38;
-}
-
-.sand-top {
-    top: 0;
-
-    height: 8px;
-
-    animation: sand-empty 4s steps(8, end) infinite;
-}
-
-.sand-bottom {
-    bottom: 0;
-
-    height: 1px;
-
-    animation: sand-fill 4s steps(8, end) infinite;
-}
-
-.hourglass-middle {
-    position: absolute;
-
-    left: 11px;
-    top: 13px;
-
-    width: 2px;
-    height: 8px;
-}
-
-.falling-sand {
-    display: block;
-
-    width: 2px;
-    height: 6px;
-
-    background: #c59b38;
-
-    animation: sand-stream 4s steps(4, end) infinite;
-}
-
-@keyframes sand-empty {
-    0% {
-        height: 8px;
-    }
-
-    85% {
-        height: 1px;
-    }
-
-    100% {
-        height: 1px;
-    }
-}
-
-@keyframes sand-fill {
-    0% {
-        height: 1px;
-    }
-
-    85% {
-        height: 8px;
-    }
-
-    100% {
-        height: 8px;
-    }
-}
-
-@keyframes sand-stream {
-    0%,
-    85% {
-        opacity: 1;
-    }
-
-    86%,
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes hourglass-turn {
-    0%,
-    47% {
-        transform: rotate(0deg);
-    }
-
-    50%,
-    97% {
-        transform: rotate(180deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
+    line-height: 1;
 }
 
 
@@ -322,11 +155,13 @@ a:hover {
 
 .main-nav a::before {
     content: "[ ";
+
     color: #111;
 }
 
 .main-nav a::after {
     content: " ]";
+
     color: #111;
 }
 
@@ -352,12 +187,12 @@ main {
     display: grid;
 
     grid-template-columns:
-        1.fr
-        1.15fr;
+        1.2fr
+        1fr;
 
     align-items: center;
 
-    gap: 22px;
+    gap: 25px;
 
     min-height: 255px;
 
@@ -370,23 +205,26 @@ main {
 
 
 /* ==================================
-   ORGANOID INTELLIGENCE LOOP IMAGE
+   ORGANOID INTELLIGENCE IMAGE
 ================================== */
-
-.oi-loop-image {
-    width: 260px;
-    max-width: 100%;
-    height: auto;
-
-    display: block;
-
-    image-rendering: pixelated;
-}
 
 .oi-loop-visual {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    padding: 5px 0;
+}
+
+.oi-loop-image {
+    width: 320px;
+    max-width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    image-rendering: pixelated;
 }
 
 
@@ -582,7 +420,6 @@ main {
 
 .trajectory {
     display: flex;
-
     align-items: stretch;
 
     gap: 8px;
@@ -636,20 +473,6 @@ main {
     border-color: #000080;
 }
 
-.tiny-fish,
-.tiny-organoid {
-    position: absolute;
-
-    right: 7px;
-    bottom: 5px;
-
-    font-size: 11px;
-}
-
-.tiny-organoid {
-    font-size: 20px;
-}
-
 
 /* ==================================
    ANIMATED DOTS
@@ -686,6 +509,7 @@ main {
 }
 
 @keyframes dot-pulse {
+
     0%,
     100% {
         opacity: 0.15;
@@ -694,6 +518,7 @@ main {
     50% {
         opacity: 1;
     }
+
 }
 
 
@@ -815,12 +640,11 @@ main {
 
 
 /* ==================================
-   ICON STRIP
+   OLD WEB ICON STRIP
 ================================== */
 
 .icon-strip {
     display: flex;
-
     justify-content: space-around;
     align-items: center;
 
@@ -835,7 +659,6 @@ main {
 
 .icon-item {
     display: flex;
-
     align-items: center;
 
     gap: 8px;
@@ -843,10 +666,6 @@ main {
     text-align: left;
 
     font-size: 10px;
-}
-
-.icon-large {
-    font-size: 28px;
 }
 
 .icon-divider {
@@ -1182,6 +1001,7 @@ footer {
     text-align: center;
 }
 
+
 /* ==================================
    UNDER CONSTRUCTION PAGE
 ================================== */
@@ -1219,6 +1039,7 @@ footer {
 
 .construction-window-title {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
 
@@ -1286,6 +1107,7 @@ footer {
     padding: 12px 18px;
 
     background: #000;
+
     color: #00cf3c;
 
     border: 2px inset #777;
@@ -1305,6 +1127,7 @@ footer {
 
 .construction-buttons {
     display: flex;
+
     justify-content: center;
 
     gap: 12px;
@@ -1360,12 +1183,14 @@ footer {
     border: 1px solid #111;
 
     background: #ffff00;
+
     color: #000;
 
     font-size: 10px;
 
     font-weight: bold;
 }
+
 
 /* ==================================
    MOBILE
@@ -1402,6 +1227,8 @@ footer {
     }
 
     .oi-loop-image {
+        width: 300px;
+
         max-width: 100%;
     }
 
@@ -1463,6 +1290,22 @@ footer {
         display: block;
 
         margin-bottom: 6px;
+    }
+
+    .construction-page {
+        width: 95%;
+
+        padding-top: 25px;
+    }
+
+    .construction-content {
+        padding: 28px 15px;
+    }
+
+    .construction-buttons {
+        flex-direction: column;
+
+        align-items: center;
     }
 
 }
