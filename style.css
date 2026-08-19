@@ -1,0 +1,1471 @@
+/* ==================================
+   GLOBAL
+================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: #ece7d8;
+}
+
+body {
+
+    margin: 0;
+
+    padding: 16px 10px 30px;
+
+    background: #ece7d8;
+
+    color: #111;
+
+    font-family: "Courier New", Courier, monospace;
+
+    font-size: 14px;
+
+    line-height: 1.45;
+}
+
+
+/* LINKS */
+
+a {
+
+    color: #0000ee;
+
+    text-decoration: underline;
+}
+
+a:visited {
+
+    color: #551a8b;
+}
+
+a:hover {
+
+    color: #cc0000;
+}
+
+
+/* MAIN PAGE */
+
+.page {
+
+    width: 980px;
+
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    background: #fffdf5;
+
+    border: 1px solid #111;
+}
+
+
+/* ==================================
+   HEADER
+================================== */
+
+.site-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 18px 22px;
+
+    border-bottom: 1px solid #111;
+}
+
+
+.site-header h1 {
+
+    margin: 0;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 42px;
+
+    letter-spacing: 2px;
+
+    line-height: 1;
+}
+
+
+.subtitle {
+
+    margin: 9px 0 0;
+
+    font-size: 13px;
+}
+
+
+/* STATUS */
+
+.status-box {
+
+    position: relative;
+
+    min-width: 210px;
+
+    border: 1px solid #777;
+
+    padding: 10px 44px 10px 12px;
+
+    background: #fffef8;
+
+    font-size: 11px;
+}
+
+
+.status-title {
+
+    margin-bottom: 5px;
+
+    font-size: 10px;
+}
+
+
+.online-dot {
+
+    display: inline-block;
+
+    width: 9px;
+
+    height: 9px;
+
+    margin-right: 5px;
+
+    border-radius: 50%;
+
+    background: #00a000;
+
+    border: 1px solid #006000;
+}
+
+
+.tiny-status {
+
+    margin-top: 3px;
+
+    font-size: 10px;
+}
+
+
+.hourglass {
+
+    position: absolute;
+
+    right: 12px;
+
+    top: 17px;
+
+    font-size: 25px;
+}
+
+
+/* ==================================
+   NAVIGATION
+================================== */
+
+.main-nav {
+
+    display: flex;
+
+    justify-content: space-around;
+
+    gap: 15px;
+
+    padding: 10px 18px;
+
+    border-bottom: 1px solid #111;
+
+    font-size: 13px;
+}
+
+
+.main-nav a::before {
+
+    content: "[ ";
+
+    color: #111;
+}
+
+
+.main-nav a::after {
+
+    content: " ]";
+
+    color: #111;
+}
+
+
+/* ==================================
+   MAIN
+================================== */
+
+main {
+
+    padding: 15px 20px 0;
+}
+
+
+/* ==================================
+   HERO
+================================== */
+
+.hero {
+
+    padding-bottom: 13px;
+}
+
+
+.hero-visual {
+
+    display: grid;
+
+    grid-template-columns:
+        1.05fr
+        0.9fr
+        1.05fr
+        1.35fr;
+
+    align-items: center;
+
+    min-height: 285px;
+
+    border: 1px solid #111;
+
+    padding: 20px;
+
+    background: #fffef8;
+}
+
+
+/* ==================================
+   WINDOWS XP COMPUTER
+================================== */
+
+.computer-area {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.xp-computer {
+
+    width: 190px;
+
+    max-width: 100%;
+
+    display: block;
+
+    image-rendering: auto;
+}
+
+
+/* ==================================
+   PC <-> ORGANOID CYCLE
+================================== */
+
+.cycle-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 38px;
+    color: #000080;
+}
+
+.cycle-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+}
+
+.top-arrow {
+    transform: translateY(-12px);
+}
+
+.bottom-arrow {
+    transform: translateY(12px);
+}
+
+.curve-symbol {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 34px;
+    line-height: 1;
+    color: #000080;
+}
+
+.arrow-text {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #666;
+}
+
+/* ==================================
+   FLOATING ORGANOID
+================================== */
+
+.organoid-area {
+
+    position: relative;
+
+    min-height: 210px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.floating-organoid {
+
+    position: relative;
+
+    z-index: 2;
+
+    animation:
+        float-organoid
+        3.4s
+        ease-in-out
+        infinite;
+}
+
+
+.organoid-gif {
+
+    width: 145px;
+
+    max-width: 100%;
+
+    display: block;
+}
+
+
+/* FLOAT UP + DOWN */
+
+@keyframes float-organoid {
+
+    0% {
+
+        transform: translateY(0);
+    }
+
+    50% {
+
+        transform: translateY(-12px);
+    }
+
+    100% {
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* SHADOW */
+
+.organoid-shadow {
+
+    position: absolute;
+
+    bottom: 24px;
+
+    width: 95px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background:
+        repeating-radial-gradient(
+            ellipse at center,
+            #777 0 1px,
+            transparent 1px 3px
+        );
+
+    opacity: 0.45;
+
+    animation:
+        shadow-animation
+        3.4s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes shadow-animation {
+
+    0% {
+
+        transform: scaleX(1);
+
+        opacity: 0.45;
+    }
+
+    50% {
+
+        transform: scaleX(0.78);
+
+        opacity: 0.25;
+    }
+
+    100% {
+
+        transform: scaleX(1);
+
+        opacity: 0.45;
+    }
+
+}
+
+
+/* RANDOM OLD-WEB SPARKS */
+
+.spark {
+
+    position: absolute;
+
+    z-index: 1;
+
+    color: #003e9a;
+
+    font-weight: bold;
+
+    font-size: 15px;
+}
+
+
+.spark-1 {
+
+    left: 17px;
+
+    top: 24px;
+}
+
+
+.spark-2 {
+
+    right: 16px;
+
+    top: 17px;
+}
+
+
+.spark-3 {
+
+    right: 10px;
+
+    bottom: 62px;
+}
+
+
+.spark-4 {
+
+    left: 24px;
+
+    bottom: 45px;
+}
+
+
+/* ==================================
+   QUESTION WINDOW
+================================== */
+
+.question-window {
+
+    align-self: stretch;
+
+    border: 1px solid #111;
+
+    background: #fffef8;
+}
+
+
+.window-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 4px 7px;
+
+    background: #000080;
+
+    color: white;
+
+    border-bottom: 1px solid #111;
+
+    font-size: 11px;
+}
+
+
+.window-x {
+
+    background: #c0c0c0;
+
+    color: black;
+
+    border-top: 1px solid white;
+
+    border-left: 1px solid white;
+
+    border-right: 1px solid #444;
+
+    border-bottom: 1px solid #444;
+
+    padding: 0 4px;
+}
+
+
+.window-content {
+
+    padding: 14px;
+}
+
+
+.window-content h2 {
+
+    margin: 0;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 26px;
+
+    line-height: 1.08;
+}
+
+
+.window-content hr {
+
+    border: 0;
+
+    border-top: 1px solid #111;
+
+    margin: 12px 0;
+}
+
+
+.window-content p {
+
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+}
+
+
+/* ==================================
+   ABOUT / INTEREST PANELS
+================================== */
+
+.two-column {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1.25fr;
+
+    gap: 14px;
+}
+
+
+.panel {
+
+    border: 1px solid #777;
+
+    background: #fffef8;
+}
+
+
+.panel-title {
+
+    padding: 5px 8px;
+
+    border-bottom: 1px solid #777;
+
+    background: #e5e1d8;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+.panel-icon {
+
+    margin-right: 6px;
+}
+
+
+.panel-body {
+
+    padding: 12px;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 15px;
+
+    line-height: 1.35;
+}
+
+
+.panel-body p {
+
+    margin: 0 0 14px;
+}
+
+
+.panel-body p:last-child {
+
+    margin-bottom: 0;
+}
+
+
+.read-more {
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+}
+
+
+/* INTERESTS */
+
+.interests-list {
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 13px;
+}
+
+
+.interests-list p {
+
+    margin: 0 0 6px;
+}
+
+
+/* ==================================
+   TERMINAL
+================================== */
+
+.terminal {
+
+    margin-top: 13px;
+
+    border: 1px solid #111;
+}
+
+
+.terminal-title {
+
+    padding: 4px 7px;
+
+    background: #d8d8d8;
+
+    border-bottom: 1px solid #111;
+
+    font-size: 11px;
+}
+
+
+.terminal-body {
+
+    padding: 10px 12px;
+
+    background: #000;
+
+    color: #00cf3c;
+
+    font-size: 11px;
+}
+
+
+.terminal-body p {
+
+    margin: 3px 0;
+}
+
+
+/* ==================================
+   TRAJECTORY
+================================== */
+
+.trajectory-panel {
+
+    margin-top: 14px;
+}
+
+
+.trajectory {
+
+    display: flex;
+
+    align-items: stretch;
+
+    gap: 10px;
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+}
+
+
+.trajectory-box {
+
+    position: relative;
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 10px;
+
+    border: 1px solid #777;
+
+    font-size: 11px;
+}
+
+
+.trajectory-box strong {
+
+    display: block;
+
+    margin: 7px 0;
+
+    font-size: 12px;
+}
+
+
+.trajectory-box p {
+
+    margin: 2px 0;
+}
+
+
+.trajectory-label {
+
+    color: #0000aa;
+
+    font-weight: bold;
+}
+
+
+.trajectory-arrow {
+
+    align-self: center;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 35px;
+}
+
+
+.next-box {
+
+    border-style: dashed;
+}
+
+
+.tiny-fish,
+.tiny-organoid {
+
+    position: absolute;
+
+    right: 8px;
+
+    bottom: 6px;
+
+    font-size: 13px;
+}
+
+
+.tiny-organoid {
+
+    font-size: 22px;
+}
+
+
+/* ==================================
+   QUESTIONS + VISITOR
+================================== */
+
+.bottom-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        2.2fr
+        0.8fr
+        1fr;
+
+    gap: 13px;
+
+    margin-top: 14px;
+}
+
+
+.questions {
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 11px;
+}
+
+
+.questions p {
+
+    margin: 0 0 7px;
+}
+
+
+.questions span {
+
+    color: #0000aa;
+}
+
+
+.question-icon {
+
+    display: inline-block;
+
+    width: 18px;
+
+    height: 18px;
+
+    margin-right: 7px;
+
+    border-radius: 50%;
+
+    background: #1245a6;
+
+    color: white;
+
+    text-align: center;
+
+    line-height: 18px;
+}
+
+
+/* EVOLVING */
+
+.evolving-box {
+
+    text-align: center;
+}
+
+
+.pixel-globe {
+
+    margin-bottom: 10px;
+
+    font-size: 48px;
+}
+
+
+.evolving-message {
+
+    display: inline-block;
+
+    border: 1px dashed #777;
+
+    padding: 11px 16px;
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 12px;
+}
+
+
+.blue-cursor {
+
+    color: #0000aa;
+}
+
+
+/* VISITOR */
+
+.visitor-body {
+
+    text-align: center;
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+}
+
+
+.counter {
+
+    display: inline-block;
+
+    padding: 5px 8px;
+
+    background: #000;
+
+    color: #00ff3b;
+
+    border: 3px inset #777;
+
+    font-size: 23px;
+
+    letter-spacing: 4px;
+}
+
+
+.cat {
+
+    margin: 12px 0;
+
+    font-size: 10px;
+
+    line-height: 1;
+}
+
+
+/* ==================================
+   OLD WEB ICON STRIP
+================================== */
+
+.icon-strip {
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 13px;
+
+    padding: 12px 4px 10px;
+
+    border-top: 1px solid #777;
+}
+
+
+.icon-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    text-align: left;
+
+    font-size: 10px;
+}
+
+
+.icon-large {
+
+    font-size: 28px;
+}
+
+
+.icon-divider {
+
+    height: 38px;
+
+    border-left: 1px solid #777;
+}
+
+
+.mini-computer {
+
+    font-size: 26px;
+}
+
+
+.html-badge {
+
+    border: 2px outset #999;
+
+    background: #eee;
+
+    padding: 6px 5px;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-weight: bold;
+
+    font-size: 15px;
+}
+
+
+.mail-icon,
+.dna-icon {
+
+    font-size: 25px;
+}
+
+
+/* ==================================
+   FOOTER
+================================== */
+
+footer {
+
+    padding: 10px 15px 15px;
+
+    text-align: center;
+
+    border-top: 1px solid #777;
+
+    font-size: 10px;
+}
+
+
+/* ==================================
+   MOBILE
+================================== */
+
+@media (max-width: 760px) {
+
+    body {
+
+        padding: 5px;
+    }
+
+
+    .site-header {
+
+        display: block;
+    }
+
+
+    .status-box {
+
+        margin-top: 15px;
+    }
+
+
+    .site-header h1 {
+
+        font-size: 32px;
+    }
+
+
+    .main-nav {
+
+        flex-wrap: wrap;
+
+        justify-content: flex-start;
+    }
+
+
+    .hero-visual {
+
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+
+    .computer-area {
+
+        grid-column: 1;
+    }
+
+
+    .cycle-area {
+
+        display: none;
+    }
+
+
+    .organoid-area {
+
+        grid-column: 2;
+    }
+
+
+    .question-window {
+
+        grid-column:
+            1 / -1;
+    }
+
+
+    .two-column {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .trajectory {
+
+        display: block;
+    }
+
+
+    .trajectory-box {
+
+        margin-bottom: 8px;
+    }
+
+
+    .trajectory-arrow {
+
+        text-align: center;
+
+        transform:
+            rotate(90deg);
+    }
+
+
+    .bottom-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .icon-strip {
+
+        flex-wrap: wrap;
+    }
+
+
+    .icon-divider {
+
+        display: none;
+    }
+
+}
+
+/* ==================================
+   ORGANOID INTELLIGENCE PAGE
+================================== */
+
+.oi-intro {
+    margin-bottom: 14px;
+}
+
+
+/* MAIN TITLE AREA */
+
+.oi-title-area {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 25px;
+}
+
+
+.oi-title-area h2 {
+
+    margin: 4px 0;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 37px;
+
+    letter-spacing: 1px;
+}
+
+
+.file-path {
+
+    margin: 0;
+
+    color: #777;
+
+    font-size: 10px;
+}
+
+
+.oi-subtitle {
+
+    margin: 5px 0 0;
+
+    font-size: 12px;
+}
+
+
+.oi-page-organoid {
+
+    width: 135px;
+
+    animation:
+        float-organoid
+        3.4s
+        ease-in-out
+        infinite;
+}
+
+
+/* PAGE SECTIONS */
+
+.oi-section {
+
+    margin-bottom: 14px;
+}
+
+
+/* BASIC CLOSED LOOP */
+
+.oi-loop {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin: 22px 0;
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+}
+
+
+.oi-loop-box {
+
+    flex: 1;
+
+    padding: 13px 10px;
+
+    border: 1px solid #777;
+
+    text-align: center;
+
+    color: #000080;
+
+    font-weight: bold;
+
+    font-size: 12px;
+}
+
+
+.oi-loop-box span {
+
+    display: block;
+
+    margin-top: 6px;
+
+    color: #111;
+
+    font-weight: normal;
+
+    font-size: 9px;
+}
+
+
+.oi-loop-arrow {
+
+    color: #000080;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 30px;
+
+    font-weight: bold;
+}
+
+
+/* PERSONAL BOX */
+
+.personal-section {
+
+    border-color: #000080;
+}
+
+
+/* QUESTIONS */
+
+.oi-questions {
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 12px;
+}
+
+
+.oi-questions p {
+
+    margin-bottom: 8px;
+}
+
+
+.oi-questions span {
+
+    color: #0000aa;
+
+    margin-right: 7px;
+}
+
+
+/* BUILDING BLOCKS */
+
+.oi-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1fr;
+
+    gap: 9px;
+}
+
+
+.oi-card {
+
+    min-height: 120px;
+
+    padding: 11px;
+
+    border: 1px solid #777;
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 11px;
+}
+
+
+.oi-card strong {
+
+    color: #000080;
+}
+
+
+.oi-card p {
+
+    margin: 8px 0;
+}
+
+
+/* PAGE NAVIGATION */
+
+.page-navigation {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin: 20px 0;
+
+    font-size: 11px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+
+    .oi-title-area {
+
+        display: block;
+    }
+
+
+    .oi-page-organoid {
+
+        display: block;
+
+        margin: 20px auto 0;
+    }
+
+
+    .oi-loop {
+
+        display: block;
+    }
+
+
+    .oi-loop-box {
+
+        margin-bottom: 7px;
+    }
+
+
+    .oi-loop-arrow {
+
+        text-align: center;
+
+        transform: rotate(90deg);
+    }
+
+
+    .oi-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+}
