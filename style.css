@@ -1187,10 +1187,12 @@ footer {
 ================================== */
 
 .construction-page {
-    width: 620px;
-    max-width: 95%;
+    width: 760px;
+    max-width: 92%;
 
-    margin: 35px auto;
+    margin: 0 auto;
+
+    padding-top: 70px;
 
     font-family: "Courier New", Courier, monospace;
 }
@@ -1206,6 +1208,8 @@ footer {
 }
 
 .construction-window {
+    width: 100%;
+
     border: 2px outset #c0c0c0;
 
     background: #c0c0c0;
@@ -1229,7 +1233,7 @@ footer {
 }
 
 .construction-content {
-    padding: 35px 25px;
+    padding: 42px 40px;
 
     border-top: 2px solid white;
 
