@@ -171,13 +171,11 @@ a:hover {
 
 .hourglass-frame::before {
     top: 1px;
-
     transform: skewX(18deg);
 }
 
 .hourglass-frame::after {
     bottom: 1px;
-
     transform: skewX(-18deg);
 }
 
@@ -249,7 +247,6 @@ a:hover {
 }
 
 @keyframes sand-empty {
-
     0% {
         height: 8px;
     }
@@ -261,11 +258,9 @@ a:hover {
     100% {
         height: 1px;
     }
-
 }
 
 @keyframes sand-fill {
-
     0% {
         height: 1px;
     }
@@ -277,11 +272,9 @@ a:hover {
     100% {
         height: 8px;
     }
-
 }
 
 @keyframes sand-stream {
-
     0%,
     85% {
         opacity: 1;
@@ -291,11 +284,9 @@ a:hover {
     100% {
         opacity: 0;
     }
-
 }
 
 @keyframes hourglass-turn {
-
     0%,
     47% {
         transform: rotate(0deg);
@@ -309,7 +300,6 @@ a:hover {
     100% {
         transform: rotate(360deg);
     }
-
 }
 
 
@@ -362,12 +352,12 @@ main {
     display: grid;
 
     grid-template-columns:
-        0.8fr
-        0.75fr
-        0.9fr
-        1.35fr;
+        1.45fr
+        1fr;
 
     align-items: center;
+
+    gap: 22px;
 
     min-height: 255px;
 
@@ -380,172 +370,24 @@ main {
 
 
 /* ==================================
-   COMPUTER
+   ORGANOID INTELLIGENCE LOOP IMAGE
 ================================== */
 
-.computer-area {
+.oi-loop-visual {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.xp-computer {
-    width: 105px;
-    max-width: 100%;
+.oi-loop-image {
+    width: 100%;
+    max-width: 430px;
+
+    height: auto;
 
     display: block;
 
     image-rendering: pixelated;
-}
-
-
-/* ==================================
-   PC <-> ORGANOID CYCLE
-================================== */
-
-.cycle-area {
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-
-    gap: 42px;
-
-    color: #000080;
-}
-
-.cycle-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 2px;
-
-    white-space: nowrap;
-}
-
-.top-cycle-arrow {
-    transform: translateY(-8px);
-}
-
-.bottom-cycle-arrow {
-    transform: translateY(8px);
-}
-
-.curve-arrow {
-    font-family: "Times New Roman", Times, serif;
-
-    font-size: 31px;
-    font-weight: bold;
-
-    line-height: 1;
-
-    color: #000080;
-}
-
-.cycle-word {
-    color: #777;
-
-    font-size: 8px;
-
-    letter-spacing: 1px;
-}
-
-
-/* ==================================
-   FLOATING ORGANOID
-================================== */
-
-.organoid-area {
-    position: relative;
-
-    min-height: 175px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.floating-organoid {
-    position: relative;
-
-    z-index: 2;
-
-    animation:
-        float-organoid
-        4.5s
-        ease-in-out
-        infinite;
-}
-
-.organoid-gif {
-    width: 125px;
-    max-width: 100%;
-
-    display: block;
-
-    image-rendering: pixelated;
-}
-
-@keyframes float-organoid {
-
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-9px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-
-}
-
-.organoid-shadow {
-    position: absolute;
-
-    bottom: 15px;
-
-    width: 75px;
-    height: 8px;
-
-    border-radius: 50%;
-
-    background:
-        repeating-radial-gradient(
-            ellipse at center,
-            #777 0 1px,
-            transparent 1px 3px
-        );
-
-    opacity: 0.35;
-
-    animation:
-        shadow-animation
-        4.5s
-        ease-in-out
-        infinite;
-}
-
-@keyframes shadow-animation {
-
-    0% {
-        transform: scaleX(1);
-        opacity: 0.35;
-    }
-
-    50% {
-        transform: scaleX(0.8);
-        opacity: 0.2;
-    }
-
-    100% {
-        transform: scaleX(1);
-        opacity: 0.35;
-    }
-
 }
 
 
@@ -845,7 +687,6 @@ main {
 }
 
 @keyframes dot-pulse {
-
     0%,
     100% {
         opacity: 0.15;
@@ -854,7 +695,6 @@ main {
     50% {
         opacity: 1;
     }
-
 }
 
 
@@ -1056,7 +896,7 @@ footer {
 
 
 /* ==================================
-   ABOUT-ME.HTML SUPPORT
+   ABOUT-ME.HTML
 ================================== */
 
 .site-wrapper {
@@ -1144,6 +984,171 @@ footer {
     font-size: 11px;
 }
 
+.big-question {
+    margin: 18px 0;
+
+    padding: 13px 15px;
+
+    border-left: 3px solid #000080;
+
+    background: #f3f0e7;
+
+    font-family: "Courier New", Courier, monospace;
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+.interface-box {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 13px;
+
+    margin: 18px 0;
+
+    padding: 12px;
+
+    border: 1px solid #777;
+
+    background: #f5f2e9;
+
+    font-family: "Courier New", Courier, monospace;
+
+    font-size: 11px;
+}
+
+.interface-arrow {
+    color: #000080;
+
+    font-size: 22px;
+}
+
+.interest-chain {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    align-items: center;
+
+    margin: 18px 0;
+
+    padding: 12px;
+
+    border: 1px dashed #777;
+
+    font-family: "Courier New", Courier, monospace;
+
+    font-size: 11px;
+}
+
+.interest-chain span:nth-child(even) {
+    color: #000080;
+}
+
+.comparison-box {
+    margin: 18px 0;
+
+    padding: 14px;
+
+    border: 1px solid #777;
+
+    background: #f5f2e9;
+
+    font-family: "Courier New", Courier, monospace;
+
+    font-size: 12px;
+}
+
+.comparison-box hr {
+    border: 0;
+
+    border-top: 1px solid #777;
+
+    margin: 12px 0;
+}
+
+.comparison-label {
+    color: #000080;
+
+    font-weight: bold;
+}
+
+.spoiler-warning {
+    display: inline-block;
+
+    margin: 4px 0 18px;
+
+    padding: 3px 7px;
+
+    border: 1px solid #111;
+
+    background: #000;
+
+    color: #00cf3c;
+
+    font-family: "Courier New", Courier, monospace;
+
+    font-size: 11px;
+}
+
+.consciousness-question {
+    margin: 22px 0;
+
+    padding: 15px;
+
+    border: 1px solid #000080;
+
+    text-align: center;
+
+    font-family: "Courier New", Courier, monospace;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #000080;
+}
+
+.question-stack {
+    margin: 17px 0;
+
+    padding-left: 14px;
+
+    border-left: 1px dashed #777;
+}
+
+.question-stack p {
+    margin: 5px 0;
+}
+
+.research-direction {
+    margin: 17px 0;
+
+    padding: 13px;
+
+    border: 1px solid #777;
+
+    background: #f3f0e7;
+
+    text-align: center;
+
+    font-family: "Courier New", Courier, monospace;
+
+    font-size: 11px;
+}
+
+.research-direction span {
+    color: #000080;
+
+    padding: 0 5px;
+}
+
 .terminal-note {
     margin-top: 18px;
 
@@ -1156,6 +1161,20 @@ footer {
     border: 1px solid #111;
 
     font-size: 11px;
+}
+
+.future-link {
+    font-family: "Courier New", Courier, monospace !important;
+
+    font-size: 13px !important;
+}
+
+.small-note {
+    color: #777;
+
+    font-family: "Courier New", Courier, monospace !important;
+
+    font-size: 10px !important;
 }
 
 .back-home {
@@ -1196,31 +1215,19 @@ footer {
     }
 
     .hero-visual {
-        grid-template-columns:
-            1fr
-            1fr;
+        grid-template-columns: 1fr;
     }
 
-    .computer-area {
-        grid-column: 1;
-    }
-
-    .cycle-area {
-        display: none;
-    }
-
-    .organoid-area {
-        grid-column: 2;
+    .oi-loop-image {
+        max-width: 100%;
     }
 
     .question-window {
-        grid-column:
-            1 / -1;
+        width: 100%;
     }
 
     .two-column {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
     .trajectory {
@@ -1235,6 +1242,8 @@ footer {
         text-align: center;
 
         transform: rotate(90deg);
+
+        margin: 4px 0;
     }
 
     .trajectory-dots {
@@ -1244,8 +1253,7 @@ footer {
     }
 
     .bottom-grid {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
     .icon-strip {
@@ -1254,6 +1262,24 @@ footer {
 
     .icon-divider {
         display: none;
+    }
+
+    .site-wrapper {
+        padding: 12px;
+    }
+
+    .interface-box {
+        flex-direction: column;
+    }
+
+    .interest-chain {
+        display: block;
+    }
+
+    .interest-chain span {
+        display: block;
+
+        margin-bottom: 6px;
     }
 
 }
