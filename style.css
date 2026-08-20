@@ -1,4 +1,4 @@
-/* ==================================
+ /* ==================================
    GLOBAL
 ================================== */
 
@@ -13,6 +13,8 @@ html {
 body {
     margin: 0;
     padding: 16px 10px 30px;
+
+    min-height: 100vh;
 
     background: #ece7d8;
     color: #111;
@@ -35,6 +37,11 @@ a:hover {
     color: #cc0000;
 }
 
+
+/* ==================================
+   MAIN HOMEPAGE SHELL
+================================== */
+
 .page {
     width: 980px;
     max-width: 100%;
@@ -53,6 +60,7 @@ a:hover {
 
 .site-header {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
 
@@ -67,7 +75,9 @@ a:hover {
     margin: 0;
 
     font-family: "Times New Roman", Times, serif;
+
     font-size: 42px;
+
     letter-spacing: 2px;
 
     line-height: 1;
@@ -81,11 +91,12 @@ a:hover {
 
 
 /* ==================================
-   STATUS BOX
+   STATUS
 ================================== */
 
 .status-box {
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
@@ -93,9 +104,9 @@ a:hover {
 
     min-width: 255px;
 
-    border: 1px solid #777;
-
     padding: 8px 10px 8px 12px;
+
+    border: 1px solid #777;
 
     background: #fffef8;
 
@@ -116,11 +127,11 @@ a:hover {
 
     margin-right: 5px;
 
+    border: 1px solid #006000;
+
     border-radius: 50%;
 
     background: #00a000;
-
-    border: 1px solid #006000;
 }
 
 .tiny-status {
@@ -130,18 +141,19 @@ a:hover {
 }
 
 .status-construction {
-    font-size: 29px;
+    font-size: 28px;
 
     line-height: 1;
 }
 
 
 /* ==================================
-   NAVIGATION
+   HOMEPAGE NAVIGATION
 ================================== */
 
 .main-nav {
     display: flex;
+
     justify-content: space-around;
 
     gap: 15px;
@@ -167,7 +179,7 @@ a:hover {
 
 
 /* ==================================
-   MAIN
+   HOMEPAGE MAIN
 ================================== */
 
 main {
@@ -186,43 +198,37 @@ main {
 .hero-visual {
     display: grid;
 
-    grid-template-columns:
-        1.2fr
-        1fr;
+    grid-template-columns: 1.15fr 1fr;
 
     align-items: center;
 
-    gap: 25px;
+    gap: 26px;
 
     min-height: 255px;
 
-    border: 1px solid #111;
-
     padding: 18px;
+
+    border: 1px solid #111;
 
     background: #fffef8;
 }
 
-
-/* ==================================
-   ORGANOID INTELLIGENCE IMAGE
-================================== */
-
 .oi-loop-visual {
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    padding: 5px 0;
+    padding: 4px;
 }
 
 .oi-loop-image {
-    width: 320px;
+    display: block;
+
+    width: 335px;
     max-width: 100%;
 
     height: auto;
-
-    display: block;
 
     image-rendering: pixelated;
 }
@@ -242,28 +248,30 @@ main {
 
 .window-title {
     display: flex;
+
     justify-content: space-between;
+    align-items: center;
 
     padding: 4px 7px;
 
+    border-bottom: 1px solid #111;
+
     background: #000080;
     color: white;
-
-    border-bottom: 1px solid #111;
 
     font-size: 11px;
 }
 
 .window-x {
-    background: #c0c0c0;
-    color: black;
+    padding: 0 4px;
 
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-right: 1px solid #444;
     border-bottom: 1px solid #444;
 
-    padding: 0 4px;
+    background: #c0c0c0;
+    color: black;
 }
 
 .window-content {
@@ -281,11 +289,10 @@ main {
 }
 
 .window-content hr {
-    border: 0;
-
-    border-top: 1px solid #111;
-
     margin: 12px 0;
+
+    border: 0;
+    border-top: 1px solid #111;
 }
 
 .window-content p {
@@ -298,15 +305,13 @@ main {
 
 
 /* ==================================
-   PANELS
+   HOMEPAGE PANELS
 ================================== */
 
 .two-column {
     display: grid;
 
-    grid-template-columns:
-        1fr
-        1.25fr;
+    grid-template-columns: 1fr 1.25fr;
 
     gap: 14px;
 }
@@ -325,7 +330,6 @@ main {
     background: #e5e1d8;
 
     font-size: 13px;
-
     font-weight: bold;
 }
 
@@ -352,12 +356,14 @@ main {
 }
 
 .read-more {
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Courier New", Courier, monospace !important;
+
+    font-size: 12px;
 }
 
 
 /* ==================================
-   CURRENT INTERESTS
+   INTERESTS
 ================================== */
 
 .interests-list {
@@ -384,9 +390,9 @@ main {
 .terminal-title {
     padding: 4px 7px;
 
-    background: #d8d8d8;
-
     border-bottom: 1px solid #111;
+
+    background: #d8d8d8;
 
     font-size: 11px;
 }
@@ -395,7 +401,6 @@ main {
     padding: 10px 12px;
 
     background: #000;
-
     color: #00cf3c;
 
     font-size: 11px;
@@ -420,6 +425,7 @@ main {
 
 .trajectory {
     display: flex;
+
     align-items: stretch;
 
     gap: 8px;
@@ -473,198 +479,18 @@ main {
     border-color: #000080;
 }
 
-/* ==================================
-   90s RESEARCH MEDIA ARCHIVE
-================================== */
-
-.archive-media {
-    width: 300px;
-    max-width: 85%;
-
-    margin: 22px auto;
-
-    background: #c0c0c0;
-
-    border-top: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
-    border-right: 2px solid #444;
-    border-bottom: 2px solid #444;
-
-    box-shadow:
-        1px 1px 0 #000,
-        4px 4px 0 #999;
-
-    font-family: "Courier New", Courier, monospace;
-}
-
-
-/* Transcendence slightly smaller */
-
-.archive-media-small {
-    width: 260px;
-}
-
-
-/* Video same compact size */
-
-.archive-video {
-    width: 320px;
-}
-
-
-/* ----------------------------------
-   WINDOWS 95 TITLE BAR
----------------------------------- */
-
-.archive-titlebar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    min-height: 19px;
-
-    padding: 2px 3px 2px 5px;
-
-    background: #000080;
-    color: #ffffff;
-
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    font-weight: bold;
-
-    image-rendering: pixelated;
-}
-
-.archive-controls {
-    display: inline-block;
-
-    padding: 0 3px;
-
-    background: #c0c0c0;
-    color: #000;
-
-    border-top: 1px solid #fff;
-    border-left: 1px solid #fff;
-    border-right: 1px solid #444;
-    border-bottom: 1px solid #444;
-
-    font-size: 9px;
-    line-height: 13px;
-}
-
-
-/* ----------------------------------
-   MEDIA VIEWER
----------------------------------- */
-
-.archive-screen {
-    padding: 5px;
-
-    background: #c0c0c0;
-}
-
-.archive-screen img,
-.archive-screen video {
-    display: block;
-
-    width: 100%;
-    height: auto;
-
-    border-top: 1px solid #444;
-    border-left: 1px solid #444;
-    border-right: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-
-    background: #000;
-}
-
-
-/* Make images feel slightly more
-   like old compressed web images */
-
-.archive-screen img {
-    image-rendering: auto;
-}
-
-
-/* ----------------------------------
-   OLD FILE INFO BAR
----------------------------------- */
-
-.archive-caption {
-    padding: 5px 6px;
-
-    background: #c0c0c0;
-
-    border-top: 1px solid #777;
-
-    color: #111;
-
-    font-family: "Courier New", Courier, monospace;
-
-    font-size: 9px;
-    line-height: 1.35;
-
-    text-align: left;
-}
-
-.archive-label {
-    color: #000080;
-
-    font-weight: bold;
-}
-
-
-/* ----------------------------------
-   MAKE LAB FILES FEEL SCATTERED
----------------------------------- */
-
-.content-box .archive-media:nth-of-type(odd) {
-    margin-left: 8%;
-    margin-right: auto;
-}
-
-.content-box .archive-media:nth-of-type(even) {
-    margin-left: auto;
-    margin-right: 8%;
-}
-
-
-/* ----------------------------------
-   MOBILE
----------------------------------- */
-
-@media (max-width: 600px) {
-
-    .archive-media,
-    .archive-media-small,
-    .archive-video {
-        width: 270px;
-        max-width: 95%;
-
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-
-}
-
-/* ==================================
-   ANIMATED DOTS
-================================== */
-
 .trajectory-dots {
+    display: flex;
+
     align-self: center;
 
-    display: flex;
+    min-width: 25px;
 
     gap: 1px;
-
-    min-width: 25px;
 
     color: #000080;
 
     font-size: 25px;
-
     font-weight: bold;
 }
 
@@ -697,16 +523,13 @@ main {
 
 
 /* ==================================
-   QUESTIONS / VISITOR
+   HOMEPAGE QUESTIONS
 ================================== */
 
 .bottom-grid {
     display: grid;
 
-    grid-template-columns:
-        2.2fr
-        0.8fr
-        1fr;
+    grid-template-columns: 2.2fr 0.8fr 1fr;
 
     gap: 13px;
 
@@ -724,9 +547,9 @@ main {
 }
 
 .questions span {
-    color: #0000aa;
-
     margin-right: 4px;
+
+    color: #0000aa;
 }
 
 .question-icon {
@@ -740,7 +563,6 @@ main {
     border-radius: 50%;
 
     background: #1245a6;
-
     color: white;
 
     text-align: center;
@@ -766,9 +588,9 @@ main {
 .evolving-message {
     display: inline-block;
 
-    border: 1px dashed #777;
-
     padding: 11px 16px;
+
+    border: 1px dashed #777;
 
     font-size: 12px;
 }
@@ -793,11 +615,10 @@ main {
 
     padding: 5px 8px;
 
-    background: #000;
-
-    color: #00ff3b;
-
     border: 3px inset #777;
+
+    background: #000;
+    color: #00ff3b;
 
     font-size: 23px;
 
@@ -814,11 +635,12 @@ main {
 
 
 /* ==================================
-   OLD WEB ICON STRIP
+   OLD WEB STRIP
 ================================== */
 
 .icon-strip {
     display: flex;
+
     justify-content: space-around;
     align-items: center;
 
@@ -833,6 +655,7 @@ main {
 
 .icon-item {
     display: flex;
+
     align-items: center;
 
     gap: 8px;
@@ -853,17 +676,16 @@ main {
 }
 
 .html-badge {
+    padding: 6px 5px;
+
     border: 2px outset #999;
 
     background: #eee;
 
-    padding: 6px 5px;
-
     font-family: "Times New Roman", Times, serif;
 
-    font-weight: bold;
-
     font-size: 15px;
+    font-weight: bold;
 }
 
 .mail-icon,
@@ -873,22 +695,22 @@ main {
 
 
 /* ==================================
-   FOOTER
+   GLOBAL FOOTER
 ================================== */
 
 footer {
     padding: 10px 15px 15px;
 
-    text-align: center;
-
     border-top: 1px solid #777;
+
+    text-align: center;
 
     font-size: 10px;
 }
 
 
 /* ==================================
-   ABOUT-ME.HTML
+   ABOUT PAGE SHELL
 ================================== */
 
 .site-wrapper {
@@ -897,11 +719,11 @@ footer {
 
     margin: 0 auto;
 
-    background: #fffdf5;
+    padding: 18px;
 
     border: 1px solid #111;
 
-    padding: 18px;
+    background: #fffdf5;
 }
 
 .top-nav {
@@ -914,6 +736,8 @@ footer {
     padding-bottom: 12px;
 
     border-bottom: 1px solid #777;
+
+    font-size: 12px;
 }
 
 .page-header {
@@ -930,16 +754,33 @@ footer {
     font-size: 34px;
 }
 
+.page-header p {
+    margin: 7px 0;
+}
+
 .terminal-label {
     color: #777;
 
     font-size: 11px;
 }
 
+.research-links {
+    margin-top: 14px !important;
+
+    font-family: "Courier New", Courier, monospace;
+
+    font-size: 11px;
+}
+
+
+/* ==================================
+   ABOUT CONTENT SECTIONS
+================================== */
+
 .content-box {
     margin-top: 15px;
 
-    padding: 16px;
+    padding: 18px;
 
     border: 1px solid #777;
 
@@ -947,7 +788,7 @@ footer {
 }
 
 .content-box h2 {
-    margin-top: 0;
+    margin: 0 0 15px;
 
     font-family: "Courier New", Courier, monospace;
 
@@ -959,27 +800,13 @@ footer {
 
     font-size: 16px;
 
-    line-height: 1.5;
-}
-
-.image-placeholder {
-    margin-top: 15px;
-
-    padding: 28px;
-
-    border: 1px dashed #777;
-
-    text-align: center;
-
-    color: #777;
-
-    font-size: 11px;
+    line-height: 1.55;
 }
 
 .big-question {
-    margin: 18px 0;
+    margin: 20px 0;
 
-    padding: 13px 15px;
+    padding: 14px 16px;
 
     border-left: 3px solid #000080;
 
@@ -987,89 +814,455 @@ footer {
 
     font-family: "Courier New", Courier, monospace;
 
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: bold;
+
+    line-height: 1.5;
+}
+
+
+/* ==================================
+   90s MEDIA WINDOWS
+================================== */
+
+.archive-media {
+    background: #c0c0c0;
+
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #444;
+    border-bottom: 2px solid #444;
+
+    box-shadow:
+        1px 1px 0 #000,
+        3px 3px 0 #999;
+
+    font-family: "Courier New", Courier, monospace;
+}
+
+.archive-titlebar {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 19px;
+
+    padding: 2px 3px 2px 5px;
+
+    overflow: hidden;
+
+    background: #000080;
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+.archive-controls {
+    flex-shrink: 0;
+
+    margin-left: 4px;
+
+    padding: 0 3px;
+
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid #444;
+    border-bottom: 1px solid #444;
+
+    background: #c0c0c0;
+    color: #000;
+
+    font-size: 8px;
+
+    line-height: 12px;
+}
+
+.archive-screen {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 4px;
+
+    overflow: hidden;
+
+    background: #808080;
+}
+
+.archive-screen img,
+.archive-screen video {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-top: 1px solid #444;
+    border-left: 1px solid #444;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+
+    background: #000;
+}
+
+.archive-caption {
+    padding: 7px;
+
+    border-top: 1px solid #777;
+
+    background: #c0c0c0;
+
+    color: #111;
+
+    font-family: "Courier New", Courier, monospace;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+
+    text-align: left;
+}
+
+.archive-label {
+    color: #000080;
 
     font-weight: bold;
 }
 
-.interface-box {
+
+/* ==================================
+   TRANSCENDENCE WINDOW
+================================== */
+
+.transcendence-window {
+    width: 300px;
+    max-width: 90%;
+
+    margin: 24px auto;
+}
+
+.transcendence-window .archive-screen {
+    height: 180px;
+}
+
+
+/* ==================================
+   LAB ARCHIVE
+================================== */
+
+.lab-archive {
+    display: grid;
+
+    grid-template-columns: 1.08fr 1fr;
+
+    gap: 14px;
+
+    width: 650px;
+    max-width: 100%;
+
+    margin: 26px auto 30px;
+
+    align-items: stretch;
+}
+
+.lab-archive .archive-media {
+    width: 100%;
+
+    margin: 0;
+}
+
+
+/* DZNE LARGE LEFT WINDOW */
+
+.dzne-window {
     display: flex;
 
+    flex-direction: column;
+}
+
+.dzne-window .archive-screen {
+    flex: 1;
+
+    min-height: 310px;
+}
+
+.dzne-window .archive-caption {
+    min-height: 105px;
+}
+
+
+/* CRTD RIGHT STACK */
+
+.crtd-stack {
+    display: grid;
+
+    grid-template-rows: 1fr 1fr;
+
+    gap: 14px;
+}
+
+.crtd-stack .archive-media {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.crtd-stack .archive-screen {
+    height: 125px;
+}
+
+.crtd-stack .archive-caption {
+    flex: 1;
+
+    min-height: 90px;
+}
+
+
+/* EXPERIMENT METADATA */
+
+.archive-metadata p {
+    margin: 0 0 4px !important;
+
+    font-family: "Courier New", Courier, monospace !important;
+
+    font-size: 8.5px !important;
+
+    line-height: 1.35 !important;
+}
+
+.archive-metadata p:last-child {
+    margin-bottom: 0 !important;
+}
+
+.archive-metadata span {
+    color: #000080;
+
+    font-weight: bold;
+}
+
+
+/* ==================================
+   CLOSED LOOP
+================================== */
+
+.closed-loop-box {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
     justify-content: center;
+
+    gap: 8px;
+
+    margin: 25px 0 18px;
+
+    padding: 22px 12px 42px;
+
+    border: 1px dashed #777;
+
+    background: #f3f0e7;
+
+    font-family: "Courier New", Courier, monospace;
+}
+
+.loop-node {
+    padding: 9px 10px;
+
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #555;
+    border-bottom: 2px solid #555;
+
+    background: #c0c0c0;
+
+    text-align: center;
+
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.loop-mea {
+    background: #d7d7d7;
+}
+
+.loop-connection {
+    display: flex;
+
+    flex-direction: column;
+
     align-items: center;
 
-    gap: 13px;
+    color: #000080;
 
+    font-family: "Courier New", Courier, monospace;
+}
+
+.loop-label {
+    color: #555;
+
+    font-size: 8px;
+}
+
+.loop-arrow {
+    font-size: 22px;
+}
+
+.loop-return {
+    position: absolute;
+
+    bottom: 10px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #000080;
+
+    font-size: 9px;
+
+    white-space: nowrap;
+}
+
+
+/* ==================================
+   ABOUT TERMINAL
+================================== */
+
+.terminal-note {
     margin: 18px 0;
 
     padding: 12px;
 
-    border: 1px solid #777;
+    border: 1px solid #111;
 
-    background: #f5f2e9;
+    background: #000;
+    color: #00cf3c;
 
     font-family: "Courier New", Courier, monospace;
 
     font-size: 11px;
+
+    line-height: 1.6;
 }
 
-.interface-arrow {
-    color: #000080;
-
-    font-size: 22px;
+.blink-cursor {
+    animation: cursor-blink 1s steps(1) infinite;
 }
 
-.interest-chain {
+@keyframes cursor-blink {
+
+    50% {
+        opacity: 0;
+    }
+
+}
+
+
+/* ==================================
+   OI COMPONENTS
+================================== */
+
+.oi-components {
     display: flex;
 
     flex-wrap: wrap;
 
-    gap: 8px;
-
+    justify-content: center;
     align-items: center;
 
-    margin: 18px 0;
+    gap: 7px;
 
-    padding: 12px;
+    margin: 22px 0;
+
+    padding: 13px;
+
+    border: 1px solid #777;
+
+    background: #000;
+    color: #00cf3c;
+
+    font-family: "Courier New", Courier, monospace;
+
+    font-size: 10px;
+}
+
+.oi-components span:nth-child(even) {
+    color: #888;
+}
+
+
+/* ==================================
+   RESEARCH PATH
+================================== */
+
+.interest-path {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 22px 0 5px;
+
+    padding: 13px;
 
     border: 1px dashed #777;
 
     font-family: "Courier New", Courier, monospace;
 
-    font-size: 11px;
+    font-size: 10px;
 }
 
-.interest-chain span:nth-child(even) {
+.interest-path span:nth-child(even) {
+    color: #000080;
+
+    font-size: 15px;
+}
+
+.interest-path strong {
     color: #000080;
 }
 
-.comparison-box {
-    margin: 18px 0;
 
-    padding: 14px;
+/* ==================================
+   RESEARCH LINKS
+================================== */
 
-    border: 1px solid #777;
+.research-link-box {
+    margin: 20px 0 5px;
 
-    background: #f5f2e9;
+    padding: 12px;
+
+    border: 1px dashed #777;
+
+    background: #f3f0e7;
 
     font-family: "Courier New", Courier, monospace;
-
-    font-size: 12px;
 }
 
-.comparison-box hr {
-    border: 0;
+.research-link-box p {
+    margin: 5px 0 !important;
 
-    border-top: 1px solid #777;
+    font-family: "Courier New", Courier, monospace !important;
 
-    margin: 12px 0;
+    font-size: 11px !important;
 }
 
-.comparison-label {
-    color: #000080;
 
-    font-weight: bold;
-}
+/* ==================================
+   SPOILER / CONSCIOUSNESS
+================================== */
 
 .spoiler-warning {
     display: inline-block;
@@ -1081,7 +1274,6 @@ footer {
     border: 1px solid #111;
 
     background: #000;
-
     color: #00cf3c;
 
     font-family: "Courier New", Courier, monospace;
@@ -1096,15 +1288,14 @@ footer {
 
     border: 1px solid #000080;
 
+    color: #000080;
+
     text-align: center;
 
     font-family: "Courier New", Courier, monospace;
 
     font-size: 20px;
-
     font-weight: bold;
-
-    color: #000080;
 }
 
 .question-stack {
@@ -1116,63 +1307,129 @@ footer {
 }
 
 .question-stack p {
-    margin: 5px 0;
-}
-
-.research-direction {
-    margin: 17px 0;
-
-    padding: 13px;
-
-    border: 1px solid #777;
-
-    background: #f3f0e7;
-
-    text-align: center;
-
-    font-family: "Courier New", Courier, monospace;
-
-    font-size: 11px;
-}
-
-.research-direction span {
-    color: #000080;
-
-    padding: 0 5px;
-}
-
-.terminal-note {
-    margin-top: 18px;
-
-    padding: 12px;
-
-    background: #000;
-
-    color: #00cf3c;
-
-    border: 1px solid #111;
-
-    font-size: 11px;
+    margin: 6px 0;
 }
 
 .future-link {
+    margin-top: 20px !important;
+
     font-family: "Courier New", Courier, monospace !important;
 
-    font-size: 13px !important;
+    font-size: 11px !important;
 }
 
-.small-note {
+
+/* ==================================
+   ABOUT RESEARCH QUESTIONS
+================================== */
+
+.research-questions {
+    margin: 22px 0;
+
+    border-top: 1px solid #aaa;
+
+    font-family: "Courier New", Courier, monospace;
+}
+
+.research-question {
+    display: grid;
+
+    grid-template-columns: 45px 1fr;
+
+    gap: 5px;
+
+    padding: 11px 7px;
+
+    border-bottom: 1px dotted #999;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+.question-number {
+    color: #000080;
+
+    font-weight: bold;
+}
+
+.question-footnote {
     color: #777;
 
     font-family: "Courier New", Courier, monospace !important;
 
-    font-size: 10px !important;
+    font-size: 9px !important;
 }
 
-.back-home {
-    margin: 20px 0;
+
+/* ==================================
+   FINAL THOUGHT
+================================== */
+
+.final-thought {
+    padding: 0;
+
+    overflow: hidden;
+
+    border-color: #000080;
+}
+
+.final-terminal-title {
+    padding: 4px 7px;
+
+    background: #000080;
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.final-statement {
+    padding: 27px 35px;
 
     text-align: center;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 19px;
+
+    line-height: 1.5;
+}
+
+.final-statement strong {
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 21px;
+}
+
+.final-status {
+    padding: 8px 10px;
+
+    border-top: 1px solid #777;
+
+    background: #000;
+    color: #00cf3c;
+
+    font-family: "Courier New", Courier, monospace;
+
+    font-size: 9px;
+}
+
+
+/* ==================================
+   ABOUT BOTTOM LINKS
+================================== */
+
+.back-home {
+    margin: 22px 0;
+
+    text-align: center;
+
+    font-size: 11px;
 }
 
 
@@ -1186,7 +1443,7 @@ footer {
 
     margin: 0 auto;
 
-    padding-top: 70px;
+    padding-top: 60px;
 
     font-family: "Courier New", Courier, monospace;
 }
@@ -1223,7 +1480,6 @@ footer {
     color: white;
 
     font-size: 11px;
-
     font-weight: bold;
 }
 
@@ -1260,11 +1516,11 @@ footer {
 .construction-divider {
     margin: 18px 0;
 
+    overflow: hidden;
+
     color: #777;
 
     font-size: 11px;
-
-    overflow: hidden;
 }
 
 .construction-content p {
@@ -1280,11 +1536,10 @@ footer {
 
     padding: 12px 18px;
 
-    background: #000;
-
-    color: #00cf3c;
-
     border: 2px inset #777;
+
+    background: #000;
+    color: #00cf3c;
 
     text-align: left;
 
@@ -1340,11 +1595,11 @@ footer {
 .construction-footer {
     margin-top: 25px;
 
+    color: #555;
+
     text-align: center;
 
     font-size: 9px;
-
-    color: #555;
 }
 
 .construction-tape {
@@ -1357,214 +1612,15 @@ footer {
     border: 1px solid #111;
 
     background: #ffff00;
-
     color: #000;
 
     font-size: 10px;
-
-    font-weight: bold;
-}
-/* ==================================
-   LAB ARCHIVE — DZNE + CRTD
-================================== */
-
-.lab-archive {
-    display: grid;
-    grid-template-columns: 1.15fr 1fr;
-
-    gap: 14px;
-
-    width: 620px;
-    max-width: 100%;
-
-    margin: 25px auto 28px;
-
-    align-items: start;
-}
-
-
-/* ALL MEDIA WINDOWS */
-
-.lab-archive .archive-media {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-
-    background: #c0c0c0;
-
-    border-top: 2px solid #fff;
-    border-left: 2px solid #fff;
-    border-right: 2px solid #444;
-    border-bottom: 2px solid #444;
-
-    box-shadow:
-        1px 1px 0 #000,
-        3px 3px 0 #999;
-}
-
-
-/* ==================================
-   LEFT — DZNE
-================================== */
-
-.dzne-window .archive-screen {
-    height: 310px;
-}
-
-.dzne-window .archive-caption {
-    min-height: 58px;
-}
-
-
-/* ==================================
-   RIGHT — CRTD STACK
-================================== */
-
-.crtd-stack {
-    display: flex;
-    flex-direction: column;
-
-    gap: 14px;
-}
-
-.crtd-stack .archive-screen {
-    height: 125px;
-}
-
-.crtd-stack .archive-caption {
-    min-height: 45px;
-}
-
-
-/* ==================================
-   MEDIA VIEWER
-================================== */
-
-.archive-screen {
-    padding: 4px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-    background: #808080;
-}
-
-.archive-screen img,
-.archive-screen video {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    background: #000;
-
-    border-top: 1px solid #444;
-    border-left: 1px solid #444;
-    border-right: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-}
-
-
-/* ==================================
-   WINDOWS 95 TITLE BAR
-================================== */
-
-.archive-titlebar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    height: 19px;
-
-    padding: 2px 3px 2px 5px;
-
-    overflow: hidden;
-
-    background: #000080;
-    color: white;
-
-    font-family: Arial, sans-serif;
-    font-size: 9px;
-    font-weight: bold;
-
-    white-space: nowrap;
-}
-
-.archive-controls {
-    flex-shrink: 0;
-
-    margin-left: 4px;
-    padding: 0 2px;
-
-    background: #c0c0c0;
-    color: #000;
-
-    border-top: 1px solid #fff;
-    border-left: 1px solid #fff;
-    border-right: 1px solid #444;
-    border-bottom: 1px solid #444;
-
-    font-size: 8px;
-    line-height: 12px;
-}
-
-
-/* ==================================
-   CAPTIONS
-================================== */
-
-.archive-caption {
-    padding: 6px;
-
-    background: #c0c0c0;
-
-    border-top: 1px solid #777;
-
-    color: #111;
-
-    font-family: "Courier New", Courier, monospace;
-
-    font-size: 9px;
-    line-height: 1.35;
-
-    text-align: left;
-}
-
-.archive-label {
-    color: #000080;
     font-weight: bold;
 }
 
 
 /* ==================================
-   LAB ARCHIVE MOBILE
-================================== */
-
-@media (max-width: 650px) {
-
-    .lab-archive {
-        grid-template-columns: 1fr;
-
-        width: 290px;
-    }
-
-    .dzne-window .archive-screen {
-        height: 220px;
-    }
-
-    .crtd-stack .archive-screen {
-        height: 150px;
-    }
-
-}
-
-/* ==================================
-   MOBILE
+   TABLET / MOBILE
 ================================== */
 
 @media (max-width: 760px) {
@@ -1573,14 +1629,17 @@ footer {
         padding: 5px;
     }
 
+
+    /* HOMEPAGE */
+
     .site-header {
         display: block;
     }
 
     .status-box {
-        margin-top: 15px;
-
         width: 100%;
+
+        margin-top: 15px;
     }
 
     .site-header h1 {
@@ -1598,7 +1657,7 @@ footer {
     }
 
     .oi-loop-image {
-        width: 300px;
+        width: 310px;
 
         max-width: 100%;
     }
@@ -1620,11 +1679,11 @@ footer {
     }
 
     .trajectory-arrow {
-        text-align: center;
+        margin: 4px 0;
 
         transform: rotate(90deg);
 
-        margin: 4px 0;
+        text-align: center;
     }
 
     .trajectory-dots {
@@ -1645,23 +1704,65 @@ footer {
         display: none;
     }
 
+
+    /* ABOUT */
+
     .site-wrapper {
         padding: 12px;
     }
 
-    .interface-box {
+    .lab-archive {
+        grid-template-columns: 1fr;
+
+        width: 310px;
+    }
+
+    .dzne-window .archive-screen {
+        min-height: 220px;
+    }
+
+    .crtd-stack {
+        grid-template-rows: auto auto;
+    }
+
+    .crtd-stack .archive-screen {
+        height: 160px;
+    }
+
+    .closed-loop-box {
+        flex-direction: column;
+
+        padding-bottom: 48px;
+    }
+
+    .loop-connection {
+        transform: rotate(90deg);
+    }
+
+    .oi-components {
+        line-height: 1.7;
+    }
+
+    .interest-path {
         flex-direction: column;
     }
 
-    .interest-chain {
-        display: block;
+    .interest-path span:nth-child(even) {
+        transform: rotate(90deg);
     }
 
-    .interest-chain span {
-        display: block;
+    .final-statement {
+        padding: 22px 18px;
 
-        margin-bottom: 6px;
+        font-size: 17px;
     }
+
+    .final-statement strong {
+        font-size: 19px;
+    }
+
+
+    /* UNDER CONSTRUCTION */
 
     .construction-page {
         width: 95%;
@@ -1677,6 +1778,37 @@ footer {
         flex-direction: column;
 
         align-items: center;
+    }
+
+}
+
+
+/* ==================================
+   VERY SMALL SCREENS
+================================== */
+
+@media (max-width: 480px) {
+
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+    .content-box {
+        padding: 14px;
+    }
+
+    .content-box p {
+        font-size: 15px;
+    }
+
+    .research-question {
+        grid-template-columns: 36px 1fr;
+    }
+
+    .transcendence-window {
+        width: 260px;
+
+        max-width: 100%;
     }
 
 }
