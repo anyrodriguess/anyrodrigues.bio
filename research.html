@@ -1,453 +1,299 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Research portfolio of Any Rodrigues, covering retinal electrophysiology, CMOS-MEAs, and olfactory neural cultures.">
-  <title>Research | Any Rodrigues</title>
-
-  <style>
-    :root {
-      --background: #ffffff;
-      --text: #171717;
-      --muted: #666666;
-      --line: #dedede;
-      --soft: #f7f7f5;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .container {
-      width: min(1100px, calc(100% - 48px));
-      margin: 0 auto;
-    }
-
-    header {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .header-inner {
-      min-height: 88px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .logo {
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-
-    nav a {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    nav a:hover,
-    nav a.active {
-      text-decoration: underline;
-      text-underline-offset: 6px;
-    }
-
-    .intro {
-      padding: 105px 0 75px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .eyebrow {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 0 0 18px;
-    }
-
-    h1 {
-      font-size: clamp(54px, 9vw, 105px);
-      font-weight: 500;
-      line-height: 1;
-      letter-spacing: -0.065em;
-      margin: 0 0 32px;
-    }
-
-    .intro-text {
-      max-width: 710px;
-      font-size: clamp(17px, 2vw, 20px);
-      line-height: 1.75;
-      color: #444;
-      margin: 0;
-    }
-
-    .section-heading {
-      padding: 45px 0 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 20px;
-    }
-
-    .section-heading h2 {
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin: 0;
-    }
-
-    .section-heading span {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .project {
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 35px;
-      padding: 55px 0 65px;
-      border-top: 1px solid var(--line);
-    }
-
-    .project-meta {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.9;
-    }
-
-    .project-meta strong {
-      display: block;
-      color: var(--text);
-      font-size: 12px;
-    }
-
-    .project-content h3 {
-      font-size: clamp(27px, 4vw, 43px);
-      line-height: 1.2;
-      letter-spacing: -0.035em;
-      font-weight: 500;
-      max-width: 800px;
-      margin: 0 0 22px;
-    }
-
-    .project-content p {
-      max-width: 760px;
-      font-size: 15px;
-      color: #4c4c4c;
-      margin: 0 0 16px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 25px 0 30px;
-    }
-
-    .tag {
-      border: 1px solid #d6d6d6;
-      padding: 6px 11px;
-      font-size: 11px;
-      color: #555;
-    }
-
-    .project-link {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-bottom: 1px solid var(--text);
-      padding-bottom: 7px;
-    }
-
-    .project-link:hover {
-      opacity: 0.55;
-    }
-
-    .interests {
-      background: var(--soft);
-      padding: 75px 0 85px;
-      margin-top: 35px;
-    }
-
-    .interests-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 50px;
-    }
-
-    .interests h2 {
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin: 0;
-    }
-
-    .interests p {
-      max-width: 700px;
-      margin: 0 0 18px;
-      font-size: 16px;
-      color: #444;
-    }
-
-    footer {
-      padding: 35px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .footer-inner a {
-      text-decoration: none;
-    }
-
-    @media (max-width: 700px) {
-      .header-inner {
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: center;
-        padding: 25px 0;
-        gap: 18px;
-      }
-
-      nav {
-        gap: 14px 20px;
-      }
-
-      .intro {
-        padding: 75px 0 55px;
-      }
-
-      .project {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        padding: 40px 0 50px;
-      }
-
-      .interests-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <header>
-    <div class="container header-inner">
-      <a class="logo" href="index.html">ANY RODRIGUES</a>
-
-      <nav aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="about-me.html">About Me</a>
-        <a href="research.html" class="active" aria-current="page">Research</a>
-        <a href="organoid_intelligence.html">Organoid Intelligence</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-
-    <section class="intro">
-      <div class="container">
-        <p class="eyebrow">Molecular Bioengineering / Neuroscience</p>
-        <h1>Research.</h1>
-        <p class="intro-text">
-          My research experience focuses on electrophysiology and
-          experimental models of the nervous system. I have worked
-          with ex vivo retinal tissue and in vitro neural cultures,
-          using microelectrode arrays to investigate neuronal activity
-          and responses to external stimuli.
-        </p>
-      </div>
-    </section>
-
-    <section class="container" aria-labelledby="selected-work">
-      <div class="section-heading">
-        <h2 id="selected-work">Selected Research</h2>
-        <span>2023 — 2024</span>
-      </div>
-
-      <article class="project">
-        <div class="project-meta">
-          <strong>2024</strong>
-          CRTD / TU Dresden<br>
-          Dresden, Germany<br>
-          Master's Thesis
-        </div>
-
-        <div class="project-content">
-          <h3>
-            Establishing CMOS-MEA Recordings
-            in Adult Zebrafish Retina
-          </h3>
-
-          <p>
-            During my master's thesis at the Center for Regenerative
-            Therapies Dresden, I worked on establishing extracellular
-            electrophysiological recordings from isolated adult
-            zebrafish retina using a high-density CMOS microelectrode
-            array with 4,096 electrodes.
-          </p>
-
-          <p>
-            The project involved optimizing retinal dissection,
-            tissue placement and recording conditions to obtain
-            reliable neuronal activity. I investigated spontaneous
-            and light-evoked responses, characterized ON, OFF and
-            ON-OFF activity, and examined the effects of pharmacological
-            modulation and light-induced retinal injury.
-          </p>
-
-          <p>
-            I also developed and applied data analysis workflows
-            for spike activity, firing rates, stimulus responses
-            and spatial patterns of neuronal activity.
-          </p>
-
-          <div class="tags">
-            <span class="tag">CMOS-MEA</span>
-            <span class="tag">Retinal Electrophysiology</span>
-            <span class="tag">Zebrafish</span>
-            <span class="tag">Spike Analysis</span>
-            <span class="tag">Python / R</span>
-          </div>
-
-          <a class="project-link" href="crtd.html">
-            Explore this project &rarr;
-          </a>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-meta">
-          <strong>2023 — 2024</strong>
-          DZNE<br>
-          Dresden, Germany<br>
-          Research Internship
-        </div>
-
-        <div class="project-content">
-          <h3>
-            Olfactory Neural Cultures and
-            Electrophysiological Responses
-            to Odorant Stimulation
-          </h3>
-
-          <p>
-            At the German Center for Neurodegenerative Diseases
-            (DZNE), I worked with olfactory epithelium and
-            olfactory bulb cell cultures, including co-culture
-            configurations designed to explore interactions
-            between these neural populations.
-          </p>
-
-          <p>
-            My work included preparing and maintaining cultures,
-            monitoring them through microscopy, preparing
-            microelectrode arrays, and recording neuronal activity
-            following exposure to odorant compounds such as
-            eugenol and isoamyl acetate.
-          </p>
-
-          <p>
-            The broader objective was to investigate whether
-            odorant stimulation could produce distinguishable
-            electrophysiological response patterns, with potential
-            relevance to the development of olfactory biosensing
-            approaches. Although the responses were variable,
-            the project provided experience in neural culture
-            models, assay development and electrophysiological
-            data interpretation.
-          </p>
-
-          <div class="tags">
-            <span class="tag">Neural Cell Culture</span>
-            <span class="tag">Co-culture Models</span>
-            <span class="tag">Microelectrode Arrays</span>
-            <span class="tag">Odorant Stimulation</span>
-            <span class="tag">Data Analysis</span>
-          </div>
-
-          <a class="project-link" href="dzne.html">
-            Explore this project &rarr;
-          </a>
-        </div>
-      </article>
-    </section>
-
-    <section class="interests">
-      <div class="container interests-grid">
-        <h2>Research Interests</h2>
-
-        <div>
-          <p>
-            I am particularly interested in developing experimental
-            models that can help us understand disease mechanisms
-            and evaluate potential therapies.
-          </p>
-
-          <p>
-            Building on my experience in electrophysiology and
-            neural cultures, I would like to expand into
-            organoids, organ-on-chip systems and other advanced
-            in vitro models, especially where functional
-            measurements can complement cellular and molecular
-            characterization.
-          </p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <span>&copy; 2026 Any Rodrigues</span>
-      <a href="index.html">Back to Home &rarr;</a>
-    </div>
-  </footer>
-
-</body>
-</html>
+:root {
+  --background: #f8f8f2;
+  --text: #171717;
+  --muted: #626262;
+  --line: #171717;
+  --soft: #efefe7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  background: #171717;
+  color: #ffffff;
+}
+
+.container {
+  width: min(900px, calc(100% - 36px));
+  margin: 0 auto;
+}
+
+/* RETRO NAVIGATION */
+
+header {
+  border-bottom: 2px solid var(--line);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 23px 0;
+}
+
+.logo {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.logo::before {
+  content: "> ";
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+nav a {
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav a::before {
+  content: "[";
+}
+
+nav a::after {
+  content: "]";
+}
+
+nav a.active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* PAGE TITLE */
+
+.intro {
+  padding: 65px 0 55px;
+  border-bottom: 2px solid var(--line);
+}
+
+.eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.eyebrow::before {
+  content: "// ";
+}
+
+h1 {
+  font-size: clamp(38px, 7vw, 65px);
+  font-weight: bold;
+  letter-spacing: -0.06em;
+  line-height: 1.1;
+  margin: 0 0 28px;
+}
+
+h1::before {
+  content: "01_";
+  color: #777;
+}
+
+.intro-text {
+  max-width: 720px;
+  font-size: 14px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+/* RESEARCH INDEX */
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 0 20px;
+}
+
+.section-heading h2,
+.interests h2 {
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.section-heading h2::before {
+  content: "[ ";
+}
+
+.section-heading h2::after {
+  content: " ]";
+}
+
+.section-heading span {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* PROJECT ENTRIES */
+
+.project {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 30px;
+  padding: 45px 0 55px;
+  border-top: 1px dashed #777;
+}
+
+.project-meta {
+  font-size: 11px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.project-meta strong {
+  display: block;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.project-content h3 {
+  font-size: clamp(19px, 3vw, 26px);
+  font-weight: bold;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+  margin: 0 0 24px;
+}
+
+.project-content p {
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 0 0 18px;
+  max-width: 680px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 25px 0 30px;
+}
+
+.tag {
+  border: 1px solid #777;
+  padding: 4px 8px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.project-link {
+  display: inline-block;
+  border: 1px solid var(--line);
+  padding: 9px 14px;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.project-link:hover {
+  background: var(--text);
+  color: var(--background);
+}
+
+/* RESEARCH INTERESTS */
+
+.interests {
+  background: var(--soft);
+  border-top: 2px solid var(--line);
+  border-bottom: 2px solid var(--line);
+  padding: 55px 0;
+  margin-top: 20px;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 30px;
+}
+
+.interests h2::before {
+  content: ">> ";
+}
+
+.interests p {
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 0 0 18px;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 30px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.footer-inner a {
+  text-decoration: none;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  .intro {
+    padding: 50px 0 40px;
+  }
+
+  .project,
+  .interests-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .project {
+    padding: 35px 0 45px;
+  }
+}
