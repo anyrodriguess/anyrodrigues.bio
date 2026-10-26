@@ -1,10 +1,326 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Any Rodrigues — master's research on adult zebrafish retinal electrophysiology"><title>CRTD Research | Any Rodrigues</title><style>
-:root{--bg:#0c1218;--panel:#121d27;--edge:#355266;--ink:#e2edf1;--muted:#a2b8c5;--accent:#8bdacb;--gold:#f2ce86}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 'Courier New',monospace}a{color:var(--accent)}header{border-bottom:1px solid var(--edge);background:#101b23;position:sticky;top:0;z-index:5}nav{max-width:1040px;margin:auto;padding:15px 22px;display:flex;gap:18px;flex-wrap:wrap;align-items:center}nav a{text-decoration:none;font-size:13px}nav .brand{color:var(--gold);margin-right:auto;font-weight:bold}main{max-width:1040px;margin:auto;padding:55px 22px 90px}.eyebrow{font-size:12px;color:var(--accent);letter-spacing:2px;text-transform:uppercase}h1{font-size:clamp(29px,5vw,49px);line-height:1.2;margin:12px 0 18px}h2{font-size:22px;color:var(--accent);margin:0 0 15px}h3{font-size:17px;color:var(--gold);margin:0 0 10px}p{margin:0 0 17px}.lead{font-size:17px;color:#c7d9df;max-width:850px}.panel{border:1px solid var(--edge);background:var(--panel);border-radius:9px;padding:25px;margin-top:25px}.tag{display:inline-block;border:1px solid var(--edge);border-radius:4px;padding:3px 8px;margin:3px 5px 3px 0;color:var(--accent);font-size:12px}.meta{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid .panel{margin-top:0}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:22px 0}.step{border:1px solid var(--edge);padding:15px 10px;text-align:center;font-size:13px;background:#0d1821}.step b{display:block;color:var(--accent);margin-bottom:5px}.note{border-left:3px solid var(--gold);padding:12px 16px;background:#192129;color:#e1d8bf}.list{padding-left:23px}li{margin:8px 0}.figure{border:1px dashed var(--edge);border-radius:8px;padding:20px;margin:20px 0;color:var(--muted);text-align:center}footer{max-width:1040px;margin:auto;padding:20px 22px 40px;border-top:1px solid var(--edge);font-size:12px;color:var(--muted)}@media(max-width:650px){.grid{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}main{padding-top:35px}nav{gap:12px}}
-</style></head><body><header><nav><a class="brand" href="index.html">ANY_RODRIGUES.bio</a><a href="index.html">HOME</a><a href="about-me.html">ABOUT ME</a><a href="research.html" aria-current="page">RESEARCH</a><a href="organoid_intelligence.html">ORGANOID INTELLIGENCE</a></nav></header><main><div class="eyebrow"><a href="research.html">RESEARCH</a> / CRTD / 2024</div><h1>Establishing CMOS-MEA Recordings in Adult Zebrafish Retina</h1><p class="lead">For my master's dissertation at the Center for Regenerative Therapies TU Dresden (CRTD), I optimized ex vivo adult zebrafish retinal recordings and investigated how retinal ganglion cells respond to light, pharmacological intervention and acute light-induced damage.</p><p class="meta">MSc Molecular Bioengineering · University of Porto · CRTD, TU Dresden · 2024</p><div><span class="tag">3Brain CMOS-MEA</span><span class="tag">4096 electrodes</span><span class="tag">Ex vivo retina</span><span class="tag">Spike sorting</span><span class="tag">Light stimulation</span><span class="tag">Python / R</span></div>
-<section class="panel"><h2>01 / Why zebrafish retina?</h2><p>Zebrafish can regenerate retinal tissue after injury, making them a valuable model for studying mechanisms of neural repair. While the cellular and molecular aspects of retinal regeneration are widely investigated, measuring the functional electrical responses of adult retinal neurons provides a complementary perspective.</p><p>My project focused on retinal ganglion cell (RGC) activity: could we obtain reliable high-resolution recordings, distinguish light-responsive populations and measure the immediate functional effects of experimental perturbations?</p></section>
-<section class="panel"><h2>02 / Building a reliable recording preparation</h2><p>Starting from an initial laboratory protocol, I worked on retinal dissection and tissue mounting to improve contact between the ganglion cell layer and CMOS microelectrodes. The preparation used isolated adult zebrafish retina mounted on 3Brain chips, with physiological perfusion during recording.</p><div class="steps"><div class="step"><b>01</b>Dissect retina</div><div class="step"><b>02</b>Mount on CMOS-MEA</div><div class="step"><b>03</b>Record spontaneous activity</div><div class="step"><b>04</b>Stimulate and analyze</div></div><p>The dissertation compared tissue preparation and mounting strategies, including vitreous removal, coating, applied pressure and three-dimensional electrode configurations. Improving tissue–electrode contact was central to obtaining more informative recordings.</p><div class="note">Platform: 3Brain BioCAM / CMOS-MEA with 4,096 recording electrodes. The project established an experimental workflow rather than a clinical assay.</div></section>
-<section class="panel"><h2>03 / From electrical signals to functional responses</h2><div class="grid"><div class="panel"><h3>Acquisition and processing</h3><ul class="list"><li>Extracellular spike detection and spike sorting using BrainWave</li><li>Spike trains, raster plots and mean firing rate (MFR)</li><li>Interspike intervals, response timing and activity distributions</li><li>Comparisons between spontaneous baseline and stimulated phases</li></ul></div><div class="panel"><h3>Light stimulation</h3><ul class="list"><li>Repeated white-light step flashes from 0.1 to 1.0 seconds</li><li>Assessment of changes in spiking activity during light stimulation</li><li>Classification of responses at light onset (ON), offset (OFF) or both (ON-OFF)</li><li>Exploration of heterogeneous response profiles across recorded units</li></ul></div></div><p>Across five experiments summarized in the dissertation, baseline and light-stimulated firing rates differed significantly in four experiments, while one did not show a significant difference. The response patterns also varied with stimulus duration, illustrating the diversity of retinal activity.</p><div class="figure"><strong>FIGURE SLOT / Light-evoked spike raster or response heatmap</strong><p class="meta">Suggested: dissertation Figure 13, 15 or 16. Export a figure you have permission to publish and insert it here.</p></div></section>
-<section class="panel"><h2>04 / Functional classification of retinal ganglion cells</h2><p>By comparing spike activity around stimulus onset and offset, I characterized units showing ON, OFF and ON-OFF response patterns. This provided an initial functional view of the recorded retinal population rather than treating all electrically active units as equivalent.</p><div class="grid"><div class="panel"><h3>ON responses</h3><p>Increased activity associated with the appearance of light.</p></div><div class="panel"><h3>OFF responses</h3><p>Increased activity associated with the disappearance of light.</p></div><div class="panel"><h3>ON-OFF responses</h3><p>Responses associated with both stimulus transitions.</p></div><div class="panel"><h3>Response diversity</h3><p>Different units exhibited different timing and sensitivity across light-step conditions.</p></div></div><p class="meta">This was an initial electrophysiological classification; it did not establish molecular identities for the recorded cells.</p></section>
-<section class="panel"><h2>05 / Pharmacological modulation and light lesion</h2><div class="grid"><div class="panel"><h3>Meclofenamic acid (MFA)</h3><p>I investigated changes in retinal activity after application of MFA, a gap-junction blocker. The treatment altered recorded firing activity and light responses, providing a pharmacological perturbation of the established recording system.</p></div><div class="panel"><h3>Acute light-induced lesion</h3><p>Following intense white-light exposure, spontaneous activity increased, while light-evoked responses were strongly impaired at the one-hour observation point. These results captured acute functional disruption, not recovery.</p></div></div><div class="figure"><strong>FIGURE SLOT / MFA comparison or light-lesion results</strong><p class="meta">Suggested: dissertation Figure 26/31 for MFA, or Figures 32–33 for the light-lesion experiment.</p></div></section>
-<section class="panel"><h2>06 / What I contributed</h2><ul class="list"><li>Optimized adult zebrafish retina preparation and CMOS-MEA tissue mounting.</li><li>Conducted extracellular electrophysiology recordings under spontaneous and light-stimulated conditions.</li><li>Implemented light-stimulation, pharmacological and light-lesion experimental workflows.</li><li>Processed spike data and analyzed firing rates, spike timing and stimulus-associated responses.</li><li>Compared experimental conditions and characterized initial RGC functional response classes.</li><li>Documented the workflow and findings in my MSc dissertation.</li></ul></section>
-<section class="panel"><h2>07 / Main takeaway and next steps</h2><p>The project established a more reliable preparation for recording adult zebrafish retinal activity on high-density CMOS-MEAs and demonstrated that light-responsive neuronal activity could be measured and functionally characterized. It also showed how pharmacological treatment and acute retinal damage alter those signals.</p><div class="note">The dissertation explicitly recommends repeating experiments to improve robustness and reproducibility. Studying functional recovery after retinal regeneration remains a future direction, not an outcome demonstrated by this project.</div><p style="margin-top:18px" class="meta">Based on: <em>Establishing CMOS MEA recordings in adult zebrafish retina</em>, MSc dissertation, September 2024, and associated lab presentation (28 August 2024). Supervisor: Prof. Dr. Michael Brand; co-supervisor: Prof. Dr. Paulo Aguiar.</p></section><p style="margin-top:30px"><a href="research.html">← Back to all research</a></p></main><footer>ANY_RODRIGUES.bio // Research portfolio · <a href="research.html">Back to Research</a></footer></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Any Rodrigues' master's thesis on CMOS-MEA recordings from adult zebrafish retina at CRTD, TU Dresden.">
+  <title>CRTD Retina | Any Rodrigues</title>
+  <link rel="stylesheet" href="research-retro.css">
+</head>
+
+<body>
+<div class="page">
+
+  <header class="site-header">
+    <div>
+      <h1>ANY RODRIGUES</h1>
+      <p class="subtitle">
+        molecular bioengineer / neural interfaces / biological intelligence
+      </p>
+    </div>
+    <div class="status-box">
+      <div class="status-title">FILE STATUS:</div>
+      <div><span class="online-dot"></span> available</div>
+      <div>CRTD_RETINA / 2024</div>
+    </div>
+  </header>
+
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="index.html">HOME</a>
+    <a href="about-me.html">ABOUT</a>
+    <a href="research.html" aria-current="page">RESEARCH</a>
+    <a href="Any_Rodrigues_CV.pdf" target="_blank" rel="noopener">CV</a>
+    <a href="mailto:anycgrodrigues@gmail.com">CONTACT</a>
+  </nav>
+
+  <main>
+
+    <a class="back" href="research.html">← back to research_archive</a>
+
+    <section class="window">
+      <div class="window-title">
+        <span>📄 crtd_retina_project.txt</span>
+        <div class="window-buttons" aria-hidden="true">
+          <span>_</span><span>□</span><span>×</span>
+        </div>
+      </div>
+
+      <div class="window-content">
+        <p class="meta">
+          C:\ANY_RODRIGUES\RESEARCH\CRTD_RETINA\
+        </p>
+
+        <h2>
+          Establishing CMOS-MEA Recordings
+          in Adult Zebrafish Retina
+        </h2>
+
+        <p class="label">MASTER'S THESIS / 2024</p>
+        <p>
+          Center for Regenerative Therapies Dresden (CRTD),
+          Technische Universität Dresden, Germany.
+        </p>
+
+        <hr class="divider">
+
+        <p>
+          My master's thesis focused on establishing extracellular
+          electrophysiological recordings from isolated adult
+          zebrafish retina using a high-density CMOS microelectrode
+          array.
+        </p>
+
+        <p>
+          The aim was to develop a reliable experimental preparation
+          for recording spontaneous and visually evoked retinal
+          activity, and to use this preparation to investigate
+          changes in neuronal responses under different
+          experimental conditions.
+        </p>
+
+        <span class="tag">CMOS-MEA</span>
+        <span class="tag">Zebrafish Retina</span>
+        <span class="tag">Ex Vivo</span>
+        <span class="tag">Electrophysiology</span>
+        <span class="tag">Python / R</span>
+      </div>
+
+      <div class="statusline">
+        research_file | CRTD | master's thesis | 2024
+      </div>
+    </section>
+
+    <section class="two-col">
+
+      <div class="window">
+        <div class="window-title">
+          <span>🔬 experimental_setup.ini</span>
+          <div class="window-buttons" aria-hidden="true">
+            <span>×</span>
+          </div>
+        </div>
+
+        <div class="window-content">
+          <h2>EXPERIMENTAL SETUP</h2>
+
+          <p class="label">BIOLOGICAL PREPARATION</p>
+          <p>
+            Isolated adult zebrafish retina, maintained
+            under perfusion during electrophysiological
+            recordings.
+          </p>
+
+          <p class="label">RECORDING PLATFORM</p>
+          <p>
+            3Brain Accura CMOS-MEA with 4,096 electrodes
+            arranged in a 64 × 64 array.
+          </p>
+
+          <p class="label">OPTIMIZATION</p>
+          <p>
+            Retinal dissection, tissue orientation,
+            tissue-electrode contact and recording
+            conditions were evaluated to improve
+            signal quality.
+          </p>
+
+          <p class="label">STIMULATION</p>
+          <p>
+            Light stimulation protocols were used to
+            investigate visually responsive neuronal
+            activity across the retinal preparation.
+          </p>
+        </div>
+      </div>
+
+      <div class="window">
+        <div class="window-title">
+          <span>⚙ experimental_protocols.txt</span>
+          <div class="window-buttons" aria-hidden="true">
+            <span>×</span>
+          </div>
+        </div>
+
+        <div class="window-content">
+          <h2>EXPERIMENTAL CONDITIONS</h2>
+
+          <p class="label">BASELINE ACTIVITY</p>
+          <p>
+            Spontaneous retinal activity was recorded
+            and compared with activity during visual
+            stimulation.
+          </p>
+
+          <p class="label">LIGHT RESPONSES</p>
+          <p>
+            Responses to different light stimulation
+            protocols were examined, including ON,
+            OFF and ON-OFF activity patterns.
+          </p>
+
+          <p class="label">PHARMACOLOGY</p>
+          <p>
+            Meclofenamic acid (MFA) was applied to
+            investigate the effects of pharmacological
+            modulation on retinal activity.
+          </p>
+
+          <p class="label">RETINAL INJURY</p>
+          <p>
+            Light-induced injury was used to explore
+            how retinal activity changed following
+            experimental damage.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="window">
+      <div class="window-title">
+        <span>📊 signal_analysis.exe</span>
+        <div class="window-buttons" aria-hidden="true">
+          <span>_</span><span>□</span><span>×</span>
+        </div>
+      </div>
+
+      <div class="window-content">
+        <h2>FROM RAW SIGNALS TO NEURAL RESPONSES</h2>
+
+        <p>
+          Extracellular recordings were processed to
+          characterize neuronal activity and evaluate
+          changes between experimental conditions.
+        </p>
+
+        <ul>
+          <li>Spike detection and spike sorting</li>
+          <li>Mean firing rate and spike-count analysis</li>
+          <li>Inter-spike interval distributions and variability</li>
+          <li>Peristimulus time histograms (PSTHs)</li>
+          <li>Classification of ON, OFF and ON-OFF responses</li>
+          <li>Spatial visualization of activity across the array</li>
+          <li>Statistical comparison of recording conditions</li>
+        </ul>
+
+        <p>
+          I used Python and R for data processing,
+          visualization and statistical analysis.
+        </p>
+      </div>
+    </section>
+
+    <section class="window">
+      <div class="window-title">
+        <span>📄 observations_and_findings.txt</span>
+        <div class="window-buttons" aria-hidden="true">
+          <span>_</span><span>□</span><span>×</span>
+        </div>
+      </div>
+
+      <div class="window-content">
+        <h2>MAIN FINDINGS</h2>
+
+        <h3>01 / Establishing the preparation</h3>
+        <p>
+          Improvements in tissue preparation and
+          recording conditions enabled the detection
+          of spontaneous and light-evoked retinal
+          activity across the CMOS-MEA.
+        </p>
+
+        <h3>02 / Visual responses</h3>
+        <p>
+          Light stimulation produced distinguishable
+          response patterns, including ON, OFF and
+          ON-OFF activity. Firing-rate changes
+          were used to evaluate responsiveness.
+        </p>
+
+        <h3>03 / Pharmacological modulation</h3>
+        <p>
+          MFA treatment reduced light-associated
+          spiking activity, demonstrating that the
+          preparation could be used to investigate
+          pharmacological effects on retinal responses.
+        </p>
+
+        <h3>04 / Light-induced injury</h3>
+        <p>
+          Following light-induced injury, spontaneous
+          activity increased at the later recording
+          time point, while significant differences
+          between baseline and light-stimulated
+          activity were no longer detected.
+        </p>
+
+        <div class="note">
+          The work focused on establishing a functional
+          recording approach and characterizing
+          experimental responses, rather than
+          developing a diagnostic or therapeutic device.
+        </div>
+      </div>
+    </section>
+
+    <section class="window">
+      <div class="window-title">
+        <span>🖼 retina_recordings.dat</span>
+        <div class="window-buttons" aria-hidden="true">
+          <span>_</span><span>□</span><span>×</span>
+        </div>
+      </div>
+
+      <div class="window-content">
+        <h2>RECORDING ARCHIVE</h2>
+
+        <p>
+          Selected visual material from the retinal
+          electrophysiology project.
+        </p>
+
+        <figure>
+          <img
+            class="media"
+            src="CRTD_artifact.jpeg"
+            alt="Experimental image from the CRTD retinal electrophysiology project"
+            loading="lazy"
+          >
+          <figcaption class="media-caption">
+            CRTD research image.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <video class="media" controls preload="metadata">
+            <source src="CRTD_video.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+          <figcaption class="media-caption">
+            Video from the retinal recording project.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="terminal">
+      <p>&gt; project: CRTD_RETINA</p>
+      <p>&gt; recording platform: CMOS-MEA / 4096 electrodes</p>
+      <p>&gt; model: adult zebrafish retina</p>
+      <p>&gt; analysis: Python / R</p>
+      <p>&gt; archive status: available</p>
+      <p>&gt; _</p>
+    </section>
+
+    <a class="back" href="research.html">← return to research_archive</a>
+
+  </main>
+
+  <footer>
+    © 2026 Any Rodrigues | CRTD_RETINA | research archive
+  </footer>
+
+</div>
+</body>
+</html>

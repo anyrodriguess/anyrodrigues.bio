@@ -1,299 +1,189 @@
 
-:root {
-  --background: #f8f8f2;
-  --text: #171717;
-  --muted: #626262;
-  --line: #171717;
-  --soft: #efefe7;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Research archive of Any Rodrigues: neural electrophysiology, retinal recordings and olfactory cultures.">
+  <title>Research Archive | Any Rodrigues</title>
+  <link rel="stylesheet" href="research-retro.css">
+</head>
 
-* {
-  box-sizing: border-box;
-}
+<body>
+<div class="page">
 
-html {
-  scroll-behavior: smooth;
-}
+  <header class="site-header">
+    <div>
+      <h1>ANY RODRIGUES</h1>
+      <p class="subtitle">
+        molecular bioengineer / neural interfaces / biological intelligence
+      </p>
+    </div>
+    <div class="status-box">
+      <div class="status-title">CURRENT DIRECTORY:</div>
+      <div><span class="online-dot"></span> research_archive</div>
+      <div>2 projects available</div>
+    </div>
+  </header>
 
-body {
-  margin: 0;
-  background: var(--background);
-  color: var(--text);
-  font-family: "Courier New", Courier, monospace;
-  font-size: 14px;
-  line-height: 1.7;
-}
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="index.html">HOME</a>
+    <a href="about-me.html">ABOUT</a>
+    <a href="research.html" aria-current="page">RESEARCH</a>
+    <a href="Any_Rodrigues_CV.pdf" target="_blank" rel="noopener">CV</a>
+    <a href="mailto:anycgrodrigues@gmail.com">CONTACT</a>
+  </nav>
 
-a {
-  color: inherit;
-}
+  <main>
 
-a:hover {
-  background: #171717;
-  color: #ffffff;
-}
+    <section class="window">
+      <div class="window-title">
+        <span>📁 research_explorer.exe</span>
+        <div class="window-buttons" aria-hidden="true">
+          <span>_</span><span>□</span><span>×</span>
+        </div>
+      </div>
 
-.container {
-  width: min(900px, calc(100% - 36px));
-  margin: 0 auto;
-}
+      <div class="window-content">
+        <p class="meta">C:\ANY_RODRIGUES\RESEARCH\</p>
+        <h2>RESEARCH ARCHIVE</h2>
+        <p>
+          My research experience has focused on understanding neuronal
+          activity through electrophysiology, from cultured olfactory
+          neural cells to isolated adult zebrafish retina.
+        </p>
+        <p>
+          These projects introduced me to different experimental
+          preparations, microelectrode array platforms, stimulation
+          protocols and approaches to analyzing neural responses.
+        </p>
 
-/* RETRO NAVIGATION */
+        <hr class="divider">
 
-header {
-  border-bottom: 2px solid var(--line);
-}
+        <p class="label">SELECT A RESEARCH FOLDER:</p>
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-  padding: 23px 0;
-}
+        <div class="file-grid">
 
-.logo {
-  font-size: 15px;
-  font-weight: bold;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-}
+          <a class="file" href="crtd.html">
+            <span class="icon" aria-hidden="true">📁</span>
+            <strong>CRTD_RETINA</strong>
+            <small>2024 / Master's thesis / TU Dresden</small>
+            <p>
+              CMOS-MEA recordings in adult zebrafish retina.
+              Light responses, pharmacology and retinal injury.
+            </p>
+            <span>OPEN FOLDER →</span>
+          </a>
 
-.logo::before {
-  content: "> ";
-}
+          <a class="file" href="dzne.html">
+            <span class="icon" aria-hidden="true">📁</span>
+            <strong>DZNE_OLFACTION</strong>
+            <small>2023–2024 / Research internship / DZNE</small>
+            <p>
+              Olfactory epithelium and bulb neural cultures.
+              MEA recordings and responses to odorant stimulation.
+            </p>
+            <span>OPEN FOLDER →</span>
+          </a>
 
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-}
+        </div>
+      </div>
 
-nav a {
-  font-size: 11px;
-  font-weight: bold;
-  text-decoration: none;
-  text-transform: uppercase;
-}
+      <div class="statusline">
+        2 objects | electrophysiology | neural models
+      </div>
+    </section>
 
-nav a::before {
-  content: "[";
-}
+    <section class="two-col">
 
-nav a::after {
-  content: "]";
-}
+      <div class="window">
+        <div class="window-title">
+          <span>📄 experimental_toolkit.txt</span>
+          <div class="window-buttons" aria-hidden="true">
+            <span>×</span>
+          </div>
+        </div>
 
-nav a.active {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
+        <div class="window-content">
+          <h2>EXPERIMENTAL TOOLKIT</h2>
 
-/* PAGE TITLE */
+          <p class="label">RECORDING</p>
+          <p>
+            Microelectrode arrays (MEA/HD-MEA), extracellular
+            neural activity, spike detection and sorting.
+          </p>
 
-.intro {
-  padding: 65px 0 55px;
-  border-bottom: 2px solid var(--line);
-}
+          <p class="label">BIOLOGICAL MODELS</p>
+          <p>
+            Ex vivo adult zebrafish retina, olfactory neural
+            cultures and co-culture preparations.
+          </p>
 
-.eyebrow {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  margin-bottom: 22px;
-}
+          <p class="label">EXPERIMENTAL WORK</p>
+          <p>
+            Tissue preparation, neural culture maintenance,
+            electrical recordings, sensory stimulation,
+            pharmacological experiments and microscopy.
+          </p>
 
-.eyebrow::before {
-  content: "// ";
-}
+          <p class="label">DATA</p>
+          <p>
+            Firing rates, inter-spike intervals, bursting,
+            stimulus responses, visualization and analysis
+            using Python and R.
+          </p>
+        </div>
+      </div>
 
-h1 {
-  font-size: clamp(38px, 7vw, 65px);
-  font-weight: bold;
-  letter-spacing: -0.06em;
-  line-height: 1.1;
-  margin: 0 0 28px;
-}
+      <div class="window">
+        <div class="window-title">
+          <span>💾 research_interests.ini</span>
+          <div class="window-buttons" aria-hidden="true">
+            <span>×</span>
+          </div>
+        </div>
 
-h1::before {
-  content: "01_";
-  color: #777;
-}
+        <div class="window-content">
+          <h2>WHERE I WANT TO GO NEXT</h2>
 
-.intro-text {
-  max-width: 720px;
-  font-size: 14px;
-  line-height: 1.9;
-  margin: 0;
-}
+          <p>
+            I am interested in using advanced biological models
+            to study disease mechanisms and investigate
+            potential therapeutic approaches.
+          </p>
 
-/* RESEARCH INDEX */
+          <p>
+            In particular, I would like to explore brain
+            organoids, organ-on-chip systems and other
+            complex in vitro models, combining functional
+            electrophysiology with molecular and cellular
+            characterization.
+          </p>
 
-.section-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding: 40px 0 20px;
-}
+          <div class="note">
+            My experience with organoids and organ-on-chip
+            systems is an area I want to develop, rather
+            than a technique I claim to have already mastered.
+          </div>
+        </div>
+      </div>
 
-.section-heading h2,
-.interests h2 {
-  font-size: 13px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin: 0;
-}
+    </section>
 
-.section-heading h2::before {
-  content: "[ ";
-}
+    <section class="terminal" aria-label="Research terminal">
+      <p>&gt; loading research history...</p>
+      <p>&gt; DZNE_OLFACTION ............ found</p>
+      <p>&gt; CRTD_RETINA ............... found</p>
+      <p>&gt; experimental curiosity ... active</p>
+      <p>&gt; _</p>
+    </section>
 
-.section-heading h2::after {
-  content: " ]";
-}
+  </main>
 
-.section-heading span {
-  font-size: 11px;
-  color: var(--muted);
-}
+  <footer>
+    © 2026 Any Rodrigues | research_archive | just curiosity.
+  </footer>
 
-/* PROJECT ENTRIES */
-
-.project {
-  display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  gap: 30px;
-  padding: 45px 0 55px;
-  border-top: 1px dashed #777;
-}
-
-.project-meta {
-  font-size: 11px;
-  line-height: 1.9;
-  color: var(--muted);
-}
-
-.project-meta strong {
-  display: block;
-  color: var(--text);
-  font-size: 13px;
-}
-
-.project-content h3 {
-  font-size: clamp(19px, 3vw, 26px);
-  font-weight: bold;
-  line-height: 1.4;
-  letter-spacing: -0.025em;
-  margin: 0 0 24px;
-}
-
-.project-content p {
-  font-size: 13px;
-  line-height: 1.9;
-  margin: 0 0 18px;
-  max-width: 680px;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 25px 0 30px;
-}
-
-.tag {
-  border: 1px solid #777;
-  padding: 4px 8px;
-  font-size: 10px;
-  text-transform: uppercase;
-}
-
-.project-link {
-  display: inline-block;
-  border: 1px solid var(--line);
-  padding: 9px 14px;
-  font-size: 11px;
-  font-weight: bold;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.project-link:hover {
-  background: var(--text);
-  color: var(--background);
-}
-
-/* RESEARCH INTERESTS */
-
-.interests {
-  background: var(--soft);
-  border-top: 2px solid var(--line);
-  border-bottom: 2px solid var(--line);
-  padding: 55px 0;
-  margin-top: 20px;
-}
-
-.interests-grid {
-  display: grid;
-  grid-template-columns: 170px minmax(0, 1fr);
-  gap: 30px;
-}
-
-.interests h2::before {
-  content: ">> ";
-}
-
-.interests p {
-  font-size: 13px;
-  line-height: 1.9;
-  margin: 0 0 18px;
-}
-
-/* FOOTER */
-
-footer {
-  padding: 30px 0;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-  font-size: 11px;
-  color: var(--muted);
-}
-
-.footer-inner a {
-  text-decoration: none;
-}
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav {
-    gap: 12px;
-  }
-
-  .intro {
-    padding: 50px 0 40px;
-  }
-
-  .project,
-  .interests-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .project {
-    padding: 35px 0 45px;
-  }
-}
+</div>
+</body>
+</html>
