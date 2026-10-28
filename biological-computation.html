@@ -1,0 +1,934 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Living neurons, biological computers, brain energy efficiency, and the laboratories exploring computation with neural networks.">
+<title>Biological Computation | Any Rodrigues</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.interest-page{max-width:1080px;margin:0 auto}
+.crumb{font:.83rem monospace;margin:1.2rem 0;color:#50627b}
+.crumb a,.article a{color:#1555b5}
+.article{background:#fff;border:2px solid #1c355d;box-shadow:5px 5px 0 #c4d3e6;margin:1.5rem 0}
+.bar{background:#183d79;color:#fff;padding:.6rem .9rem;font:700 .85rem monospace;display:flex;justify-content:space-between;gap:1rem}
+.inside{padding:clamp(1rem,3vw,2rem)}
+.inside p,.inside li{line-height:1.8}
+.inside h1{font-size:clamp(2rem,4vw,3.1rem);line-height:1.15;margin:.4rem 0}
+.inside h2{font-size:1.45rem;margin:1.8rem 0 .6rem}
+.inside h2:first-child{margin-top:0}
+.inside h3{font-size:1.1rem;margin:1.5rem 0 .5rem}
+.kicker{font:700 .78rem monospace;letter-spacing:.08em;color:#2863ae}
+.subtitle2{font-size:1.13rem;color:#40556f}
+.note{background:#edf4fd;border-left:4px solid #356db4;padding:1rem;margin:1.2rem 0;line-height:1.7}
+.toc{display:flex;flex-wrap:wrap;gap:.55rem}
+.toc a{background:#edf3fb;border:1px solid #b8cbe4;padding:.5rem .7rem;font:.85rem monospace;text-decoration:none}
+.ref-list{overflow-wrap:anywhere}
+.ref-list li{margin:.65rem 0;line-height:1.6}
+.more{display:flex;flex-wrap:wrap;gap:.7rem}
+.more a{border:1px solid #b8cbe4;background:#edf3fb;padding:.65rem;text-decoration:none;font:.86rem monospace}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.4rem 0}
+.stat{background:#f0f5fc;border:1px solid #9eb8d9;padding:1rem}
+.stat strong{display:block;font-size:1.55rem;color:#183d79;margin:.3rem 0}
+.stat small{font:.73rem monospace;color:#50627b}
+.compare{width:100%;border-collapse:collapse;margin:1rem 0}
+.compare th,.compare td{border:1px solid #b8cbe4;padding:.75rem;text-align:left;vertical-align:top;line-height:1.6}
+.compare th{background:#e5eef9}
+.question{background:#fff8e6;border-left:4px solid #c59738;padding:1rem;margin:1.5rem 0;line-height:1.7}
+.tag{font:.73rem monospace;background:#e9f0fa;border:1px solid #c1d0e5;padding:.2rem .45rem;display:inline-block;margin:.2rem 0}
+@media(max-width:650px){
+.stats{grid-template-columns:1fr}
+.article{box-shadow:3px 3px 0 #c4d3e6}
+.compare{font-size:.86rem}
+}
+</style>
+</head>
+
+<body>
+<div class="page interest-page">
+
+<header class="site-header">
+  <div>
+    <h1>ANY RODRIGUES</h1>
+    <p class="subtitle">
+      molecular bioengineer / neural interfaces / biological intelligence
+    </p>
+  </div>
+  <div class="status-box">
+    <div>
+      <div class="status-title">CURRENT FILE:</div>
+      <div><span class="online-dot"></span> biological-computation.html</div>
+      <div class="tiny-status">scientific interests / evolving notes</div>
+    </div>
+  </div>
+</header>
+
+<nav class="main-nav" aria-label="Main navigation">
+  <a href="index.html">HOME</a>
+  <a href="about-me.html">ABOUT</a>
+  <a href="research.html">RESEARCH</a>
+  <a href="Any_Rodrigues_CV.pdf" target="_blank" rel="noopener">CV</a>
+  <a href="mailto:anycgrodrigues@gmail.com">CONTACT</a>
+</nav>
+
+<main>
+<p class="crumb">
+  <a href="index.html">home</a> /
+  current_interests.ini /
+  <strong>biological-computation.txt</strong>
+</p>
+
+<article class="article">
+  <div class="bar">
+    <span>📁 biological-computation.txt</span>
+    <span>□ ×</span>
+  </div>
+  <div class="inside">
+    <div class="kicker">SCIENTIFIC INTERESTS / NOTES FROM THE RABBIT HOLE</div>
+    <h1>Biological Computation</h1>
+    <p class="subtitle2">
+      What happens when the computer is alive?
+    </p>
+    <p>
+      We have built machines capable of performing quintillions
+      of calculations per second. Meanwhile, the human brain
+      continuously processes information, learns and adapts
+      using roughly the power of a small light bulb.
+    </p>
+    <p>
+      Could living neurons teach us a different way to compute?
+      And what happens when we connect them directly to silicon?
+    </p>
+    <div class="note">
+      <strong>About this page:</strong>
+      My personal collection of experiments, research groups,
+      companies and questions about biological computing.
+      These are interests and independent reading notes,
+      not claims of personal experience with all the systems discussed.
+    </div>
+  </div>
+</article>
+
+<article class="article">
+  <div class="bar">
+    <span>📑 directory / jump_to</span>
+    <span>01–08</span>
+  </div>
+  <div class="inside">
+    <div class="toc">
+      <a href="#s1">01 / Brain vs. supercomputer</a>
+      <a href="#s2">02 / AI's energy problem</a>
+      <a href="#s3">03 / Computing with living neurons</a>
+      <a href="#s4">04 / Experiments that started it</a>
+      <a href="#s5">05 / Companies building it</a>
+      <a href="#s6">06 / Research community</a>
+      <a href="#s7">07 / What's still missing?</a>
+      <a href="#s8">08 / My questions</a>
+      <a href="#references">References</a>
+    </div>
+  </div>
+</article>
+
+<article class="article">
+  <div class="bar">
+    <span>📖 01 / brain_vs_supercomputer.exe</span>
+    <span>ENERGY</span>
+  </div>
+  <div class="inside">
+    <section id="s1">
+      <h2>01 / Is the brain a better computer?</h2>
+
+      <p>
+        It depends entirely on what we ask it to do.
+        A conventional computer is exceptionally good at precise,
+        repeatable calculations. The brain is remarkable at
+        integrating sensory information, controlling movement,
+        adapting to unfamiliar situations and learning from experience.
+      </p>
+
+      <p>
+        The surprising part is how little energy the brain uses.
+        Its metabolic power consumption is often estimated at
+        approximately 20 watts.
+      </p>
+
+      <p>
+        Compare that with the world's fastest supercomputer
+        in the June 2026 TOP500 ranking.
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <small>HUMAN BRAIN</small>
+          <strong>~20 W</strong>
+          <small>Estimated metabolic power</small>
+        </div>
+        <div class="stat">
+          <small>LINESHINE / 2026</small>
+          <strong>2.198 EFLOP/s</strong>
+          <small>Measured LINPACK performance</small>
+        </div>
+        <div class="stat">
+          <small>LINESHINE / POWER</small>
+          <strong>42.22 MW</strong>
+          <small>TOP500 listed power</small>
+        </div>
+      </div>
+
+      <p>
+        LineShine, installed at the National Supercomputing
+        Centre in Shenzhen, China, achieved approximately
+        2.198 exaFLOP/s on the LINPACK benchmark.
+        Its listed power consumption was 42,220 kilowatts.
+      </p>
+
+      <p>
+        That's more than two million times the brain's
+        approximate 20-watt power consumption.
+        But it would be misleading to say the brain is
+        two million times more efficient.
+      </p>
+
+      <div class="note">
+        <strong>Important distinction:</strong>
+        FLOPS measure floating-point calculations.
+        They do not measure intelligence, consciousness,
+        perception or learning. A human brain cannot be
+        meaningfully benchmarked against a supercomputer
+        using LINPACK.
+      </div>
+
+      <h3>So what makes neural processing interesting?</h3>
+
+      <p>
+        In conventional computing, memory and processing are
+        often physically separated. Moving information between
+        them has an energy and time cost.
+      </p>
+
+      <p>
+        In biological neural networks, information processing
+        and changes associated with memory occur within
+        interconnected cells and synapses. Activity is sparse
+        in many circuits, and the network itself can change
+        through experience.
+      </p>
+
+      <p>
+        This is one reason researchers are interested in
+        neuromorphic computing, artificial synapses and
+        living-neuron computing.
+      </p>
+
+      <div class="question">
+        <strong>Question I keep coming back to:</strong>
+        If biological neural networks can adapt without
+        being explicitly programmed for every situation,
+        could that ability be useful in a computer?
+      </div>
+
+      <p><a href="#ref3">[TOP500, 2026]</a></p>
+    </section>
+  </div>
+</article>
+
+<article class="article">
+  <div class="bar">
+    <span>📖 02 / ai_energy_report.txt</span>
+    <span>2026</span>
+  </div>
+  <div class="inside">
+    <section id="s2">
+      <h2>02 / AI has an energy problem</h2>
+
+      <p>
+        The growth of artificial intelligence has made
+        computational energy demand increasingly difficult
+        to ignore.
+      </p>
+
+      <p>
+        Training large models requires substantial computing
+        resources. Running them also consumes electricity,
+        especially when millions of people use AI services
+        and increasingly demanding applications become common.
+      </p>
+
+      <p>
+        According to the International Energy Agency's
+        2026 outlook, global data-centre electricity
+        consumption was approximately 485 TWh in 2025.
+        Its central projection reaches around 950 TWh
+        in 2030.
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <small>DATA CENTRES / 2025</small>
+          <strong>485 TWh</strong>
+          <small>IEA estimate</small>
+        </div>
+        <div class="stat">
+          <small>DATA CENTRES / 2030</small>
+          <strong>950 TWh</strong>
+          <small>IEA central projection</small>
+        </div>
+        <div class="stat">
+          <small>GROWTH</small>
+          <strong>~2×</strong>
+          <small>Projected total electricity demand</small>
+        </div>
+      </div>
+
+      <p>
+        Not all data-centre electricity is used for AI.
+        However, AI-focused facilities are expected to
+        account for a rapidly growing share of demand.
+      </p>
+
+      <p>
+        There is also an interesting paradox: an individual
+        AI operation can become more energy efficient while
+        total electricity consumption increases because
+        the technology is being used much more widely.
+      </p>
+
+      <h3>Could biological computing help?</h3>
+
+      <p>
+        Possibly, but that remains to be demonstrated.
+        Living neurons need a controlled environment,
+        nutrients, temperature regulation, recording
+        electronics and supporting computers.
+      </p>
+
+      <p>
+        A fair energy comparison must include the
+        entire experimental platform, not just the
+        electrical activity of the neurons.
+      </p>
+
+      <div class="question">
+        <strong>My question:</strong>
+        Could biological computing become genuinely
+        energy efficient at the system level,
+        or is the more realistic opportunity to
+        learn new computational principles from neurons?
+      </div>
+
+      <p><a href="#ref4">[IEA, 2026]</a></p>
+    </section>
+  </div>
+</article>
+
+<article class="article">
+  <div class="bar">
+    <span>📖 03 / living_neurons.exe</span>
+    <span>HOW IT WORKS</span>
+  </div>
+  <div class="inside">
+    <section id="s3">
+      <h2>03 / How do you turn neurons into a computer?</h2>
+
+      <p>
+        The basic idea is surprisingly close to electrophysiology.
+        Cultured neurons can generate electrical signals,
+        respond to stimulation and form interconnected networks.
+      </p>
+
+      <p>
+        Microelectrode arrays provide an interface between
+        these biological networks and digital electronics.
+      </p>
+
+      <ol>
+        <li>
+          <strong>Input:</strong> a digital system converts
+          information into patterns of electrical stimulation.
+        </li>
+        <li>
+          <strong>Biological processing:</strong> neurons
+          respond through their collective network dynamics.
+        </li>
+        <li>
+          <strong>Output:</strong> electrodes record activity
+          such as spikes and network responses.
+        </li>
+        <li>
+          <strong>Feedback:</strong> software interprets
+          the response and changes subsequent stimulation.
+        </li>
+      </ol>
+
+      <h3>Where does learning enter the picture?</h3>
+
+      <p>
+        Neural networks can change their responses with
+        repeated activity. Synaptic plasticity, including
+        activity-dependent changes in connection strength,
+        is one of the mechanisms that makes biological
+        neural systems interesting.
+      </p>
+
+      <p>
+        However, not every change in firing is evidence
+        of learning. Adaptation, fatigue, changes in
+        excitability and recording variability can also
+        alter neural responses.
+      </p>
+
+      <p>
+        To demonstrate learning convincingly, experiments
+        need carefully designed tasks, controls and
+        reproducible evidence of improved performance
+        or retained information.
+      </p>
+
+      <div class="note">
+        <strong>Why MEAs matter:</strong>
+        They allow researchers to observe and stimulate
+        neural activity without relying exclusively
+        on destructive endpoint measurements.
+        They are an essential interface in many
+        experimental biological computing systems.
+      </div>
+    </section>
+  </div>
+</article>
+
+<article class="article">
+  <div class="bar">
+    <span>📖 04 / experiments.log</span>
+    <span>CASE STUDIES</span>
+  </div>
+  <div class="inside">
+    <section id="s4">
+      <h2>04 / The experiments that made me pay attention</h2>
+
+      <h3>DishBrain — playing Pong with neurons</h3>
+      <span class="tag">2022</span>
+      <span class="tag">2D neuronal cultures</span>
+      <span class="tag">closed-loop feedback</span>
+
+      <p>
+        In 2022, Kagan and colleagues reported an experiment
+        in which living neurons cultured on an electrode
+        array interacted with a simplified version of Pong.
+      </p>
+
+      <p>
+        The system translated the position of the ball
+        into electrical stimulation and used recorded
+        neural activity to control the paddle.
+      </p>
+
+      <p>
+        The authors reported changes in performance
+        associated with structured feedback.
+        The experiment raised fascinating questions
+        about adaptation and goal-directed behavior
+        in cultured neural networks.
+      </p>
+
+      <p>
+        But DishBrain used two-dimensional neuronal
+        cultures, not cerebral organoids. And the
+        interpretation of learning in such systems
+        remains an active scientific discussion.
+      </p>
+
+      <p><a href="#ref1">[Kagan et al., 2022]</a></p>
+
+      <h3>Brainoware — a brain organoid as a computational reservoir</h3>
+      <span class="tag">2023</span>
+      <span class="tag">3D brain organoid</span>
+      <span class="tag">HD-MEA</span>
+
+      <p>
+        A different approach was demonstrated by
+        Cai and colleagues in a 2023
+        <em>Nature Electronics</em> paper.
+      </p>
+
+      <p>
+        Their Brainoware system used a brain organoid
+        connected to a high-density microelectrode array.
+        Electrical stimulation supplied information,
+        while the organoid's responses were used in
+        a reservoir-computing framework.
+      </p>
+
+      <p>
+        The researchers explored tasks including
+        speech recognition and prediction of
+        nonlinear equations.
+      </p>
+
+      <p>
+        This is particularly interesting because
+        the biological tissue is not simply a model
+        of the brain. Its dynamics become part
+        of the computational process.
+      </p>
+
+      <p>
+        It is still a research demonstration,
+        not a general-purpose biological computer.
+      </p>
+
+      <p><a href="#ref2">[Cai et al., 2023]</a></p>
+
+      <div class="question">
+        <strong>Something I find fascinating:</strong>
+        DishBrain and Brainoware use different biological
+        preparations and computational strategies.
+        How much of their behavior comes from the
+        living network, and how much comes from
+        the surrounding software?
+      </div>
+    </section>
+  </div>
+</article>
+
+<article class="article">
+  <div class="bar">
+    <span>📖 05 / companies.directory</span>
+    <span>INDUSTRY</span>
+  </div>
+  <div class="inside">
+    <section id="s5">
+      <h2>05 / Who is building computers with living neurons?</h2>
+
+      <p>
+        Several companies are now exploring the interface
+        between living neural tissue and computing.
+        But they are not all building the same thing.
+      </p>
+
+      <h3>Cortical Labs</h3>
+      <span class="tag">Living neuronal cultures</span>
+      <span class="tag">Bio-digital hardware</span>
+
+      <p>
+        <a href="https://corticallabs.com/" target="_blank" rel="noopener">
+          Cortical Labs
+        </a>
+        is associated with the DishBrain research and
+        develops systems that combine cultured neurons,
+        electrode arrays and digital interfaces.
+      </p>
+
+      <p>
+        Its CL1 platform is designed around living
+        neural networks integrated with electronic
+        hardware. Cortical Cloud explores remote
+        access to biological computing experiments.
+      </p>
+
+      <h3>FinalSpark</h3>
+      <span class="tag">Human neural organoids</span>
+      <span class="tag">Remote Neuroplatform</span>
+
+      <p>
+        <a href="https://finalspark.com/" target="_blank" rel="noopener">
+          FinalSpark
+        </a>
+        develops an experimental Neuroplatform using
+        living human neural tissue, including organoids.
+      </p>
+
+      <p>
+        Its work explores remote experimentation,
+        stimulation, electrophysiological recording
+        and the possibility of using organoid
+        networks for computation.
+      </p>
+
+      <p>
+        The team published a technical description
+        of the Neuroplatform in 2024.
+      </p>
+
+      <p><a href="#ref5">[Jordan et al., 2024]</a></p>
+
+      <h3>The Biological Computing Co.</h3>
+      <span class="tag">Living-neuron experiments</span>
+      <span class="tag">Neuron-derived AI software</span>
+
+      <p>
+        <a href="https://www.tbc.co/" target="_blank" rel="noopener">
+          The Biological Computing Co.
+        </a>
+        takes a particularly interesting approach.
+        The company studies living neurons to discover
+        computational principles that can improve AI.
+      </p>
+
+      <p>
+        In September 2026, it announced a collaboration
+        with AWS involving a neuron-derived video
+        generation model.
+      </p>
+
+      <p>
+        Importantly, the resulting commercial software
+        runs on conventional computing infrastructure.
+        It does not require living neurons to be
+        present when a user generates a video.
+      </p>
+
+      <p>
+        This is a different direction from using
+        living tissue as the computing hardware itself.
+      </p>
+
+      <p>
+        <a href="https://www.tbc.co/press-releases/aws-partnership"
+           target="_blank" rel="noopener">
+          Read the company's September 2026 announcement ↗
+        </a>
+      </p>
+
+      <h3>Three approaches, three different questions</h3>
+
+      <table class="compare">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Approach</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cortical Labs</td>
+            <td>Living neurons integrated with electronic computing systems</td>
+          </tr>
+          <tr>
+            <td>FinalSpark</td>
+            <td>Organoid-based experimental computing platform</td>
+          </tr>
+          <tr>
+            <td>The Biological Computing Co.</td>
+            <td>Using living-neuron research to develop computational software</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <strong>A distinction worth keeping:</strong>
+        A computer containing living neurons is not the
+        same thing as software inspired by, or developed
+        using measurements from, living neurons.
+        Company claims about speed or energy savings
+        also need independent benchmarking.
+      </div>
+    </section>
+  </div>
+</article>
+
+<article class="article">
+  <div class="bar">
+    <span>📖 06 / research_community.txt</span>
+    <span>LABS</span>
+  </div>
+  <div class="inside">
+    <section id="s6">
+      <h2>06 / The research community behind the idea</h2>
+
+      <p>
+        Biological computing isn't the work of one
+        company or one laboratory. It draws on
+        electrophysiology, stem-cell biology,
+        neuroscience, engineering and computer science.
+      </p>
+
+      <h3>Kagan and colleagues — DishBrain</h3>
+      <p>
+        Their 2022 work brought together cultured
+        neurons, electrophysiology and a digital
+        feedback environment. It helped bring
+        closed-loop in-vitro neural systems
+        into a wider discussion about computation.
+      </p>
+
+      <h3>Cai and colleagues — Brainoware</h3>
+      <p>
+        This research demonstrated how brain organoids
+        and HD-MEAs could be combined with reservoir
+        computing to perform experimental tasks.
+      </p>
+
+      <h3>Jordan and colleagues — FinalSpark Neuroplatform</h3>
+      <p>
+        Their work focused on building an accessible
+        experimental platform for organoid-based
+        computation, including stimulation,
+        recording and remote research access.
+      </p>
+
+      <h3>The wider organoid intelligence community</h3>
+      <p>
+        Researchers working on organoid intelligence
+        are also investigating how human neural models,
+        electrophysiology, plasticity and bio-digital
+        interfaces might contribute to future
+        computational systems.
+      </p>
+
+      <p>
+        For the broader questions about learning,
+        intelligence and the interpretation of neural
+        responses, I keep separate notes in
+        <a href="organoid-intelligence.html">
+          Organoid Intelligence
+        </a>.
+      </p>
+
+      <div class="question">
+        <strong>What I'd like to see more of:</strong>
+        Experiments that compare different neural
+        preparations under the same stimulation
+        protocols and computational benchmarks.
+        How much do cell composition, maturation,
+        network architecture and electrode density matter?
+      </div>
+    </section>
+  </div>
+</article>
+
+<article class="article">
+  <div class="bar">
+    <span>📖 07 / limitations.txt</span>
+    <span>OPEN QUESTIONS</span>
+  </div>
+  <div class="inside">
+    <section id="s7">
+      <h2>07 / Why aren't biological computers everywhere?</h2>
+
+      <p>
+        Because turning an exciting experimental
+        demonstration into reliable computing hardware
+        is an enormous challenge.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Reproducibility:</strong>
+          two neural cultures or organoids may behave
+          differently even under similar conditions.
+        </li>
+        <li>
+          <strong>Longevity:</strong>
+          living systems require maintenance and
+          may change over time.
+        </li>
+        <li>
+          <strong>Scalability:</strong>
+          increasing the number of neurons does not
+          automatically increase useful computing performance.
+        </li>
+        <li>
+          <strong>Readout:</strong>
+          electrical recordings capture only part
+          of the network's activity.
+        </li>
+        <li>
+          <strong>Benchmarking:</strong>
+          researchers need fair ways to compare
+          biological and silicon-based systems.
+        </li>
+        <li>
+          <strong>Energy efficiency:</strong>
+          the entire platform must be included
+          in the calculation.
+        </li>
+        <li>
+          <strong>Ethics:</strong>
+          increasingly complex human neural models
+          raise questions about oversight,
+          responsible use and possible future
+          moral considerations.
+        </li>
+      </ul>
+
+      <p>
+        These challenges are also what make the field
+        scientifically interesting. There is still
+        so much we don't understand about the relationship
+        between neural activity, adaptation and computation.
+      </p>
+    </section>
+  </div>
+</article>
+
+<article class="article">
+  <div class="bar">
+    <span>📖 08 / personal_notes.txt</span>
+    <span>MY QUESTIONS</span>
+  </div>
+  <div class="inside">
+    <section id="s8">
+      <h2>08 / Why I keep coming back to this</h2>
+
+      <p>
+        My background is in neural electrophysiology,
+        particularly recording activity using
+        microelectrode arrays.
+      </p>
+
+      <p>
+        I am used to thinking about how experimental
+        conditions affect firing patterns and network
+        responses. Biological computing adds a new
+        dimension to that: what if we use those
+        responses as part of an interactive system?
+      </p>
+
+      <p>
+        I'm especially curious about how researchers
+        distinguish genuine learning from simpler
+        changes in neural excitability, and how
+        experimental design influences that interpretation.
+      </p>
+
+      <p>
+        I also wonder whether biological computing
+        will ultimately become a practical computing
+        technology or whether its greatest contribution
+        will be helping us understand the principles
+        of neural information processing.
+      </p>
+
+      <div class="question">
+        <strong>One question I'd love to investigate:</strong>
+        If we give two neural networks the same task
+        but change their architecture, maturity or
+        stimulation pattern, what determines which
+        network adapts more successfully?
+      </div>
+    </section>
+  </div>
+</article>
+
+<article class="article" id="references">
+  <div class="bar">
+    <span>🔗 references.url</span>
+    <span>external links ↗</span>
+  </div>
+  <div class="inside">
+    <h2>References &amp; further reading</h2>
+
+    <ol class="ref-list">
+      <li id="ref1">
+        <a href="https://doi.org/10.1016/j.neuron.2022.09.001"
+           target="_blank" rel="noopener">
+          Kagan et al. (2022).
+          In vitro neurons learn and exhibit sentience
+          when embodied in a simulated game-world.
+          Neuron.
+        </a>
+      </li>
+
+      <li id="ref2">
+        <a href="https://doi.org/10.1038/s41928-023-01069-w"
+           target="_blank" rel="noopener">
+          Cai et al. (2023).
+          Brain organoid reservoir computing
+          for artificial intelligence.
+          Nature Electronics.
+        </a>
+      </li>
+
+      <li id="ref3">
+        <a href="https://top500.org/lists/top500/list/2026/06/"
+           target="_blank" rel="noopener">
+          TOP500 (June 2026).
+          World's fastest supercomputers.
+        </a>
+      </li>
+
+      <li id="ref4">
+        <a href="https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary"
+           target="_blank" rel="noopener">
+          International Energy Agency (2026).
+          Key Questions on Energy and AI.
+        </a>
+      </li>
+
+      <li id="ref5">
+        <a href="https://doi.org/10.3389/frai.2024.1376042"
+           target="_blank" rel="noopener">
+          Jordan et al. (2024).
+          The FinalSpark Neuroplatform.
+          Frontiers in Artificial Intelligence.
+        </a>
+      </li>
+
+      <li>
+        <a href="https://corticallabs.com/"
+           target="_blank" rel="noopener">
+          Cortical Labs — company and platform information.
+        </a>
+      </li>
+
+      <li>
+        <a href="https://finalspark.com/"
+           target="_blank" rel="noopener">
+          FinalSpark — Neuroplatform.
+        </a>
+      </li>
+
+      <li>
+        <a href="https://www.tbc.co/press-releases/aws-partnership"
+           target="_blank" rel="noopener">
+          The Biological Computing Co. (2026).
+          AWS collaboration announcement.
+        </a>
+      </li>
+
+      <li>
+        <a href="https://www.nationalgeographic.com/science/article/brain-cells-organoids-computers-ai-energy"
+           target="_blank" rel="noopener">
+          National Geographic (2025).
+          Reporting on biological computing,
+          brain organoids and AI energy demand.
+        </a>
+      </li>
+    </ol>
+
+    <p>
+      These notes combine peer-reviewed research,
+      institutional data, science journalism and
+      company information. Commercial claims are
+      not treated as independent experimental validation.
+    </p>
+  </div>
+</article>
+
+<article class="article">
+  <div class="bar">
+    <span>📂 related_files</span>
+    <span>browse ↗</span>
+  </div>
+  <div class="inside">
+    <div class="more">
+      <a href="organoid-intelligence.html">↗ Organoid Intelligence</a>
+      <a href="brain-organoids.html">↗ Brain Organoids</a>
+      <a href="neurodegenerative-disease-models.html">↗ Disease Models</a>
+      <a href="neuropharmacology-neurotoxicity.html">↗ Neuropharmacology &amp; Neurotoxicity</a>
+      <a href="research.html">↗ My Electrophysiology Research</a>
+    </div>
+  </div>
+</article>
+
+<p class="crumb">
+  <a href="index.html">← back to home</a>
+</p>
+</main>
+
+<footer>© 2026 Any Rodrigues | just curiosity.</footer>
+</div>
+</body>
+</html>
