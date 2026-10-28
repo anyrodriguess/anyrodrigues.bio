@@ -1,0 +1,110 @@
+/* Research explorer and project windows only. */
+.research-page .window { border: 3px outset #fff;
+  background: #c8c8c8;
+  box-shadow: 3px 3px 0 #999;
+  margin-bottom: 25px; }
+.research-page .window-title { display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: linear-gradient(90deg, #101a83, #4775ae);
+  color: white;
+  padding: 6px 9px;
+  font-size: 12px;
+  font-weight: bold; }
+.research-page .window-buttons { display: flex;
+  gap: 4px; }
+.research-page .window-buttons span { display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: #c8c8c8;
+  border: 2px outset #fff;
+  color: #111;
+  line-height: 1; }
+.research-page .window-content { background: #fff;
+  border: 2px inset #ddd;
+  margin: 7px;
+  padding: 23px; }
+.research-page .window-content h2 { font-size: 20px;
+  line-height: 1.35;
+  margin: 0 0 16px; }
+.research-page .window-content h3 { font-size: 15px;
+  margin: 20px 0 8px; }
+.research-page .window-content p { margin: 0 0 13px;
+  max-width: 82ch; }
+.research-page .file-grid { display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px; }
+.research-page .file { border: 2px outset #fff;
+  background: #ededed;
+  padding: 18px;
+  display: block;
+  text-decoration: none;
+  color: #111; }
+.research-page .file:hover { background: #e1e8ff;
+  color: #111;
+  outline: 2px solid #101a83; }
+.research-page .file .icon { font-size: 32px;
+  display: block;
+  margin-bottom: 8px; }
+.research-page .file strong { display: block;
+  font-size: 16px; }
+.research-page .file small { display: block;
+  color: #555;
+  margin-top: 7px; }
+.research-page .meta { font-size: 11px;
+  color: #555; }
+.research-page .label { font-weight: bold;
+  color: #101a83; }
+.research-page .two-col { display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 20px; }
+.research-page .divider { border: 0;
+  border-top: 1px dashed #888;
+  margin: 20px 0; }
+.research-page .tag { display: inline-block;
+  border: 1px solid #777;
+  background: #eee;
+  padding: 2px 7px;
+  margin: 3px;
+  font-size: 11px; }
+.research-page .note { border-left: 3px solid #101a83;
+  padding: 8px 13px;
+  background: #f2f2f2; }
+.research-page .window-content ul { padding-left: 23px;
+  margin: 0 0 16px; }
+.research-page .window-content li { margin-bottom: 7px; }
+.research-page .terminal { background: #070707;
+  color: #7dfb93;
+  border: 3px ridge #777;
+  padding: 18px;
+  font-size: 12px;
+  line-height: 1.8; }
+.research-page .terminal p { margin: 0 0 8px; }
+.research-page .terminal a { color: #9ecbff; }
+.research-page .media { max-width: 100%;
+  height: auto;
+  border: 2px inset #aaa;
+  background: #eee; }
+.research-page .media-caption { font-size: 11px;
+  color: #555; }
+.research-page video { max-width: 100%;
+  height: auto; }
+/* Research-only content styles. Global header, navigation, page shell and name
+   are owned by style.css, exactly as on the homepage. */
+.research-page .window-content {font-family: "Times New Roman",Times,serif; font-size:16px; line-height:1.5;}
+.research-page .window-content p {font-size:16px;line-height:1.5;margin:0 0 13px;}
+.research-page .window-content h2 {font-family:"Times New Roman",Times,serif;font-size:23px;}
+.research-page .window-content h3 {font-family:"Courier New",monospace;}
+.research-page .window-title {background:#000080;color:#fff;font-family:"Courier New",monospace;font-weight:bold;}
+.research-page .window {margin-bottom:20px;}
+.research-page .file:hover {color:#111;}
+.research-page .file:visited {color:#111;}
+.research-page .terminal {margin-top:10px;}
+.research-page .back {font-size:12px;}
+@media (max-width:720px){
+ .research-page .file-grid,.research-page .two-col {grid-template-columns:1fr;}
+ .research-page .window-content {padding:15px;}
+}
