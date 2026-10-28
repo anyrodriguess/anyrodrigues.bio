@@ -1,163 +1,808 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="An independent scientific exploration of organoid intelligence, closed-loop electrophysiology, DishBrain, and biological computing by Any Rodrigues.">
+<meta name="description" content="Personal notes on organoid intelligence, electrophysiology, and biological computing by Any Rodrigues.">
 <title>Organoid Intelligence | Any Rodrigues</title>
 <link rel="stylesheet" href="style.css">
+
 <style>
-/* Page-specific additions. Existing site styles in style.css remain in effect. */
-.oi-page {max-width: 1080px; margin: 0 auto;}
-.oi-breadcrumb {font-family:monospace;font-size:.83rem;margin:1.25rem 0;color:#52637b}
-.oi-breadcrumb a {color:#1555b5}
-.oi-intro {font-size:1.06rem;line-height:1.8;max-width:75ch}
-.oi-kicker {font:700 .78rem monospace;letter-spacing:.1em;text-transform:uppercase;color:#2863ae}
-.oi-headline {font-size:clamp(2rem,5vw,3.8rem);line-height:1.12;margin:.35rem 0 1rem}
-.oi-subtitle {font-size:1.12rem;line-height:1.65;max-width:66ch;color:#3c506a}
-.oi-panel {border:2px solid #1c355d;background:#fff;box-shadow:5px 5px 0 #c4d3e6;margin:1.7rem 0}
-.oi-panelbar {background:#183d79;color:white;padding:.55rem .85rem;font:700 .84rem monospace;display:flex;justify-content:space-between;gap:1rem}
-.oi-panelcontent {padding:clamp(1rem,3vw,2rem)}
-.oi-panelcontent p,.oi-panelcontent li {line-height:1.75}
-.oi-panelcontent h2 {margin:0 0 1rem;font-size:1.55rem}
-.oi-panelcontent h3 {font-size:1.12rem;margin:1.6rem 0 .5rem}
-.oi-panelcontent a {color:#1555b5;text-underline-offset:3px}
-.oi-panelcontent sup a {font-size:.78rem;white-space:nowrap}
-.oi-contents {display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.6rem}
-.oi-contents a {display:block;padding:.65rem .75rem;background:#edf3fb;border:1px solid #bacde5;font-family:monospace;font-size:.86rem;text-decoration:none}
-.oi-contents a:hover {background:#d9e8fc}
-.oi-three {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem}
-.oi-three div {border:1px solid #a9bedb;background:#f2f6fd;padding:1rem}
-.oi-three strong {display:block;font-family:monospace;color:#174c91;margin-bottom:.45rem}
-.oi-timeline {border-left:3px solid #316ab2;margin-left:.5rem;padding-left:1.2rem}
-.oi-timeline article {position:relative;padding-bottom:1rem}
-.oi-timeline article:before {content:"";position:absolute;left:-1.64rem;top:.4rem;width:.7rem;height:.7rem;border:2px solid #316ab2;background:#fff;border-radius:50%}
-.oi-year {font:700 .85rem monospace;color:#245b9e}
-.oi-gif {border:2px dashed #6f92c0;background:repeating-linear-gradient(0deg,#eaf1fb,#eaf1fb 15px,#e3ecf8 16px);min-height:260px;display:flex;align-items:center;justify-content:center;text-align:center;padding:1.5rem}
-.oi-gif img {display:block;width:100%;height:auto;max-height:460px;object-fit:contain}
-.oi-gif-placeholder {font-family:monospace;color:#315784}
-.oi-note {border-left:4px solid #356db4;background:#edf4fd;padding:1rem 1.2rem;margin:1.2rem 0;line-height:1.65}
-.oi-links {display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.8rem}
-.oi-link {padding:1rem;border:1px solid #b8cbe4;background:#f5f8fd}
-.oi-link strong {display:block;margin-bottom:.4rem}
-.oi-link small {display:block;line-height:1.5;color:#4e6076}
-.oi-references {padding-left:1.5rem;overflow-wrap:anywhere}
-.oi-references li {padding:.25rem 0}
-.oi-footer-nav {display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:monospace;margin:2rem 0}
-@media(max-width:600px){.oi-panel {box-shadow:3px 3px 0 #c4d3e6}.oi-panelcontent {padding:1rem}.oi-headline {font-size:2.15rem}}
+.oi-page {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.oi-breadcrumb {
+  font-family: monospace;
+  font-size: .83rem;
+  margin: 1.25rem 0;
+  color: #52637b;
+}
+.oi-intro {
+  font-size: 1.06rem;
+  line-height: 1.8;
+  max-width: 75ch;
+}
+.oi-kicker {
+  font: 700 .78rem monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #2863ae;
+}
+.oi-headline {
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  line-height: 1.12;
+  margin: .35rem 0 1rem;
+}
+.oi-subtitle {
+  font-size: 1.12rem;
+  line-height: 1.65;
+  max-width: 66ch;
+  color: #3c506a;
+}
+.oi-panel {
+  border: 2px solid #1c355d;
+  background: #fff;
+  box-shadow: 5px 5px 0 #c4d3e6;
+  margin: 1.7rem 0;
+}
+.oi-panelbar {
+  background: #183d79;
+  color: white;
+  padding: .55rem .85rem;
+  font: 700 .84rem monospace;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.oi-panelcontent {
+  padding: clamp(1rem, 3vw, 2rem);
+}
+.oi-panelcontent p,
+.oi-panelcontent li {
+  line-height: 1.75;
+}
+.oi-panelcontent h2 {
+  margin: 0 0 1rem;
+  font-size: 1.55rem;
+}
+.oi-panelcontent h3 {
+  font-size: 1.12rem;
+  margin: 1.6rem 0 .5rem;
+}
+.oi-panelcontent a {
+  color: #1555b5;
+  text-underline-offset: 3px;
+}
+.oi-panelcontent sup a {
+  font-size: .78rem;
+  white-space: nowrap;
+}
+.oi-contents {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: .6rem;
+}
+.oi-contents a {
+  display: block;
+  padding: .65rem .75rem;
+  background: #edf3fb;
+  border: 1px solid #bacde5;
+  font-family: monospace;
+  font-size: .86rem;
+  text-decoration: none;
+}
+.oi-contents a:hover {
+  background: #d9e8fc;
+}
+.oi-timeline {
+  border-left: 3px solid #316ab2;
+  margin-left: .5rem;
+  padding-left: 1.2rem;
+}
+.oi-timeline article {
+  position: relative;
+  padding-bottom: 1rem;
+}
+.oi-timeline article:before {
+  content: "";
+  position: absolute;
+  left: -1.64rem;
+  top: .4rem;
+  width: .7rem;
+  height: .7rem;
+  border: 2px solid #316ab2;
+  background: #fff;
+  border-radius: 50%;
+}
+.oi-year {
+  font: 700 .85rem monospace;
+  color: #245b9e;
+}
+.oi-gif {
+  border: 2px dashed #6f92c0;
+  background: #eaf1fb;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+.oi-gif-placeholder {
+  font-family: monospace;
+  color: #315784;
+}
+.oi-note {
+  border-left: 4px solid #356db4;
+  background: #edf4fd;
+  padding: 1rem 1.2rem;
+  margin: 1.2rem 0;
+  line-height: 1.65;
+}
+.oi-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: .8rem;
+}
+.oi-link {
+  padding: 1rem;
+  border: 1px solid #b8cbe4;
+  background: #f5f8fd;
+}
+.oi-link strong {
+  display: block;
+  margin-bottom: .4rem;
+}
+.oi-link small {
+  display: block;
+  line-height: 1.5;
+  color: #4e6076;
+}
+.oi-references {
+  padding-left: 1.5rem;
+  overflow-wrap: anywhere;
+}
+.oi-references li {
+  padding: .25rem 0;
+}
+.oi-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-family: monospace;
+  margin: 2rem 0;
+}
+@media (max-width: 600px) {
+  .oi-panel {
+    box-shadow: 3px 3px 0 #c4d3e6;
+  }
+  .oi-panelcontent {
+    padding: 1rem;
+  }
+  .oi-headline {
+    font-size: 2.15rem;
+  }
+}
 </style>
 </head>
+
 <body id="top">
 <div class="page oi-page">
+
 <header class="site-header">
-  <div><h1>ANY RODRIGUES</h1><p class="subtitle">molecular bioengineer / neural interfaces / biological intelligence</p></div>
-  <div class="status-box"><div><div class="status-title">CURRENT FILE:</div><div><span class="online-dot"></span> organoid_intelligence.html</div><div class="tiny-status">scientific interests / evolving notes</div></div></div>
+  <div>
+    <h1>ANY RODRIGUES</h1>
+    <p class="subtitle">
+      molecular bioengineer / neural interfaces / biological intelligence
+    </p>
+  </div>
+  <div class="status-box">
+    <div>
+      <div class="status-title">CURRENT FILE:</div>
+      <div>
+        <span class="online-dot"></span>
+        organoid_intelligence.html
+      </div>
+      <div class="tiny-status">
+        scientific interests / evolving notes
+      </div>
+    </div>
+  </div>
 </header>
+
 <nav class="main-nav" aria-label="Main navigation">
-  <a href="index.html">HOME</a><a href="about-me.html">ABOUT</a><a href="research.html">RESEARCH</a><a href="Any_Rodrigues_CV.pdf" target="_blank" rel="noopener">CV</a><a href="mailto:anycgrodrigues@gmail.com">CONTACT</a>
+  <a href="index.html">HOME</a>
+  <a href="about-me.html">ABOUT</a>
+  <a href="research.html">RESEARCH</a>
+  <a href="Any_Rodrigues_CV.pdf" target="_blank">CV</a>
+  <a href="mailto:anycgrodrigues@gmail.com">CONTACT</a>
 </nav>
+
 <main>
-<p class="oi-breadcrumb"><a href="index.html">home</a> / current_interests.ini / <strong>organoid_intelligence.txt</strong></p>
-<section class="oi-panel"><div class="oi-panelbar"><span>📂 organoid_intelligence.txt</span><span>□ ×</span></div><div class="oi-panelcontent">
-  <div class="oi-kicker">Research interests / independent reading</div>
-  <h1 class="oi-headline">Can living neural networks learn?</h1>
-  <p class="oi-subtitle">From stem cells and brain organoids to closed-loop experiments and biological computing.</p>
-  <p class="oi-intro">What if a living neuronal network could receive information, respond to a digital environment, and change its behavior through experience? <strong>Organoid Intelligence (OI)</strong> brings together stem cell biology, electrophysiology, and computation to explore questions like these. This page follows some of the scientific milestones that made that research possible, and the questions that remain open.</p>
-  <div class="oi-note"><strong>Scope:</strong> This is a personal scientific overview of an emerging research field, not a description of experiments I have performed. The work discussed below includes both <strong>2D neuronal cultures</strong> and <strong>3D brain organoids</strong>; they are not interchangeable.</div>
-</div></section>
-<section class="oi-panel"><div class="oi-panelbar"><span>📑 directory / jump_to</span><span>01–07</span></div><div class="oi-panelcontent"><div class="oi-contents">
-<a href="#ambitions">01 / The OI vision</a><a href="#milestones">02 / How we got here</a><a href="#electrophysiology">03 / Reading neural activity</a><a href="#dishbrain">04 / DishBrain (2D)</a><a href="#biocomputing">05 / Biological computing today</a><a href="#questions">06 / What's still unknown?</a><a href="#references">07 / References</a>
-</div></div></section>
-<section class="oi-panel" id="ambitions"><div class="oi-panelbar"><span>01 / oi_manifesto.ini</span><span>★</span></div><div class="oi-panelcontent">
-<h2>Three ambitions behind Organoid Intelligence</h2>
-<p>The interdisciplinary OI framework articulated by Smirnova and colleagues in 2023 describes a research program for using brain organoids to study learning and memory, develop human-relevant models, and explore biological information processing.<sup><a href="#ref-1">[1]</a></sup></p>
-<div class="oi-three">
-<div><strong>01 / Understand</strong>Investigate the cellular and network processes associated with learning, memory, and human brain function.</div>
-<div><strong>02 / Model</strong>Develop human-relevant experimental systems for neurological disease research, neurotoxicity, and drug discovery.</div>
-<div><strong>03 / Compute</strong>Explore whether living neural networks can complement silicon-based information processing.</div>
+
+<p class="oi-breadcrumb">
+  <a href="index.html">home</a> /
+  current_interests.ini /
+  <strong>organoid_intelligence.txt</strong>
+</p>
+
+<!-- INTRODUCTION -->
+
+<section class="oi-panel">
+  <div class="oi-panelbar">
+    <span>📂 organoid_intelligence.txt</span>
+    <span>□ ×</span>
+  </div>
+  <div class="oi-panelcontent">
+    <div class="oi-kicker">
+      a little corner of my scientific curiosity
+    </div>
+
+    <h1 class="oi-headline">
+      Can living neural networks learn?
+    </h1>
+
+    <p class="oi-subtitle">
+      From stem cells and brain organoids to closed-loop
+      experiments and biological computing.
+    </p>
+
+    <p class="oi-intro">
+      What if a living neuronal network could receive
+      information, respond to a digital environment,
+      and change its behavior through experience?
+      <strong>Organoid Intelligence (OI)</strong> brings
+      together stem cell biology, electrophysiology,
+      and computation to explore questions like these.
+      I started reading about it because the idea
+      sounded almost like science fiction.
+      The more I read, the more questions I had.
+    </p>
+  </div>
+</section>
+
+<!-- DIRECTORY -->
+
+<section class="oi-panel">
+  <div class="oi-panelbar">
+    <span>📑 directory / jump_to</span>
+    <span>01–07</span>
+  </div>
+  <div class="oi-panelcontent">
+    <div class="oi-contents">
+      <a href="#ambitions">01 / Why this caught my attention</a>
+      <a href="#milestones">02 / How we got here</a>
+      <a href="#electrophysiology">03 / Reading neural activity</a>
+      <a href="#dishbrain">04 / DishBrain (2D)</a>
+      <a href="#biocomputing">05 / Biological computing today</a>
+      <a href="#questions">06 / What's still unknown?</a>
+      <a href="#references">07 / References</a>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAL INTEREST -->
+
+<section class="oi-panel" id="ambitions">
+  <div class="oi-panelbar">
+    <span>01 / why_this_is_cool.txt</span>
+    <span>★</span>
+  </div>
+  <div class="oi-panelcontent">
+    <h2>Why does this interest me so much?</h2>
+
+    <p>
+      I have spent a lot of time recording electrical activity
+      from living neural preparations. But I keep coming back
+      to a different question: what happens when we stop just
+      listening and start interacting with those networks?
+    </p>
+
+    <p>
+      The idea that a neural culture could receive signals
+      from a computer, respond, and potentially change its
+      responses over time is what drew me to Organoid
+      Intelligence. The 2023 OI paper by Smirnova and
+      colleagues gave a name to some of these possibilities.
+      <sup><a href="#ref-1">[1]</a></sup>
+    </p>
+
+    <p>
+      I'm especially curious about the space between
+      <a href="neural-electrophysiology.html">electrophysiology</a>,
+      <a href="neural-plasticity.html">plasticity</a>, and
+      <a href="biological-computation.html">biological computation</a>.
+      I haven't worked with brain organoids myself yet;
+      this is where I'm collecting the experiments and ideas
+      I want to understand better.
+    </p>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+
+<section class="oi-panel" id="milestones">
+  <div class="oi-panelbar">
+    <span>02 / timeline.exe</span>
+    <span>1990s → now</span>
+  </div>
+  <div class="oi-panelcontent">
+
+    <h2>How did we get here?</h2>
+
+    <div class="oi-timeline">
+
+      <article>
+        <div class="oi-year">2006–2007 / iPSCs</div>
+        <p>
+          Takahashi and Yamanaka showed that differentiated
+          cells could be reprogrammed into induced pluripotent
+          stem cells (iPSCs), first in mice and subsequently
+          in humans. Human iPSCs made it possible to generate
+          patient-derived neural cells for laboratory research.
+          <sup><a href="#ref-2">[2]</a></sup>
+          <sup><a href="#ref-3">[3]</a></sup>
+        </p>
+      </article>
+
+      <article id="brain-organoids">
+        <div class="oi-year">2013 / cerebral organoids</div>
+        <p>
+          Lancaster and colleagues developed self-organizing
+          cerebral organoids that reproduced selected features
+          of early human brain development. They also
+          demonstrated their value for investigating primary
+          microcephaly.
+          <sup><a href="#ref-4">[4]</a></sup>
+          These models are powerful, but they are not
+          miniature, fully functional human brains.
+        </p>
+      </article>
+
+      <article>
+        <div class="oi-year">2016 / Zika and disease modeling</div>
+        <p>
+          Brain organoids and related human neural models
+          helped researchers examine how Zika virus infection
+          disrupts neural progenitors and developing tissue.
+          <sup><a href="#ref-5">[5]</a></sup>
+        </p>
+      </article>
+
+      <article>
+        <div class="oi-year">2017 / assembloids</div>
+        <p>
+          Birey, Pașca, and colleagues assembled region-specific
+          neural spheroids to study human interneuron migration
+          and interactions between distinct forebrain-like regions.
+          <sup><a href="#ref-6">[6]</a></sup>
+        </p>
+      </article>
+
+      <article>
+        <div class="oi-year">2019 / network oscillations</div>
+        <p>
+          Trujillo, Muotri, and colleagues reported increasingly
+          complex oscillatory activity in developing cortical
+          organoids. Some features were compared with patterns
+          in premature infant EEG recordings, but this does
+          not establish infant-like cognition.
+          <sup><a href="#ref-7">[7]</a></sup>
+        </p>
+      </article>
+
+      <article>
+        <div class="oi-year">2022 / DishBrain</div>
+        <p>
+          Cultured neurons were connected to a simulated Pong
+          environment through a bidirectional electrophysiological
+          interface. DishBrain used 2D neuronal cultures,
+          not brain organoids.
+          <sup><a href="#ref-8">[8]</a></sup>
+        </p>
+      </article>
+
+      <article>
+        <div class="oi-year">2023 / OI framework</div>
+        <p>
+          The OI roadmap brought together neuroscience,
+          organoid engineering, computation, and ethics
+          in a shared research agenda.
+          <sup><a href="#ref-1">[1]</a></sup>
+        </p>
+      </article>
+
+    </div>
+
+    <h3>Why not just grow larger organoids?</h3>
+
+    <p>
+      Many conventional organoids lack functional vasculature,
+      making oxygen and nutrient transport difficult as tissue
+      grows. Variability, incomplete maturation, and limited
+      access to deeper cells remain major challenges.
+      Perfusion, co-culture, vascularization strategies,
+      and organ-on-chip approaches may help address some
+      of these limitations.
+      <sup><a href="#ref-9">[9]</a></sup>
+    </p>
+
+    <p>
+      For a closer look at the models themselves,
+      see my <a href="brain-organoids.html">Brain Organoids</a> page.
+    </p>
+
+  </div>
+</section>
+
+<!-- ELECTROPHYSIOLOGY -->
+
+<section class="oi-panel" id="electrophysiology">
+  <div class="oi-panelbar">
+    <span>03 / signal_monitor.log</span>
+    <span>● REC</span>
+  </div>
+  <div class="oi-panelcontent">
+
+    <h2>From recording neurons to interacting with them</h2>
+
+    <p>
+      Electrical activity provides a functional readout of
+      neuronal networks. Microelectrode arrays (MEAs) can
+      record extracellular signals from multiple sites,
+      allowing researchers to examine firing, bursting,
+      synchronization, and responses to stimulation.
+    </p>
+
+    <p>
+      High-density MEAs provide more spatial sampling,
+      while three-dimensional organoids create additional
+      challenges for electrode contact and access
+      to internal cells.
+    </p>
+
+    <p>
+      A <strong>closed-loop system</strong> goes beyond
+      passive recording: measured neural activity affects
+      what the network receives next. The loop might
+      involve stimulation, recording, decoding, feedback,
+      and another stimulation cycle.
+    </p>
+
+    <div class="oi-note">
+      <strong>A question I keep returning to:</strong>
+      When a network changes its activity after repeated
+      feedback, what evidence would distinguish learning
+      from a temporary change in excitability?
+    </div>
+
+  </div>
+</section>
+
+<!-- DISHBRAIN -->
+
+<section class="oi-panel" id="dishbrain">
+  <div class="oi-panelbar">
+    <span>04 / dishbrain_pong.exe</span>
+    <span>2D CULTURE</span>
+  </div>
+  <div class="oi-panelcontent">
+
+    <h2>DishBrain: When neurons played Pong</h2>
+
+    <p>
+      In 2022, Kagan and colleagues at
+      <a href="https://corticallabs.com/" target="_blank" rel="noopener">
+        Cortical Labs
+      </a>
+      reported an experiment in which approximately
+      800,000 cultured neurons were interfaced with
+      a simplified version of Pong through a high-density
+      microelectrode array.
+      <sup><a href="#ref-8">[8]</a></sup>
+    </p>
+
+    <p>
+      The interface translated aspects of the game into
+      electrical stimulation and used neuronal activity
+      to influence the paddle. The researchers compared
+      structured and unstructured feedback conditions
+      and reported improvements in performance during
+      closed-loop interaction.
+    </p>
+
+    <div class="oi-note">
+      <strong>Important distinction:</strong>
+      DishBrain's neuronal networks were grown as
+      two-dimensional cultures, using human
+      stem-cell-derived neurons or mouse embryonic
+      cortical neurons. This was not an experiment
+      with a 3D brain organoid.
+    </div>
+
+    <h3>Why this matters for OI</h3>
+
+    <p>
+      DishBrain showed how living neural networks can
+      be connected to an interactive digital environment.
+      OI researchers are exploring how related questions
+      might be studied in three-dimensional human neural
+      models.
+    </p>
+
+    <h3>Visual experiment / reserved GIF</h3>
+
+    <div class="oi-gif">
+      <div class="oi-gif-placeholder">
+        [ INSERT GIF HERE ]
+        <br><br>
+        neurons ↔ electrodes ↔ digital world
+        <br><br>
+        Original pixel-art animation could go here.
+      </div>
+    </div>
+
+    <p>
+      <small>
+        Visual placeholder for an original animation,
+        not experimental footage.
+      </small>
+    </p>
+
+  </div>
+</section>
+
+<!-- BIOLOGICAL COMPUTING -->
+
+<section class="oi-panel" id="biocomputing">
+  <div class="oi-panelbar">
+    <span>05 / biological_computing.url</span>
+    <span>↗ LINKS</span>
+  </div>
+  <div class="oi-panelcontent">
+
+    <h2>Biological computing is moving beyond individual experiments</h2>
+
+    <p>
+      Several groups are developing platforms that make
+      living neural systems accessible through integrated
+      hardware and software. Their approaches differ:
+      some work primarily with 2D neuronal cultures,
+      while others use three-dimensional brain organoids.
+    </p>
+
+    <div class="oi-links">
+
+      <div class="oi-link">
+        <strong>
+          <a href="https://corticallabs.com/" target="_blank" rel="noopener">
+            Cortical Labs ↗
+          </a>
+        </strong>
+        <small>
+          Developer of DishBrain and the CL1 platform,
+          connecting living neuronal cultures to
+          digital systems.
+        </small>
+      </div>
+
+      <div class="oi-link">
+        <strong>
+          <a href="https://corticallabs.com/cloud.html" target="_blank" rel="noopener">
+            Cortical Cloud ↗
+          </a>
+        </strong>
+        <small>
+          Remote-access approach for experiments
+          with compatible biological computing hardware.
+        </small>
+      </div>
+
+      <div class="oi-link">
+        <strong>
+          <a href="https://finalspark.com/" target="_blank" rel="noopener">
+            FinalSpark ↗
+          </a>
+        </strong>
+        <small>
+          Developer of the Neuroplatform for experiments
+          with living neural tissue, including brain organoids.
+          <sup><a href="#ref-10">[10]</a></sup>
+        </small>
+      </div>
+
+    </div>
+
+    <p>
+      I find these projects interesting because they turn
+      biological computing from a theoretical idea into
+      something researchers can actually experiment with.
+      Whether such systems will become useful computing
+      technologies is still an open question.
+    </p>
+
+  </div>
+</section>
+
+<!-- QUESTIONS -->
+
+<section class="oi-panel" id="questions">
+  <div class="oi-panelbar">
+    <span>06 / unanswered_questions.txt</span>
+    <span>?</span>
+  </div>
+  <div class="oi-panelcontent">
+
+    <h2>What do we still need to understand?</h2>
+
+    <ul>
+      <li>
+        How can we distinguish genuine learning from
+        short-term changes in neural activity?
+      </li>
+      <li>
+        How does tissue maturity influence network behavior?
+      </li>
+      <li>
+        How can we record from deeper regions of organoids?
+      </li>
+      <li>
+        Could biological networks adapt to increasingly
+        complex feedback?
+      </li>
+      <li>
+        Could these systems help us study neurological
+        disease or neurotoxicity?
+      </li>
+      <li>
+        At what point might their complexity raise
+        new ethical questions?
+      </li>
+    </ul>
+
+    <p>
+      For me, the most compelling part of OI is the
+      possibility of designing experiments to understand
+      how living neural networks process signals,
+      adapt to feedback, and interact with their environment.
+    </p>
+
+    <p>
+      <strong>Related interests:</strong>
+      <a href="brain-organoids.html">Brain Organoids</a> ·
+      <a href="neural-electrophysiology.html">Neural Electrophysiology</a> ·
+      <a href="neuropharmacology-neurotoxicity.html">
+        Neuropharmacology &amp; Neurotoxicity
+      </a>
+    </p>
+
+  </div>
+</section>
+
+<!-- REFERENCES -->
+
+<section class="oi-panel" id="references">
+  <div class="oi-panelbar">
+    <span>07 / bibliography.bib</span>
+    <span>REFERENCES</span>
+  </div>
+  <div class="oi-panelcontent">
+
+    <h2>References &amp; further reading</h2>
+
+    <ol class="oi-references">
+
+      <li id="ref-1">
+        Smirnova L. et al. (2023).
+        Organoid intelligence (OI): the new frontier
+        in biocomputing and intelligence-in-a-dish.
+        <em>Frontiers in Science.</em>
+        <a href="https://doi.org/10.3389/fsci.2023.1017235">DOI ↗</a>
+      </li>
+
+      <li id="ref-2">
+        Takahashi K. &amp; Yamanaka S. (2006).
+        Induction of pluripotent stem cells from mouse
+        embryonic and adult fibroblast cultures by defined factors.
+        <em>Cell.</em>
+        <a href="https://doi.org/10.1016/j.cell.2006.07.024">DOI ↗</a>
+      </li>
+
+      <li id="ref-3">
+        Takahashi K. et al. (2007).
+        Induction of pluripotent stem cells from adult
+        human fibroblasts by defined factors.
+        <em>Cell.</em>
+        <a href="https://doi.org/10.1016/j.cell.2007.11.019">DOI ↗</a>
+      </li>
+
+      <li id="ref-4">
+        Lancaster M. A. et al. (2013).
+        Cerebral organoids model human brain development
+        and microcephaly.
+        <em>Nature.</em>
+        <a href="https://doi.org/10.1038/nature12517">DOI ↗</a>
+      </li>
+
+      <li id="ref-5">
+        Qian X. et al. (2016).
+        Brain-region-specific organoids using
+        mini-bioreactors for modeling ZIKV exposure.
+        <em>Cell.</em>
+        <a href="https://doi.org/10.1016/j.cell.2016.04.032">DOI ↗</a>
+      </li>
+
+      <li id="ref-6">
+        Birey F. et al. (2017).
+        Assembly of functionally integrated human
+        forebrain spheroids.
+        <em>Nature.</em>
+        <a href="https://doi.org/10.1038/nature22330">DOI ↗</a>
+      </li>
+
+      <li id="ref-7">
+        Trujillo C. A. et al. (2019).
+        Complex oscillatory waves emerging from cortical
+        organoids model early human brain network development.
+        <em>Cell Stem Cell.</em>
+        <a href="https://doi.org/10.1016/j.stem.2019.08.002">DOI ↗</a>
+      </li>
+
+      <li id="ref-8">
+        Kagan B. J. et al. (2022).
+        In vitro neurons learn and exhibit sentience
+        when embodied in a simulated game-world.
+        <em>Neuron.</em>
+        <a href="https://doi.org/10.1016/j.neuron.2022.09.001">DOI ↗</a>
+        <small>
+          The interpretation of "sentience" in this paper
+          remains debated.
+        </small>
+      </li>
+
+      <li id="ref-9">
+        Lancaster M. A. &amp; Knoblich J. A. (2014).
+        Organogenesis in a dish: modeling development
+        and disease using organoid technologies.
+        <em>Science.</em>
+        <a href="https://doi.org/10.1126/science.1247125">DOI ↗</a>
+      </li>
+
+      <li id="ref-10">
+        Jordan J. et al. (2024).
+        The Neuroplatform: an open-source platform
+        for training and stimulating biological neural networks.
+        <em>Frontiers in Artificial Intelligence.</em>
+        <a href="https://doi.org/10.3389/frai.2024.1376042">DOI ↗</a>
+      </li>
+
+    </ol>
+
+    <p>
+      <small>
+        Independent reading notes by Any Rodrigues.
+        This is a personal collection of scientific interests,
+        not a systematic literature review.
+      </small>
+    </p>
+
+  </div>
+</section>
+
+<div class="oi-footer-nav">
+  <a href="index.html">← back to homepage</a>
+  <a href="#top">↑ back to top</a>
 </div>
-<p>These ambitions are connected, but none is fully achieved. A neural network showing an adaptive response is not equivalent to a human brain, and a proof-of-concept biological computer is not yet a general-purpose alternative to conventional hardware.</p>
-</div></section>
-<section class="oi-panel" id="milestones"><div class="oi-panelbar"><span>02 / timeline.exe</span><span>1990s → now</span></div><div class="oi-panelcontent">
-<h2>How did we get here?</h2>
-<div class="oi-timeline">
-<article><div class="oi-year">2006–2007 / iPSCs</div><p>Takahashi and Yamanaka showed that differentiated cells could be reprogrammed into induced pluripotent stem cells (iPSCs), first in mice and subsequently in humans. Human iPSCs made it possible to generate patient-derived neural cells for laboratory research.<sup><a href="#ref-2">[2]</a></sup><sup><a href="#ref-3">[3]</a></sup></p></article>
-<article id="brain-organoids"><div class="oi-year">2013 / cerebral organoids</div><p>Lancaster and colleagues developed self-organizing cerebral organoids that reproduced selected features of early human brain development. They also demonstrated their value for investigating primary microcephaly.<sup><a href="#ref-4">[4]</a></sup> These models are powerful, but they are not miniature, fully functional human brains.</p></article>
-<article><div class="oi-year">2016 / Zika and disease modeling</div><p>Brain organoids and related human neural models helped researchers examine how Zika virus infection disrupts neural progenitors and developing tissue, illustrating the value of human-derived systems for studying disease mechanisms.<sup><a href="#ref-5">[5]</a></sup></p></article>
-<article><div class="oi-year">2017 / assembloids</div><p>Birey, Pașca, and colleagues assembled region-specific neural spheroids to study human interneuron migration and interactions between distinct forebrain-like regions.<sup><a href="#ref-6">[6]</a></sup></p></article>
-<article><div class="oi-year">2019 / network oscillations</div><p>Trujillo, Muotri, and colleagues reported increasingly complex oscillatory activity in developing cortical organoids. Some features were compared with patterns in premature infant EEG recordings, but this does <em>not</em> establish infant-like cognition.<sup><a href="#ref-7">[7]</a></sup></p></article>
-<article><div class="oi-year">2022 / DishBrain</div><p>Cultured neurons were connected to a simulated Pong environment through a bidirectional electrophysiological interface. Importantly, <strong>DishBrain used 2D neuronal cultures, not brain organoids</strong>.<sup><a href="#ref-8">[8]</a></sup></p></article>
-<article><div class="oi-year">2023 / OI framework</div><p>The OI roadmap brought together neuroscience, organoid engineering, computation, and ethics in a shared research agenda.<sup><a href="#ref-1">[1]</a></sup></p></article>
-</div>
-<h3>Why not just grow larger organoids?</h3>
-<p>Many conventional organoids lack functional vasculature, making oxygen and nutrient transport difficult as tissue grows. Variability, incomplete maturation, and limited access to deeper cells remain major challenges. Perfusion, co-culture, vascularization strategies, and organ-on-chip approaches may help address some of these limitations, although they do not automatically make organoids equivalent to intact brains.<sup><a href="#ref-9">[9]</a></sup></p>
-<p>For a closer look at the models themselves, this topic belongs on my <a href="brain-organoids.html">Brain Organoids</a> page.</p>
-</div></section>
-<section class="oi-panel" id="electrophysiology"><div class="oi-panelbar"><span>03 / signal_monitor.log</span><span>● REC</span></div><div class="oi-panelcontent">
-<h2>From recording neurons to interacting with them</h2>
-<p>Electrical activity provides a functional readout of neuronal networks. Microelectrode arrays (MEAs) can record extracellular signals from multiple sites, allowing researchers to examine firing, bursting, synchronization, and responses to chemical or electrical stimulation. High-density MEAs provide more spatial sampling, while three-dimensional organoids create additional challenges for electrode contact and access to internal cells.</p>
-<p>A <strong>closed-loop system</strong> goes beyond passive recording: measured neural activity affects what the network receives next. The loop might involve stimulation, recording, decoding, feedback, and another stimulation cycle. This makes it possible to test how activity changes through interaction with an environment.</p>
-<div class="oi-note"><strong>A question I keep returning to:</strong> When a network changes its activity after repeated feedback, what evidence would distinguish learning from a temporary change in excitability?</div>
-</div></section>
-<section class="oi-panel" id="dishbrain"><div class="oi-panelbar"><span>04 / dishbrain_pong.exe</span><span>2D CULTURE</span></div><div class="oi-panelcontent">
-<h2>DishBrain: When neurons played Pong</h2>
-<p>In 2022, Kagan and colleagues at <a href="https://corticallabs.com/" target="_blank" rel="noopener">Cortical Labs</a> reported an experiment in which approximately 800,000 cultured neurons were interfaced with a simplified version of Pong through a high-density microelectrode array.<sup><a href="#ref-8">[8]</a></sup></p>
-<p>The interface translated aspects of the game into electrical stimulation and used neuronal activity to influence the paddle. The researchers compared structured and unstructured feedback conditions and reported improvements in performance during closed-loop interaction.</p>
-<div class="oi-note"><strong>Important distinction:</strong> DishBrain's neuronal networks were grown as <strong>two-dimensional cultures</strong>, using human stem-cell-derived neurons or mouse embryonic cortical neurons. The experiment was a milestone for <em>synthetic biological intelligence</em> and closed-loop neuronal systems, <strong>not a demonstration that a 3D brain organoid played Pong</strong>. Nor does task adaptation imply human-like understanding or consciousness.</div>
-<h3>Why this matters for OI</h3>
-<p>DishBrain showed how living neural networks can be connected to an interactive digital environment. OI researchers are exploring how related questions might be studied in three-dimensional human neural models, where tissue architecture, cell diversity, and access to neurons pose different experimental challenges.</p>
-<h3>Visual experiment / reserved GIF</h3>
-<div class="oi-gif">
-  <!-- To add your own licensed/original GIF, replace the placeholder div with:
-       <img src="images/organoid-doom.gif" alt="Illustration of a neuronal culture connected to a Doom-like digital environment">
-       Keep the GIF in your GitHub repository at images/organoid-doom.gif.
-       If it is an artistic animation, caption it as a conceptual illustration, not real experimental footage. -->
-  <div class="oi-gif-placeholder">[ INSERT GIF HERE ]<br><br>neurons ↔ electrodes ↔ digital world<br><br>Suggested: original pixel-art animation of a neural culture<br>interacting with a Doom-like environment</div>
-</div>
-<p><small>Visual placeholder. Any future animation should clearly distinguish artistic visualization from recorded scientific evidence.</small></p>
-</div></section>
-<section class="oi-panel" id="biocomputing"><div class="oi-panelbar"><span>05 / biological_computing.url</span><span>↗ LINKS</span></div><div class="oi-panelcontent">
-<h2>Biological computing is moving beyond individual experiments</h2>
-<p>Several groups are developing platforms that make living neural systems accessible through integrated hardware and software. Their approaches differ: some work primarily with 2D neuronal cultures, while others use three-dimensional brain organoids.</p>
-<div class="oi-links">
-<div class="oi-link"><strong><a href="https://corticallabs.com/" target="_blank" rel="noopener">Cortical Labs ↗</a></strong><small>Developer of DishBrain and the CL1 platform, connecting living neuronal cultures to digital systems for recording, stimulation, and experimentation.</small></div>
-<div class="oi-link"><strong><a href="https://corticallabs.com/cloud.html" target="_blank" rel="noopener">Cortical Cloud ↗</a></strong><small>Remote access concept for experimenting with compatible biological computing hardware through software interfaces. Check the provider for current access and capabilities.</small></div>
-<div class="oi-link"><strong><a href="https://finalspark.com/" target="_blank" rel="noopener">FinalSpark ↗</a></strong><small>Developer of a remote-access Neuroplatform for electrophysiological experiments with living neural tissue, including brain organoids.<sup><a href="#ref-10">[10]</a></sup></small></div>
-</div>
-<p>These platforms make biological computing more tangible, but comparisons with silicon computing need careful benchmarks. Energy claims, for example, must include the equipment required to keep cells alive and the electronics that operate the interface. Biological adaptability is fascinating; general-purpose computational superiority has not been established.</p>
-</div></section>
-<section class="oi-panel" id="questions"><div class="oi-panelbar"><span>06 / unanswered_questions.txt</span><span>?</span></div><div class="oi-panelcontent">
-<h2>What do we still need to understand?</h2>
-<ul>
-<li><strong>Learning:</strong> How can experiments distinguish lasting, experience-dependent adaptation from short-term changes in neural excitability?</li>
-<li><strong>Models:</strong> How do maturation, cellular composition, and tissue architecture affect network behavior?</li>
-<li><strong>Interfaces:</strong> How can we stimulate and record from three-dimensional tissue without losing access to deeper networks?</li>
-<li><strong>Reproducibility:</strong> Can results be compared reliably across organoids, donors, laboratories, and platforms?</li>
-<li><strong>Applications:</strong> Could adaptive network readouts eventually complement established functional neurotoxicity assays or disease models?</li>
-<li><strong>Ethics:</strong> Which kinds of neural complexity or experimental capability should prompt additional ethical scrutiny?</li>
-</ul>
-<p>For me, the most compelling part of OI is not the claim that a dish contains a tiny brain. It is the possibility of developing rigorous experiments to understand how living neural networks process signals, adapt to feedback, and respond to their environment.</p>
-<p><strong>Related interests:</strong> <a href="brain-organoids.html">Brain Organoids</a> · <a href="neural-electrophysiology.html">Neural Electrophysiology</a> · <a href="neuropharmacology-neurotoxicity.html">Neuropharmacology &amp; Neurotoxicity</a></p>
-</div></section>
-<section class="oi-panel" id="references"><div class="oi-panelbar"><span>07 / bibliography.bib</span><span>OPEN ACCESS WHEN AVAILABLE</span></div><div class="oi-panelcontent">
-<h2>References &amp; further reading</h2>
-<ol class="oi-references">
-<li id="ref-1">Smirnova L. et al. (2023). Organoid intelligence (OI): the new frontier in biocomputing and intelligence-in-a-dish. <em>Frontiers in Science.</em> <a href="https://doi.org/10.3389/fsci.2023.1017235" target="_blank" rel="noopener">DOI ↗</a></li>
-<li id="ref-2">Takahashi K. &amp; Yamanaka S. (2006). Induction of pluripotent stem cells from mouse embryonic and adult fibroblast cultures by defined factors. <em>Cell.</em> <a href="https://doi.org/10.1016/j.cell.2006.07.024" target="_blank" rel="noopener">DOI ↗</a></li>
-<li id="ref-3">Takahashi K. et al. (2007). Induction of pluripotent stem cells from adult human fibroblasts by defined factors. <em>Cell.</em> <a href="https://doi.org/10.1016/j.cell.2007.11.019" target="_blank" rel="noopener">DOI ↗</a></li>
-<li id="ref-4">Lancaster M. A. et al. (2013). Cerebral organoids model human brain development and microcephaly. <em>Nature.</em> <a href="https://doi.org/10.1038/nature12517" target="_blank" rel="noopener">DOI ↗</a></li>
-<li id="ref-5">Qian X. et al. (2016). Brain-region-specific organoids using mini-bioreactors for modeling ZIKV exposure. <em>Cell.</em> <a href="https://doi.org/10.1016/j.cell.2016.04.032" target="_blank" rel="noopener">DOI ↗</a></li>
-<li id="ref-6">Birey F. et al. (2017). Assembly of functionally integrated human forebrain spheroids. <em>Nature.</em> <a href="https://doi.org/10.1038/nature22330" target="_blank" rel="noopener">DOI ↗</a></li>
-<li id="ref-7">Trujillo C. A. et al. (2019). Complex oscillatory waves emerging from cortical organoids model early human brain network development. <em>Cell Stem Cell.</em> <a href="https://doi.org/10.1016/j.stem.2019.08.002" target="_blank" rel="noopener">DOI ↗</a></li>
-<li id="ref-8">Kagan B. J. et al. (2022). In vitro neurons learn and exhibit sentience when embodied in a simulated game-world. <em>Neuron.</em> <a href="https://doi.org/10.1016/j.neuron.2022.09.001" target="_blank" rel="noopener">DOI ↗</a> <small>(The paper's title uses “sentience”; that interpretation is debated and should not be treated as established consciousness.)</small></li>
-<li id="ref-9">Lancaster M. A. &amp; Knoblich J. A. (2014). Organogenesis in a dish: modeling development and disease using organoid technologies. <em>Science.</em> <a href="https://doi.org/10.1126/science.1247125" target="_blank" rel="noopener">DOI ↗</a></li>
-<li id="ref-10">Jordan J. et al. (2024). The Neuroplatform: an open-source platform for training and stimulating biological neural networks. <em>Frontiers in Artificial Intelligence.</em> <a href="https://doi.org/10.3389/frai.2024.1376042" target="_blank" rel="noopener">DOI ↗</a></li>
-</ol>
-<p><small>Independent reading notes by Any Rodrigues. This page is intended as a developing scientific overview, not a systematic review.</small></p>
-</div></section>
-<div class="oi-footer-nav"><a href="index.html">← back to homepage</a><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ back to top</a></div>
+
 </main>
-<footer>© 2026 Any Rodrigues | made with HTML | just curiosity.</footer>
+
+<footer>
+  © 2026 Any Rodrigues | made with HTML | just curiosity.
+</footer>
+
 </div>
 </body>
 </html>
