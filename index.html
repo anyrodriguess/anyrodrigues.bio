@@ -605,6 +605,46 @@
 
         </section>
 
+        <!-- EMBEDDED OFFICE ASSISTANT -->
+<style>
+/* Windows 98 Office Assistant */
+#clippy-widget{position:relative;width:min(440px,100%);margin:0 auto;background:#c0c0c0;color:#000;border:2px solid;border-color:#fff #404040 #404040 #fff;box-shadow:2px 2px 0 #000;font:12px Tahoma,"MS Sans Serif",Arial,sans-serif;text-align:left}
+#clippy-widget *{box-sizing:border-box}
+#clippy-widget .clippy-title{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(90deg,#000080,#1084d0);color:#fff;padding:3px 4px;font-weight:bold;letter-spacing:0}
+#clippy-widget button{font:12px Tahoma,"MS Sans Serif",Arial,sans-serif;background:#c0c0c0;color:#000;border:2px solid;border-color:#fff #555 #555 #fff;border-radius:0;box-shadow:1px 1px 0 #000;cursor:pointer;padding:5px 12px;min-width:58px}
+#clippy-widget button:active{border-color:#555 #fff #fff #555;box-shadow:none}
+#clippy-widget button:focus-visible{outline:1px dotted #000;outline-offset:2px}
+#clippy-widget .clippy-x{min-width:20px;width:20px;height:20px;padding:0;font-weight:bold;line-height:16px}
+#clippy-widget .clippy-inner{padding:10px}
+#clippy-widget .clippy-question{display:flex;align-items:center;gap:10px}
+#clippy-widget .clippy-art{width:105px;height:118px;object-fit:contain;flex-shrink:0}
+#clippy-widget .clippy-copy{line-height:1.5;flex:1}
+#clippy-widget .clippy-copy strong{display:block;margin-top:7px}
+#clippy-widget .clippy-actions{display:flex;justify-content:flex-end;gap:7px;margin-top:8px;flex-wrap:wrap}
+#clippy-widget .clippy-result{display:none;margin-top:12px;padding:9px;background:#fff;border:2px solid;border-color:#777 #fff #fff #777;line-height:1.5}
+#clippy-widget .clippy-result a{color:#000080;text-decoration:underline}
+.clippy-section{display:flex;justify-content:center;align-items:flex-start;margin:28px auto 38px;width:100%;padding:0 12px}
+@media(max-width:420px){#clippy-widget .clippy-art{width:78px;height:98px}}
+@media(prefers-reduced-motion:reduce){#clippy-widget .clippy-art{animation:none}}
+</style>
+<section class="clippy-section">
+<div id="clippy-widget" role="group" aria-label="Office Assistant question">
+  <div class="clippy-title"><span>📎 Office Assistant</span><span aria-hidden="true">□</span></div>
+  <div class="clippy-inner">
+    <div class="clippy-question">
+      <img class="clippy-art" src="clippy.gif" alt="Clippy paperclip on yellow notepad">
+      <div class="clippy-copy">It looks like you're thinking about biological intelligence.<strong>Could a brain organoid ever ask for a body?</strong></div>
+    </div>
+    <div class="clippy-actions" id="clippy-actions">
+      <button type="button" data-vote="yes">Yes</button>
+      <button type="button" data-vote="no">No</button>
+      <button type="button" data-vote="unsure">Not sure</button>
+    </div>
+    <div class="clippy-result" id="clippy-result" aria-live="polite"></div>
+  </div>
+</div>
+</section>
+
     </main>
 
 
@@ -621,43 +661,6 @@
 </div>
 
 
-<style>
-/* Windows 98 Office Assistant */
-#clippy-widget{position:fixed;right:18px;bottom:18px;z-index:9999;width:min(380px,calc(100vw - 36px));background:#c0c0c0;color:#000;border:2px solid;border-color:#fff #404040 #404040 #fff;box-shadow:2px 2px 0 #000;font:12px Tahoma,"MS Sans Serif",Arial,sans-serif;text-align:left}
-#clippy-widget *{box-sizing:border-box}
-#clippy-widget .clippy-title{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(90deg,#000080,#1084d0);color:#fff;padding:3px 4px;font-weight:bold;letter-spacing:0}
-#clippy-widget button{font:12px Tahoma,"MS Sans Serif",Arial,sans-serif;background:#c0c0c0;color:#000;border:2px solid;border-color:#fff #555 #555 #fff;border-radius:0;box-shadow:1px 1px 0 #000;cursor:pointer;padding:5px 12px;min-width:58px}
-#clippy-widget button:active{border-color:#555 #fff #fff #555;box-shadow:none}
-#clippy-widget button:focus-visible{outline:1px dotted #000;outline-offset:2px}
-#clippy-widget .clippy-x{min-width:20px;width:20px;height:20px;padding:0;font-weight:bold;line-height:16px}
-#clippy-widget .clippy-inner{padding:10px}
-#clippy-widget .clippy-question{display:flex;align-items:center;gap:10px}
-#clippy-widget .clippy-art{width:105px;height:118px;object-fit:contain;flex-shrink:0}
-#clippy-widget .clippy-copy{line-height:1.5;flex:1}
-#clippy-widget .clippy-copy strong{display:block;margin-top:7px}
-#clippy-widget .clippy-actions{display:flex;justify-content:flex-end;gap:7px;margin-top:8px;flex-wrap:wrap}
-#clippy-widget .clippy-result{display:none;margin-top:12px;padding:9px;background:#fff;border:2px solid;border-color:#777 #fff #fff #777;line-height:1.5}
-#clippy-widget .clippy-result a{color:#000080;text-decoration:underline}
-#clippy-reopen{position:fixed;right:18px;bottom:18px;z-index:9998;font:12px Tahoma,Arial,sans-serif;background:#c0c0c0;border:2px outset #fff;padding:7px 12px;cursor:pointer;display:none}
-@media(max-width:420px){#clippy-widget .clippy-art{width:78px;height:98px}}
-@media(prefers-reduced-motion:reduce){#clippy-widget .clippy-art{animation:none}}
-</style>
-<div id="clippy-widget" role="group" aria-label="Office Assistant question">
-  <div class="clippy-title"><span>📎 Office Assistant</span><button class="clippy-x" type="button" id="clippy-close" aria-label="Minimize Clippy">×</button></div>
-  <div class="clippy-inner">
-    <div class="clippy-question">
-      <img class="clippy-art" src="clippy.gif" alt="Clippy paperclip on yellow notepad">
-      <div class="clippy-copy">It looks like you're thinking about biological intelligence.<strong>Could a brain organoid ever ask for a body?</strong></div>
-    </div>
-    <div class="clippy-actions" id="clippy-actions">
-      <button type="button" data-vote="yes">Yes</button>
-      <button type="button" data-vote="no">No</button>
-      <button type="button" data-vote="unsure">Not sure</button>
-    </div>
-    <div class="clippy-result" id="clippy-result" aria-live="polite"></div>
-  </div>
-</div>
-<button id="clippy-reopen" type="button">📎 Ask Clippy</button>
 <script>
 /* CONFIGURATION: enter your Supabase project URL and publishable/anon key.
    Create a clippy_votes table and a secure insert policy before enabling voting.
@@ -669,10 +672,6 @@ const replies = {
   no: "Could a neural network still develop a preference for interacting with the world?",
   unsure: "Perhaps the first question is how we would recognize a request at all."
 };
-const clippyWidget=document.getElementById("clippy-widget");
-const clippyReopen=document.getElementById("clippy-reopen");
-document.getElementById("clippy-close").addEventListener("click",()=>{clippyWidget.hidden=true;clippyWidget.style.display="none";clippyReopen.style.display="block";});
-clippyReopen.addEventListener("click",()=>{clippyWidget.hidden=false;clippyWidget.style.display="block";clippyReopen.style.display="none";});
 function showClippyReply(vote,saved){
   const result=document.getElementById("clippy-result");
   result.replaceChildren();
