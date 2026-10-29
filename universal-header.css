@@ -1,0 +1,15 @@
+
+/* Universal site header and navigation: applied to index, research and about */
+.universal-header{box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:16px 18px;background:#c0c0c0;border:2px solid;border-color:#fff #555 #555 #fff;color:#111;margin:0 0 0;font-family:Tahoma,Arial,sans-serif}
+.universal-header *,.universal-nav *{box-sizing:border-box}
+.universal-header__name{font:700 clamp(25px,4vw,37px)/1.1 Tahoma,Arial,sans-serif!important;letter-spacing:0!important;margin:0 0 8px!important;color:#111!important}
+.universal-header__subtitle{font:12px/1.5 Tahoma,Arial,sans-serif!important;margin:0!important;color:#333!important}
+.universal-header__status{min-width:170px;padding:8px 11px;background:#e5e5e5;border:2px solid;border-color:#fff #777 #777 #fff;font:11px/1.5 Tahoma,Arial,sans-serif;color:#111}
+.universal-header__status-title{font-weight:bold}
+.universal-header__dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#008c49;margin-right:5px}
+.universal-nav{box-sizing:border-box;display:flex;flex-wrap:wrap;gap:8px;background:#c0c0c0;border:2px solid;border-color:#fff #555 #555 #fff;padding:8px;margin:10px 0 22px;font-family:Tahoma,Arial,sans-serif}
+.universal-nav a{display:inline-block!important;background:#c0c0c0!important;border:2px solid!important;border-color:#fff #555 #555 #fff!important;box-shadow:1px 1px #777;padding:7px 13px!important;color:#000080!important;text-decoration:none!important;font:700 12px/1.25 Tahoma,Arial,sans-serif!important;letter-spacing:0!important}
+.universal-nav a::before,.universal-nav a::after{content:none!important}
+.universal-nav a:hover{background:#e8e8e8!important;color:#000080!important}
+.universal-nav a[aria-current="page"]{border-color:#777 #fff #fff #777!important;background:#d6d6d6!important;box-shadow:none!important}
+@media(max-width:650px){.universal-header{flex-direction:column;align-items:flex-start;padding:12px}.universal-header__status{width:100%}.universal-nav{gap:6px}.universal-nav a{padding:7px 9px!important;font-size:11px!important}}

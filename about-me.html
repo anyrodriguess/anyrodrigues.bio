@@ -5,8 +5,6 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>About Me | Any Rodrigues</title>
-
-
 <style>
 /* Research windows — inspired by the existing homepage */
 
@@ -404,30 +402,28 @@ body{background:#f6f6f2!important;color:#161616!important;font:14px/1.65 Tahoma,
 .archive-media img,.content-box img{max-width:100%;height:auto}
 footer{border-top:2px solid #808080;padding:16px 8px;font:12px Tahoma,Arial,sans-serif;color:#333}
 @media(max-width:650px){.site-wrapper{width:calc(100% - 16px);margin:8px auto;padding:6px}.content-box{padding:13px!important}.content-box h2{margin:-13px -13px 15px!important}}
-</style></head>
+
+/* Compact image viewers: preserve original aspect ratios and captions */
+.archive-media{width:fit-content!important;max-width:100%!important;margin:18px auto!important}
+.archive-screen{padding:8px!important;text-align:center!important;background:#ededed!important}
+.archive-screen img{display:block!important;width:auto!important;height:auto!important;max-width:min(100%,420px)!important;max-height:290px!important;object-fit:contain!important;margin:0 auto!important}
+.transcendence-window .archive-screen img{max-width:min(100%,360px)!important;max-height:235px!important}
+.dzne-window .archive-screen img{max-width:min(100%,460px)!important;max-height:310px!important}
+.crtd-stack .archive-screen img{max-width:min(100%,460px)!important;max-height:300px!important}
+.archive-screen video{display:block!important;width:min(100%,460px)!important;max-height:300px!important;margin:0 auto!important}
+.archive-caption{max-width:480px!important}
+@media(max-width:520px){.archive-screen img,.archive-screen video{max-width:100%!important;height:auto!important}}
+</style><link href="universal-header.css" rel="stylesheet"/></head>
 <body>
-<div class="site-wrapper">
+<div class="site-wrapper"><header class="universal-header"><div><h1 class="universal-header__name">ANY RODRIGUES</h1><p class="universal-header__subtitle">molecular bioengineer / neural interfaces / biological intelligence</p></div><div class="universal-header__status"><div class="universal-header__status-title">STATUS:</div><div><span class="universal-header__dot"></span> online</div></div></header><nav aria-label="Main navigation" class="universal-nav"><a href="index.html">HOME</a><a aria-current="page" href="about-me.html">ABOUT</a><a href="research.html">RESEARCH</a><a href="Any_Rodrigues_CV.pdf" rel="noopener" target="_blank">CV</a><a href="mailto:anycgrodrigues@gmail.com">CONTACT</a></nav>
 <!-- =========================================
          NAVIGATION
     ========================================== -->
-<nav class="top-nav"><a href="index.html">HOME</a><a aria-current="page" href="about-me.html">ABOUT</a><a href="research.html">RESEARCH</a><a href="Any_Rodrigues_CV.pdf">CV</a><a href="mailto:anycgrodrigues@gmail.com">CONTACT</a></nav>
+
 <!-- =========================================
          HEADER
     ========================================== -->
-<header class="page-header">
-<div class="terminal-label">
-            C:\any\about_me.txt
-        </div>
-<h1>MORE ABOUT ME</h1>
-<p class="subtitle">
-            how science fiction somehow became a research direction
-        </p>
-<p class="research-links">
-<a href="Any_Rodrigues_CV.pdf" target="_blank">
-                [ open curriculum_vitae.pdf ]
-            </a>
-</p>
-</header>
+
 <!-- =========================================
          01
     ========================================== -->
