@@ -8,13 +8,15 @@
 <link href="style.css" rel="stylesheet"/>
 <link href="site-consistency.css" rel="stylesheet"/></head>
 <body>
-<div class="page"><header class="site-header"><div><h1>ANY RODRIGUES</h1><p class="subtitle">molecular bioengineer / neural interfaces / biological intelligence</p></div><div class="status-box"><div class="status-title">CURRENT FILE:</div><div><span class="online-dot"></span> index.html</div></div></header><nav aria-label="Main navigation" class="main-nav"><a aria-current="page" href="index.html">HOME</a><a href="about-me.html">ABOUT</a><a href="research.html">RESEARCH</a><a href="Any_Rodrigues_CV.pdf" rel="noopener" target="_blank">CV</a><a href="mailto:anycgrodrigues@gmail.com">CONTACT</a></nav>
+<div class="page"><header class="site-header"><div><h1>ANY RODRIGUES</h1><p class="subtitle">molecular bioengineer / neural interfaces / biological intelligence</p></div><div class="status-box"><div class="status-title">STATUS:</div><div><span class="online-dot"></span> online</div></div></header><nav aria-label="Main navigation" class="main-nav"><a aria-current="page" href="index.html">HOME</a><a href="about-me.html">ABOUT</a><a href="research.html">RESEARCH</a><a href="Any_Rodrigues_CV.pdf" rel="noopener" target="_blank">CV</a><a href="mailto:anycgrodrigues@gmail.com">CONTACT</a></nav>
 <!-- ==================================
          HEADER
     =================================== -->
+
 <!-- ==================================
          NAVIGATION
     =================================== -->
+
 <main>
 <!-- ==================================
              HERO
@@ -108,43 +110,28 @@
                     </div>
 <div class="panel-body interests-list">
 <p>
-                            → <a href="under-construction.html">
+                            → <a href="organoid-intelligence.html">
                                 Organoid Intelligence
                             </a>
 </p>
 <p>
-                            → <a href="under-construction.html">
+                            → <a href="brain-organoids.html">
                                 Brain Organoids
                             </a>
 </p>
 <p>
-                            → <a href="under-construction.html">
+                            → <a href="neurodegenerative-disease-models.html">
                                 Neurodegenerative Disease Models
                             </a>
 </p>
 <p>
-                            → <a href="under-construction.html">
+                            → <a href="neuropharmacology-neurotoxicity.html">
                                 Neuropharmacology &amp; Neurotoxicity
                             </a>
 </p>
 <p>
-                            → <a href="under-construction.html">
+                            → <a href="biological-computation.html">
                                 Biological Computation
-                            </a>
-</p>
-<p>
-                            → <a href="under-construction.html">
-                                Neural Electrophysiology
-                            </a>
-</p>
-<p>
-                            → <a href="under-construction.html">
-                                HD-MEAs
-                            </a>
-</p>
-<p>
-                            → <a href="under-construction.html">
-                                Neural Plasticity
                             </a>
 </p>
 </div>
@@ -264,81 +251,24 @@
 
                 </div>
 <div class="panel-body questions">
-<p>
-<span>[01]</span>
-<a href="under-construction.html">
-                            What are brain organoids?
-                        </a>
-</p>
-<p>
-<span>[02]</span>
-<a href="under-construction.html">
-                            Can brain organoids learn?
-                        </a>
-</p>
-<p>
-<span>[03]</span>
-<a href="under-construction.html">
-                            What does "learning" mean in a biological
-                            neural network?
-                        </a>
-</p>
-<p>
-<span>[04]</span>
-<a href="under-construction.html">
-                            Does biological intelligence require a body?
-                        </a>
-</p>
-<p>
-<span>[05]</span>
-<a href="under-construction.html">
-                            Could ethical limits eventually restrict this kind of research?
-                        </a>
-</p>
+<p><span>[01]</span> <a href="organoid-intelligence.html">What constitutes intelligence, and how can we recognize it in a biological system?</a></p>
+<p><span>[02]</span> <a href="consciousness.html">Could a biological neural network be conscious, and how would we know?</a></p>
 </div>
 </div>
-<!-- EVOLVING -->
-<div class="evolving-box">
-<div class="pixel-globe">
-                    🌍
-                </div>
-<div class="evolving-message">
-
-                    this page<br/>
-                    is always<br/>
-                    evolving...
-
-                    <span class="blue-cursor">
-                        ■
-                    </span>
+<!-- OFFICE ASSISTANT: INTERACTIVE QUESTION -->
+<div aria-label="Office Assistant question" id="clippy-widget" role="group">
+<div class="clippy-title"><span>📎 Office Assistant</span><span aria-hidden="true">□</span></div>
+<div class="clippy-inner">
+<div class="clippy-question">
+<img alt="Animated Clippy paperclip on a yellow notepad" class="clippy-art" src="clippy.gif"/>
+<div class="clippy-copy">It looks like you're thinking about biological intelligence.<strong>Could a brain organoid ever ask for a body?</strong></div>
 </div>
+<div class="clippy-actions" id="clippy-actions">
+<button data-vote="yes" type="button">Yes</button>
+<button data-vote="no" type="button">No</button>
+<button data-vote="unsure" type="button">Not sure</button>
 </div>
-<!-- VISITORS -->
-<div class="panel visitor-panel">
-<div class="panel-title">
-<span>▥</span>
-
-                    visitors.dat
-
-                </div>
-<div class="panel-body visitor-body">
-<div class="counter">
-                        000004
-                    </div>
-<div class="cat">
-
-                        /\_/\
-                        <br/>
-
-                        ( o.o )
-                        <br/>
-
-                        &gt; ^ &lt;
-
-                    </div>
-<p>
-                        thanks for stopping by!
-                    </p>
+<div aria-live="polite" class="clippy-result" id="clippy-result"></div>
 </div>
 </div>
 </section>
@@ -381,20 +311,67 @@
                 </div>
 <span>
                     last updated:<br/>
-                    19.08.2026
+                    29.10.2026
                 </span>
 </div>
 </section>
+<!-- OFFICE ASSISTANT STYLES -->
+<style>
+/* Two balanced windows: questions and Clippy */
+.bottom-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:18px; align-items:stretch; }
+.bottom-grid > * { min-width:0; }
+#clippy-widget { width:100%; background:#fff; color:#000; border:2px solid; border-color:#fff #404040 #404040 #fff; box-shadow:2px 2px 0 #000; font:12px Tahoma,"MS Sans Serif",Arial,sans-serif; text-align:left; }
+#clippy-widget * { box-sizing:border-box; }
+#clippy-widget .clippy-title { display:flex; align-items:center; justify-content:space-between; background:linear-gradient(90deg,#000080,#1084d0); color:#fff; padding:4px 6px; font-weight:bold; }
+#clippy-widget .clippy-inner { padding:12px; background:#fff; }
+#clippy-widget .clippy-question { display:flex; align-items:center; gap:12px; }
+#clippy-widget .clippy-art { width:105px; height:118px; object-fit:contain; flex-shrink:0; }
+#clippy-widget .clippy-copy { line-height:1.5; flex:1; }
+#clippy-widget .clippy-copy strong { display:block; margin-top:7px; }
+#clippy-widget .clippy-actions { display:flex; justify-content:flex-end; gap:7px; margin-top:10px; flex-wrap:wrap; }
+#clippy-widget button { font:12px Tahoma,"MS Sans Serif",Arial,sans-serif; background:#c0c0c0; color:#000; border:2px solid; border-color:#fff #555 #555 #fff; border-radius:0; box-shadow:1px 1px 0 #000; cursor:pointer; padding:5px 12px; min-width:58px; }
+#clippy-widget button:active { border-color:#555 #fff #fff #555; box-shadow:none; }
+#clippy-widget button:focus-visible { outline:1px dotted #000; outline-offset:2px; }
+#clippy-widget button:disabled { opacity:.65; cursor:default; }
+#clippy-widget .clippy-result { display:none; margin-top:12px; padding:9px; background:#fff; border:2px solid; border-color:#777 #fff #fff #777; line-height:1.5; }
+#clippy-widget .clippy-result a { color:#000080; text-decoration:underline; }
+@media(max-width:700px) { .bottom-grid { grid-template-columns:minmax(0,1fr); } }
+@media(max-width:420px) { #clippy-widget .clippy-art { width:78px; height:98px; } }
+</style>
 </main>
 <footer>
 
         © 2026 Any Rodrigues
         |
-        no JavaScript
+        a little JavaScript
         |
         just curiosity.
 
     </footer>
 </div>
+<script>
+/* Clippy's answers are interactive only; no votes or personal data are stored. */
+const replies = {
+  yes: "Then how would we distinguish a genuine request from a trained response?",
+  no: "Could a neural network still develop a preference for interacting with the world?",
+  unsure: "Perhaps the first question is how we would recognize a request at all."
+};
+
+const clippyResult = document.getElementById("clippy-result");
+document.querySelectorAll("#clippy-actions [data-vote]").forEach(button => {
+  button.addEventListener("click", () => {
+    const response = replies[button.dataset.vote];
+    clippyResult.replaceChildren();
+    const message = document.createElement("p");
+    message.textContent = response;
+    clippyResult.append(message);
+    const link = document.createElement("a");
+    link.href = "consciousness.html";
+    link.textContent = "Explore Consciousness in Organoid Intelligence →";
+    clippyResult.append(link);
+    clippyResult.style.display = "block";
+  });
+});
+</script>
 </body>
 </html>

@@ -1,18 +1,26 @@
-/* Minimal site-wide visual alignment. Does not change research folder windows. */
-html,body{background:#eeeeea!important;color:#161616!important}
-body{margin:0}
-.page,.site-wrapper{width:min(1050px,calc(100% - 30px))!important;margin:26px auto 60px!important}
-.site-wrapper{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important}
-.page:not(.interest-page){background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important}
-.interest-page{background:#e6e6e6!important}
-.site-header{display:flex!important;align-items:flex-start!important;justify-content:space-between!important;gap:24px!important;background:transparent!important;border:0!important;border-bottom:3px double #222!important;box-shadow:none!important;padding:0 0 19px!important;margin:0!important;color:#161616!important}
-.site-header h1{font:700 clamp(27px,5vw,43px)/1.1 'Courier New',monospace!important;letter-spacing:-1.5px!important;color:#161616!important;margin:0 0 8px!important}
-.site-header .subtitle{font:12px/1.5 'Courier New',monospace!important;color:#161616!important;margin:0!important}
-.site-header .status-box{min-width:170px!important;max-width:270px!important;background:#ddd!important;border:2px outset #fff!important;box-shadow:none!important;color:#111!important;padding:8px 13px!important;font:11px/1.5 'Courier New',monospace!important}
-.main-nav{display:flex!important;flex-wrap:wrap!important;justify-content:flex-start!important;gap:0!important;background:#c8c8c8!important;border:2px outset #fff!important;box-shadow:none!important;margin:16px 0 26px!important;padding:5px!important}
-.main-nav a{display:inline-block!important;background:transparent!important;color:#111!important;border:0!important;box-shadow:none!important;text-decoration:none!important;padding:7px 13px!important;font:700 12px/1.5 'Courier New',monospace!important}
+
+/* Minimal consistency patch: original About/Research header, calm grey backdrop.
+   Do not change folder windows, text content, layout grids or titlebar colors. */
+html, body { background-color:#eeeeee!important; }
+body { color:#161616; }
+.site-header {display:flex;justify-content:space-between;align-items:flex-start;gap:25px;
+  border-bottom:3px double #111;padding:0 0 19px;background:transparent!important;color:#161616!important}
+.site-header h1 {font:700 clamp(27px,5vw,43px)/1.1 "Courier New",monospace!important;
+  letter-spacing:-1.5px!important;color:#161616!important;margin:0 0 8px!important}
+.site-header .subtitle {font:12px/1.5 "Courier New",monospace!important;color:#161616!important;margin:0!important}
+.site-header .status-box {background:#ddd!important;border:2px outset white!important;padding:8px 13px!important;
+  min-width:170px!important;color:#161616!important;font-size:11px!important}
+.main-nav {display:flex!important;justify-content:flex-start!important;flex-wrap:wrap!important;gap:0!important;
+  border:2px outset white!important;background:#c8c8c8!important;margin:16px 0 26px!important;padding:5px!important}
+.main-nav a {font:bold 12px/1.5 "Courier New",monospace!important;display:inline-block!important;
+  color:#111!important;background:transparent!important;padding:7px 13px!important;
+  text-decoration:none!important;border:0!important;box-shadow:none!important}
 .main-nav a::before,.main-nav a::after{content:none!important}
-.main-nav a:hover,.main-nav a[aria-current='page']{background:#101a83!important;color:#fff!important}
-/* Reading areas are calm; keep navy window title bars and folder details. */
-.window-content,.panel-body,.inside{background:#f6f6f3!important;color:#161616!important}
-@media(max-width:650px){.page,.site-wrapper{width:calc(100% - 16px)!important;margin:12px auto 35px!important}.site-header{flex-direction:column!important;gap:10px!important}.site-header .status-box{max-width:100%!important}.main-nav a{padding:7px 9px!important}}
+.main-nav a:hover,.main-nav a[aria-current="page"] {background:#101a83!important;color:white!important}
+.page.interest-page {background:#c8c8c8!important}
+@media(max-width:650px){.site-header{flex-wrap:wrap}.site-header .status-box{min-width:0;max-width:100%}}
+
+/* Home uses the same unframed page width and header as About / Research. */
+body:has(.site-header) .page,body:has(.site-header) .site-wrapper{width:min(1050px,calc(100% - 30px));margin:26px auto 60px;background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important}
+body:has(.site-header) main{background:transparent!important}
+body:has(.site-header) .main-nav{justify-content:flex-start!important}
