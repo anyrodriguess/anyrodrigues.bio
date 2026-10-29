@@ -557,7 +557,7 @@
 .clippy-easter-egg #clippy-widget { max-width:680px; }
 #clippy-widget { width:100%; background:#fff; color:#000; border:2px solid; border-color:#fff #404040 #404040 #fff; box-shadow:2px 2px 0 #000; font:12px Tahoma,"MS Sans Serif",Arial,sans-serif; text-align:left; }
 #clippy-widget * { box-sizing:border-box; }
-#clippy-widget .clippy-title { display:flex; align-items:center; justify-content:space-between; background:linear-gradient(90deg,#000080,#1084d0); color:#fff; padding:4px 6px; font-weight:bold; }
+#clippy-widget .clippy-title { display:flex; align-items:center; justify-content:space-between; background:#000080; color:#fff; padding:4px 6px; font-weight:bold; }
 #clippy-widget .clippy-inner { padding:12px; background:#fff; }
 #clippy-widget .clippy-question { display:flex; align-items:center; gap:12px; }
 #clippy-widget .clippy-art { width:105px; height:118px; object-fit:contain; flex-shrink:0; }
@@ -573,6 +573,55 @@
 #clippy-widget .clippy-discovery { margin:10px 0 6px; font-size:11px; color:#555; }
 @media(max-width:700px) { .clippy-easter-egg #clippy-widget { max-width:100%; } }
 @media(max-width:420px) { #clippy-widget .clippy-art { width:78px; height:98px; } }
+
+/* One consistent Windows 98 visual language across both windows */
+.question-window {
+  border: 2px solid;
+  border-color: #fff #404040 #404040 #fff;
+  box-shadow: 2px 2px 0 #000;
+  background: #c0c0c0;
+  font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
+}
+.question-window .window-title {
+  background: #000080;
+  color: #fff;
+  border-bottom: 0;
+  min-height: 28px;
+  padding: 3px 5px 3px 8px;
+  font: bold 12px Tahoma, "MS Sans Serif", Arial, sans-serif;
+}
+.question-window .window-x {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 2px solid;
+  border-color: #fff #555 #555 #fff;
+  box-shadow: 1px 1px 0 #000;
+  background: #c0c0c0;
+  color: #000;
+  font: bold 12px Tahoma, Arial, sans-serif;
+}
+.question-window .window-content {
+  padding: 22px;
+  background: #fff;
+  min-height: calc(100% - 28px);
+}
+.question-window .window-content h2 {
+  font: bold clamp(22px, 2.3vw, 32px)/1.14 Tahoma, Arial, sans-serif;
+  letter-spacing: -.6px;
+}
+.question-window .window-content hr {
+  border: 0;
+  border-top: 1px solid #808080;
+  margin: 16px 0;
+}
+.question-window .window-content p {
+  font: 14px/1.6 Tahoma, Arial, sans-serif;
+}
+
 </style>
 
     </main>
