@@ -458,51 +458,23 @@
         </section>
 
 
-        <!-- ==================================
-             QUESTIONS
-        =================================== -->
-
-        <section class="bottom-grid">
-
-
-            <div class="panel">
-
-                <div class="panel-title">
-
-                    <span class="question-icon">
-                        ?
-                    </span>
-
-                    questions_i_keep_returning_to.txt
-
-                </div>
-
-
-                <div class="panel-body questions">
-                    <p><span>[01]</span> <a href="organoid-intelligence.html">What constitutes intelligence, and how can we recognize it in a biological system?</a></p>
-                    <p><span>[02]</span> <a href="organoid-intelligence.html#questions">Could a biological neural network be conscious, and how would we know?</a></p>
-                </div>
-
-            </div>
-
-
-            <!-- OFFICE ASSISTANT: INTERACTIVE QUESTION -->
+        <!-- A small hidden doorway into the consciousness essay -->
+        <section class="clippy-easter-egg" aria-label="An interactive question from the Office Assistant">
             <div id="clippy-widget" role="group" aria-label="Office Assistant question">
                 <div class="clippy-title"><span>📎 Office Assistant</span><span aria-hidden="true">□</span></div>
                 <div class="clippy-inner">
                     <div class="clippy-question">
                         <img class="clippy-art" src="clippy.gif" alt="Animated Clippy paperclip on a yellow notepad">
-                        <div class="clippy-copy">It looks like you're thinking about biological intelligence.<strong>Could a brain organoid ever ask for a body?</strong></div>
+                        <div class="clippy-copy">It looks like you're thinking about biological intelligence.<strong>If a brain organoid could tell you it was in pain, would you believe it?</strong></div>
                     </div>
-                    <div class="clippy-actions" id="clippy-actions">
+                    <div class="clippy-actions" id="clippy-actions" aria-label="Choose your answer">
                         <button type="button" data-vote="yes">Yes</button>
                         <button type="button" data-vote="no">No</button>
-                        <button type="button" data-vote="unsure">Not sure</button>
+                        <button type="button" data-vote="unsure">I'm not sure</button>
                     </div>
                     <div class="clippy-result" id="clippy-result" aria-live="polite"></div>
                 </div>
             </div>
-
         </section>
 
 
@@ -580,9 +552,9 @@
 
         <!-- OFFICE ASSISTANT STYLES -->
 <style>
-/* Two balanced windows: questions and Clippy */
-.bottom-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:18px; align-items:stretch; }
-.bottom-grid > * { min-width:0; }
+/* A single, compact assistant window, centered below the research trajectory. */
+.clippy-easter-egg { display:flex; justify-content:center; padding:8px 0 18px; }
+.clippy-easter-egg #clippy-widget { max-width:680px; }
 #clippy-widget { width:100%; background:#fff; color:#000; border:2px solid; border-color:#fff #404040 #404040 #fff; box-shadow:2px 2px 0 #000; font:12px Tahoma,"MS Sans Serif",Arial,sans-serif; text-align:left; }
 #clippy-widget * { box-sizing:border-box; }
 #clippy-widget .clippy-title { display:flex; align-items:center; justify-content:space-between; background:linear-gradient(90deg,#000080,#1084d0); color:#fff; padding:4px 6px; font-weight:bold; }
@@ -597,8 +569,9 @@
 #clippy-widget button:focus-visible { outline:1px dotted #000; outline-offset:2px; }
 #clippy-widget button:disabled { opacity:.65; cursor:default; }
 #clippy-widget .clippy-result { display:none; margin-top:12px; padding:9px; background:#fff; border:2px solid; border-color:#777 #fff #fff #777; line-height:1.5; }
-#clippy-widget .clippy-result a { color:#000080; text-decoration:underline; }
-@media(max-width:700px) { .bottom-grid { grid-template-columns:minmax(0,1fr); } }
+#clippy-widget .clippy-result a { color:#000080; text-decoration:underline; font-weight:bold; }
+#clippy-widget .clippy-discovery { margin:10px 0 6px; font-size:11px; color:#555; }
+@media(max-width:700px) { .clippy-easter-egg #clippy-widget { max-width:100%; } }
 @media(max-width:420px) { #clippy-widget .clippy-art { width:78px; height:98px; } }
 </style>
 
@@ -621,9 +594,9 @@
 <script>
 /* Clippy's answers are interactive only; no votes or personal data are stored. */
 const replies = {
-  yes: "Then how would we distinguish a genuine request from a trained response?",
-  no: "Could a neural network still develop a preference for interacting with the world?",
-  unsure: "Perhaps the first question is how we would recognize a request at all."
+  yes: "But how would you know whether it was experiencing pain or producing a learned response?",
+  no: "What evidence would you need before taking the possibility of suffering seriously?",
+  unsure: "Neither are scientists. And that’s where the ethical questions begin."
 };
 
 const clippyResult = document.getElementById("clippy-result");
@@ -634,9 +607,13 @@ document.querySelectorAll("#clippy-actions [data-vote]").forEach(button => {
     const message = document.createElement("p");
     message.textContent = response;
     clippyResult.append(message);
+    const discovery = document.createElement("p");
+    discovery.className = "clippy-discovery";
+    discovery.textContent = "I found a hidden file you might want to read…";
+    clippyResult.append(discovery);
     const link = document.createElement("a");
-    link.href = "organoid-intelligence.html";
-    link.textContent = "Explore Organoid Intelligence →";
+    link.href = "consciousness.html";
+    link.textContent = "📄 Open consciousness.html →";
     clippyResult.append(link);
     clippyResult.style.display = "block";
   });
