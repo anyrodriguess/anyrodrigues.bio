@@ -38,6 +38,39 @@
 .article{box-shadow:3px 3px 0 #c4d3e6}
 .compare{font-size:.85rem}
 }
+
+/* Braille → Organoid Intelligence illustration */
+
+.braille-workflow {
+  margin: 55px auto 65px;
+  padding: 35px 0;
+  text-align: center;
+}
+
+.braille-workflow img {
+  display: block;
+  width: 100%;
+  max-width: 1050px;
+  height: auto;
+  margin: 0 auto;
+  image-rendering: pixelated;
+}
+
+.braille-caption {
+  margin: 15px auto 0;
+  max-width: 720px;
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #53627a;
+}
+
+@media (max-width: 600px) {
+  .braille-workflow {
+    margin: 30px auto 40px;
+    padding: 15px 0;
+  }
+}
 </style>
 </head>
 
@@ -115,6 +148,22 @@
     </div>
   </div>
 </article>
+
+<!-- BRAILLE / ORGANOID INTELLIGENCE WORKFLOW -->
+<figure class="braille-workflow">
+  <img
+    src="organoid-braille.png"
+    alt="Pixel-art workflow: a robotic sensor scans Braille, electrical signals reach a brain organoid, and a computer displays Hello World."
+    loading="lazy"
+  >
+  <figcaption class="braille-caption">
+    BRAILLE INPUT → ELECTRICAL STIMULATION → BRAIN ORGANOID → NEURAL ACTIVITY → DECODING
+    <span style="display:block;margin-top:8px;">
+      Conceptual illustration inspired by research on tactile signal processing with brain organoids.
+      The “Hello World!” output is illustrative, not an experimental result.
+    </span>
+  </figcaption>
+</figure>
 
 <article class="article">
   <div class="bar">
