@@ -619,44 +619,26 @@
 
 
 <script>
-/* CONFIGURATION: enter your Supabase project URL and publishable/anon key.
-   Create a clippy_votes table and a secure insert policy before enabling voting.
-   Do not use a Supabase service_role or secret key in public HTML. */
-const CLIPPY_SUPABASE_URL = "";
-const CLIPPY_SUPABASE_ANON_KEY = "";
+/* Clippy's answers are interactive only; no votes or personal data are stored. */
 const replies = {
   yes: "Then how would we distinguish a genuine request from a trained response?",
   no: "Could a neural network still develop a preference for interacting with the world?",
   unsure: "Perhaps the first question is how we would recognize a request at all."
 };
-function showClippyReply(vote,saved){
-  const result=document.getElementById("clippy-result");
-  result.replaceChildren();
-  const p=document.createElement("p");p.textContent=replies[vote];result.append(p);
-  const status=document.createElement("p");
-  status.textContent=saved?"Your anonymous response was recorded.":"Your choice was not saved online (voting database not configured or unavailable).";
-  result.append(status);
-  const a=document.createElement("a");a.href="organoid-intelligence.html";a.textContent="Explore Organoid Intelligence →";result.append(a);
-  result.style.display="block";
-}
-async function recordClippyVote(vote){
-  if(!CLIPPY_SUPABASE_URL||!CLIPPY_SUPABASE_ANON_KEY)return false;
-  try{
-    const res=await fetch(CLIPPY_SUPABASE_URL.replace(/\/$/,"")+"/rest/v1/clippy_votes",{
-      method:"POST",headers:{"apikey":CLIPPY_SUPABASE_ANON_KEY,"Authorization":"Bearer "+CLIPPY_SUPABASE_ANON_KEY,"Content-Type":"application/json","Prefer":"return=minimal"},
-      body:JSON.stringify({answer:vote})
-    });return res.ok;
-  }catch{return false;}
-}
-document.querySelectorAll("#clippy-actions [data-vote]").forEach(button=>{
-  button.addEventListener("click",async()=>{
-    const vote=button.dataset.vote;
-    if(sessionStorage.getItem("clippy_vote"))return;
-    document.querySelectorAll("#clippy-actions button").forEach(b=>b.disabled=true);
-    const saved=await recordClippyVote(vote);
-    if(saved)sessionStorage.setItem("clippy_vote",vote);
-    showClippyReply(vote,saved);
-    if(!saved)document.querySelectorAll("#clippy-actions button").forEach(b=>b.disabled=false);
+
+const clippyResult = document.getElementById("clippy-result");
+document.querySelectorAll("#clippy-actions [data-vote]").forEach(button => {
+  button.addEventListener("click", () => {
+    const response = replies[button.dataset.vote];
+    clippyResult.replaceChildren();
+    const message = document.createElement("p");
+    message.textContent = response;
+    clippyResult.append(message);
+    const link = document.createElement("a");
+    link.href = "organoid-intelligence.html";
+    link.textContent = "Explore Organoid Intelligence →";
+    clippyResult.append(link);
+    clippyResult.style.display = "block";
   });
 });
 </script>
