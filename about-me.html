@@ -422,7 +422,14 @@ footer{border-top:2px solid #808080;padding:16px 8px;font:12px Tahoma,Arial,sans
 .final-thought .final-statement strong{display:inline!important;color:#161616!important;font:700 14px/1.7 Tahoma,Arial,sans-serif!important;margin:0!important}
 .final-thought .final-status{font:12px/1.6 "Courier New",monospace!important;color:#333!important;margin:12px 0 0!important}
 @media(max-width:650px){.final-thought{padding:13px!important}.final-thought h2{margin:-13px -13px 15px!important}}
-</style><style>.personal-photo-window{max-width:360px!important;width:100%!important;margin:18px auto!important}.personal-photo-window .archive-screen img{display:block;width:100%!important;max-width:100%!important;max-height:440px!important;height:auto!important;object-fit:contain!important}.research-folder-links{text-align:center;margin:12px auto 22px}.research-folder-links a{font-weight:bold}@media(max-width:520px){.personal-photo-window{max-width:300px!important}}</style></head>
+</style><style>.personal-photo-window{max-width:360px!important;width:100%!important;margin:18px auto!important}.personal-photo-window .archive-screen img{display:block;width:100%!important;max-width:100%!important;max-height:440px!important;height:auto!important;object-fit:contain!important}.research-folder-links{text-align:center;margin:12px auto 22px}.research-folder-links a{font-weight:bold}@media(max-width:520px){.personal-photo-window{max-width:300px!important}}</style><style>
+/* Compact image at left, existing research story at right. */
+.about-photo-text-layout{display:grid;grid-template-columns:minmax(160px,230px) minmax(0,1fr);gap:22px;align-items:start;margin:18px 0 22px}
+.about-photo-text-layout .personal-photo-window{width:100%!important;max-width:230px!important;margin:0!important}
+.about-photo-text-layout .personal-photo-window img{width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important}
+.about-photo-text-copy p:first-child{margin-top:0}
+@media(max-width:610px){.about-photo-text-layout{grid-template-columns:1fr;gap:14px}.about-photo-text-layout .personal-photo-window{max-width:230px!important;margin:0 auto!important}}
+</style></head>
 <body>
 <div class="site-wrapper"><header class="site-header"><div><h1>ANY RODRIGUES</h1><p class="subtitle">molecular bioengineer / neural interfaces / biological intelligence</p></div><div class="status-box"><div class="status-title">STATUS:</div><div><span class="online-dot"></span> online</div></div></header><nav aria-label="Main navigation" class="main-nav"><a href="index.html">HOME</a><a aria-current="page" href="about-me.html">ABOUT</a><a href="research.html">RESEARCH</a><a href="Any_Rodrigues_CV.pdf" rel="noopener" target="_blank">CV</a><a href="mailto:anycgrodrigues@gmail.com">CONTACT</a></nav>
 <!-- =========================================
@@ -518,26 +525,26 @@ footer{border-top:2px solid #808080;padding:16px 8px;font:12px Tahoma,Arial,sans
 <h2>
             03 // THEN I STARTED LISTENING TO CELLS
         </h2>
-<p>
-            That interest eventually brought me to neural electrophysiology.
-        </p>
-<p>
-            At DZNE in Dresden, I worked with human olfactory epithelium and
-            rat olfactory bulb co-cultures using MEA electrophysiology.
-        </p>
-<p>
-            Later, during my Master's research at TU Dresden / CRTD, I worked
-            with adult zebrafish retina on HD-MEAs.
-        </p>
-<p>
-            There was something fascinating about placing living neural
-            tissue on a chip and being able to listen to its electrical
-            activity.
-        </p>
+
+
+
+
 <!-- =========================================
              LAB ARCHIVE
         ========================================== -->
-<div class="archive-media personal-photo-window"><div class="archive-titlebar"><span>📷 behind_the_experiments.png</span><span class="archive-controls">_ □ X</span></div><div class="archive-screen"><img alt="A candid laboratory selfie with a small inset showing the experimental setup" loading="lazy" src="behind_the_experiments.png"/></div><div class="archive-caption"><span class="archive-label">FILE_NOTE:</span> a moment behind the experiments</div></div><p class="research-folder-links">Explore the experiments: <a href="dzne.html">📁 DZNE</a> · <a href="crtd.html">📁 CRTD</a></p>
+<div class="about-photo-text-layout"><div class="archive-media personal-photo-window"><div class="archive-titlebar"><span>📷 behind_the_experiments.png</span><span class="archive-controls">_ □ X</span></div><div class="archive-screen"><img alt="A candid laboratory selfie with a small inset showing the experimental setup" loading="lazy" src="behind_the_experiments.png"/></div><div class="archive-caption"><span class="archive-label">FILE_NOTE:</span> a moment behind the experiments</div></div><div class="about-photo-text-copy"><p>
+            That interest eventually brought me to neural electrophysiology.
+        </p><p>
+            At DZNE in Dresden, I worked with human olfactory epithelium and
+            rat olfactory bulb co-cultures using MEA electrophysiology.
+        </p><p>
+            Later, during my Master's research at TU Dresden / CRTD, I worked
+            with adult zebrafish retina on HD-MEAs.
+        </p><p>
+            There was something fascinating about placing living neural
+            tissue on a chip and being able to listen to its electrical
+            activity.
+        </p><p class="research-folder-links">Explore the experiments: <a href="dzne.html">📁 DZNE</a> · <a href="crtd.html">📁 CRTD</a></p></div></div>
 <p>
             Working with living preparations also taught me the less
             glamorous part of electrophysiology.
