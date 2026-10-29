@@ -450,11 +450,11 @@ footer{border-top:2px solid #808080;padding:16px 8px;font:12px Tahoma,Arial,sans
 .final-thought .final-statement p{margin:0 0 12px!important}
 .final-thought .final-statement .direction-emphasis{font:600 15px/1.7 Tahoma,Arial,sans-serif!important;padding:11px 14px!important;border-left:4px solid #000080!important;background:#f2f2f2!important;color:#111!important}
 .final-thought .final-status{display:block!important;background:#090909!important;color:#b8f6b8!important;padding:12px 15px!important;border:2px inset #888!important;font:13px/1.6 "Courier New",monospace!important;white-space:normal!important;overflow-wrap:anywhere!important}
-.typing-dots{display:inline-block;overflow:hidden;vertical-align:bottom;width:0;animation:typing-dots 1.8s steps(3,end) infinite}
+.typing-dots{display:inline;white-space:nowrap}.typing-dots span{display:inline-block;opacity:0;animation:dot-appear 1.8s infinite}.typing-dots span:nth-child(2){animation-delay:.3s}.typing-dots span:nth-child(3){animation-delay:.6s}
 .terminal-cursor{animation:cursor-blink 1s step-end infinite}
-@keyframes typing-dots{0%{width:0}75%,100%{width:3ch}}
+@keyframes dot-appear{0%,12%{opacity:0}25%,80%{opacity:1}95%,100%{opacity:0}}
 @keyframes cursor-blink{50%{opacity:0}}
-@media(prefers-reduced-motion:reduce){.typing-dots{animation:none;width:3ch}.terminal-cursor{animation:none}}
+@media(prefers-reduced-motion:reduce){.typing-dots span{animation:none;opacity:1}.terminal-cursor{animation:none}}
 </style></head>
 <body>
 <div class="site-wrapper"><header class="site-header"><div><h1>ANY RODRIGUES</h1><p class="subtitle">molecular bioengineer / neural interfaces / biological intelligence</p></div><div class="status-box"><div class="status-title">STATUS:</div><div><span class="online-dot"></span> online</div></div></header><nav aria-label="Main navigation" class="main-nav"><a href="index.html">HOME</a><a aria-current="page" href="about-me.html">ABOUT</a><a href="research.html">RESEARCH</a><a href="Any_Rodrigues_CV.pdf" rel="noopener" target="_blank">CV</a><a href="mailto:anycgrodrigues@gmail.com">CONTACT</a></nav>
@@ -841,7 +841,7 @@ footer{border-top:2px solid #808080;padding:16px 8px;font:12px Tahoma,Arial,sans
             current_direction.txt
         </h2>
 <div class="final-statement"><p>I don't want to simulate a brain.</p><p class="direction-emphasis">I want to understand what living neural networks can do when we give them something to interact with.</p></div>
-<div class="final-status">&gt; status: looking for the lab where the next chapter begins<span aria-hidden="true" class="typing-dots">...</span><span aria-hidden="true" class="terminal-cursor">_</span></div>
+<div class="final-status">&gt; status: looking for the lab where the next chapter begins<span aria-hidden="true" class="typing-dots"><span>.</span><span>.</span><span>.</span></span><span aria-hidden="true" class="terminal-cursor">_</span></div>
 </section>
 <!-- =========================================
          BOTTOM LINKS
