@@ -1,828 +1,942 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Me | Any Rodrigues</title>
 
-    <title>About Me | Any Rodrigues</title>
 
-    <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="windows98.css">
-</head>
+<style>
+/* Research windows — inspired by the existing homepage */
 
+:root {
+  --blue: #101a83;
+  --ink: #161616;
+  --grey: #c8c8c8;
+  --paper: #f6f6f2;
+  --line: #777;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 14px/1.65 "Courier New", monospace;
+}
+
+a {
+  color: #101a83;
+}
+
+a:hover {
+  background: #101a83;
+  color: white;
+}
+
+.page {
+  width: min(1050px, calc(100% - 30px));
+  margin: 26px auto 60px;
+}
+
+/* HEADER */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 25px;
+  border-bottom: 3px double #111;
+  padding: 0 0 19px;
+}
+
+.site-header h1 {
+  font-size: clamp(27px, 5vw, 43px);
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin: 0 0 8px;
+}
+
+.subtitle {
+  font-size: 12px;
+  margin: 0;
+}
+
+.status-box {
+  border: 2px outset white;
+  background: #ddd;
+  padding: 8px 13px;
+  min-width: 170px;
+  font-size: 11px;
+}
+
+.status-title {
+  font-weight: bold;
+}
+
+.online-dot {
+  display: inline-block;
+  background: #008c49;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* NAVIGATION */
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border: 2px outset white;
+  background: #c8c8c8;
+  margin: 16px 0 26px;
+  padding: 5px;
+}
+
+.main-nav a {
+  display: inline-block;
+  padding: 7px 13px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 12px;
+  color: #111;
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+  background: #101a83;
+  color: #fff;
+}
+
+/* WINDOWS */
+
+.window {
+  border: 3px outset #fff;
+  background: #c8c8c8;
+  box-shadow: 3px 3px 0 #999;
+  margin-bottom: 25px;
+}
+
+.window-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: linear-gradient(90deg, #101a83, #4775ae);
+  color: white;
+  padding: 6px 9px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.window-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.window-buttons span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: #c8c8c8;
+  border: 2px outset #fff;
+  color: #111;
+  line-height: 1;
+}
+
+.window-content {
+  background: #fff;
+  border: 2px inset #ddd;
+  margin: 7px;
+  padding: 23px;
+}
+
+.window-content h2 {
+  font-size: 20px;
+  line-height: 1.35;
+  margin: 0 0 16px;
+}
+
+.window-content h3 {
+  font-size: 15px;
+  margin: 20px 0 8px;
+}
+
+.window-content p {
+  margin: 0 0 13px;
+  max-width: 82ch;
+}
+
+/* RESEARCH FOLDERS */
+
+.file-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.file {
+  border: 2px outset #fff;
+  background: #ededed;
+  padding: 18px;
+  display: block;
+  text-decoration: none;
+  color: #111;
+}
+
+.file:hover {
+  background: #e1e8ff;
+  color: #111;
+  outline: 2px solid #101a83;
+}
+
+.file .icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.file strong {
+  display: block;
+  font-size: 16px;
+}
+
+.file small {
+  display: block;
+  color: #555;
+  margin-top: 7px;
+}
+
+/* CONTENT */
+
+.meta {
+  font-size: 11px;
+  color: #555;
+}
+
+.label {
+  font-weight: bold;
+  color: #101a83;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 20px;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px dashed #888;
+  margin: 20px 0;
+}
+
+.tag {
+  display: inline-block;
+  border: 1px solid #777;
+  background: #eee;
+  padding: 2px 7px;
+  margin: 3px;
+  font-size: 11px;
+}
+
+.note {
+  border-left: 3px solid #101a83;
+  padding: 8px 13px;
+  background: #f2f2f2;
+}
+
+.window-content ul {
+  padding-left: 23px;
+  margin: 0 0 16px;
+}
+
+.window-content li {
+  margin-bottom: 7px;
+}
+
+/* TERMINAL */
+
+.terminal {
+  background: #070707;
+  color: #7dfb93;
+  border: 3px ridge #777;
+  padding: 18px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.terminal p {
+  margin: 0 0 8px;
+}
+
+.terminal a {
+  color: #9ecbff;
+}
+
+/* IMAGES AND VIDEOS */
+
+.media {
+  max-width: 100%;
+  height: auto;
+  border: 2px inset #aaa;
+  background: #eee;
+}
+
+.media-caption {
+  font-size: 11px;
+  color: #555;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* FOOTER */
+
+.statusline {
+  font-size: 11px;
+  border-top: 1px solid #888;
+  padding: 5px 9px;
+  color: #333;
+}
+
+.back {
+  display: inline-block;
+  margin: 8px 0 28px;
+}
+
+footer {
+  border-top: 1px dashed #777;
+  padding-top: 16px;
+  font-size: 11px;
+  color: #555;
+}
+
+/* MOBILE */
+
+@media (max-width: 720px) {
+  .site-header {
+    flex-direction: column;
+  }
+
+  .file-grid,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .window-content {
+    padding: 15px;
+  }
+
+  .main-nav a {
+    padding: 7px 9px;
+    font-size: 11px;
+  }
+}
+
+/* Windows 98 / personal web archive: shared visual language */
+:root { --win-blue:#000080; --win-gray:#c0c0c0; --win-paper:#ffffff; --win-shadow:#808080; }
+html,body { background:#008080 !important; color:#000 !important; }
+body { font-family:Tahoma,"MS Sans Serif",Arial,sans-serif !important; font-size:14px; line-height:1.5; }
+.page,.interest-page { background:#c0c0c0 !important; border:2px solid !important; border-color:#fff #404040 #404040 #fff !important; box-shadow:2px 2px 0 #000 !important; padding:12px !important; }
+.site-header { background:#c0c0c0 !important; color:#000 !important; border-bottom:2px solid #808080 !important; padding:10px 12px !important; }
+.site-header h1 { font-family:Tahoma,"MS Sans Serif",Arial,sans-serif !important; font-weight:700 !important; letter-spacing:0 !important; }
+.main-nav { background:#c0c0c0 !important; border:0 !important; border-bottom:2px solid #808080 !important; padding:8px !important; }
+.main-nav a, .toc a,.more a,.back { display:inline-block; background:#c0c0c0 !important; color:#000080 !important; border:2px solid !important; border-color:#fff #555 #555 #fff !important; padding:5px 9px !important; text-decoration:none !important; box-shadow:1px 1px #000 !important; }
+.main-nav a:hover,.toc a:hover,.more a:hover { background:#e5e5e5 !important; }
+.window,.panel,.article { background:#fff !important; border:2px solid !important; border-color:#fff #404040 #404040 #fff !important; box-shadow:2px 2px 0 #000 !important; }
+.window-title,.panel-title,.bar { background:#000080 !important; color:white !important; border:0 !important; padding:5px 9px !important; font-family:Tahoma,"MS Sans Serif",Arial,sans-serif !important; font-size:13px !important; font-weight:bold !important; letter-spacing:0 !important; }
+.window-content,.panel-body,.inside { background:#fff !important; color:#000 !important; }
+.inside h1,.inside h2,.inside h3,.window-content h2,.panel-body h2 { font-family:Tahoma,"MS Sans Serif",Arial,sans-serif !important; letter-spacing:0 !important; }
+.inside h1 { font-size:clamp(24px,3.4vw,36px) !important; }
+.inside h2 { font-size:22px !important; }
+.inside h3 { font-size:17px !important; }
+.crumb,.kicker,.fine,.subtitle2,.quote-credit { color:#333 !important; }
+.note,.question,.research-quote { background:#ffffe1 !important; border:1px solid #808080 !important; border-left:4px solid #000080 !important; box-shadow:2px 2px #c0c0c0 !important; }
+.compare th { background:#c0c0c0 !important; }
+.compare td,.compare th { border:1px solid #808080 !important; }
+a { color:#0000ee; }
+a:visited { color:#551a8b; }
+button,input,select,textarea { font-family:Tahoma,"MS Sans Serif",Arial,sans-serif; }
+button { background:#c0c0c0; border:2px solid; border-color:#fff #404040 #404040 #fff; }
+img { max-width:100%; }
+@media(max-width:650px) { .page,.interest-page { padding:6px !important; } .site-header { flex-wrap:wrap; } .inside { padding:14px !important; } }
+
+
+/* Research folder controls: classic Windows 98 clickable Explorer items */
+.file-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important;margin:18px 0!important}
+.file-grid a.file{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:8px!important;min-height:220px!important;padding:18px!important;background:#e5e5e5!important;border:3px solid!important;border-color:#fff #555 #555 #fff!important;box-shadow:2px 2px 0 #333!important;color:#000!important;text-decoration:none!important;transition:none!important}
+.file-grid a.file:hover,.file-grid a.file:focus-visible{background:#d8e5ff!important;outline:2px dotted #000080!important;outline-offset:-8px!important}
+.file-grid a.file:active{border-color:#555 #fff #fff #555!important;box-shadow:none!important;transform:translate(1px,1px)}
+.file-grid a.file .icon{font-size:36px!important;margin:0!important;line-height:1!important}
+.file-grid a.file strong{font-family:Tahoma,Arial,sans-serif!important;font-size:18px!important;color:#000080!important}
+.file-grid a.file small{font-family:Tahoma,Arial,sans-serif!important;font-size:12px!important;color:#333!important}
+.file-grid a.file p{margin:0!important;font-size:13px!important;color:#222!important}
+.file-grid a.file .open-folder{margin-top:auto!important;align-self:flex-end!important;background:#c0c0c0!important;border:2px solid!important;border-color:#fff #555 #555 #fff!important;padding:5px 12px!important;font-weight:bold!important;font-size:12px!important;color:#000!important}
+@media(max-width:680px){.file-grid{grid-template-columns:1fr!important}.file-grid a.file{min-height:0!important}}
+
+
+/* About page: match the research archive's Windows 98 interface */
+body{background:#f6f6f2!important;color:#161616!important;font:14px/1.65 Tahoma,Arial,sans-serif!important}
+.site-wrapper{width:min(1050px,calc(100% - 30px));margin:26px auto 60px;background:#c0c0c0;border:2px solid;border-color:#fff #404040 #404040 #fff;padding:12px;box-shadow:2px 2px #000}
+.top-nav{display:flex;gap:9px;flex-wrap:wrap;background:#c0c0c0;border-bottom:2px solid #808080;padding:8px;margin:0 0 18px}
+.top-nav a{display:inline-block;background:#c0c0c0;color:#000080!important;border:2px solid;border-color:#fff #555 #555 #fff;padding:5px 9px;text-decoration:none!important;box-shadow:1px 1px #000;font:bold 12px Tahoma,Arial,sans-serif}
+.top-nav a:hover{background:#e5e5e5}
+.page-header{background:#c0c0c0;color:#000;padding:10px 12px;margin:0 0 20px;border-bottom:2px solid #808080}
+.page-header h1{font:bold 28px Tahoma,Arial,sans-serif;color:#000;letter-spacing:0}
+.page-header .terminal-label{font:12px 'Courier New',monospace;color:#333}
+.page-header .subtitle{font-size:13px;color:#333}
+.content-box{background:white!important;color:#161616!important;border:2px solid!important;border-color:#fff #404040 #404040 #fff!important;box-shadow:2px 2px #000!important;margin:18px 0!important;padding:20px!important;border-radius:0!important}
+.content-box h2{font:bold 17px Tahoma,Arial,sans-serif!important;letter-spacing:0!important;color:#fff!important;background:#000080!important;padding:7px 10px!important;margin:-20px -20px 18px!important;border:0!important}
+.content-box p,.content-box li{font:14px/1.7 Tahoma,Arial,sans-serif}
+.archive-titlebar,.window-title,.titlebar{background:#000080!important;color:#fff!important;font:bold 12px Tahoma,Arial,sans-serif!important}
+.archive-media{max-width:100%;overflow:hidden}
+.archive-media img,.content-box img{max-width:100%;height:auto}
+footer{border-top:2px solid #808080;padding:16px 8px;font:12px Tahoma,Arial,sans-serif;color:#333}
+@media(max-width:650px){.site-wrapper{width:calc(100% - 16px);margin:8px auto;padding:6px}.content-box{padding:13px!important}.content-box h2{margin:-13px -13px 15px!important}}
+</style></head>
 <body>
-
 <div class="site-wrapper">
-
-    <!-- =========================================
+<!-- =========================================
          NAVIGATION
     ========================================== -->
-
-    <nav class="top-nav">
-
-        <a href="index.html">[ HOME ]</a>
-
-        <a href="about-me.html">[ ABOUT ]</a>
-
-        <a href="research.html">[ RESEARCH ]</a>
-
-        <a href="Any_Rodrigues_CV.pdf" target="_blank">[ CV.pdf ]</a>
-
-        <a href="mailto:anycgrodrigues@gmail.com">[ EMAIL ]</a>
-
-    </nav>
-
-
-    <!-- =========================================
+<nav class="top-nav"><a href="index.html">HOME</a><a aria-current="page" href="about-me.html">ABOUT</a><a href="research.html">RESEARCH</a><a href="Any_Rodrigues_CV.pdf">CV</a><a href="mailto:anycgrodrigues@gmail.com">CONTACT</a></nav>
+<!-- =========================================
          HEADER
     ========================================== -->
-
-    <header class="page-header">
-
-        <div class="terminal-label">
+<header class="page-header">
+<div class="terminal-label">
             C:\any\about_me.txt
         </div>
-
-        <h1>MORE ABOUT ME</h1>
-
-        <p class="subtitle">
+<h1>MORE ABOUT ME</h1>
+<p class="subtitle">
             how science fiction somehow became a research direction
         </p>
-
-        <p class="research-links">
-
-            <a href="Any_Rodrigues_CV.pdf" target="_blank">
+<p class="research-links">
+<a href="Any_Rodrigues_CV.pdf" target="_blank">
                 [ open curriculum_vitae.pdf ]
             </a>
-
-        </p>
-
-    </header>
-
-
-    <!-- =========================================
+</p>
+</header>
+<!-- =========================================
          01
     ========================================== -->
-
-    <section class="content-box">
-
-        <h2>
+<section class="content-box">
+<h2>
             01 // IT STARTED WITH SCIENCE FICTION
         </h2>
-
-        <p>
+<p>
             I can trace my interest in bioengineering back to a slightly
             unusual place: <em>Transcendence</em>.
         </p>
-
-        <p>
+<p>
             I watched it before I really knew what bioengineering could be.
             I was fascinated by its imagined boundary between biology,
             computation and human intelligence.
         </p>
-
-
-        <div class="archive-media transcendence-window">
-
-            <div class="archive-titlebar">
-
-                <span>
+<div class="archive-media transcendence-window">
+<div class="archive-titlebar">
+<span>
                     transcendence.webp
                 </span>
-
-                <span class="archive-controls">
+<span class="archive-controls">
                     _ □ X
                 </span>
-
-            </div>
-
-            <div class="archive-screen">
-
-                <img
-                    src="transcendence.webp"
-                    alt="Transcendence film image"
-                >
-
-            </div>
-
-            <div class="archive-caption">
-
-                <span class="archive-label">
+</div>
+<div class="archive-screen">
+<img alt="Transcendence film image" src="transcendence.webp"/>
+</div>
+<div class="archive-caption">
+<span class="archive-label">
                     FILE_NOTE:
                 </span>
 
                 where this whole thing somehow started...
 
             </div>
-
-        </div>
-
-
-        <p>
+</div>
+<p>
             Uploading a human mind into a computer was obviously science
             fiction. The question underneath it stayed with me:
         </p>
-
-        <div class="big-question">
+<div class="big-question">
             how far can we actually connect living systems and technology?
         </div>
-
-    </section>
-
-
-    <!-- =========================================
+</section>
+<!-- =========================================
          02
     ========================================== -->
-
-    <section class="content-box">
-
-        <h2>
+<section class="content-box">
+<h2>
             02 // THEN BIOLOGY BECAME ENGINEERABLE
         </h2>
-
-        <p>
+<p>
             During my Bachelor's in Bioengineering, that question started
             to feel considerably less fictional.
         </p>
-
-        <p>
+<p>
             I discovered organ-on-chip technology. What fascinated me even
             more was the idea of a <strong>patient-on-chip</strong>.
         </p>
-
-        <p>
+<p>
             The possibility of taking cells from an individual and building
             an experimental system that reproduces aspects of that person's
             biology felt extraordinary.
         </p>
-
-        <div class="big-question">
+<div class="big-question">
 
             What if a biological model could help us understand disease
             or even predict how a patient might respond to treatment?
 
         </div>
-
-        <p>
+<p>
             Suddenly, engineering technology around living systems was not
             science fiction at all. It was experimental biology.
         </p>
-
-        <p>
+<p>
             From there, I knew I wanted my research to stay somewhere around
             this interface between biology and engineered platforms.
         </p>
-
-    </section>
-
-
-    <!-- =========================================
+</section>
+<!-- =========================================
          03
     ========================================== -->
-
-    <section class="content-box">
-
-        <h2>
+<section class="content-box">
+<h2>
             03 // THEN I STARTED LISTENING TO CELLS
         </h2>
-
-        <p>
+<p>
             That interest eventually brought me to neural electrophysiology.
         </p>
-
-        <p>
+<p>
             At DZNE in Dresden, I worked with human olfactory epithelium and
             rat olfactory bulb co-cultures using MEA electrophysiology.
         </p>
-
-        <p>
+<p>
             Later, during my Master's research at TU Dresden / CRTD, I worked
             with adult zebrafish retina on HD-MEAs.
         </p>
-
-        <p>
+<p>
             There was something fascinating about placing living neural
             tissue on a chip and being able to listen to its electrical
             activity.
         </p>
-
-
-        <!-- =========================================
+<!-- =========================================
              LAB ARCHIVE
         ========================================== -->
-
-        <div class="lab-archive">
-
-
-            <!-- DZNE -->
-
-            <div class="archive-media dzne-window">
-
-                <div class="archive-titlebar">
-
-                    <span>
+<div class="lab-archive">
+<!-- DZNE -->
+<div class="archive-media dzne-window">
+<div class="archive-titlebar">
+<span>
                         DZNE_confocal.jpeg
                     </span>
-
-                    <span class="archive-controls">
+<span class="archive-controls">
                         _ □ X
                     </span>
-
-                </div>
-
-                <div class="archive-screen">
-
-                    <img
-                        src="DZNE_confocal.jpeg"
-                        alt="Confocal image of human olfactory epithelium and rat olfactory bulb co-culture"
-                    >
-
-                </div>
-
-                <div class="archive-caption archive-metadata">
-
-                    <p>
-                        <span>MODEL:</span>
+</div>
+<div class="archive-screen">
+<img alt="Confocal image of human olfactory epithelium and rat olfactory bulb co-culture" src="DZNE_confocal.jpeg"/>
+</div>
+<div class="archive-caption archive-metadata">
+<p>
+<span>MODEL:</span>
                         human OE + rat OB co-culture
                     </p>
-
-                    <p>
-                        <span>METHOD:</span>
+<p>
+<span>METHOD:</span>
                         confocal imaging + MEA
                     </p>
-
-                    <p>
-                        <span>NOTE:</span>
+<p>
+<span>NOTE:</span>
                         agglomerates formed. Interesting morphology,
                         very noisy recordings.
                     </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- CRTD STACK -->
-
-            <div class="crtd-stack">
-
-
-                <!-- CRTD IMAGE -->
-
-                <div class="archive-media">
-
-                    <div class="archive-titlebar">
-
-                        <span>
+</div>
+</div>
+<!-- CRTD STACK -->
+<div class="crtd-stack">
+<!-- CRTD IMAGE -->
+<div class="archive-media">
+<div class="archive-titlebar">
+<span>
                             CRTD_artifact.jpeg
                         </span>
-
-                        <span class="archive-controls">
+<span class="archive-controls">
                             _ □ X
                         </span>
-
-                    </div>
-
-                    <div class="archive-screen">
-
-                        <img
-                            src="CRTD_artifact.jpeg"
-                            alt="Light stimulation experiment with ex vivo adult zebrafish retina"
-                        >
-
-                    </div>
-
-                    <div class="archive-caption archive-metadata">
-
-                        <p>
-                            <span>MODEL:</span>
+</div>
+<div class="archive-screen">
+<img alt="Light stimulation experiment with ex vivo adult zebrafish retina" src="CRTD_artifact.jpeg"/>
+</div>
+<div class="archive-caption archive-metadata">
+<p>
+<span>MODEL:</span>
                             adult zebrafish retina
                         </p>
-
-                        <p>
-                            <span>METHOD:</span>
+<p>
+<span>METHOD:</span>
                             light stimulation + HD-MEA
                         </p>
-
-                        <p>
-                            <span>NOTE:</span>
+<p>
+<span>NOTE:</span>
                             applying light stimulation to a
                             "healthy" ex vivo retina.
                         </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- CRTD VIDEO -->
-
-                <div class="archive-media">
-
-                    <div class="archive-titlebar">
-
-                        <span>
+</div>
+</div>
+<!-- CRTD VIDEO -->
+<div class="archive-media">
+<div class="archive-titlebar">
+<span>
                             CRTD_video.mp4
                         </span>
-
-                        <span class="archive-controls">
+<span class="archive-controls">
                             _ □ X
                         </span>
-
-                    </div>
-
-                    <div class="archive-screen">
-
-                        <video
-                            controls
-                            muted
-                            playsinline
-                            preload="metadata"
-                        >
-
-                            <source
-                                src="CRTD_video.mp4"
-                                type="video/mp4"
-                            >
+</div>
+<div class="archive-screen">
+<video controls="" muted="" playsinline="" preload="metadata">
+<source src="CRTD_video.mp4" type="video/mp4"/>
 
                             Your browser does not support HTML video.
 
                         </video>
-
-                    </div>
-
-                    <div class="archive-caption archive-metadata">
-
-                        <p>
-                            <span>MODEL:</span>
+</div>
+<div class="archive-caption archive-metadata">
+<p>
+<span>MODEL:</span>
                             adult zebrafish retina
                         </p>
-
-                        <p>
-                            <span>METHOD:</span>
+<p>
+<span>METHOD:</span>
                             HD-MEA recording
                         </p>
-
-                        <p>
-                            <span>NOTE:</span>
+<p>
+<span>NOTE:</span>
                             the first good signal captured.
                         </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <p>
+</div>
+</div>
+</div>
+</div>
+<p>
             Working with living preparations also taught me the less
             glamorous part of electrophysiology.
         </p>
-
-        <p>
+<p>
             Tissue has to remain viable. Stimulation has to be reproducible.
             Biological variability is unavoidable. Artifacts can look
             convincing. Good recordings often come after a lot of
             troubleshooting.
         </p>
-
-        <p>
+<p>
             But recording was only part of what interested me.
         </p>
-
-        <p>
+<p>
             If we can record from a neural network, we can also give it
             input. We can stimulate it, change its environment and observe
             how it responds.
         </p>
-
-        <p>
+<p>
             Eventually, we can ask whether those responses themselves
             change with experience.
         </p>
-
-    </section>
-
-
-    <!-- =========================================
+</section>
+<!-- =========================================
          04
     ========================================== -->
-
-    <section class="content-box">
-
-        <h2>
+<section class="content-box">
+<h2>
             04 // THE QUESTION CHANGED
         </h2>
-
-        <p>
+<p>
             At first, I was interested in what we could
             <strong>record</strong> from living neural systems.
         </p>
-
-        <p>
+<p>
             Eventually, I became more interested in what happens when
             communication goes both ways.
         </p>
-
-
-        <div class="closed-loop-box">
-
-            <div class="loop-node">
-                LIVING<br>
+<div class="closed-loop-box">
+<div class="loop-node">
+                LIVING<br/>
                 NEURAL SYSTEM
             </div>
-
-            <div class="loop-connection">
-
-                <span class="loop-label">
+<div class="loop-connection">
+<span class="loop-label">
                     activity
                 </span>
-
-                <span class="loop-arrow">
+<span class="loop-arrow">
                     →
                 </span>
-
-            </div>
-
-            <div class="loop-node loop-mea">
+</div>
+<div class="loop-node loop-mea">
                 HD-MEA
             </div>
-
-            <div class="loop-connection">
-
-                <span class="loop-label">
+<div class="loop-connection">
+<span class="loop-label">
                     data
                 </span>
-
-                <span class="loop-arrow">
+<span class="loop-arrow">
                     →
                 </span>
-
-            </div>
-
-            <div class="loop-node">
+</div>
+<div class="loop-node">
                 COMPUTATION
             </div>
-
-            <div class="loop-return">
+<div class="loop-return">
                 ↳ stimulation / feedback ↲
             </div>
+</div>
+<div class="terminal-note">
 
-        </div>
-
-
-        <div class="terminal-note">
-
-            &gt; record activity<br>
-            &gt; interpret it<br>
-            &gt; provide stimulation<br>
-            &gt; observe the response<br>
+            &gt; record activity<br/>
+            &gt; interpret it<br/>
+            &gt; provide stimulation<br/>
+            &gt; observe the response<br/>
             &gt; repeat_<span class="blink-cursor">█</span>
-
-        </div>
-
-
-        <p>
+</div>
+<p>
             A closed loop.
         </p>
-
-        <p>
+<p>
             At that point, the electrode array is no longer simply
             measuring biology.
         </p>
-
-        <p>
+<p>
             It becomes part of the environment the biological system
             is interacting with.
         </p>
-
-    </section>
-
-
-    <!-- =========================================
+</section>
+<!-- =========================================
          05
     ========================================== -->
-
-    <section class="content-box">
-
-        <h2>
+<section class="content-box">
+<h2>
             05 // THEN I FOUND ORGANOID INTELLIGENCE
         </h2>
-
-        <p>
+<p>
             After my Master's, I joined MaxWell Biosystems.
         </p>
-
-        <p>
+<p>
             Being surrounded by HD-MEA technology exposed me to neural
             models and applications far beyond the preparations I had
             worked with myself.
         </p>
-
-        <p>
+<p>
             That was where I first encountered
             <strong>Organoid Intelligence</strong>.
         </p>
-
-
-        <div class="oi-components">
-
-            <span>brain organoids</span>
-            <span>+</span>
-            <span>HD-MEA</span>
-            <span>+</span>
-            <span>stimulation</span>
-            <span>+</span>
-            <span>closed-loop interaction</span>
-            <span>+</span>
-            <span>learning?</span>
-
-        </div>
-
-
-        <p>
+<div class="oi-components">
+<span>brain organoids</span>
+<span>+</span>
+<span>HD-MEA</span>
+<span>+</span>
+<span>stimulation</span>
+<span>+</span>
+<span>closed-loop interaction</span>
+<span>+</span>
+<span>learning?</span>
+</div>
+<p>
             It did not feel like discovering a completely new subject.
             It felt like finding the place where several things I had
             already been interested in finally met.
         </p>
-
-
-        <div class="interest-path">
-
-            <span>organ-on-chip</span>
-
-            <span>→</span>
-
-            <span>electrophysiology</span>
-
-            <span>→</span>
-
-            <span>neural interfaces</span>
-
-            <span>→</span>
-
-            <strong>
+<div class="interest-path">
+<span>organ-on-chip</span>
+<span>→</span>
+<span>electrophysiology</span>
+<span>→</span>
+<span>neural interfaces</span>
+<span>→</span>
+<strong>
                 Organoid Intelligence
             </strong>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================
+</div>
+</section>
+<!-- =========================================
          06
     ========================================== -->
-
-    <section class="content-box">
-
-        <h2>
+<section class="content-box">
+<h2>
             06 // BRAIN ORGANOIDS BEYOND COMPUTATION
         </h2>
-
-        <p>
+<p>
             What draws me to brain organoids is not limited to biological
             computing.
         </p>
-
-        <p>
+<p>
             They can also provide experimentally accessible human neural
             models for studying development, neurodegenerative disease,
             neurotoxicity and responses to pharmacological intervention.
         </p>
-
-        <p>
+<p>
             These directions are closely connected to functional
             electrophysiology.
         </p>
-
-        <p>
+<p>
             Whether the question concerns learning, disease progression
             or drug response, we still need to understand what the neural
             network is doing, how that activity changes over time and what
             happens when we perturb it.
         </p>
-
-
-        <div class="research-link-box">
-
-            <p>
-                <a href="under-construction.html">
+<div class="research-link-box">
+<p>
+<a href="under-construction.html">
                     [ brain_organoids_as_disease_models.html ]
                 </a>
-            </p>
-
-            <p>
-                <a href="under-construction.html">
+</p>
+<p>
+<a href="under-construction.html">
                     [ neuropharmacology_and_neurotoxicity.html ]
                 </a>
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================
+</p>
+</div>
+</section>
+<!-- =========================================
          07
     ========================================== -->
-
-    <section class="content-box">
-
-        <h2>
+<section class="content-box">
+<h2>
             07 // WHICH BRINGS ME BACK TO TRANSCENDENCE
         </h2>
-
-        <div class="spoiler-warning">
+<div class="spoiler-warning">
             [ SPOILER ALERT ]
         </div>
-
-        <p>
+<p>
             At the end of <em>Transcendence</em>, one question remains
             strangely unresolved.
         </p>
-
-        <p>
+<p>
             Was what existed inside the machine really Will?
         </p>
-
-        <p>
+<p>
             Was it a copy? Was it an artificial intelligence that believed
             it was him? Was it something entirely new?
         </p>
-
-        <div class="big-question">
+<div class="big-question">
             how could anyone know?
         </div>
-
-        <p>
+<p>
             That question interests me much more now than when I first
             watched the film.
         </p>
-
-        <p>
+<p>
             Before asking whether a machine, or a biological neural system
             grown in a laboratory, could ever be conscious, there is a much
             more difficult question:
         </p>
-
-        <div class="consciousness-question">
+<div class="consciousness-question">
             WHAT IS CONSCIOUSNESS?
         </div>
-
-
-        <div class="question-stack">
-
-            <p>
+<div class="question-stack">
+<p>
                 How do we distinguish consciousness from intelligence?
             </p>
-
-            <p>
+<p>
                 From learning?
             </p>
-
-            <p>
+<p>
                 From memory?
             </p>
-
-            <p>
+<p>
                 From adaptation?
             </p>
-
-            <p>
+<p>
                 From increasingly complex responses to an environment?
             </p>
-
-        </div>
-
-        <p>
+</div>
+<p>
             I do not think Organoid Intelligence answers those questions.
         </p>
-
-        <p>
+<p>
             I find it fascinating that experimental biology is beginning
             to create systems that make us ask them more carefully.
         </p>
-
-        <p class="future-link">
-
-            <a href="under-construction.html">
+<p class="future-link">
+<a href="under-construction.html">
                 [ consciousness_notes.html ]
             </a>
-
-        </p>
-
-    </section>
-
-
-    <!-- =========================================
+</p>
+</section>
+<!-- =========================================
          08
     ========================================== -->
-
-    <section class="content-box">
-
-        <h2>
+<section class="content-box">
+<h2>
             08 // WHAT I WANT TO KNOW
         </h2>
-
-
-        <div class="research-questions">
-
-
-            <div class="research-question">
-
-                <span class="question-number">
+<div class="research-questions">
+<div class="research-question">
+<span class="question-number">
                     [01]
                 </span>
-
-                <span>
+<span>
                     What constitutes convincing evidence of learning
                     <em>in vitro</em>?
                 </span>
-
-            </div>
-
-
-            <div class="research-question">
-
-                <span class="question-number">
+</div>
+<div class="research-question">
+<span class="question-number">
                     [02]
                 </span>
-
-                <span>
+<span>
                     How should stimulation be designed so that a neural
                     organoid receives meaningful information rather than
                     arbitrary electrical input?
                 </span>
-
-            </div>
-
-
-            <div class="research-question">
-
-                <span class="question-number">
+</div>
+<div class="research-question">
+<span class="question-number">
                     [03]
                 </span>
-
-                <span>
+<span>
                     What can spiking activity and network dynamics tell us about adaptation over time?
                 </span>
-
-            </div>
-
-
-            <div class="research-question">
-
-                <span class="question-number">
+</div>
+<div class="research-question">
+<span class="question-number">
                     [04]
                 </span>
-
-                <span>
+<span>
                     How can electrophysiology help distinguish altered
                     network function caused by disease, drugs or experience?
                 </span>
-
-            </div>
-
-
-            <div class="research-question">
-
-                <span class="question-number">
+</div>
+<div class="research-question">
+<span class="question-number">
                     [05]
                 </span>
-
-                <span>
+<span>
                     Does biological intelligence require a body?
 
                 </span>
-
-            </div>
-
-        </div>
-
-
-        <p class="question-footnote">
+</div>
+</div>
+<p class="question-footnote">
             [ some questions have answers. some have several. that is the interesting part. ]
         </p>
-
-    </section>
-
-
-    <!-- =========================================
+</section>
+<!-- =========================================
          FINAL
     ========================================== -->
-
-    <section class="content-box final-thought">
-
-        <div class="final-terminal-title">
+<section class="content-box final-thought">
+<div class="final-terminal-title">
             current_direction.txt
         </div>
-
-        <div class="final-statement">
+<div class="final-statement">
 
             I don't want to simulate a brain.
 
@@ -830,53 +944,37 @@
                 I want to understand what living neural networks can do
                 when we give them something to interact with.
             </strong>
-
-        </div>
-
-        <div class="final-status">
+</div>
+<div class="final-status">
 
             &gt; status:
             looking for the lab where the next chapter begins..._
 
         </div>
-
-    </section>
-
-
-    <!-- =========================================
+</section>
+<!-- =========================================
          BOTTOM LINKS
     ========================================== -->
-
-    <div class="back-home">
-
-        <a href="index.html">
+<div class="back-home">
+<a href="index.html">
             &lt;&lt; return home
         </a>
-
-        <span> | </span>
-
-        <a href="Any_Rodrigues_CV.pdf" target="_blank">
+<span> | </span>
+<a href="Any_Rodrigues_CV.pdf" target="_blank">
             open CV.pdf
         </a>
-
-        <span> | </span>
-
-        <a href="mailto:anycgrodrigues@gmail.com">
+<span> | </span>
+<a href="mailto:anycgrodrigues@gmail.com">
             email me
         </a>
-
-    </div>
-
-
-    <footer>
+</div>
+<footer>
 
         © 2026 Any Rodrigues
         |
         somewhere between biology and science fiction.
 
     </footer>
-
 </div>
-
 </body>
 </html>
