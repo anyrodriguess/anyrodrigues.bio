@@ -6,8 +6,385 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Research archive of Any Rodrigues: neural electrophysiology, retinal recordings and olfactory cultures.">
   <title>Research Archive | Any Rodrigues</title>
-  <link rel="stylesheet" href="research-retro.css">
-<link rel="stylesheet" href="windows98.css">
+  <style>
+/* Research windows — inspired by the existing homepage */
+
+:root {
+  --blue: #101a83;
+  --ink: #161616;
+  --grey: #c8c8c8;
+  --paper: #f6f6f2;
+  --line: #777;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 14px/1.65 "Courier New", monospace;
+}
+
+a {
+  color: #101a83;
+}
+
+a:hover {
+  background: #101a83;
+  color: white;
+}
+
+.page {
+  width: min(1050px, calc(100% - 30px));
+  margin: 26px auto 60px;
+}
+
+/* HEADER */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 25px;
+  border-bottom: 3px double #111;
+  padding: 0 0 19px;
+}
+
+.site-header h1 {
+  font-size: clamp(27px, 5vw, 43px);
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin: 0 0 8px;
+}
+
+.subtitle {
+  font-size: 12px;
+  margin: 0;
+}
+
+.status-box {
+  border: 2px outset white;
+  background: #ddd;
+  padding: 8px 13px;
+  min-width: 170px;
+  font-size: 11px;
+}
+
+.status-title {
+  font-weight: bold;
+}
+
+.online-dot {
+  display: inline-block;
+  background: #008c49;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* NAVIGATION */
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border: 2px outset white;
+  background: #c8c8c8;
+  margin: 16px 0 26px;
+  padding: 5px;
+}
+
+.main-nav a {
+  display: inline-block;
+  padding: 7px 13px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 12px;
+  color: #111;
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+  background: #101a83;
+  color: #fff;
+}
+
+/* WINDOWS */
+
+.window {
+  border: 3px outset #fff;
+  background: #c8c8c8;
+  box-shadow: 3px 3px 0 #999;
+  margin-bottom: 25px;
+}
+
+.window-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: linear-gradient(90deg, #101a83, #4775ae);
+  color: white;
+  padding: 6px 9px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.window-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.window-buttons span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: #c8c8c8;
+  border: 2px outset #fff;
+  color: #111;
+  line-height: 1;
+}
+
+.window-content {
+  background: #fff;
+  border: 2px inset #ddd;
+  margin: 7px;
+  padding: 23px;
+}
+
+.window-content h2 {
+  font-size: 20px;
+  line-height: 1.35;
+  margin: 0 0 16px;
+}
+
+.window-content h3 {
+  font-size: 15px;
+  margin: 20px 0 8px;
+}
+
+.window-content p {
+  margin: 0 0 13px;
+  max-width: 82ch;
+}
+
+/* RESEARCH FOLDERS */
+
+.file-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.file {
+  border: 2px outset #fff;
+  background: #ededed;
+  padding: 18px;
+  display: block;
+  text-decoration: none;
+  color: #111;
+}
+
+.file:hover {
+  background: #e1e8ff;
+  color: #111;
+  outline: 2px solid #101a83;
+}
+
+.file .icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.file strong {
+  display: block;
+  font-size: 16px;
+}
+
+.file small {
+  display: block;
+  color: #555;
+  margin-top: 7px;
+}
+
+/* CONTENT */
+
+.meta {
+  font-size: 11px;
+  color: #555;
+}
+
+.label {
+  font-weight: bold;
+  color: #101a83;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 20px;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px dashed #888;
+  margin: 20px 0;
+}
+
+.tag {
+  display: inline-block;
+  border: 1px solid #777;
+  background: #eee;
+  padding: 2px 7px;
+  margin: 3px;
+  font-size: 11px;
+}
+
+.note {
+  border-left: 3px solid #101a83;
+  padding: 8px 13px;
+  background: #f2f2f2;
+}
+
+.window-content ul {
+  padding-left: 23px;
+  margin: 0 0 16px;
+}
+
+.window-content li {
+  margin-bottom: 7px;
+}
+
+/* TERMINAL */
+
+.terminal {
+  background: #070707;
+  color: #7dfb93;
+  border: 3px ridge #777;
+  padding: 18px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.terminal p {
+  margin: 0 0 8px;
+}
+
+.terminal a {
+  color: #9ecbff;
+}
+
+/* IMAGES AND VIDEOS */
+
+.media {
+  max-width: 100%;
+  height: auto;
+  border: 2px inset #aaa;
+  background: #eee;
+}
+
+.media-caption {
+  font-size: 11px;
+  color: #555;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* FOOTER */
+
+.statusline {
+  font-size: 11px;
+  border-top: 1px solid #888;
+  padding: 5px 9px;
+  color: #333;
+}
+
+.back {
+  display: inline-block;
+  margin: 8px 0 28px;
+}
+
+footer {
+  border-top: 1px dashed #777;
+  padding-top: 16px;
+  font-size: 11px;
+  color: #555;
+}
+
+/* MOBILE */
+
+@media (max-width: 720px) {
+  .site-header {
+    flex-direction: column;
+  }
+
+  .file-grid,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .window-content {
+    padding: 15px;
+  }
+
+  .main-nav a {
+    padding: 7px 9px;
+    font-size: 11px;
+  }
+}
+
+/* Windows 98 / personal web archive: shared visual language */
+:root { --win-blue:#000080; --win-gray:#c0c0c0; --win-paper:#ffffff; --win-shadow:#808080; }
+html,body { background:#008080 !important; color:#000 !important; }
+body { font-family:Tahoma,"MS Sans Serif",Arial,sans-serif !important; font-size:14px; line-height:1.5; }
+.page,.interest-page { background:#c0c0c0 !important; border:2px solid !important; border-color:#fff #404040 #404040 #fff !important; box-shadow:2px 2px 0 #000 !important; padding:12px !important; }
+.site-header { background:#c0c0c0 !important; color:#000 !important; border-bottom:2px solid #808080 !important; padding:10px 12px !important; }
+.site-header h1 { font-family:Tahoma,"MS Sans Serif",Arial,sans-serif !important; font-weight:700 !important; letter-spacing:0 !important; }
+.main-nav { background:#c0c0c0 !important; border:0 !important; border-bottom:2px solid #808080 !important; padding:8px !important; }
+.main-nav a, .toc a,.more a,.back { display:inline-block; background:#c0c0c0 !important; color:#000080 !important; border:2px solid !important; border-color:#fff #555 #555 #fff !important; padding:5px 9px !important; text-decoration:none !important; box-shadow:1px 1px #000 !important; }
+.main-nav a:hover,.toc a:hover,.more a:hover { background:#e5e5e5 !important; }
+.window,.panel,.article { background:#fff !important; border:2px solid !important; border-color:#fff #404040 #404040 #fff !important; box-shadow:2px 2px 0 #000 !important; }
+.window-title,.panel-title,.bar { background:#000080 !important; color:white !important; border:0 !important; padding:5px 9px !important; font-family:Tahoma,"MS Sans Serif",Arial,sans-serif !important; font-size:13px !important; font-weight:bold !important; letter-spacing:0 !important; }
+.window-content,.panel-body,.inside { background:#fff !important; color:#000 !important; }
+.inside h1,.inside h2,.inside h3,.window-content h2,.panel-body h2 { font-family:Tahoma,"MS Sans Serif",Arial,sans-serif !important; letter-spacing:0 !important; }
+.inside h1 { font-size:clamp(24px,3.4vw,36px) !important; }
+.inside h2 { font-size:22px !important; }
+.inside h3 { font-size:17px !important; }
+.crumb,.kicker,.fine,.subtitle2,.quote-credit { color:#333 !important; }
+.note,.question,.research-quote { background:#ffffe1 !important; border:1px solid #808080 !important; border-left:4px solid #000080 !important; box-shadow:2px 2px #c0c0c0 !important; }
+.compare th { background:#c0c0c0 !important; }
+.compare td,.compare th { border:1px solid #808080 !important; }
+a { color:#0000ee; }
+a:visited { color:#551a8b; }
+button,input,select,textarea { font-family:Tahoma,"MS Sans Serif",Arial,sans-serif; }
+button { background:#c0c0c0; border:2px solid; border-color:#fff #404040 #404040 #fff; }
+img { max-width:100%; }
+@media(max-width:650px) { .page,.interest-page { padding:6px !important; } .site-header { flex-wrap:wrap; } .inside { padding:14px !important; } }
+
+
+/* Research folder controls: classic Windows 98 clickable Explorer items */
+.file-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important;margin:18px 0!important}
+.file-grid a.file{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:8px!important;min-height:220px!important;padding:18px!important;background:#e5e5e5!important;border:3px solid!important;border-color:#fff #555 #555 #fff!important;box-shadow:2px 2px 0 #333!important;color:#000!important;text-decoration:none!important;transition:none!important}
+.file-grid a.file:hover,.file-grid a.file:focus-visible{background:#d8e5ff!important;outline:2px dotted #000080!important;outline-offset:-8px!important}
+.file-grid a.file:active{border-color:#555 #fff #fff #555!important;box-shadow:none!important;transform:translate(1px,1px)}
+.file-grid a.file .icon{font-size:36px!important;margin:0!important;line-height:1!important}
+.file-grid a.file strong{font-family:Tahoma,Arial,sans-serif!important;font-size:18px!important;color:#000080!important}
+.file-grid a.file small{font-family:Tahoma,Arial,sans-serif!important;font-size:12px!important;color:#333!important}
+.file-grid a.file p{margin:0!important;font-size:13px!important;color:#222!important}
+.file-grid a.file .open-folder{margin-top:auto!important;align-self:flex-end!important;background:#c0c0c0!important;border:2px solid!important;border-color:#fff #555 #555 #fff!important;padding:5px 12px!important;font-weight:bold!important;font-size:12px!important;color:#000!important}
+@media(max-width:680px){.file-grid{grid-template-columns:1fr!important}.file-grid a.file{min-height:0!important}}
+
+</style>
 </head>
 
 <body>
@@ -23,7 +400,7 @@
     <div class="status-box">
       <div class="status-title">CURRENT DIRECTORY:</div>
       <div><span class="online-dot"></span> research_archive</div>
-      <div>2 projects available</div>
+      <div>2 research folders available</div>
     </div>
   </header>
 
@@ -73,7 +450,7 @@
               CMOS-MEA recordings in adult zebrafish retina.
               Light responses, pharmacology and retinal injury.
             </p>
-            <span>OPEN FOLDER →</span>
+            <span class="open-folder">OPEN FOLDER →</span>
           </a>
 
           <a class="file" href="dzne.html">
@@ -84,7 +461,7 @@
               Olfactory epithelium and bulb neural cultures.
               MEA recordings and responses to odorant stimulation.
             </p>
-            <span>OPEN FOLDER →</span>
+            <span class="open-folder">OPEN FOLDER →</span>
           </a>
 
         </div>
