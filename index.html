@@ -486,48 +486,21 @@
             </div>
 
 
-            <!-- EVOLVING -->
-
-            <div class="evolving-box">
-
-                <div class="pixel-globe">
-                    🌍
+            <!-- OFFICE ASSISTANT: INTERACTIVE QUESTION -->
+            <div id="clippy-widget" role="group" aria-label="Office Assistant question">
+                <div class="clippy-title"><span>📎 Office Assistant</span><span aria-hidden="true">□</span></div>
+                <div class="clippy-inner">
+                    <div class="clippy-question">
+                        <img class="clippy-art" src="clippy.gif" alt="Animated Clippy paperclip on a yellow notepad">
+                        <div class="clippy-copy">It looks like you're thinking about biological intelligence.<strong>Could a brain organoid ever ask for a body?</strong></div>
+                    </div>
+                    <div class="clippy-actions" id="clippy-actions">
+                        <button type="button" data-vote="yes">Yes</button>
+                        <button type="button" data-vote="no">No</button>
+                        <button type="button" data-vote="unsure">Not sure</button>
+                    </div>
+                    <div class="clippy-result" id="clippy-result" aria-live="polite"></div>
                 </div>
-
-                <div class="evolving-message">
-
-                    this page<br>
-                    is always<br>
-                    evolving...
-
-                    <span class="blue-cursor">
-                        ■
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- VISITORS -->
-
-            <div class="panel visitor-panel">
-
-                <div class="panel-title">
-
-                    <span>▥</span>
-
-                    visitors.dat
-
-                </div>
-
-
-                <div class="panel-body visitor-body">
-                    <div class="counter" id="visitor-count" aria-live="polite">—</div>
-                    <p>homepage page views</p>
-                    <p class="tiny-status">Live counter requires configuration.</p>
-                </div>
-
             </div>
 
         </section>
@@ -605,45 +578,29 @@
 
         </section>
 
-        <!-- EMBEDDED OFFICE ASSISTANT -->
+        <!-- OFFICE ASSISTANT STYLES -->
 <style>
-/* Windows 98 Office Assistant */
-#clippy-widget{position:relative;width:min(440px,100%);margin:0 auto;background:#c0c0c0;color:#000;border:2px solid;border-color:#fff #404040 #404040 #fff;box-shadow:2px 2px 0 #000;font:12px Tahoma,"MS Sans Serif",Arial,sans-serif;text-align:left}
-#clippy-widget *{box-sizing:border-box}
-#clippy-widget .clippy-title{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(90deg,#000080,#1084d0);color:#fff;padding:3px 4px;font-weight:bold;letter-spacing:0}
-#clippy-widget button{font:12px Tahoma,"MS Sans Serif",Arial,sans-serif;background:#c0c0c0;color:#000;border:2px solid;border-color:#fff #555 #555 #fff;border-radius:0;box-shadow:1px 1px 0 #000;cursor:pointer;padding:5px 12px;min-width:58px}
-#clippy-widget button:active{border-color:#555 #fff #fff #555;box-shadow:none}
-#clippy-widget button:focus-visible{outline:1px dotted #000;outline-offset:2px}
-#clippy-widget .clippy-x{min-width:20px;width:20px;height:20px;padding:0;font-weight:bold;line-height:16px}
-#clippy-widget .clippy-inner{padding:10px}
-#clippy-widget .clippy-question{display:flex;align-items:center;gap:10px}
-#clippy-widget .clippy-art{width:105px;height:118px;object-fit:contain;flex-shrink:0}
-#clippy-widget .clippy-copy{line-height:1.5;flex:1}
-#clippy-widget .clippy-copy strong{display:block;margin-top:7px}
-#clippy-widget .clippy-actions{display:flex;justify-content:flex-end;gap:7px;margin-top:8px;flex-wrap:wrap}
-#clippy-widget .clippy-result{display:none;margin-top:12px;padding:9px;background:#fff;border:2px solid;border-color:#777 #fff #fff #777;line-height:1.5}
-#clippy-widget .clippy-result a{color:#000080;text-decoration:underline}
-.clippy-section{display:flex;justify-content:center;align-items:flex-start;margin:28px auto 38px;width:100%;padding:0 12px}
-@media(max-width:420px){#clippy-widget .clippy-art{width:78px;height:98px}}
-@media(prefers-reduced-motion:reduce){#clippy-widget .clippy-art{animation:none}}
+/* Two balanced windows: questions and Clippy */
+.bottom-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:18px; align-items:stretch; }
+.bottom-grid > * { min-width:0; }
+#clippy-widget { width:100%; background:#fff; color:#000; border:2px solid; border-color:#fff #404040 #404040 #fff; box-shadow:2px 2px 0 #000; font:12px Tahoma,"MS Sans Serif",Arial,sans-serif; text-align:left; }
+#clippy-widget * { box-sizing:border-box; }
+#clippy-widget .clippy-title { display:flex; align-items:center; justify-content:space-between; background:linear-gradient(90deg,#000080,#1084d0); color:#fff; padding:4px 6px; font-weight:bold; }
+#clippy-widget .clippy-inner { padding:12px; background:#fff; }
+#clippy-widget .clippy-question { display:flex; align-items:center; gap:12px; }
+#clippy-widget .clippy-art { width:105px; height:118px; object-fit:contain; flex-shrink:0; }
+#clippy-widget .clippy-copy { line-height:1.5; flex:1; }
+#clippy-widget .clippy-copy strong { display:block; margin-top:7px; }
+#clippy-widget .clippy-actions { display:flex; justify-content:flex-end; gap:7px; margin-top:10px; flex-wrap:wrap; }
+#clippy-widget button { font:12px Tahoma,"MS Sans Serif",Arial,sans-serif; background:#c0c0c0; color:#000; border:2px solid; border-color:#fff #555 #555 #fff; border-radius:0; box-shadow:1px 1px 0 #000; cursor:pointer; padding:5px 12px; min-width:58px; }
+#clippy-widget button:active { border-color:#555 #fff #fff #555; box-shadow:none; }
+#clippy-widget button:focus-visible { outline:1px dotted #000; outline-offset:2px; }
+#clippy-widget button:disabled { opacity:.65; cursor:default; }
+#clippy-widget .clippy-result { display:none; margin-top:12px; padding:9px; background:#fff; border:2px solid; border-color:#777 #fff #fff #777; line-height:1.5; }
+#clippy-widget .clippy-result a { color:#000080; text-decoration:underline; }
+@media(max-width:700px) { .bottom-grid { grid-template-columns:minmax(0,1fr); } }
+@media(max-width:420px) { #clippy-widget .clippy-art { width:78px; height:98px; } }
 </style>
-<section class="clippy-section">
-<div id="clippy-widget" role="group" aria-label="Office Assistant question">
-  <div class="clippy-title"><span>📎 Office Assistant</span><span aria-hidden="true">□</span></div>
-  <div class="clippy-inner">
-    <div class="clippy-question">
-      <img class="clippy-art" src="clippy.gif" alt="Clippy paperclip on yellow notepad">
-      <div class="clippy-copy">It looks like you're thinking about biological intelligence.<strong>Could a brain organoid ever ask for a body?</strong></div>
-    </div>
-    <div class="clippy-actions" id="clippy-actions">
-      <button type="button" data-vote="yes">Yes</button>
-      <button type="button" data-vote="no">No</button>
-      <button type="button" data-vote="unsure">Not sure</button>
-    </div>
-    <div class="clippy-result" id="clippy-result" aria-live="polite"></div>
-  </div>
-</div>
-</section>
 
     </main>
 
