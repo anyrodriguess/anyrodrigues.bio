@@ -2,234 +2,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta name="description"
-content="Scientific notes on brain organoids, vascularization, maturation, assembloids, microglia and microfluidic engineering.">
-
+<meta name="description" content="Personal research notes on brain organoids, vascularization, maturation, assembloids and the laboratories engineering better human neural models.">
 <title>Brain Organoids | Any Rodrigues</title>
-
 <link rel="stylesheet" href="style.css">
 
 <style>
-.interest-page {
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-.crumb {
-  font: .83rem monospace;
-  margin: 1.2rem 0;
-  color: #50627b;
-}
-
-.crumb a,
-.article a {
-  color: #1555b5;
-}
-
-.article {
-  background: #fff;
-  border: 2px solid #1c355d;
-  box-shadow: 5px 5px 0 #c4d3e6;
-  margin: 1.5rem 0;
-}
-
-.bar {
-  background: #183d79;
-  color: white;
-  padding: .6rem .9rem;
-  font: 700 .85rem monospace;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.inside {
-  padding: clamp(1rem, 3vw, 2rem);
-}
-
-.inside p,
-.inside li {
-  line-height: 1.8;
-}
-
-.inside h1 {
-  font-size: clamp(2rem, 4vw, 3.1rem);
-  line-height: 1.15;
-  margin: .4rem 0;
-}
-
-.inside h2 {
-  font-size: 1.45rem;
-  margin: 1.7rem 0 .6rem;
-}
-
-.inside h2:first-child {
-  margin-top: 0;
-}
-
-.inside h3 {
-  font-size: 1.1rem;
-  margin: 1.4rem 0 .5rem;
-}
-
-.kicker {
-  font: 700 .78rem monospace;
-  letter-spacing: .08em;
-  color: #2863ae;
-}
-
-.subtitle2 {
-  font-size: 1.13rem;
-  color: #40556f;
-}
-
-.note {
-  background: #edf4fd;
-  border-left: 4px solid #356db4;
-  padding: 1rem;
-  margin: 1.2rem 0;
-  line-height: 1.7;
-}
-
-.question {
-  background: #fff8e6;
-  border-left: 4px solid #c59738;
-  padding: 1rem;
-  margin: 1.4rem 0;
-  line-height: 1.7;
-}
-
-.toc {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .55rem;
-}
-
-.toc a {
-  background: #edf3fb;
-  border: 1px solid #b8cbe4;
-  padding: .5rem .7rem;
-  font: .85rem monospace;
-  text-decoration: none;
-}
-
-.tag {
-  font: .73rem monospace;
-  background: #e9f0fa;
-  border: 1px solid #c1d0e5;
-  padding: .2rem .45rem;
-  display: inline-block;
-  margin: .2rem;
-}
-
-.ref-list {
-  overflow-wrap: anywhere;
-}
-
-.ref-list li {
-  margin: .7rem 0;
-  line-height: 1.6;
-}
-
-.citation {
-  white-space: nowrap;
-  font-size: .9em;
-  text-decoration: none;
-}
-
-.citation:hover {
-  text-decoration: underline;
-}
-
-.more {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .7rem;
-}
-
-.more a {
-  border: 1px solid #b8cbe4;
-  background: #edf3fb;
-  padding: .65rem;
-  text-decoration: none;
-  font: .86rem monospace;
-}
-
-.compare {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.2rem 0;
-}
-
-.compare th,
-.compare td {
-  border: 1px solid #b8cbe4;
-  padding: .75rem;
-  text-align: left;
-  vertical-align: top;
-  line-height: 1.6;
-}
-
-.compare th {
-  background: #e5eef9;
-}
-
-:target {
-  scroll-margin-top: 1rem;
-}
-
-.ref-list li:target {
-  background: #fff8e6;
-}
-
-@media (max-width: 600px) {
-  .article {
-    box-shadow: 3px 3px 0 #c4d3e6;
-  }
-
-  .compare {
-    font-size: .85rem;
-  }
+.interest-page{max-width:1080px;margin:0 auto}
+.crumb{font:.83rem monospace;margin:1.2rem 0;color:#50627b}
+.crumb a,.article a{color:#1555b5}
+.article{background:#fff;border:2px solid #1c355d;box-shadow:5px 5px 0 #c4d3e6;margin:1.5rem 0}
+.bar{background:#183d79;color:white;padding:.6rem .9rem;font:700 .85rem monospace;display:flex;justify-content:space-between;gap:1rem}
+.inside{padding:clamp(1rem,3vw,2rem)}
+.inside p,.inside li{line-height:1.8}
+.inside h1{font-size:clamp(2rem,4vw,3.1rem);line-height:1.15;margin:.4rem 0}
+.inside h2{font-size:1.45rem;margin:1.7rem 0 .6rem}
+.inside h2:first-child{margin-top:0}
+.inside h3{font-size:1.1rem;margin:1.4rem 0 .5rem}
+.kicker{font:700 .78rem monospace;letter-spacing:.08em;color:#2863ae}
+.subtitle2{font-size:1.13rem;color:#40556f}
+.note{background:#edf4fd;border-left:4px solid #356db4;padding:1rem;margin:1.2rem 0;line-height:1.7}
+.question{background:#fff8e6;border-left:4px solid #c59738;padding:1rem;margin:1.4rem 0;line-height:1.7}
+.toc{display:flex;flex-wrap:wrap;gap:.55rem}
+.toc a{background:#edf3fb;border:1px solid #b8cbe4;padding:.5rem .7rem;font:.85rem monospace;text-decoration:none}
+.tag{font:.73rem monospace;background:#e9f0fa;border:1px solid #c1d0e5;padding:.2rem .45rem;display:inline-block;margin:.2rem}
+.ref-list{overflow-wrap:anywhere}
+.ref-list li{margin:.7rem 0;line-height:1.6}
+.more{display:flex;flex-wrap:wrap;gap:.7rem}
+.more a{border:1px solid #b8cbe4;background:#edf3fb;padding:.65rem;text-decoration:none;font:.86rem monospace}
+.compare{width:100%;border-collapse:collapse;margin:1.2rem 0}
+.compare th,.compare td{border:1px solid #b8cbe4;padding:.75rem;text-align:left;vertical-align:top;line-height:1.6}
+.compare th{background:#e5eef9}
+@media(max-width:600px){
+.article{box-shadow:3px 3px 0 #c4d3e6}
+.compare{font-size:.85rem}
 }
 </style>
+<link rel="stylesheet" href="windows98.css">
 </head>
 
 <body>
-
 <div class="page interest-page">
 
 <header class="site-header">
   <div>
     <h1>ANY RODRIGUES</h1>
     <p class="subtitle">
-      molecular bioengineer / neural interfaces /
-      biological intelligence
+      molecular bioengineer / neural interfaces / biological intelligence
     </p>
   </div>
-
   <div class="status-box">
     <div>
       <div class="status-title">CURRENT FILE:</div>
-      <div>
-        <span class="online-dot"></span>
-        brain-organoids.html
-      </div>
-      <div class="tiny-status">
-        scientific interests / evolving notes
-      </div>
+      <div><span class="online-dot"></span> brain-organoids.html</div>
+      <div class="tiny-status">scientific interests / evolving notes</div>
     </div>
   </div>
 </header>
 
-<nav aria-label="Main navigation" class="main-nav">
+<nav class="main-nav" aria-label="Main navigation">
   <a href="index.html">HOME</a>
   <a href="about-me.html">ABOUT</a>
   <a href="research.html">RESEARCH</a>
-  <a href="Any_Rodrigues_CV.pdf"
-     target="_blank" rel="noopener">CV</a>
+  <a href="Any_Rodrigues_CV.pdf" target="_blank" rel="noopener">CV</a>
   <a href="mailto:anycgrodrigues@gmail.com">CONTACT</a>
 </nav>
 
@@ -241,18 +77,13 @@ content="Scientific notes on brain organoids, vascularization, maturation, assem
   <strong>brain-organoids.txt</strong>
 </p>
 
-<!-- INTRODUCTION -->
-
 <article class="article">
   <div class="bar">
     <span>📁 brain-organoids.txt</span>
     <span>□ ×</span>
   </div>
-
   <div class="inside">
-    <div class="kicker">
-      SCIENTIFIC INTERESTS / NOTES FROM THE RABBIT HOLE
-    </div>
+    <div class="kicker">SCIENTIFIC INTERESTS / NOTES FROM THE RABBIT HOLE</div>
 
     <h1>Brain Organoids</h1>
 
@@ -262,79 +93,70 @@ content="Scientific notes on brain organoids, vascularization, maturation, assem
     </p>
 
     <p>
-      Brain organoids are three-dimensional neural tissues
-      generated from human stem cells. Under suitable
-      conditions, these cells can self-organize and
-      reproduce selected features of human neural development.
+      Brain organoids are fascinating because human stem cells
+      can self-organize into three-dimensional neural tissue.
+      But the more I read about them, the more interested I become
+      in everything these models are still missing.
     </p>
 
     <p>
-      Yet many questions remain about their physiological
-      relevance. How can researchers introduce vascular
-      networks, improve maturation, reproduce interactions
-      between brain regions and obtain reliable
-      functional measurements?
+      Blood vessels, mature cell populations, interactions
+      between brain regions, immune cells, controlled
+      microenvironments, and reliable functional readouts.
+      How are researchers solving these problems?
     </p>
 
     <div class="note">
       <strong>About this page:</strong>
-      A collection of scientific papers, research groups
-      and experimental questions concerning the engineering
-      of human neural models. These notes reflect
-      independent reading, not personal experience
-      culturing brain organoids.
+      My collection of papers, laboratories and questions
+      about engineering better human brain models.
+      This is independent reading, not a claim that I have
+      personally cultured brain organoids.
     </div>
   </div>
 </article>
-
-<!-- DIRECTORY -->
 
 <article class="article">
   <div class="bar">
     <span>📑 directory / jump_to</span>
     <span>01–08</span>
   </div>
-
   <div class="inside">
     <div class="toc">
-      <a href="#s1">01 / Limitations</a>
+      <a href="#s1">01 / What is missing?</a>
       <a href="#s2">02 / Vascularization</a>
-      <a href="#s3">03 / Maturation</a>
+      <a href="#s3">03 / Five years in culture</a>
       <a href="#s4">04 / Assembloids</a>
       <a href="#s5">05 / Microglia</a>
-      <a href="#s6">06 / Microfluidics</a>
-      <a href="#s7">07 / Research groups</a>
-      <a href="#s8">08 / Open questions</a>
+      <a href="#s6">06 / Organ-on-chip</a>
+      <a href="#s7">07 / Research community</a>
+      <a href="#s8">08 / My questions</a>
       <a href="#references">References</a>
     </div>
   </div>
 </article>
-
-<!-- SECTION 01 -->
 
 <article class="article">
   <div class="bar">
     <span>📖 01 / model_limitations.txt</span>
     <span>THE PROBLEM</span>
   </div>
-
   <div class="inside">
     <section id="s1">
-
       <h2>01 / What is a brain organoid still missing?</h2>
 
       <p>
         Brain organoids can reproduce selected features
         of human neural development. Depending on the
-        protocol, they may contain neural progenitors,
-        neurons, astrocytes and other cell populations.
+        differentiation protocol, they may contain neural
+        progenitors, neurons, astrocytes and other cell types.
       </p>
 
       <p>
-        However, they are not miniature, complete human
-        brains. Their architecture, cellular diversity,
-        maturation and physiological environment differ
-        substantially from the human nervous system.
+        But they are not miniature, complete human brains.
+        Their architecture, cellular diversity, maturation
+        and physiological environment differ substantially
+        from the human nervous system.
       </p>
 
       <table class="compare">
@@ -344,106 +166,83 @@ content="Scientific notes on brain organoids, vascularization, maturation, assem
             <th>What researchers are trying</th>
           </tr>
         </thead>
-
         <tbody>
           <tr>
             <td>Oxygen and nutrients</td>
-            <td>
-              Endothelial networks, hydrogels,
-              perfusion and microfluidics
-            </td>
+            <td>Endothelial networks, hydrogels, perfusion and microfluidics</td>
           </tr>
-
           <tr>
             <td>Immature cells</td>
-            <td>
-              Long-term culture and improved
-              maturation protocols
-            </td>
+            <td>Long-term culture, improved media and maturation protocols</td>
           </tr>
-
           <tr>
             <td>Missing brain regions</td>
-            <td>
-              Region-specific organoids and assembloids
-            </td>
+            <td>Region-specific organoids and assembloids</td>
           </tr>
-
           <tr>
             <td>Missing immune cells</td>
-            <td>
-              Microglial integration and
-              multicellular co-cultures
-            </td>
+            <td>Microglial integration and multicellular co-cultures</td>
           </tr>
-
           <tr>
             <td>Batch variability</td>
-            <td>
-              Standardized differentiation,
-              controlled matrices and quality metrics
-            </td>
+            <td>Standardized differentiation, controlled matrices and quality metrics</td>
           </tr>
-
           <tr>
             <td>Limited functional readouts</td>
-            <td>
-              MEAs, imaging, stimulation and
-              multimodal characterization
-            </td>
+            <td>MEAs, imaging, stimulation and multimodal characterization</td>
           </tr>
         </tbody>
       </table>
 
       <p>
-        Addressing these limitations requires more than
-        stem-cell biology. It also involves materials
-        science, microengineering, electrophysiology
-        and computational analysis.
+        What I find particularly interesting is that
+        these problems cannot be solved by stem-cell
+        biology alone. They also require engineering,
+        materials science, electrophysiology and
+        computational analysis.
       </p>
-
     </section>
   </div>
 </article>
-
-<!-- SECTION 02 -->
 
 <article class="article">
   <div class="bar">
     <span>📖 02 / vascularization.log</span>
     <span>RESEARCH</span>
   </div>
-
   <div class="inside">
     <section id="s2">
-
       <h2>02 / How do you give an organoid blood vessels?</h2>
 
       <p>
-        In the human brain, blood vessels deliver oxygen
-        and nutrients, remove waste and contribute to the
-        neurovascular unit. Conventional brain organoids
-        lack an equivalent functional circulatory system.
+        This might be my favorite engineering challenge
+        in the field.
       </p>
 
       <p>
-        As organoids become larger, cells deep inside the
-        tissue can experience insufficient oxygen and
-        nutrient delivery, contributing to stress
+        In the human brain, blood vessels deliver oxygen
+        and nutrients, remove waste and participate in
+        the neurovascular unit. A conventional brain
+        organoid growing in culture medium has no
+        equivalent functional circulatory system.
+      </p>
+
+      <p>
+        As organoids become larger, cells deep inside
+        the tissue can experience insufficient oxygen
+        and nutrient delivery, contributing to stress
         and necrosis.
       </p>
 
       <h3>Yale / In-Hyun Park and collaborators — 2019</h3>
-
       <span class="tag">ETV2</span>
       <span class="tag">vascular-like networks</span>
 
       <p>
         Cakir and colleagues engineered cortical organoids
-        containing cells expressing the transcription factor
-        ETV2. These cells contributed to endothelial-like
-        networks within the tissue
-        <a class="citation" href="#ref1">[1]</a>.
+        with cells expressing the transcription factor ETV2.
+        These cells contributed to endothelial-like
+        networks within the tissue.
       </p>
 
       <p>
@@ -454,37 +253,44 @@ content="Scientific notes on brain organoids, vascularization, maturation, assem
       </p>
 
       <p>
-        The study also showed that engineered endothelial
-        cells could contribute to perfused vessels after
-        transplantation in vivo.
+        Their study also demonstrated that the engineered
+        endothelial cells could support perfused vessels
+        after transplantation in vivo.
       </p>
 
       <p>
         This was an important step, but vascular-like
-        networks in culture should not automatically be
-        described as a complete, continuously perfused
-        vascular system.
+        networks in culture should not automatically
+        be described as a complete, continuously
+        perfused vascular system.
       </p>
 
-      <h3>Galway, CÚRAM and Edinburgh — 2025</h3>
+      <p><a href="#ref1">[Cakir et al., 2019]</a></p>
 
+      <h3>Galway, CÚRAM and Edinburgh — 2025</h3>
       <span class="tag">endothelial integration</span>
       <span class="tag">hydrogels</span>
       <span class="tag">neurovascular unit</span>
 
       <p>
-        Fumadó Navarro and colleagues used
-        extracellular-matrix-based hydrogels to introduce
+        A 2025 study by Fumadó Navarro and colleagues
+        took a different approach.
+      </p>
+
+      <p>
+        Researchers from the University of Galway,
+        CÚRAM and the University of Edinburgh used
+        extracellular-matrix-based hydrogels to deliver
         human brain microvascular endothelial cells
-        into developing cerebral organoids
-        <a class="citation" href="#ref2">[2]</a>.
+        to developing cerebral organoids.
       </p>
 
       <p>
         The resulting endothelial networks extended
-        into the tissue and displayed features associated
-        with the neurovascular unit, including interactions
-        with astrocyte-like end-feet and pericytes.
+        into the organoid tissue and displayed features
+        associated with the neurovascular unit,
+        including interactions with astrocyte-like
+        end-feet and pericytes.
       </p>
 
       <p>
@@ -495,11 +301,19 @@ content="Scientific notes on brain organoids, vascularization, maturation, assem
       </p>
 
       <p>
-        However, the authors identified the absence
+        That's a particularly interesting result:
+        engineering the surrounding tissue environment
+        changed how well cells survived inside the model.
+      </p>
+
+      <p>
+        However, the authors also identified the absence
         of luminal perfusion as an important remaining
         limitation. Vascular integration and functional
         blood circulation are not interchangeable.
       </p>
+
+      <p><a href="#ref2">[Fumadó Navarro et al., 2025]</a></p>
 
       <h3>What does vascularization actually mean?</h3>
 
@@ -510,91 +324,74 @@ content="Scientific notes on brain organoids, vascularization, maturation, assem
             <th>What it demonstrates</th>
           </tr>
         </thead>
-
         <tbody>
           <tr>
             <td>Endothelial markers</td>
-            <td>
-              Cells express features associated
-              with endothelial identity
-            </td>
+            <td>Cells express features associated with endothelial identity</td>
           </tr>
-
           <tr>
             <td>Vascular-like networks</td>
-            <td>
-              Cells form organized vessel-like structures
-            </td>
+            <td>Cells form organized vessel-like structures</td>
           </tr>
-
           <tr>
             <td>Barrier characteristics</td>
-            <td>
-              Selected molecular or functional features
-              of a vascular barrier
-            </td>
+            <td>Selected molecular or functional features of a vascular barrier</td>
           </tr>
-
           <tr>
             <td>Perfusion</td>
-            <td>
-              Fluid demonstrably flows through connected
-              luminal structures
-            </td>
+            <td>Fluid demonstrably flows through connected luminal structures</td>
           </tr>
         </tbody>
       </table>
 
       <div class="question">
-        <strong>Open question:</strong>
+        <strong>Something I want to understand better:</strong>
         Could combining vascular networks with controlled
         microfluidic perfusion improve organoid maturation
-        and make electrophysiological recordings more
-        stable over long experimental periods?
+        and make electrophysiological recordings more stable
+        over long experimental periods?
       </div>
-
     </section>
   </div>
 </article>
-
-<!-- SECTION 03 -->
 
 <article class="article">
   <div class="bar">
     <span>📖 03 / maturation.exe</span>
     <span>2026</span>
   </div>
-
   <div class="inside">
     <section id="s3">
-
       <h2>03 / What if an organoid needs years to mature?</h2>
 
       <p>
-        Human brain development is unusually slow,
-        with many processes associated with neuronal
-        maturation continuing long after birth.
+        Human brain development is unusually slow.
+        Many processes associated with neuronal
+        maturation continue long after birth.
       </p>
 
       <p>
-        This presents a challenge for organoid research:
-        how can researchers study mature human neural
-        biology when many models resemble relatively
-        early developmental stages?
+        That creates a difficult problem for organoid
+        research: how do we study mature human neural
+        biology when our models often resemble
+        relatively early developmental stages?
       </p>
 
       <h3>Paola Arlotta's group / Harvard — 2026</h3>
-
       <span class="tag">long-term culture</span>
       <span class="tag">5+ years</span>
       <span class="tag">single-cell analysis</span>
 
       <p>
-        Faravelli, Antón-Bolaños and colleagues maintained
-        human cortical organoids in culture for more than
-        five years and investigated how their cells
-        changed over time
-        <a class="citation" href="#ref3">[3]</a>.
+        In August 2026, Faravelli, Antón-Bolaños
+        and colleagues published a remarkable study
+        in Nature.
+      </p>
+
+      <p>
+        They maintained human cortical organoids
+        in culture for more than five years and
+        investigated how their cells changed over time.
       </p>
 
       <p>
@@ -606,720 +403,557 @@ content="Scientific notes on brain organoids, vascularization, maturation, assem
       </p>
 
       <p>
-        Older neural progenitors retained information
-        about their developmental age. When combined
-        with younger cells, they could produce later
-        neuronal fates without repeating the earlier
-        developmental sequence.
+        Particularly fascinating was the finding
+        that older neural progenitors retained
+        information about their developmental age.
+        When combined with younger cells, they
+        could produce later neuronal fates without
+        repeating the earlier sequence.
       </p>
 
       <p>
-        The findings do not mean that five-year-old
+        The work does not mean that five-year-old
         organoids are equivalent to adult human brains.
-        Nevertheless, they challenge the assumption
-        that organoids can only represent a narrow
-        period of early human development.
+        Neuronal populations still changed over time,
+        and the models remained incomplete.
       </p>
 
-      <div class="question">
-        <strong>Open question:</strong>
-        How does long-term maturation affect spontaneous
-        activity, stimulus responses, synaptic plasticity
-        and network organization? Could these changes
-        be tracked longitudinally using electrophysiology?
-      </div>
+      <p>
+        But it challenges the assumption that organoids
+        can only represent a narrow period of early
+        human development.
+      </p>
 
+      <p><a href="#ref3">[Faravelli et al., 2026]</a></p>
+
+      <div class="question">
+        <strong>My question:</strong>
+        How does long-term maturation change
+        spontaneous activity, stimulus responses,
+        synaptic plasticity and network organization?
+        And could we track those changes repeatedly
+        using electrophysiology?
+      </div>
+      
       <h3>Can gravity influence brain organoid development?</h3>
 
       <p>
-        An unexpected experimental variable in organoid
-        engineering is gravity itself.
+      One unexpected variable in organoid engineering is gravity itself.
+      Research involving brain organoids aboard the International Space
+      Station has suggested that spaceflight conditions can influence
+      neuronal differentiation and maturation. However, whether these
+      changes produce more functionally mature neural networks remains
+      unclear.
       </p>
 
       <p>
-        Research involving neural organoids aboard the
-        International Space Station has suggested that
-        spaceflight conditions can influence neuronal
-        differentiation and maturation
-        <a class="citation" href="#ref4">[4]</a>.
+      OrganoTherapeutics is exploring this from another perspective.
+      Using a Random Positioning Machine to simulate microgravity, the
+      company is studying patient-derived midbrain organoids carrying
+      a GBA mutation associated with Parkinson's disease. Their
+      experiments investigate cell viability, differentiation and
+      disease-related phenotypes before moving toward an automated
+      organoid-on-chip experiment in orbit.
       </p>
 
       <p>
-        However, whether these changes produce more
-        functionally mature neural networks remains unclear.
+        What interests me is that gravity becomes another experimental
+        variable, alongside culture conditions, stimulation and tissue
+        architecture.
       </p>
 
-      <p>
-        OrganoTherapeutics is exploring related questions
-        using a Random Positioning Machine to simulate
-        microgravity. The company is studying patient-derived
-        midbrain organoids carrying a GBA mutation associated
-        with Parkinson's disease, investigating viability,
-        differentiation and disease-related phenotypes.
-      </p>
+      <div class="question">
+        <strong>My question:</strong>
+        Could changing the physical environment influence
+        not only how neural tissue develops, but also
+        how its circuits organize and function?
+      </div>
 
-      <p>
-        Its research plans also include automated
-        organoid-on-chip experiments in orbit.
-        Simulated microgravity on Earth and actual
-        spaceflight conditions should not be treated
-        as equivalent experimental environments.
-      </p>
-
-      <p>
-        Changes in developmental or maturation markers
-        do not necessarily demonstrate improved neural
-        circuit function.
-      </p>
-
-      <p>
-        <strong>Company research update:</strong>
-        <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7510574821634732033/"
-           target="_blank" rel="noopener">
-          OrganoTherapeutics — microgravity experiments
-        </a>.
+      <p class="gravity-references">
+      <strong>Further reading:</strong>
+      <a href="https://doi.org/10.1093/stcltm/szae070"
+        target="_blank" rel="noopener noreferrer">
+        Marotta et al., 2024
+      </a>
+      &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7510574821634732033/"
+        target="_blank" rel="noopener noreferrer">
+          OrganoTherapeutics — Microgravity experiments
+      </a>
       </p>
 
     </section>
   </div>
 </article>
-
-<!-- SECTION 04 -->
 
 <article class="article">
   <div class="bar">
     <span>📖 04 / assembloids.txt</span>
     <span>CONNECTIVITY</span>
   </div>
-
   <div class="inside">
     <section id="s4">
-
       <h2>04 / What happens when we connect different brain regions?</h2>
 
       <p>
         A cortical organoid can reproduce selected
-        properties of cortical development, but the
-        brain does not consist of one isolated region.
+        properties of cortical development, but
+        the brain does not consist of one isolated
+        region.
       </p>
 
       <p>
         Different neural populations communicate
-        across regions. Some neurons migrate long
-        distances during development, and functional
-        circuits depend on these interactions.
+        across regions. Some neurons migrate
+        long distances during development, and
+        functional circuits depend on these
+        interactions.
       </p>
 
       <h3>Sergiu Paşca's laboratory / Stanford</h3>
-
       <span class="tag">assembloids</span>
       <span class="tag">cell migration</span>
       <span class="tag">circuit formation</span>
 
       <p>
-        Paşca and colleagues pioneered approaches that
-        combine region-specific neural organoids into
-        assembloids.
+        Paşca and colleagues pioneered approaches
+        that combine region-specific neural
+        organoids into what they call assembloids.
       </p>
 
       <p>
-        In a landmark 2017 study, Birey and colleagues
-        fused forebrain spheroids representing different
-        neural populations and observed interneuron
-        migration between the structures
-        <a class="citation" href="#ref5">[5]</a>.
+        In a landmark 2017 study, Birey and
+        colleagues fused forebrain spheroids
+        representing different neural populations
+        and observed interneuron migration
+        between the structures.
       </p>
 
       <p>
-        Subsequent work developed models of cortico-striatal
-        and cortico-motor connections, allowing researchers
-        to investigate selected features of human
-        circuit formation.
+        Subsequent work developed models of
+        cortico-striatal and cortico-motor
+        connections, allowing researchers to
+        investigate selected features of
+        human circuit formation.
       </p>
 
       <p>
-        In 2025, the group reported midline assembloids
-        for studying regulators of human axon guidance
-        <a class="citation" href="#ref6">[6]</a>.
+        In 2025, the group also reported
+        midline assembloids for studying
+        regulators of human axon guidance.
       </p>
 
       <p>
-        Assembloids shift the experimental question from
-        generating individual cell populations to examining
-        whether those populations can establish meaningful
-        connections and communication.
+        I find assembloids especially interesting
+        because they shift the question from
+        "Can we generate the right cells?"
+        to "Can these cells connect and
+        communicate in a meaningful way?"
       </p>
+
+      <p><a href="#ref4">[Birey et al., 2017]</a></p>
+      <p><a href="#ref5">[Onesto et al., 2025]</a></p>
 
       <div class="note">
         <strong>Not a complete brain:</strong>
-        Assembloids are controlled models of selected
-        interactions. Connecting two organoids does not
-        reproduce the full circuitry of the human
-        nervous system.
+        Assembloids are controlled experimental
+        models of selected interactions.
+        Connecting two organoids does not
+        reproduce the full circuitry of
+        the human nervous system.
       </div>
-
     </section>
   </div>
 </article>
-
-<!-- SECTION 05 -->
 
 <article class="article">
   <div class="bar">
     <span>📖 05 / missing_cells.txt</span>
     <span>MICROGLIA</span>
   </div>
-
   <div class="inside">
     <section id="s5">
-
       <h2>05 / What about the brain's immune cells?</h2>
 
       <p>
-        Microglia contribute to brain development,
+        Microglia are central to brain development,
         synaptic remodeling, immune surveillance
         and responses to injury.
       </p>
 
       <p>
-        Many neural organoid protocols do not reliably
-        generate the full range of non-neuronal cells
-        present in human brain tissue.
+        Yet many neural organoid protocols do not
+        reliably generate the full range of
+        non-neuronal cells found in human brain tissue.
       </p>
 
       <h3>Adding microglia to the model</h3>
-
       <span class="tag">iPSC-derived microglia</span>
       <span class="tag">multicellular models</span>
 
       <p>
-        Wogram and colleagues investigated how human
-        iPSC-derived microglia integrate into cerebral
-        organoids and develop more in-vivo-like
-        characteristics
-        <a class="citation" href="#ref7">[7]</a>.
+        A 2025 study published in the
+        European Journal of Neuroscience
+        investigated how human iPSC-derived
+        microglia integrate into cerebral
+        organoids and develop more
+        in-vivo-like characteristics.
       </p>
 
       <p>
-        Buonfiglioli and collaborators investigated
-        microglia-containing cerebral organoids
-        as models of early-life immune challenges
-        <a class="citation" href="#ref8">[8]</a>.
+        Other researchers are studying
+        microglia-containing organoids
+        as models of early-life immune
+        challenges and neuroinflammation.
       </p>
 
       <p>
-        Such models may help investigate how immune
+        These models could become particularly
+        relevant for understanding how immune
         signaling influences neuronal maturation,
-        network function and neurodegenerative processes.
+        network function and neurodegeneration.
       </p>
+
+      <p><a href="#ref6">[Wogram et al., 2025]</a></p>
+      <p><a href="#ref7">[Buonfiglioli et al., 2025]</a></p>
 
       <div class="question">
-        <strong>Open question:</strong>
-        How does microglial integration influence
-        spontaneous neural activity and responses
-        to inflammatory stimulation?
+        <strong>Something I'm curious about:</strong>
+        If we add microglia to a neural organoid,
+        how does that change its spontaneous
+        electrical activity or response to
+        inflammatory stimulation?
       </div>
-
     </section>
   </div>
 </article>
-
-<!-- SECTION 06 -->
 
 <article class="article">
   <div class="bar">
     <span>📖 06 / organoid_on_chip.exe</span>
     <span>ENGINEERING</span>
   </div>
-
   <div class="inside">
     <section id="s6">
-
       <h2>06 / Can microfluidics make organoids more useful?</h2>
 
       <p>
-        Organoid-on-chip systems combine three-dimensional
-        biological models with engineered microenvironments.
+        Organoid-on-chip systems combine
+        three-dimensional biological models
+        with engineered microenvironments.
       </p>
 
       <p>
-        Microfluidic devices can control fluid delivery,
-        exposure timing, gradients and interactions
-        between tissue compartments.
+        Microfluidic devices can help researchers
+        control fluid delivery, exposure timing,
+        gradients and interactions between
+        tissue compartments.
       </p>
 
       <p>
-        These properties are relevant to pharmacology
-        and toxicology, where compound concentration
-        and exposure duration can influence
+        This is especially interesting for
+        neuropharmacology and neurotoxicity,
+        where the concentration and duration
+        of an exposure can strongly influence
         experimental results.
       </p>
 
-      <h3>
-        A breakthrough: perfusing neural tissue
-        through 3D microfluidics
-      </h3>
-
-      <span class="tag">3D soft microfluidics</span>
-      <span class="tag">perfusion</span>
-      <span class="tag">hydrogel engineering</span>
-
-      <p>
-        In 2023, Grebenyuk, Ranga and collaborators
-        at KU Leuven reported a soft, three-dimensional
-        microfluidic system built using printed,
-        capillary-scale hydrogel channels
-        <a class="citation" href="#ref9">[9]</a>.
-      </p>
-
-      <p>
-        By perfusing engineered neural tissue through
-        these networks, the researchers improved oxygen
-        and nutrient delivery, reduced core hypoxia
-        and supported neural differentiation.
-        The study also investigated perfusion
-        of cortical organoids.
-      </p>
-
-      <p>
-        This was an important engineering advance
-        because the channels delivered culture medium
-        within thick tissue rather than exclusively
-        around its external surface.
-      </p>
-
-      <p>
-        However, these channels were synthetic
-        microfluidic structures, not biological
-        endothelial blood vessels.
-      </p>
-
-      <p>
-        The study did not establish a mature
-        blood-brain barrier or demonstrate
-        learning-related neural network function.
-      </p>
-
-      <h3>
-        What makes an organoid-on-chip platform
-        experimentally useful?
-      </h3>
+      <h3>What might a useful platform include?</h3>
 
       <ul>
-        <li>
-          Controlled delivery of nutrients and compounds
-        </li>
-        <li>
-          Monitoring oxygen and environmental conditions
-        </li>
-        <li>
-          Defined interactions between tissue compartments
-        </li>
-        <li>
-          Optical access for imaging
-        </li>
-        <li>
-          Compatibility with electrical stimulation
-          and MEA recording
-        </li>
-        <li>
-          Longitudinal measurements of the same tissue
-        </li>
+        <li>Controlled delivery of nutrients and compounds</li>
+        <li>Monitoring of oxygen and environmental conditions</li>
+        <li>Defined interactions between tissue compartments</li>
+        <li>Optical access for imaging</li>
+        <li>Electrical stimulation and MEA recording</li>
+        <li>Longitudinal measurements of the same tissue</li>
       </ul>
 
       <p>
-        These are potential platform capabilities,
-        not properties that every organoid-on-chip
-        system necessarily possesses.
+        But placing an organoid inside a chip
+        does not automatically create blood vessels
+        or a functional blood-brain barrier.
+        Those properties must be engineered
+        and experimentally demonstrated.
       </p>
 
       <p>
-        Placing an organoid inside a microfluidic
-        chip does not automatically generate
-        biological blood vessels or a functional
-        blood-brain barrier.
-      </p>
-
-      <p>
-        Similarly, fluid flowing around an organoid
-        is not equivalent to perfusion through
-        connected luminal structures within the tissue.
+        Likewise, fluid flowing around an organoid
+        is not the same as fluid flowing through
+        a connected vascular network inside it.
       </p>
 
       <div class="question">
-        <strong>An experimental question:</strong>
-        Could a system combining vascularization,
-        controlled perfusion and longitudinal
-        electrophysiology establish whether improved
-        nutrient delivery produces measurable changes
-        in neural activity and maturation?
+        <strong>The experiment I'd love to see:</strong>
+        A vascularized brain organoid with controlled
+        perfusion and longitudinal electrophysiology,
+        allowing researchers to study how changes
+        in nutrient delivery affect neural activity
+        and maturation.
       </div>
-
     </section>
   </div>
 </article>
-
-<!-- SECTION 07 -->
 
 <article class="article">
   <div class="bar">
     <span>📖 07 / research_community.directory</span>
     <span>LABS</span>
   </div>
-
   <div class="inside">
     <section id="s7">
-
-      <h2>
-        07 / Research groups shaping
-        brain organoid engineering
-      </h2>
+      <h2>07 / Laboratories and collaborations I want to follow</h2>
 
       <p>
-        Different research groups are addressing
-        the limitations of brain organoids through
-        vascularization, long-term maturation,
-        circuit assembly, immune-cell integration
-        and microengineering.
+        One thing I love about this field is how
+        different research groups approach
+        the same problem from different directions.
       </p>
 
       <h3>In-Hyun Park and collaborators / Yale</h3>
-
       <p>
-        Engineering endothelial-like networks within
-        cortical organoids and investigating
-        neurovascular features
-        <a class="citation" href="#ref1">[1]</a>.
+        Engineering endothelial-like networks
+        in cortical organoids and investigating
+        neurovascular features.
+        <a href="#ref1">[Paper]</a>
       </p>
 
-      <h3>
-        Mihai Lomora, Abhay Pandit and collaborators /
-        Galway, CÚRAM and Edinburgh
-      </h3>
-
+      <h3>Mihai Lomora, Abhay Pandit and collaborators / Galway, CÚRAM and Edinburgh</h3>
       <p>
-        Developing biomaterial-based approaches to
-        endothelial integration, neurovascular-unit
-        features and reduced cell death within
-        cerebral organoids
-        <a class="citation" href="#ref2">[2]</a>.
+        Biomaterials, endothelial integration,
+        neurovascular-unit features and
+        strategies to reduce cell death
+        inside cerebral organoids.
+        <a href="#ref2">[Paper]</a>
       </p>
 
-      <h3>
-        Paola Arlotta and collaborators /
-        Harvard and Broad Institute
-      </h3>
-
+      <h3>Paola Arlotta and collaborators / Harvard and Broad Institute</h3>
       <p>
-        Investigating human cortical development,
-        cell-type diversity, long-term organoid
-        maturation and developmental timing
-        <a class="citation" href="#ref3">[3]</a>.
+        Human cortical development,
+        cell-type diversity, long-term
+        maturation and developmental timing.
+        <a href="#ref3">[Paper]</a>
       </p>
 
       <h3>Sergiu Paşca / Stanford</h3>
-
       <p>
-        Developing region-specific organoids and
-        assembloids to investigate neuronal migration,
-        axon guidance, circuit formation and
-        scalable human neural models
-        <a class="citation" href="#ref5">[5]</a>
-        <a class="citation" href="#ref6">[6]</a>.
+        Region-specific organoids,
+        assembloids, neural migration,
+        circuit formation and scalable
+        human neural models.
+        <a href="#ref5">[Recent paper]</a>
       </p>
 
-      <h3>Wogram and collaborators / Microglial integration</h3>
-
+      <h3>Microglia and neuroimmune-modeling researchers</h3>
       <p>
-        Investigating the integration of human
-        iPSC-derived microglia into cerebral organoids
-        and the resulting microglial phenotype
-        <a class="citation" href="#ref7">[7]</a>.
-      </p>
-
-      <p>
-        Related work by Buonfiglioli and collaborators
-        examines early-life immune challenges using
-        microglia-containing cerebral organoids
-        <a class="citation" href="#ref8">[8]</a>.
-      </p>
-
-      <h3>Adrian Ranga and collaborators / KU Leuven</h3>
-
-      <p>
-        Combining 3D hydrogel engineering,
-        synthetic capillary-scale microfluidics
-        and long-term perfusion to support
-        larger neural tissue constructs
-        <a class="citation" href="#ref9">[9]</a>.
+        Groups investigating microglial
+        integration, immune challenges
+        and neuron-glia interactions
+        in human neural organoids.
+        <a href="#ref6">[Paper]</a>
+        <a href="#ref7">[Paper]</a>
       </p>
 
       <p>
-        Their work connects tissue architecture,
-        oxygen and nutrient delivery, and neural
-        differentiation. It illustrates how several
-        engineering approaches can be integrated
-        into a single experimental platform.
+        I want to keep expanding this directory
+        as I discover more laboratories,
+        particularly groups combining organoids
+        with microfluidics, MEAs, neural engineering
+        and functional circuit studies.
       </p>
-
-      <p>
-        Nevertheless, biological vascular remodeling,
-        mature blood-brain barrier function and
-        reproducible neural circuit performance
-        remain distinct challenges.
-      </p>
-
-      <div class="note">
-        <strong>A shared challenge:</strong>
-        Across these approaches, an important next
-        step is determining whether improvements
-        in tissue structure, oxygenation and survival
-        also produce reproducible improvements
-        in neural circuit function.
-      </div>
-
     </section>
   </div>
 </article>
-
-<!-- SECTION 08 -->
 
 <article class="article">
   <div class="bar">
-    <span>📖 08 / research_questions.txt</span>
-    <span>OPEN QUESTIONS</span>
+    <span>📖 08 / personal_notes.txt</span>
+    <span>MY QUESTIONS</span>
   </div>
-
   <div class="inside">
     <section id="s8">
-
-      <h2>08 / Open questions and future directions</h2>
+      <h2>08 / What I would love to investigate</h2>
 
       <p>
-        The engineering of brain organoids raises
-        questions that extend beyond morphology
-        and gene expression.
+        My experience has mainly been with
+        electrophysiology and neural preparations
+        rather than brain organoid culture.
       </p>
 
       <p>
-        How can improvements in tissue complexity
-        be linked to measurable physiological function?
+        That is probably why I keep thinking
+        about the functional side of these models.
+        We can characterize their cell populations,
+        morphology and gene expression, but
+        what can their electrical activity tell us?
       </p>
 
       <p>
-        Does vascularization improve network maturation?
-        How does microglial integration influence
-        responses to inflammatory stimuli?
-      </p>
-
-      <p>
+        How does vascularization affect network
+        maturation? Would organoids with microglia
+        respond differently to inflammatory stimuli?
         Can assembloids develop reproducible
-        communication between neural regions?
+        communication between regions?
       </p>
 
       <p>
-        And how should researchers determine whether
-        a more complex model is genuinely more
-        informative, rather than simply more
-        difficult to reproduce?
+        And how do we decide when a more complex
+        model is genuinely better, rather than
+        simply more difficult to reproduce?
       </p>
 
       <div class="question">
-        <strong>The broader question:</strong>
-        How can the biological complexity of human
-        neural organoids be combined with the
-        experimental control and functional
-        measurements required for reproducible research?
+        <strong>The bigger question:</strong>
+        How can we combine the biological complexity
+        of human organoids with the experimental
+        control and functional measurements needed
+        for reliable research?
       </div>
-
     </section>
   </div>
 </article>
-
-<!-- REFERENCES -->
 
 <article class="article" id="references">
   <div class="bar">
     <span>🔗 references.url</span>
     <span>external links ↗</span>
   </div>
-
   <div class="inside">
-
     <h2>References &amp; further reading</h2>
 
     <ol class="ref-list">
-
       <li id="ref1">
-        Cakir et al. (2019).
         <a href="https://doi.org/10.1038/s41592-019-0586-5"
            target="_blank" rel="noopener">
-          Engineering of human brain organoids with a
-          functional vascular-like system.
+          Cakir et al. (2019).
+          Engineering of human brain organoids
+          with a functional vascular-like system.
+          Nature Methods.
         </a>
-        <em>Nature Methods.</em>
       </li>
 
       <li id="ref2">
-        Fumadó Navarro et al. (2025).
         <a href="https://doi.org/10.1002/advs.202507256"
            target="_blank" rel="noopener">
-          Cerebral Organoids with Integrated Endothelial Networks
-          Emulate the Neurovascular Unit and Mitigate Core Necrosis.
+          Fumadó Navarro et al. (2025).
+          Cerebral Organoids with Integrated Endothelial
+          Networks Emulate the Neurovascular Unit
+          and Mitigate Core Necrosis.
+          Advanced Science.
         </a>
-        <em>Advanced Science.</em>
       </li>
 
       <li id="ref3">
-        Faravelli et al. (2026).
         <a href="https://doi.org/10.1038/s41586-026-10877-x"
            target="_blank" rel="noopener">
-          Human brain organoids record the passage of time
-          over multiple years.
+          Faravelli et al. (2026).
+          Human brain organoids record the passage
+          of time over multiple years.
+          Nature.
         </a>
-        <em>Nature.</em>
       </li>
 
       <li id="ref4">
-        Marotta et al. (2024).
-        <a href="https://doi.org/10.1093/stcltm/szae070"
+        <a href="https://doi.org/10.1038/nature22330"
            target="_blank" rel="noopener">
-          Effects of microgravity on human iPSC-derived
-          neural organoids on the International Space Station.
+          Birey et al. (2017).
+          Assembly of functionally integrated
+          human forebrain spheroids.
+          Nature.
         </a>
       </li>
 
       <li id="ref5">
-        Birey et al. (2017).
-        <a href="https://doi.org/10.1038/nature22330"
+        <a href="https://doi.org/10.1126/science.adq7934"
            target="_blank" rel="noopener">
-          Assembly of functionally integrated human
-          forebrain spheroids.
+          Onesto et al. (2025).
+          Midline assembloids reveal regulators
+          of human axon guidance.
+          Science.
         </a>
-        <em>Nature.</em>
       </li>
 
       <li id="ref6">
-        Onesto et al. (2025).
-        <a href="https://doi.org/10.1126/science.adq7934"
+        <a href="https://doi.org/10.1111/ejn.70281"
            target="_blank" rel="noopener">
-          Midline assembloids reveal regulators of
-          human axon guidance.
+          Wogram et al. (2025).
+          Human iPSC-Derived Microglia Integrate
+          Into Cerebral Organoids and Assume
+          an In Vivo-Like Phenotype.
+          European Journal of Neuroscience.
         </a>
-        <em>Science.</em>
       </li>
 
       <li id="ref7">
-        Wogram et al. (2025).
-        <a href="https://doi.org/10.1111/ejn.70281"
-           target="_blank" rel="noopener">
-          Human iPSC-Derived Microglia Integrate Into
-          Cerebral Organoids and Assume an In Vivo-Like Phenotype.
-        </a>
-        <em>European Journal of Neuroscience.</em>
-      </li>
-
-      <li id="ref8">
-        Buonfiglioli et al. (2025).
         <a href="https://doi.org/10.1016/j.bbi.2024.11.008"
            target="_blank" rel="noopener">
-          A microglia-containing cerebral organoid model
-          to study early life immune challenges.
+          Buonfiglioli et al. (2025).
+          A microglia-containing cerebral organoid
+          model to study early life immune challenges.
+          Brain, Behavior, and Immunity.
         </a>
-        <em>Brain, Behavior, and Immunity.</em>
       </li>
 
-      <li id="ref9">
-        Grebenyuk et al. (2023).
-        <a href="https://doi.org/10.1038/s41467-022-35619-1"
-           target="_blank" rel="noopener">
-          Large-scale perfused tissues via synthetic
-          3D soft microfluidics.
-        </a>
-        <em>Nature Communications.</em>
-      </li>
-
-    </ol>
-
-    <h3>Additional reading</h3>
-
-    <ul class="ref-list">
       <li>
-        Levy &amp; Paşca (2025).
         <a href="https://doi.org/10.1146/annurev-neuro-112723-023232"
            target="_blank" rel="noopener">
+          Levy &amp; Paşca (2025).
           From Organoids to Assembloids:
-          Experimental Approaches to Study Human
-          Neuropsychiatric Disorders.
+          Experimental Approaches to Study
+          Human Neuropsychiatric Disorders.
+          Annual Review of Neuroscience.
         </a>
-        <em>Annual Review of Neuroscience.</em>
       </li>
 
       <li>
-        Meng et al. (2025).
         <a href="https://doi.org/10.1038/s41596-025-01299-6"
            target="_blank" rel="noopener">
-          CRISPR screens in human neural organoids
-          and assembloids.
+          Meng et al. (2025).
+          CRISPR screens in human neural
+          organoids and assembloids.
+          Nature Protocols.
         </a>
-        <em>Nature Protocols.</em>
       </li>
 
       <li>
-        Narazaki et al. (2025).
         <a href="https://doi.org/10.1038/s41551-025-01427-3"
            target="_blank" rel="noopener">
-          Scalable production of human cortical organoids
-          using a biocompatible polymer.
+          Narazaki et al. (2025).
+          Scalable production of human cortical
+          organoids using a biocompatible polymer.
+          Nature Biomedical Engineering.
         </a>
-        <em>Nature Biomedical Engineering.</em>
       </li>
-    </ul>
+      <li>
+        <a href="https://doi.org/10.1093/stcltm/szae070"
+           target="_blank" rel="noopener noreferrer">
+          Marotta et al. (2024).
+          Effects of microgravity on human iPSC-derived
+          neural organoids on the International Space Station.
+        </a>
+      </li>
+    </ol>
 
     <p>
-      These notes focus on peer-reviewed studies
-      and distinguish demonstrated experimental
-      findings from proposed applications.
-    </p>
-
-    <p>
+      These notes focus on peer-reviewed studies.
       The models described reproduce selected
-      features of human neural tissue, not the
-      complete structure or function of a human brain.
+      features of human neural tissue, not
+      the full structure or function of a brain.
     </p>
-
   </div>
 </article>
-
-<!-- RELATED PAGES -->
 
 <article class="article">
   <div class="bar">
     <span>📂 related_files</span>
     <span>browse ↗</span>
   </div>
-
   <div class="inside">
-    <div class="more">
-      <a href="organoid-intelligence.html">
-        ↗ Organoid Intelligence
-      </a>
-
-      <a href="biological-computation.html">
-        ↗ Biological Computation
-      </a>
-
-      <a href="neurodegenerative-disease-models.html">
-        ↗ Disease Models
-      </a>
-
-      <a href="neuropharmacology-neurotoxicity.html">
-        ↗ Neuropharmacology &amp; Neurotoxicity
-      </a>
-
-      <a href="research.html">
-        ↗ My Research
-      </a>
+    <div class="more"><a href="organoid-intelligence.html">↗ Organoid Intelligence</a>
+      <a href="biological-computation.html">↗ Biological Computation</a>
+      <a href="neurodegenerative-disease-models.html">↗ Disease Models</a>
+      <a href="neuropharmacology-neurotoxicity.html">↗ Neuropharmacology &amp; Neurotoxicity</a>
+      <a href="research.html">↗ My Research</a>
     </div>
   </div>
 </article>
@@ -1330,11 +964,8 @@ content="Scientific notes on brain organoids, vascularization, maturation, assem
 
 </main>
 
-<footer>
-  © 2026 Any Rodrigues | just curiosity.
-</footer>
+<footer>© 2026 Any Rodrigues | just curiosity.</footer>
 
 </div>
-
 </body>
 </html>

@@ -1,0 +1,28 @@
+
+/* Windows 98 / personal web archive: shared visual language */
+:root { --win-blue:#000080; --win-gray:#c0c0c0; --win-paper:#ffffff; --win-shadow:#808080; }
+html,body { background:#008080 !important; color:#000 !important; }
+body { font-family:Tahoma,"MS Sans Serif",Arial,sans-serif !important; font-size:14px; line-height:1.5; }
+.page,.interest-page { background:#c0c0c0 !important; border:2px solid !important; border-color:#fff #404040 #404040 #fff !important; box-shadow:2px 2px 0 #000 !important; padding:12px !important; }
+.site-header { background:#c0c0c0 !important; color:#000 !important; border-bottom:2px solid #808080 !important; padding:10px 12px !important; }
+.site-header h1 { font-family:Tahoma,"MS Sans Serif",Arial,sans-serif !important; font-weight:700 !important; letter-spacing:0 !important; }
+.main-nav { background:#c0c0c0 !important; border:0 !important; border-bottom:2px solid #808080 !important; padding:8px !important; }
+.main-nav a, .toc a,.more a,.back { display:inline-block; background:#c0c0c0 !important; color:#000080 !important; border:2px solid !important; border-color:#fff #555 #555 #fff !important; padding:5px 9px !important; text-decoration:none !important; box-shadow:1px 1px #000 !important; }
+.main-nav a:hover,.toc a:hover,.more a:hover { background:#e5e5e5 !important; }
+.window,.panel,.article { background:#fff !important; border:2px solid !important; border-color:#fff #404040 #404040 #fff !important; box-shadow:2px 2px 0 #000 !important; }
+.window-title,.panel-title,.bar { background:#000080 !important; color:white !important; border:0 !important; padding:5px 9px !important; font-family:Tahoma,"MS Sans Serif",Arial,sans-serif !important; font-size:13px !important; font-weight:bold !important; letter-spacing:0 !important; }
+.window-content,.panel-body,.inside { background:#fff !important; color:#000 !important; }
+.inside h1,.inside h2,.inside h3,.window-content h2,.panel-body h2 { font-family:Tahoma,"MS Sans Serif",Arial,sans-serif !important; letter-spacing:0 !important; }
+.inside h1 { font-size:clamp(24px,3.4vw,36px) !important; }
+.inside h2 { font-size:22px !important; }
+.inside h3 { font-size:17px !important; }
+.crumb,.kicker,.fine,.subtitle2,.quote-credit { color:#333 !important; }
+.note,.question,.research-quote { background:#ffffe1 !important; border:1px solid #808080 !important; border-left:4px solid #000080 !important; box-shadow:2px 2px #c0c0c0 !important; }
+.compare th { background:#c0c0c0 !important; }
+.compare td,.compare th { border:1px solid #808080 !important; }
+a { color:#0000ee; }
+a:visited { color:#551a8b; }
+button,input,select,textarea { font-family:Tahoma,"MS Sans Serif",Arial,sans-serif; }
+button { background:#c0c0c0; border:2px solid; border-color:#fff #404040 #404040 #fff; }
+img { max-width:100%; }
+@media(max-width:650px) { .page,.interest-page { padding:6px !important; } .site-header { flex-wrap:wrap; } .inside { padding:14px !important; } }
