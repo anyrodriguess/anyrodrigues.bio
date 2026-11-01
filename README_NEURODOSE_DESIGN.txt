@@ -1,0 +1,1 @@
+NeuroDose design update: restored the grey portfolio palette and shared original header/navigation. Kept the clean section sidebar and document layout. All other pages are unchanged. Keep your existing media and CV in your GitHub repository.
