@@ -34,7 +34,64 @@ h2{font-size:clamp(1.7rem,3vw,2.15rem)}
 section{border-bottom:1px solid #c4d3e6}table{color:#263c59}th{background:#e5eef9!important;color:#183d79!important}td{background:#fffdf5!important;color:#263c59!important}
 pre,code{background:#eef3fa!important;color:#17395d!important}blockquote{background:#f1f5fc!important;color:#17395d!important}
 @media(max-width:800px){.layout{display:block}.side{position:static;height:auto;border-right:0;border-bottom:2px solid #b8cbe4;padding:14px}.side nav{display:flex;flex-wrap:wrap;gap:3px}.side nav a{padding:6px 8px}.content{padding:25px 18px}.site-header{align-items:flex-start}.status-box{display:none}}
-</style></head><body><div class="site-top"><header class="site-header"><div class="site-identity"><h1>ANY RODRIGUES</h1><p class="subtitle">molecular bioengineer / neural interfaces / biological intelligence</p></div><div class="status-box"><div class="status-title">STATUS:</div><div><span class="online-dot"></span> online</div></div></header><nav aria-label="Main navigation" class="main-nav"><a href="index.html">HOME</a><a href="about-me.html">ABOUT</a><a href="research.html">RESEARCH</a><a aria-current="page" href="projects.html">PROJECTS</a><a href="Any_Rodrigues_CV.pdf" target="_blank">CV</a><a href="mailto:anycgrodrigues@gmail.com">CONTACT</a></nav></div><div style="padding:12px 20px;border-bottom:1px solid #516065;font:13px monospace"><a href="index.html">HOME</a>   /   <a href="projects.html">PROJECTS</a>   /   <a href="research.html">RESEARCH</a></div><div class="layout"><aside class="side"><div class="brand">NeuroDose<span style="color:var(--mint)">.</span></div><small>Research dossier · v0.2 · Nov 2026</small><nav><a href="#overview">Overview</a><a href="#context">Disease &amp; drug</a><a href="#inspiration">Research inspiration</a><a href="#aim">Aim &amp; hypotheses</a><a href="#biology">Biological system</a><a href="#pharmacology">Pharmacology</a><a href="#loop">Closed-loop system</a><a href="#arms">Study design</a><a href="#analysis">Analysis &amp; figures</a><a href="#validation">Validation</a><a href="#roadmap">Roadmap</a><a href="#references">References</a></nav></aside><main class="content">
+</style><link href="style.css" rel="stylesheet"/><link href="windows98.css" rel="stylesheet"/><link href="site-consistency.css" rel="stylesheet"/><link href="header-alignment.css" rel="stylesheet"/><style>
+/* NeuroDose: same grey Windows-style palette as the rest of the portfolio. */
+:root{color-scheme:light;--bg:#dfe3e9;--panel:#f5f6f8;--border:#9ca9b9;--ink:#1b293a;--muted:#53647a;--mint:#1c4f93;--amber:#855d1b}
+html{scroll-behavior:smooth}body{background:#dfe3e9;color:#1b293a;font-family:Tahoma,Arial,sans-serif;line-height:1.6}
+.site-top{max-width:1080px;margin:0 auto;padding:0 0 10px}
+.site-top .site-header,.site-top .main-nav{box-sizing:border-box}
+.layout{max-width:1080px;margin:12px auto 45px;grid-template-columns:225px minmax(0,1fr);border:2px solid #1c355d;background:#f7f8fa;box-shadow:5px 5px 0 #b9c4d2}
+.side{top:12px;height:calc(100vh - 24px);background:#e8edf4;border-right:2px solid #9caec7;padding:20px 12px}
+.side .brand{font-family:Tahoma,Arial,sans-serif;color:#193f7a;font-size:1.3rem;letter-spacing:0}
+.side small{color:#52647b;margin-bottom:16px;font:11px/1.5 'Courier New',monospace}
+.side nav{display:block}
+.side a{color:#244b80;font:12px/1.5 Tahoma,Arial,sans-serif;border:1px solid transparent;border-radius:2px;padding:8px 10px}
+.side a:hover,.side a:focus{background:#d6e5f9;border-color:#9db5d6;color:#143b74}
+.content{max-width:none;padding:32px clamp(18px,3vw,40px) 70px;background:#fafbfc;color:#1b293a}
+.content h1,.content h2,.content h3{font-family:Georgia,'Times New Roman',serif;letter-spacing:normal;color:#183d79}
+.content h1{font-size:clamp(2.8rem,5vw,4.7rem);line-height:1.1}
+.content h2{font-size:clamp(1.5rem,2.7vw,2rem)}
+.content p,.content li{color:#304159}
+.content a{color:#1555a0}
+.content .eyebrow,.content .kicker{color:#20569a;font-family:'Courier New',monospace;letter-spacing:.05em}
+.content .lead{color:#344a65}
+.content .hero{border-bottom:2px solid #bac8d9}
+.content section{border-bottom:1px solid #c7d2e0}
+.content .pill{background:#eaf1fa;border:1px solid #b8c9e0;color:#24466e;border-radius:3px}
+.content .card{background:#fff;border:1px solid #afc0d5;border-radius:3px;box-shadow:2px 2px 0 #d5dfeb}
+.content .notice{background:#edf4fc;border:1px solid #a5bad4;border-left:4px solid #245b9d;border-radius:2px}
+.content .notice strong{color:#183d79}
+.content .callout{background:#f7f2e7;border-left:3px solid #a47c35}
+.content .node{background:#eaf2fc;border:1px solid #93b1d3;border-radius:3px}
+.content .fig{background:#f0f4f9;border:1px dashed #93aac4;border-radius:3px}
+.content .fig .placeholder{color:#55708f}
+.content th{background:#e7eef8;color:#1a4a87}
+.content td,.content th{border-bottom:1px solid #bdcbdc}
+.content .steps li:before{border-color:#245b9d;color:#245b9d}
+.content .status{color:#805b24}
+.content button{background:#dfeaf8;border:1px solid #789ac4;color:#183d79;border-radius:2px}
+.content button:hover{background:#c9dcf5}
+.content footer{color:#5a6c80}
+@media(max-width:850px){.layout{display:block;margin:10px 10px 30px}.side{position:relative;height:auto;border-right:0;border-bottom:2px solid #a6b8cf;padding:12px}.side nav{display:flex;gap:4px;overflow-x:auto}.side a{white-space:nowrap}.content{padding:25px 18px 60px}}
+</style><style id="neurodose-xp-typography">
+/* One typeface throughout NeuroDose: classic Windows XP Tahoma. */
+body, body *, .site-header h1, .side .brand, .side small, .side a,
+.content h1, .content h2, .content h3, .content .eyebrow,
+.content .kicker, .content p, .content li, .content table,
+.content button, .main-nav a, .status-box {
+  font-family: Tahoma, Verdana, Arial, sans-serif !important;
+}
+body { background:#dfe3e9 !important; }
+.content h1 { font-size:clamp(2.6rem,5vw,4.5rem);letter-spacing:-.035em; }
+.content h2 { font-size:clamp(1.45rem,2.5vw,1.9rem);letter-spacing:0; }
+.content h3 { font-size:1.05rem; }
+.side .brand { font-size:1.2rem; font-weight:bold;letter-spacing:0; }
+.content .eyebrow,.content .kicker {letter-spacing:.03em;}
+/* Subtle early-2000s Windows borders, not modern rounded cards. */
+.side, .content .card, .content .notice, .content .fig,
+.content .pill, .content .node {border-radius:2px !important;}
+</style>
+</head><body><div class="site-top"><header class="site-header"><div class="site-identity"><h1>ANY RODRIGUES</h1><p class="subtitle">molecular bioengineer / neural interfaces / biological intelligence</p></div><div class="status-box"><div class="status-title">STATUS:</div><div><span class="online-dot"></span> online</div></div></header><nav aria-label="Main navigation" class="main-nav"><a href="index.html">HOME</a><a href="about-me.html">ABOUT</a><a href="research.html">RESEARCH</a><a aria-current="page" href="projects.html">PROJECTS</a><a href="Any_Rodrigues_CV.pdf" rel="noopener" target="_blank">CV</a><a href="mailto:anycgrodrigues@gmail.com">CONTACT</a></nav></div><div class="layout"><aside class="side"><div class="brand">NeuroDose<span style="color:var(--mint)">.</span></div><small>Research dossier · v0.2 · Nov 2026</small><nav><a href="#overview">Overview</a><a href="#context">Disease &amp; drug</a><a href="#inspiration">Research inspiration</a><a href="#aim">Aim &amp; hypotheses</a><a href="#biology">Biological system</a><a href="#pharmacology">Pharmacology</a><a href="#loop">Closed-loop system</a><a href="#arms">Study design</a><a href="#analysis">Analysis &amp; figures</a><a href="#validation">Validation</a><a href="#roadmap">Roadmap</a><a href="#references">References</a></nav></aside><main class="content">
 <header class="hero" id="overview"><div class="eyebrow">Organoid intelligence × pharmacology × HD-MEA</div><h1>NeuroDose<span style="color:var(--mint)">.</span></h1><p class="lead">Can a living neuronal network use feedback to select useful interventions in a simulated model of Dravet syndrome?</p><div class="meta"><span class="pill">Dravet syndrome / SCN1A</span><span class="pill">Fenfluramine benchmark</span><span class="pill">Zorevunersen context</span><span class="pill">Closed-loop biological computing</span></div><div class="notice"><strong>Proposed research — no experimental results.</strong> This is a literature-grounded, hypothetical preclinical protocol and portfolio research dossier. No cultures, dosing experiments, human trials or biological controller tests have been performed for NeuroDose. Simulated outcomes must be labelled as such. The project does not establish efficacy, safety, or superiority over existing preclinical methods.</div><p><strong>Central distinction:</strong> One biological system models the disease and drug response. A <em>separate</em> neuronal reservoir acts as a candidate controller of a <em>virtual</em> intervention. Separating these roles prevents drug-induced changes in the assay from being mistaken for controller learning.</p></header>
 <section id="context"><div class="eyebrow">01 / Clinical context</div><h2>Why Dravet syndrome?</h2><p>Dravet syndrome is a developmental and epileptic encephalopathy commonly associated with loss-of-function variants in <em>SCN1A</em>, which encodes the NaV1.1 sodium channel. Impaired inhibitory interneuron development and function contribute to circuit dysfunction. Network-wide firing rate alone is not an adequate surrogate for clinical seizures: cellular models can exhibit reduced inhibitory activity while the intact circuit is seizure-prone.</p><div class="grid"><div class="card"><div class="kicker">NEAR-TERM ASSAY ANCHOR</div><h3>Fenfluramine</h3><p>Approved antiseizure medicine. A 2026 study of patient-derived inhibitory forebrain organoids reported partial restoration of neuronal activity after acute fenfluramine application. The reported readouts included patch clamp and calcium imaging; do not present them as HD-MEA data.</p></div><div class="card"><div class="kicker">DISEASE-MODIFYING CONTEXT</div><h3>Zorevunersen</h3><p>Investigational antisense oligonucleotide intended to increase NaV1.1 expression. The Phase 3 EMPEROR trial was ongoing in October 2026, with a readout anticipated in Q3 2027. Its delayed molecular effects make it unsuitable as a simplistic instant-response dosing controller.</p></div></div><p><strong>Working decision:</strong> Use fenfluramine-related functional rescue as the initial literature anchor for a drug-response model; treat zorevunersen as a separate, slower-timescale translational scenario rather than pretending it has acute dose-response dynamics.</p></section>
 <section id="inspiration"><div class="eyebrow">02 / Scientific precedent</div><h2>What has been done already?</h2><div class="grid"><div class="card"><h3>Smirnova / DROIDp</h3><p>Organoid intelligence and neurotoxicity: functional plasticity and drug-sensitive learning-related endpoints. A crucial neighboring direction, but not evidence that organoids have autonomously optimized clinical dosing.</p></div><div class="card"><h3>Brainoware</h3><p>Brain organoids as reservoirs receiving electrical input, with an external computational readout for tasks such as speech recognition and nonlinear prediction.</p></div><div class="card"><h3>DishBrain</h3><p>Closed-loop behavior in dissociated neuronal cultures interacting with Pong. It is not an experiment with 3D brain organoids.</p></div><div class="card"><h3>Dravet inhibitory organoids (2026)</h3><p>Patient-derived subpallial organoids with disrupted interneuron maturation and partial acute fenfluramine rescue: a relevant disease-model precedent, not an autonomous dosing study.</p></div></div></section>
