@@ -416,7 +416,7 @@ footer{border-top:2px solid #808080;padding:16px 8px;font:12px Tahoma,Arial,sans
 .archive-caption{max-width:480px!important}
 @media(max-width:520px){.archive-screen img,.archive-screen video{max-width:100%!important;height:auto!important}}
   </style>
-<link href="site-consistency.css" rel="stylesheet"/>
+
 <style>
    /* Only restore original compact text treatments. No changes to page layout. */
 .terminal-note{background:#080808!important;color:#e8e8e8!important;border:2px inset #999!important;padding:15px 18px!important;font:13px/1.8 "Courier New",monospace!important;letter-spacing:0!important;text-align:left!important}
@@ -467,10 +467,9 @@ footer{border-top:2px solid #808080;padding:16px 8px;font:12px Tahoma,Arial,sans
 @keyframes cursor-blink{50%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.typing-dots span{animation:none;opacity:1}.terminal-cursor{animation:none}}
   </style>
-<link href="header-alignment.css" rel="stylesheet"/>
-<link href="shared-header.css" rel="stylesheet"/>
-<script defer="True" src="shared-header.js">
-</script>
+
+
+
 <style>
 /* Shared aqua desktop background across the portfolio.
    Keep the white Windows-style panels and blue title bars unchanged. */
@@ -480,11 +479,48 @@ html, body {
 body {
     background-image: none !important;
 }
-</style></head>
+</style><link href="universal-header.css" rel="stylesheet"/></head>
 <body>
-<div class="site-wrapper">
-<div id="shared-header">
+<div class="site-wrapper"><header class="site-header">
+<div class="site-identity">
+<h1>
+   ANY RODRIGUES
+  </h1>
+<p class="subtitle">
+   molecular bioengineer / neural interfaces / biological intelligence
+  </p>
 </div>
+<div class="status-box">
+<div class="status-title">
+   STATUS:
+  </div>
+<div>
+<span class="online-dot">
+</span>
+   online
+  </div>
+</div>
+</header><nav aria-label="Main navigation" class="main-nav">
+<a href="index.html">
+  HOME
+ </a>
+<a href="about-me.html">
+  ABOUT
+ </a>
+<a href="research.html">
+  RESEARCH
+ </a>
+<a href="projects.html">
+  PROJECTS
+ </a>
+<a href="Any_Rodrigues_CV.pdf" rel="noopener" target="_blank">
+  CV
+ </a>
+<a href="mailto:anycgrodrigues@gmail.com">
+  CONTACT
+ </a>
+</nav>
+
 <!-- =========================================
          NAVIGATION
     ========================================== -->
