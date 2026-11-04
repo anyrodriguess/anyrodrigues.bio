@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NeuroMaze.exe — MEA Demo</title>
+<style>
+html,body{margin:0;min-height:100%;background:#000;color:#fff;font-family:Arial,Helvetica,sans-serif}
+main{max-width:760px;margin:16px auto;padding:0 14px}
+.game{position:relative;max-width:700px;margin:auto}
+canvas{display:block;width:100%;height:auto;background:#000;image-rendering:pixelated}
+.hud{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:12px}
+.controls{display:flex;gap:12px}
+button{background:#111;color:#fff;border:2px solid #79f8fb;padding:13px 24px;font-weight:bold;font-size:19px;cursor:pointer}
+button:hover,button:focus{background:#174b53}
+button:active{transform:translateY(1px)}
+.status{color:#d4f8fa;font-size:13px;min-height:18px}
+h1{font-size:17px;margin:0 0 8px}
+p{color:#b9c3c5;font-size:13px;line-height:1.5}
+.tag{color:#79f8fb}
+.win-overlay{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.72);z-index:5}
+.win-overlay.show{display:flex}
+.win-panel{border:3px solid #78f7f7;background:#050b0d;padding:24px 30px;text-align:center;box-shadow:0 0 0 5px #000;max-width:75%}
+.win-panel h2{color:#fff;font-size:28px;margin:0 0 10px}
+.win-panel p{color:#a6f5f4;font-size:17px}
+.win-panel button{margin-top:12px}
+ @media(max-width:500px){button{padding:12px 18px}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>NeuroMaze.exe <span class="tag">/ MEA command demo</span>
+</h1>
+<div class="game">
+<canvas id="maze" width="700" height="440" aria-label="Black maze with a cyan L-shaped corridor, blue player, and orange finish">
+</canvas>
+<div class="win-overlay" id="winOverlay" role="dialog" aria-modal="true" aria-labelledby="winTitle">
+<div class="win-panel">
+<h2 id="winTitle">LEVEL COMPLETE!</h2>
+<p id="winDetail">You reached the finish.</p>
+<button id="again">↺ PLAY AGAIN</button>
+</div>
+</div>
+</div>
+<div class="hud">
+<div class="controls">
+<button id="up">↑ UP</button>
+<button id="right">→ RIGHT</button>
+<button id="reset">↺ RESET</button>
+</div>
+<div id="counter">Moves: 0</div>
+</div>
+<div class="status" id="status" aria-live="polite">Move the blue cursor to the orange finish. Each command advances one step.</div>
+<p>Visual design based on your screenshot: black background, bright cyan L-shaped corridor, tiny dark-blue cursor, orange goal, and white level label. The buttons stand in for commands that would eventually be decoded from MEA recordings. This is a game mock-up, not a biological learning measurement.</p>
+</main>
+<script>
+// The canvas is where the maze is drawn.
+const canvas = document.getElementById('maze');
+const ctx = canvas.getContext('2d');
+
+// Player position and game state.
+let x = 370;
+let y = 370;
+let moves = 0;
+let won = false;
+const STEP = 22;
+
+// The corridor and finish area, in canvas pixels.
+const path = {
+  vertical: { x1: 255, x2: 429, y1: 20, y2: 420 },
+  horizontal: { x1: 255, x2: 678, y1: 20, y2: 54 }
+};
+const goal = { x: 612, y: 20, w: 66, h: 34 };
+
+// A movement is allowed only if it stays inside the corridor.
+function inside(px, py) {
+  return (
+    px >= path.vertical.x1 + 5 && px <= path.vertical.x2 - 5 &&
+    py >= path.vertical.y1 + 5 && py <= path.vertical.y2 - 5
+  ) || (
+    px >= path.horizontal.x1 + 5 && px <= path.horizontal.x2 - 5 &&
+    py >= path.horizontal.y1 + 5 && py <= path.horizontal.y2 - 5
+  );
+}
+
+// Redraw the maze, player and move counter.
+function render() {
+  ctx.fillStyle = '#000';
+  ctx.fillRect(0, 0, 700, 440);
+  ctx.fillStyle = '#77f7f7';
+  ctx.fillRect(255, 20, 174, 400);
+  ctx.fillRect(255, 20, 423, 34);
+  ctx.fillStyle = '#ef4b29';
+  ctx.fillRect(goal.x, goal.y, goal.w, goal.h);
+  ctx.fillStyle = '#00157b';
+  ctx.fillRect(x - 4, y - 4, 8, 8);
+  ctx.fillStyle = '#fff';
+  ctx.font = 'bold 17px Arial';
+  ctx.textAlign = 'right';
+  ctx.fillText('Level 1', 675, 78);
+  document.getElementById('counter').textContent = 'Moves: ' + moves;
+}
+
+// Move one step up or right, then check whether the finish was reached.
+function move(dx, dy) {
+  if (won) return;
+  const nx = x + dx * STEP;
+  const ny = y + dy * STEP;
+  if (!inside(nx, ny)) {
+    document.getElementById('status').textContent = 'Wall! The cursor stays in place. Try a different command.';
+    return;
+  }
+  x = nx;
+  y = ny;
+  moves++;
+  if (x >= goal.x && y >= goal.y && y <= goal.y + goal.h) {
+    won = true;
+    document.getElementById('status').textContent = 'LEVEL COMPLETE! You reached the finish in ' + moves + ' commands.';
+    document.getElementById('winDetail').textContent = 'Finish reached in ' + moves + ' commands!';
+    document.getElementById('winOverlay').classList.add('show');
+  } else {
+    document.getElementById('status').textContent = 'Command registered: ' + (dx ? 'RIGHT' : 'UP') + '.';
+  }
+  render();
+}
+
+// Put the player back at the start.
+function reset() {
+  x = 370;
+  y = 370;
+  moves = 0;
+  won = false;
+  document.getElementById('winOverlay').classList.remove('show');
+  document.getElementById('status').textContent = 'Level reset. Navigate up, then right.';
+  render();
+}
+
+// Buttons and keyboard arrows use the same movement functions.
+document.getElementById('up').onclick = () => move(0, -1);
+document.getElementById('right').onclick = () => move(1, 0);
+document.getElementById('reset').onclick = reset;
+document.getElementById('again').onclick = reset;
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowUp' || e.key === 'ArrowRight') {
+    e.preventDefault();
+    move(e.key === 'ArrowUp' ? 0 : 1, e.key === 'ArrowUp' ? -1 : 0);
+  }
+});
+render();
+</script>
+</body>
+</html>
