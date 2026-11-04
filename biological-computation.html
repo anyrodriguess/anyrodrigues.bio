@@ -258,7 +258,7 @@ body {
 <strong>
          Closed loop:
         </strong>
-        the network's recorded spikes are decoded into an action; the simulated environment changes; the new state or performance determines the next electrical input. The network can therefore experience consequences of its own output.
+        recorded neuronal activity determines the next electrical input. In a game-based experiment, spikes may control a simulated action and the outcome changes the feedback. In other experiments, such as Clawson et al. (2026), feedback depends directly on the spatial origin of a network burst, without an external game.
        </p>
 <div class="note">
 <strong>
@@ -298,7 +298,7 @@ body {
 </section>
 <section id="s5">
 <h2>
-        05 / Experiments: what information entered the neurons?
+        05 / Experiments: how were neural networks interfaced?
        </h2>
 <h3>
         DishBrain (Kagan et al., 2022) — Pong in a closed loop
@@ -328,11 +328,6 @@ body {
          Paper ↗
         </a>
 </p>
-<h3>
-        Brainoware (Guo et al., 2023) — speech recognition via reservoir computing
-       </h3>
-
-       
 <h3>
   Training the tissue, not the computer
   (Clawson et al., 2026)
@@ -384,7 +379,12 @@ body {
 <strong>
          Preparation:
         </strong>
-        a three-dimensional brain organoid interfaced with an HD-MEA.
+        <h3>
+        Brainoware (Guo et al., 2023) — speech recognition via reservoir computing
+       </h3>
+<p>
+<strong>Preparation:</strong>
+a three-dimensional brain organoid interfaced with an HD-MEA.
         <strong>
          Input:
         </strong>
@@ -491,7 +491,7 @@ body {
 <strong>
          Takeaway:
         </strong>
-        These experiments are not interchangeable: some test closed-loop adaptation (DishBrain), others use a biological reservoir (Brainoware), classify predefined inputs (Braille), characterise logic-like transfer functions (ETH), or demonstrate a remote experimental platform (FinalSpark).
+        These experiments are not interchangeable: DishBrain tests adaptation during an external game; Clawson et al. investigate feedback-driven changes in the neuronal network itself; Brainoware uses a biological reservoir; Braille experiments classify predefined inputs; and engineered neuronal circuits demonstrate logic-like transfer functions. Each requires different controls and evidence.
        </div>
 </section>
 <section id="adaptive-stimulation">
@@ -692,13 +692,9 @@ body {
 </li>
 
 <li id="ref8">
-  <a
-    href="https://doi.org/10.64898/2026.10.15.759184"
-    target="_blank"
-    rel="noopener noreferrer">
-    Clawson et al. (2026) — Goal-directed
-    closed-loop training of network bursts
-  </a>
+<a href="https://doi.org/10.64898/2026.10.15.759184" rel="noopener noreferrer" target="_blank">
+         Clawson et al. (2026), bioRxiv — Goal-directed closed-loop training of network bursts (preprint)
+        </a>
 </li>
 
 </ol>
