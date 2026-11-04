@@ -61,3 +61,11 @@ html, body { background: #008080 !important; background-image: none !important; 
 #global-site-header .universal-site-nav a[aria-current="page"] {
   background: #101a83; color: #fff;
 }
+
+/* Shared gray Windows 98 title strip, same on every page */
+#global-site-header .universal-site-header {
+  background: #c8c8c8 !important; border: 2px outset #fff !important;
+  padding: 16px 18px !important; align-items: center !important;
+}
+#global-site-header .universal-site-nav { margin-top: 0 !important; margin-bottom: 0 !important; }
+#global-site-header { margin-top: 24px !important; }
