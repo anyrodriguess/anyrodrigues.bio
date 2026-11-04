@@ -415,24 +415,20 @@ html, body {
 body {
     background-image: none !important;
 }
-</style><link href="shared-header.css" rel="stylesheet"/><style>.nd-demo{border:2px solid #808080;background:#000;margin:14px 0 22px}.nd-demo iframe{display:block;width:100%;height:570px;border:0}.nd-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}.nd-node{border:2px solid #7d8793;background:#f3f5f6;padding:12px;min-height:110px}.nd-node b{display:block;color:#112b55;margin-bottom:7px}.nd-node p{font-size:13px;margin:0;line-height:1.5}.nd-num{font-size:11px;color:#687280;display:block;margin-bottom:5px}.nd-wire{padding:12px;background:#e7f0f0;border-left:4px solid #008080;margin:12px 0}.nd-mapping{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}.nd-mapping td,.nd-mapping th{border:1px solid #a5aab0;padding:9px;text-align:left}.nd-mapping th{background:#e5e8ee}@media(max-width:680px){.nd-flow{grid-template-columns:1fr}.nd-demo iframe{height:520px}}</style></head>
+</style><link href="shared-header.css" rel="stylesheet"/><style>.nd-demo{border:2px solid #808080;background:#000;margin:14px 0 22px}.nd-demo iframe{display:block;width:100%;height:570px;border:0}.nd-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}.nd-node{border:2px solid #7d8793;background:#f3f5f6;padding:12px;min-height:110px}.nd-node b{display:block;color:#112b55;margin-bottom:7px}.nd-node p{font-size:13px;margin:0;line-height:1.5}.nd-num{font-size:11px;color:#687280;display:block;margin-bottom:5px}.nd-wire{padding:12px;background:#e7f0f0;border-left:4px solid #008080;margin:12px 0}.nd-mapping{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}.nd-mapping td,.nd-mapping th{border:1px solid #a5aab0;padding:9px;text-align:left}.nd-mapping th{background:#e5e8ee}@media(max-width:680px){.nd-flow{grid-template-columns:1fr}.nd-demo iframe{height:520px}}</style><link href="portfolio-hierarchy.css" rel="stylesheet"/></head>
 <body><script src="shared-header.js"></script>
 <div class="page">
 <main>
 <p class="crumb"><a href="index.html">home</a> / projects / neurodose</p>
 <section class="window"><div class="window-title"><span>NeuroDose — research proposal</span>
 <div class="window-buttons">
-  <span aria-hidden="true">_</span>
-  <span aria-hidden="true">□</span>
-  <span class="window-close" aria-hidden="true">
-    <svg viewBox="0 0 16 16"
-         xmlns="http://www.w3.org/2000/svg">
-      <path d="M3 3 L13 13 M13 3 L3 13"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="square"/>
-    </svg>
-  </span>
+<span aria-hidden="true">_</span>
+<span aria-hidden="true">□</span>
+<span aria-hidden="true" class="window-close">
+<svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 3 L13 13 M13 3 L3 13" stroke="currentColor" stroke-linecap="square" stroke-width="2.5"></path>
+</svg>
+</span>
 </div>
 </div><div class="window-content">
 <h2>Could Living Neural Networks Transform Preclinical Drug Testing?</h2>
@@ -442,7 +438,6 @@ body {
 <p><strong>Can pharmacological treatment restore adaptive learning in human neural networks modelling Dravet syndrome?</strong></p>
 <p><strong>Hypothesis:</strong> SCN1A-associated changes in neuronal activity may affect performance in a closed-loop task. A suitable treatment might improve adaptive performance while preserving physiological network activity.</p>
 <p><strong>Aim:</strong> Compare network activity and task-related adaptation in healthy control, Dravet, and drug-treated Dravet neural models.</p>
-
 </section>
 <section id="dravet"><h3>02 / Why Dravet syndrome?</h3>
 <p>Dravet syndrome is a developmental and epileptic encephalopathy frequently associated with pathogenic variants in <em>SCN1A</em>, which encodes the NaV1.1 sodium-channel subunit.</p>
@@ -490,13 +485,9 @@ body {
 <h4>Closed-loop feedback / From game outcomes to stimulation</h4>
 <p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9747182/" rel="noopener" target="_blank">Kagan et al. (2022), DishBrain</a> provides an experimental precedent for linking a virtual game environment to living neuronal cultures through electrical stimulation and extracellular recordings. Its use of outcome-dependent feedback informs the proposed NeuroMaze loop: the game distinguishes valid movement, collision and completion, and each outcome selects a calibrated stimulation condition.</p>
 <p>These outcomes are software-defined; the corresponding electrical patterns cannot be assumed to function as biological reward or punishment. Their effect on future network responses would be tested against matched, noncontingent feedback. The <a href="https://github.com/Cortical-Labs/cl-sdk" rel="noopener" target="_blank">Cortical Labs CL1 SDK and simulator</a> offers an additional reference for experimenting with the software-side interface, rather than evidence of learning in NeuroDose cultures.</p>
-
 <h4>Biological foundations / From synaptic plasticity to learning</h4>
-
 <p><a href="https://doi.org/10.1038/s42003-025-08632-5" rel="noopener" target="_blank">Alam El Din et al. (2025)</a> investigated mechanisms associated with learning and memory in human iPSC-derived neural organoids. Using HD-MEAs, calcium imaging, molecular characterization, and pharmacological interventions, the study examined neuronal network dynamics, functional connectivity, criticality, and synaptic plasticity.</p>
-
 <p>Through input-specific theta-burst stimulation, the researchers demonstrated short- and long-term changes in synaptic responses, providing evidence of activity-dependent plasticity. While these mechanisms are fundamental to learning and memory, they do not independently establish behavioural learning.</p>
-
 <p>Building on these findings, NeuroDose proposes investigating whether closed-loop feedback produces measurable network adaptation, whether SCN1A-associated Dravet syndrome alters this capacity, and whether pharmacological intervention can restore it.</p>
 <h4>Learning analysis / From repeated decisions to a measurable phenotype</h4>
 <p>The proposed learning endpoint is a change in the network’s cue-dependent decisions over repeated trials, assessed with an unchanged decoder. Acquisition curves would describe the evolution of task performance; retention tests would examine whether changes persist without ongoing training feedback. Contingent-feedback and yoked-replay conditions would help distinguish experience-dependent adaptation from stimulation exposure, spontaneous drift and changes in overall excitability.</p>
@@ -516,7 +507,6 @@ body {
 <li><a href="https://reporter.nih.gov/project-details/11304971" rel="noopener" target="_blank">NIH DROIDp project description</a>: funded research aims and context.</li>
 <li><a href="https://doi.org/10.1038/s42003-025-08632-5" rel="noopener" target="_blank">Alam El Din et al. (2025) — Human neural organoid microphysiological systems show the building blocks necessary for basic learning and memory</a>: HD-MEA recordings, synaptic plasticity, network connectivity, and pharmacological modulation in human neural organoids.</li>
 </ul>
-
 </section>
 </div></section>
 </main>

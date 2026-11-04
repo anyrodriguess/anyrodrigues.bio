@@ -1,0 +1,46 @@
+/* Portfolio hierarchy refinement — scoped to content, preserving Win98 title bars. */
+:root { --portfolio-heading:#152c61; --portfolio-link:#45648a; }
+/* Primary page content only: the Windows 98 chrome is untouched. */
+.interest-page .inside > section > h2,
+.interest-page .inside section > h2,
+.article .inside > section > h2,
+.article .inside section > h2 {
+ font-family:Tahoma,Arial,sans-serif!important;font-size:clamp(24px,2.8vw,32px)!important;
+ font-weight:800!important;line-height:1.18!important;letter-spacing:-.35px!important;
+ margin:0 0 18px!important;color:var(--portfolio-heading)!important;
+}
+.inside section > h3, .inside > h3 {font-family:Tahoma,Arial,sans-serif!important;
+ font-size:clamp(19px,2vw,23px)!important;font-weight:750!important;line-height:1.25!important;
+ color:#202c3e!important;margin:32px 0 9px!important;}
+.inside section > h3:first-child {margin-top:0!important;}
+.inside section > h3 + p {margin-top:0!important;}
+.inside section p {line-height:1.65!important;margin-top:0!important;margin-bottom:11px!important;}
+.inside section {scroll-margin-top:20px;}
+.inside section a:not(.main-nav a):not(.toc a), .window-content section a:not(.top-nav a) {
+ color:var(--portfolio-link);text-underline-offset:3px;
+}
+.inside section a:hover,.window-content section a:hover {color:#173d75;}
+/* A heading and its description form a single visual unit. */
+.inside section h3 + p, .inside section h3 + .tags {margin-top:0!important;}
+/* Research archive content, but not the top title bar. */
+.window-content > h2 {line-height:1.18!important;margin-top:0!important;}
+.window-content > section > h3 {font-size:clamp(19px,2vw,23px)!important;line-height:1.2!important;margin:0 0 12px!important;color:#17345f!important;}
+.window-content > section {margin-top:30px!important;}
+.window-content > section p {line-height:1.65;margin-top:0;margin-bottom:11px;}
+/* About Me: treat the central question as a real typographic focal point. */
+.content-box .big-question {display:block!important;font-family:Tahoma,Arial,sans-serif!important;
+ font-size:clamp(24px,3.2vw,38px)!important;line-height:1.18!important;font-weight:800!important;
+ letter-spacing:-.5px!important;color:#122c65!important;margin:24px 0 30px!important;
+ padding:15px 18px!important;border-left:5px solid #000080!important;background:#f1f4f9!important;}
+.content-box > h2 {line-height:1.1!important;}
+/* Section 08: four connected questions, then a distinct final question. */
+.research-questions {display:flex!important;flex-direction:column!important;gap:0!important;margin-top:12px!important;}
+.research-questions .research-question {margin:0!important;border-radius:0!important;}
+.research-questions .research-question + .research-question {border-top:0!important;}
+.research-questions .research-question:last-child {margin-top:28px!important;border-top:2px solid #000080!important;
+ padding-top:18px!important;font-size:clamp(16px,2vw,21px)!important;font-weight:700!important;line-height:1.35!important;}
+/* Lab directory: group affiliation, description, citation into legible units. */
+.lab-directory-entry {padding:0 0 2px;margin:0 0 34px;}
+.lab-directory-entry h3 {margin:0 0 8px!important;}
+.lab-directory-entry p {margin:0 0 8px!important;}
+@media(max-width:640px){.inside section > h3{margin-top:25px!important}.lab-directory-entry{margin-bottom:26px}}
