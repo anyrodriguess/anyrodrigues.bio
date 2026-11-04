@@ -1,71 +1,211 @@
 
-/* ONE shared header for all pages. Change the design here, not on each HTML page. */
-html, body { background: #008080 !important; background-image: none !important; }
-#global-site-header, #global-site-header * { box-sizing: border-box; }
+/* =========================================
+   GLOBAL STYLES
+   ========================================= */
+
+html, body {
+  background: #008080 !important;
+  background-image: none !important;
+}
+
+#global-site-header,
+#global-site-header * {
+  box-sizing: border-box;
+}
+
 #global-site-header {
   width: min(1050px, calc(100% - 30px));
   max-width: 1050px;
-  margin: 26px auto 0;
+  margin: 24px auto 0;
   font-family: "Courier New", Courier, monospace;
   color: #101010;
   position: relative;
   z-index: 5;
 }
+
+/* =========================================
+   WINDOWS 98 HEADER
+   ========================================= */
+
 #global-site-header .universal-site-header {
-  display: flex; justify-content: space-between; align-items: flex-start;
-  gap: 24px; padding: 0 0 19px; border-bottom: 3px double #101010;
-  background: transparent; color: #101010;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+
+  padding: 16px 18px;
   margin: 0;
+
+  background: #c8c8c8;
+  border: 2px outset #fff;
+  color: #101010;
 }
+
 #global-site-header .universal-site-identity h1 {
-  margin: 0 0 8px; padding: 0; font-size: clamp(27px, 5vw, 43px);
-  line-height: 1.1; letter-spacing: -1.5px; color: #101010;
-  font-family: "Courier New", Courier, monospace; font-weight: bold;
+  margin: 0 0 8px;
+  padding: 0;
+
+  font-size: clamp(27px, 5vw, 43px);
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  font-weight: bold;
+
+  color: #101010;
+  font-family: "Courier New", Courier, monospace;
 }
+
 #global-site-header .universal-site-identity p {
-  margin: 0; padding: 0; font-size: 12px; color: #101010;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: #101010;
   font-family: "Courier New", Courier, monospace;
 }
+
+/* =========================================
+   STATUS PANEL
+   ========================================= */
+
 #global-site-header .universal-status {
-  display: flex; flex-direction: column; border: 2px outset white;
-  background: #dddddd; padding: 8px 13px; min-width: 170px;
-  font-size: 11px; color: #101010; line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+
+  border: 2px outset white;
+  background: #dddddd;
+
+  padding: 8px 13px;
+  min-width: 170px;
+
+  font-size: 11px;
+  color: #101010;
+  line-height: 1.6;
 }
+
 #global-site-header .universal-online-dot {
-  display: inline-block; width: 8px; height: 8px; margin-right: 5px;
-  background: #008c49; border-radius: 50%;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 5px;
+
+  background: #008c49;
+  border-radius: 50%;
 }
+
+/* =========================================
+   WINDOWS 98 NAVIGATION
+   ========================================= */
+
 #global-site-header .universal-site-nav {
-  display: flex; flex-wrap: wrap; gap: 0; margin: 16px 0 26px;
-  padding: 5px; background: #c8c8c8; border: 2px outset white;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+
+  margin: 0;
+  padding: 5px;
+
+  background: #c8c8c8;
+  border: 2px outset white;
+
   font-family: "Courier New", Courier, monospace;
-  position: static; height: auto; width: 100%;
+
+  position: static;
+  height: auto;
+  width: 100%;
 }
+
+/* Individual Windows 98 buttons */
+
 #global-site-header .universal-site-nav a {
-  display: inline-block; padding: 7px 13px; margin: 0;
-  background: transparent; color: #111; border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 7px 12px;
+  margin: 0;
+
+  background: #d4d4d4;
+  color: #111;
+  text-decoration: none;
+
+  border: 1px solid;
+  border-color: #ffffff #777777 #777777 #ffffff;
+
   font: bold 12px "Courier New", Courier, monospace;
-  text-decoration: none; text-transform: none;
-}
-#global-site-header .universal-site-nav a:hover,
-#global-site-header .universal-site-nav a:focus {
-  background: #101a83; color: white;
-}
-@media (max-width: 600px) {
-  #global-site-header .universal-site-header { flex-direction: column; gap: 10px; }
-  #global-site-header .universal-status { min-width: 0; }
-  #global-site-header .universal-site-nav a { padding: 6px 9px; }
+  text-transform: none;
+
+  transition: background 0.15s ease;
 }
 
-/* Match the About page's active navigation treatment. */
+/* Hover */
+
+#global-site-header .universal-site-nav a:hover {
+  background: #b5b5b5;
+  color: #111;
+}
+
+/* Pressed and current page */
+
+#global-site-header .universal-site-nav a:active,
 #global-site-header .universal-site-nav a[aria-current="page"] {
-  background: #101a83; color: #fff;
+  background: #a0a0a0;
+  color: #111;
+
+  border-color: #777777 #ffffff #ffffff #777777;
 }
 
-/* Shared gray Windows 98 title strip, same on every page */
-#global-site-header .universal-site-header {
-  background: #c8c8c8 !important; border: 2px outset #fff !important;
-  padding: 16px 18px !important; align-items: center !important;
+/* Keyboard accessibility */
+
+#global-site-header .universal-site-nav a:focus-visible {
+  outline: 2px solid #000080;
+  outline-offset: 2px;
 }
-#global-site-header .universal-site-nav { margin-top: 0 !important; margin-bottom: 0 !important; }
-#global-site-header { margin-top: 24px !important; }
+
+/* =========================================
+   WINDOW CLOSE BUTTON
+   ========================================= */
+
+.window-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+
+  background: #c8c8c8;
+  color: #111;
+
+  border: 2px outset #fff;
+  cursor: pointer;
+}
+
+.window-close:active {
+  border-style: inset;
+}
+
+.window-close svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+  #global-site-header .universal-site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  #global-site-header .universal-status {
+    min-width: 0;
+  }
+
+  #global-site-header .universal-site-nav a {
+    padding: 6px 9px;
+  }
+}
