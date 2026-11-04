@@ -21,3 +21,10 @@ const siteHeader = `<div id="global-site-header">
   </nav>
 </div>`;
 document.currentScript.insertAdjacentHTML("beforebegin", siteHeader);
+
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('#global-site-header .universal-site-nav a').forEach(link => {
+  if (link.getAttribute('href') === currentPage) {
+    link.setAttribute('aria-current', 'page');
+  }
+});

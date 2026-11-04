@@ -28,7 +28,7 @@ html, body { background: #008080 !important; background-image: none !important; 
 }
 #global-site-header .universal-status {
   display: flex; flex-direction: column; border: 2px outset white;
-  background: #dddddd; padding: 8px 13px; min-width: 155px;
+  background: #dddddd; padding: 8px 13px; min-width: 170px;
   font-size: 11px; color: #101010; line-height: 1.6;
 }
 #global-site-header .universal-online-dot {
@@ -42,9 +42,9 @@ html, body { background: #008080 !important; background-image: none !important; 
   position: static; height: auto; width: 100%;
 }
 #global-site-header .universal-site-nav a {
-  display: inline-block; padding: 7px 12px; margin: 0;
-  background: transparent; color: #101a83; border: 0;
-  font: bold 13px "Courier New", Courier, monospace;
+  display: inline-block; padding: 7px 13px; margin: 0;
+  background: transparent; color: #111; border: 0;
+  font: bold 12px "Courier New", Courier, monospace;
   text-decoration: none; text-transform: none;
 }
 #global-site-header .universal-site-nav a:hover,
@@ -55,4 +55,9 @@ html, body { background: #008080 !important; background-image: none !important; 
   #global-site-header .universal-site-header { flex-direction: column; gap: 10px; }
   #global-site-header .universal-status { min-width: 0; }
   #global-site-header .universal-site-nav a { padding: 6px 9px; }
+}
+
+/* Match the About page's active navigation treatment. */
+#global-site-header .universal-site-nav a[aria-current="page"] {
+  background: #101a83; color: #fff;
 }
