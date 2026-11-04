@@ -476,6 +476,14 @@ body {
 <h4>Closed-loop feedback / From game outcomes to stimulation</h4>
 <p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9747182/" rel="noopener" target="_blank">Kagan et al. (2022), DishBrain</a> provides an experimental precedent for linking a virtual game environment to living neuronal cultures through electrical stimulation and extracellular recordings. Its use of outcome-dependent feedback informs the proposed NeuroMaze loop: the game distinguishes valid movement, collision and completion, and each outcome selects a calibrated stimulation condition.</p>
 <p>These outcomes are software-defined; the corresponding electrical patterns cannot be assumed to function as biological reward or punishment. Their effect on future network responses would be tested against matched, noncontingent feedback. The <a href="https://github.com/Cortical-Labs/cl-sdk" rel="noopener" target="_blank">Cortical Labs CL1 SDK and simulator</a> offers an additional reference for experimenting with the software-side interface, rather than evidence of learning in NeuroDose cultures.</p>
+
+<h4>Biological foundations / From synaptic plasticity to learning</h4>
+
+<p><a href="https://doi.org/10.1038/s42003-025-08632-5" rel="noopener" target="_blank">Alam El Din et al. (2025)</a> investigated mechanisms associated with learning and memory in human iPSC-derived neural organoids. Using HD-MEAs, calcium imaging, molecular characterization, and pharmacological interventions, the study examined neuronal network dynamics, functional connectivity, criticality, and synaptic plasticity.</p>
+
+<p>Through input-specific theta-burst stimulation, the researchers demonstrated short- and long-term changes in synaptic responses, providing evidence of activity-dependent plasticity. While these mechanisms are fundamental to learning and memory, they do not independently establish behavioural learning.</p>
+
+<p>Building on these findings, NeuroDose proposes investigating whether closed-loop feedback produces measurable network adaptation, whether SCN1A-associated Dravet syndrome alters this capacity, and whether pharmacological intervention can restore it.</p>
 <h4>Learning analysis / From repeated decisions to a measurable phenotype</h4>
 <p>The proposed learning endpoint is a change in the network’s cue-dependent decisions over repeated trials, assessed with an unchanged decoder. Acquisition curves would describe the evolution of task performance; retention tests would examine whether changes persist without ongoing training feedback. Contingent-feedback and yoked-replay conditions would help distinguish experience-dependent adaptation from stimulation exposure, spontaneous drift and changes in overall excitability.</p>
 <p><a href="https://github.com/SpikeInterface/spikeinterface" rel="noopener" target="_blank">SpikeInterface</a> provides open-source tools for extracellular recording analysis, while <a href="https://github.com/SpikeInterface/MEArec" rel="noopener" target="_blank">MEArec</a> generates simulated extracellular recordings useful for evaluating a decoder before biological experiments. Simulated spike trains could illustrate the analysis workflow, but would not be presented as evidence that healthy, Dravet or drug-treated networks have learned.</p>
@@ -492,6 +500,7 @@ body {
 <li><a href="https://pubmed.ncbi.nlm.nih.gov/31186344/" rel="noopener" target="_blank">Therapeutic Mechanism of Cannabidiol in a Human iPSC-Based Model of Dravet Syndrome (2019)</a>: disease-relevant neuronal electrophysiology.</li>
 <li><a href="https://www.lenasmirnovalab.com/projects-1" rel="noopener" target="_blank">Lena Smirnova Lab — DROIDp</a>: proposed organoid-based learning and memory endpoints for drug testing.</li>
 <li><a href="https://reporter.nih.gov/project-details/11304971" rel="noopener" target="_blank">NIH DROIDp project description</a>: funded research aims and context.</li>
+<li><a href="https://doi.org/10.1038/s42003-025-08632-5" rel="noopener" target="_blank">Alam El Din et al. (2025) — Human neural organoid microphysiological systems show the building blocks necessary for basic learning and memory</a>: HD-MEA recordings, synaptic plasticity, network connectivity, and pharmacological modulation in human neural organoids.</li>
 </ul>
 
 </section>
