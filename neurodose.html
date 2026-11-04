@@ -1,43 +1,23 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>NeuroDose | Any Rodrigues</title>
-<style>
 
-* { box-sizing: border-box; }
-body { margin: 0; background: #e8edf4; color: #263449; font: 16px/1.65 Arial, sans-serif; }
-.page { max-width: 980px; margin: 0 auto; padding: 18px; }
-.site-header { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
-.site-identity h1 { font: bold 22px Consolas, monospace; margin: 0; }
-.subtitle { margin: 2px 0 14px; font-size: 13px; }
-.status-box { font: 12px Consolas, monospace; }
-.status-title { font-weight: bold; }
-.online-dot { display: inline-block; background: #548b66; border-radius: 50%; width: 8px; height: 8px; }
-.main-nav { background: #1c3c70; padding: 12px; display: flex; flex-wrap: wrap; gap: 20px; }
-.main-nav a { color: white; font: bold 13px Consolas, monospace; text-decoration: none; }
-.crumb { font: 13px Consolas, monospace; margin: 20px 0; }
-article { background: white; border: 2px solid #1c3c70; box-shadow: 4px 4px 0 #bdcadb; }
-.window-bar { background: #1c3c70; color: white; padding: 8px 12px; font: bold 13px Consolas, monospace; }
-.content { padding: 24px; }
-h2 { color: #1c3c70; font-size: 22px; margin-top: 0; }
-h3 { font-size: 19px; margin-bottom: 8px; }
-.lead { color: #51647d; font-size: 18px; }
-.status { border-left: 3px solid #5278a8; background: #f0f4fa; padding: 10px 14px; }
-section { border-top: 1px solid #d7e0ec; padding-top: 24px; margin-top: 24px; }
-a { color: #1c5a9d; }
-table { border-collapse: collapse; width: 100%; font-size: 14px; }
-th, td { border: 1px solid #c9d4e3; padding: 10px; text-align: left; vertical-align: top; }
-th { background: #edf2f8; }
-.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
-.steps > div { background: #f0f4fa; border: 1px solid #c9d4e3; padding: 12px; }
-.steps p { margin: 6px 0 0; font-size: 14px; }
-footer { margin: 22px 0; font-size: 13px; }
-@media (max-width: 650px) { .content { padding: 16px; } .status-box { display: none; } }
-
-</style>
-</head>
+<link href="style.css" rel="stylesheet"/><link href="windows98.css" rel="stylesheet"/><link href="site-consistency.css" rel="stylesheet"/><link href="header-alignment.css" rel="stylesheet"/><style>
+/* NeuroDose content only; shared styles control the site header and navigation. */
+main { max-width: 1100px; margin: 0 auto; padding: 20px; }
+main article { padding: 0 0 20px; }
+main article .content { padding: 20px; }
+main article section { margin-top: 25px; padding-top: 15px; border-top: 1px solid #bfc8d5; }
+main article table { width: 100%; border-collapse: collapse; }
+main article th, main article td { border: 1px solid #bfc8d5; padding: 10px; text-align: left; vertical-align: top; }
+main article .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+main article .steps > div { border: 1px solid #bfc8d5; padding: 12px; }
+main article .status { font-size: .9rem; }
+</style></head>
 <body>
 <div class="page">
 <header class="site-header">
@@ -97,7 +77,7 @@ footer { margin: 22px 0; font-size: 13px; }
 <section id="groups"><h3>03 / Experimental groups</h3>
 <table><tr><th>Group</th><th>Purpose</th></tr>
 <tr><td>Healthy / isogenic control</td><td>Reference network activity and task performance.</td></tr>
-<tr><td>Dravet + vehicle</td><td>Disease-associated baseline and control for treatment procedures.</td></tr>
+<tr><td>Dravet + vehicle (solvent-only control)</td><td>Disease-associated baseline and control for treatment procedures.</td></tr>
 <tr><td>Dravet + drug</td><td>Test for changes in electrophysiology and adaptive performance.</td></tr>
 <tr><td>Healthy + drug</td><td>Check whether the drug broadly suppresses or alters otherwise healthy networks.</td></tr></table>
 <p>Use independent cultures, biological replicates, and a consistent maturation and recording protocol.</p>
@@ -110,8 +90,8 @@ footer { margin: 22px 0; font-size: 13px; }
 <div><strong>4. Give feedback</strong><p>Change the next input based on the action and task outcome.</p></div>
 <div><strong>5. Test retention</strong><p>Measure performance again without training feedback, using the same decoder.</p></div>
 </div>
-<p><strong>First task:</strong> a simple two-choice or navigation task. It should be easier to quantify than a complex arcade game. A game is only a useful scientific assay if the input, output, feedback, and controls are precisely defined.</p>
-<p>Improvement alone does not prove biological learning. We must rule out changes in the software decoder, altered excitability, stimulation artifacts, and repeated-exposure effects.</p>
+<p><strong>Technical starting point:</strong> The NCN Lab framework from Paulo Aguiar and colleagues uses simulated hippocampal networks to pre-train a reinforcement-learning controller, then transfers control to living neuronal cultures on MEAs. We would first study how recording, stimulation and feedback are connected before designing a disease-specific adaptation assay.</p>
+<p><strong>Scientific distinction:</strong> In the NCN work, the external controller learns how to regulate network bursts. NeuroDose would additionally need to test whether the biological network itself develops persistent, experience-dependent changes. Better controller performance is not proof of biological learning.</p>
 </section>
 <section id="methods"><h3>05 / 2D development and 3D validation</h3>
 <p><strong>2D neuronal networks:</strong> a practical first platform for developing electrode stimulation, decoding, and feedback. Electrode contact and network access are generally easier to control.</p>
@@ -132,19 +112,27 @@ footer { margin: 22px 0; font-size: 13px; }
 <li>Task success, learning curve, reaction time, and retention.</li>
 <li>Differences between healthy, Dravet, vehicle-treated, and drug-treated groups.</li>
 <li>Viability and evidence of nonspecific suppression.</li></ul>
-<p>The same task rules and a frozen decoder should be used during evaluation. Include open-loop, shuffled-feedback, and non-biological baseline controls where appropriate.</p>
+<p><strong>Validation controls:</strong> Keep stimulation and analysis rules constant during evaluation so that apparent improvement cannot be explained by software changes. Compare closed-loop feedback with fixed stimulation (open-loop), feedback delivered independently of the recorded response (shuffled feedback), and an appropriate software-only or simulated baseline. These are proposed controls; the final choices depend on the experimental endpoint.</p>
 </section>
 <section id="prototype"><h3>08 / Computational starting point</h3>
-<p>We will study the <a href="https://github.com/NCN-Lab/RL_Neuronal_Control" target="_blank" rel="noopener">NCN Lab RL Neuronal Control repository</a>, associated with Paulo Aguiar's group at i3S, to understand simulated neuronal activity, MEA-style stimulation, and closed-loop control.</p>
+<p>We will study the <a href="https://github.com/NCN-Lab/RL_Neuronal_Control" rel="noopener" target="_blank">NCN Lab RL Neuronal Control repository</a>, associated with Paulo Aguiar's group at i3S, to understand simulated neuronal activity, MEA-style stimulation, and closed-loop control.</p>
 <p><strong>Important distinction:</strong> their framework trains an external reinforcement-learning controller to regulate neuronal activity. NeuroDose proposes to test adaptation <em>within the neural network</em>. We cannot treat those as equivalent.</p>
 <p>The first independent prototype will use straightforward Python and documented functions. Any simulated healthy, Dravet, or treated conditions must be labelled as hypothetical until calibrated against real data.</p>
 </section>
 <section id="references"><h3>09 / Research references</h3>
 <ul>
-<li><a href="https://doi.org/10.1016/j.neuron.2022.09.001" target="_blank" rel="noopener">Kagan et al. (2022) — DishBrain</a>: closed-loop neuronal interaction.</li>
-<li><a href="https://doi.org/10.1038/s41467-024-48905-x" target="_blank" rel="noopener">Beaubois et al. (2024) — BiœmuS</a>: hybrid biological and simulated spiking networks.</li>
-<li><a href="https://doi.org/10.1038/s41928-023-01069-w" target="_blank" rel="noopener">Guo et al. (2023) — Brainoware</a>: organoid reservoir computing.</li>
-<li><a href="https://github.com/NCN-Lab/RL_Neuronal_Control" target="_blank" rel="noopener">NCN Lab — RL Neuronal Control</a>: code to examine for the technical prototype.</li>
+<li><a href="https://doi.org/10.1016/j.neuron.2022.09.001" rel="noopener" target="_blank">Kagan et al. (2022) — DishBrain</a>: closed-loop neuronal interaction.</li>
+<li><a href="https://doi.org/10.1038/s41467-024-48905-x" rel="noopener" target="_blank">Beaubois et al. (2024) — BiœmuS</a>: hybrid biological and simulated spiking networks.</li>
+<li><a href="https://doi.org/10.1038/s41928-023-01069-w" rel="noopener" target="_blank">Guo et al. (2023) — Brainoware</a>: organoid reservoir computing.</li>
+<li><a href="https://github.com/NCN-Lab/RL_Neuronal_Control" rel="noopener" target="_blank">Carvalho et al. / NCN Lab (2026) — RL Neuronal Control code</a>: NEURON simulations, controller and MEA software.</li>
+<li><a href="https://www.biorxiv.org/content/10.64898/2026.07.13.738298v1" rel="noopener" target="_blank">Carvalho et al. (2026) — closed-loop neuronal control preprint</a>: controller pre-training and transfer to living cultures.</li>
+<li><a href="https://zenodo.org/records/21891175" rel="noopener" target="_blank">NCN Lab experimental and simulation data (Zenodo)</a>: source data for reproducing analyses.</li>
+<li><a href="https://www.mdpi.com/2674-1172/2/4/14" rel="noopener" target="_blank">Contraindicated Drug Responses in Dravet Syndrome Brain Organoids (2023)</a>: 3D organoids, MEA activity and acute drug effects.</li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12661309/" rel="noopener" target="_blank">Variability vs. phenotype: Multimodal analysis of Dravet syndrome brain organoids (2025)</a>: disease phenotyping and drug exposures.</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/42085324/" rel="noopener" target="_blank">Disrupted inhibitory interneuron development in SCN1A Dravet syndrome (2026)</a>: patient-derived subpallial organoids and acute fenfluramine response.</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/31186344/" rel="noopener" target="_blank">Therapeutic Mechanism of Cannabidiol in a Human iPSC-Based Model of Dravet Syndrome (2019)</a>: disease-relevant neuronal electrophysiology.</li>
+<li><a href="https://www.lenasmirnovalab.com/projects-1" rel="noopener" target="_blank">Lena Smirnova Lab — DROIDp</a>: proposed organoid-based learning and memory endpoints for drug testing.</li>
+<li><a href="https://reporter.nih.gov/project-details/11304971" rel="noopener" target="_blank">NIH DROIDp project description</a>: funded research aims and context.</li>
 </ul>
 <p><strong>Evidence still to collect:</strong> primary Dravet electrophysiology datasets, drug-specific in-vitro concentrations and timing, and evidence for suitable learning-related endpoints.</p>
 </section>
