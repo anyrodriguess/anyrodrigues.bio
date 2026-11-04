@@ -1,0 +1,58 @@
+
+/* ONE shared header for all pages. Change the design here, not on each HTML page. */
+html, body { background: #008080 !important; background-image: none !important; }
+#global-site-header, #global-site-header * { box-sizing: border-box; }
+#global-site-header {
+  width: min(1050px, calc(100% - 30px));
+  max-width: 1050px;
+  margin: 26px auto 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #101010;
+  position: relative;
+  z-index: 5;
+}
+#global-site-header .universal-site-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 24px; padding: 0 0 19px; border-bottom: 3px double #101010;
+  background: transparent; color: #101010;
+  margin: 0;
+}
+#global-site-header .universal-site-identity h1 {
+  margin: 0 0 8px; padding: 0; font-size: clamp(27px, 5vw, 43px);
+  line-height: 1.1; letter-spacing: -1.5px; color: #101010;
+  font-family: "Courier New", Courier, monospace; font-weight: bold;
+}
+#global-site-header .universal-site-identity p {
+  margin: 0; padding: 0; font-size: 12px; color: #101010;
+  font-family: "Courier New", Courier, monospace;
+}
+#global-site-header .universal-status {
+  display: flex; flex-direction: column; border: 2px outset white;
+  background: #dddddd; padding: 8px 13px; min-width: 155px;
+  font-size: 11px; color: #101010; line-height: 1.6;
+}
+#global-site-header .universal-online-dot {
+  display: inline-block; width: 8px; height: 8px; margin-right: 5px;
+  background: #008c49; border-radius: 50%;
+}
+#global-site-header .universal-site-nav {
+  display: flex; flex-wrap: wrap; gap: 0; margin: 16px 0 26px;
+  padding: 5px; background: #c8c8c8; border: 2px outset white;
+  font-family: "Courier New", Courier, monospace;
+  position: static; height: auto; width: 100%;
+}
+#global-site-header .universal-site-nav a {
+  display: inline-block; padding: 7px 12px; margin: 0;
+  background: transparent; color: #101a83; border: 0;
+  font: bold 13px "Courier New", Courier, monospace;
+  text-decoration: none; text-transform: none;
+}
+#global-site-header .universal-site-nav a:hover,
+#global-site-header .universal-site-nav a:focus {
+  background: #101a83; color: white;
+}
+@media (max-width: 600px) {
+  #global-site-header .universal-site-header { flex-direction: column; gap: 10px; }
+  #global-site-header .universal-status { min-width: 0; }
+  #global-site-header .universal-site-nav a { padding: 6px 9px; }
+}
