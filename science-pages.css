@@ -1,0 +1,26 @@
+/* Consistent science article layout. Loaded after legacy page styles. */
+html,body{background:#008080!important;background-image:none!important}
+body{margin:0!important;padding:0 0 38px!important;color:#161616!important;font-family:Tahoma,Arial,sans-serif!important;font-size:14px!important;line-height:1.55!important}
+.page.interest-page{width:min(1050px,calc(100% - 30px))!important;max-width:1050px!important;margin:0 auto 28px!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+.interest-page main{display:block;min-width:0}
+.interest-page .crumb{font:12px/1.6 'Courier New',monospace!important;color:#eaf8f8!important;margin:0 0 14px!important;overflow-wrap:anywhere}
+.interest-page .crumb a{color:#fff!important}
+.interest-page .article{max-width:100%!important;margin:0 0 20px!important;background:#fff!important;border:2px solid!important;border-color:#fff #4b4b4b #4b4b4b #fff!important;box-shadow:3px 3px 0 #174747!important;overflow:hidden}
+.interest-page .bar{display:flex!important;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;background:#000080!important;color:#fff!important;padding:8px 12px!important;font:700 13px/1.4 'Courier New',monospace!important}
+.interest-page .inside{background:#fff!important;color:#171717!important;padding:clamp(18px,3vw,32px)!important;min-width:0;overflow-wrap:break-word}
+.interest-page .inside h1{font-size:clamp(25px,3.7vw,40px)!important;line-height:1.2!important;letter-spacing:-.025em;margin:0 0 16px!important}
+.interest-page .inside h2{font-size:clamp(19px,2.4vw,25px)!important;line-height:1.3!important;margin:25px 0 12px!important}
+.interest-page .inside h3{font-size:clamp(16px,2vw,19px)!important;line-height:1.35!important;margin:22px 0 10px!important}
+.interest-page .inside p,.interest-page .inside li{line-height:1.7!important}
+.interest-page .inside p{margin:0 0 15px!important}
+.interest-page .inside a{overflow-wrap:anywhere}
+.interest-page .inside img{max-width:100%!important;height:auto!important}
+.interest-page .toc{display:flex!important;flex-wrap:wrap;gap:8px!important;max-width:100%;height:auto!important}
+.interest-page .toc a{white-space:normal!important;max-width:100%;font-size:12px!important}
+.interest-page table{display:block!important;max-width:100%!important;overflow-x:auto!important;border-collapse:collapse}
+.interest-page th,.interest-page td{min-width:95px;vertical-align:top}
+.interest-page .ref-list{padding-left:24px!important}
+.interest-page .ref-list li{margin:0 0 11px!important}
+.interest-page .note,.interest-page .question{max-width:100%;overflow-wrap:break-word}
+.interest-page footer{max-width:100%;overflow-wrap:break-word}
+@media(max-width:600px){.page.interest-page{width:calc(100% - 20px)!important}.interest-page .inside{padding:16px!important}.interest-page .bar{font-size:12px!important}.interest-page .inside h1{font-size:26px!important}}
