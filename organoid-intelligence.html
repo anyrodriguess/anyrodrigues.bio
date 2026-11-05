@@ -58,7 +58,17 @@
 @media (max-width: 600px) {
   
 }
-  </style>
+  
+/* Measurement approaches in section 03 */
+.plasticity-methods{margin:2.2rem 0 1.8rem;}
+.plasticity-methods>h3{font-size:clamp(1.3rem,2.4vw,1.65rem);font-weight:800;line-height:1.25;color:#173d78;margin:0 0 .8rem;}
+.plasticity-methods>.methods-intro{margin:0 0 1.5rem;max-width:78ch;}
+.plasticity-method{border-left:3px solid #a8b9cb;padding:0 0 0 1rem;margin:1.55rem 0 0;}
+.plasticity-method h4{font-size:1.08rem;line-height:1.35;font-weight:800;color:#243449;margin:0 0 .6rem;}
+.plasticity-method p{margin:.5rem 0 .75rem;}
+.plasticity-methods .method-reference{margin-top:1.6rem;font-size:.9rem;color:#45556a;}
+@media(max-width:600px){.plasticity-method{padding-left:.8rem;}}
+</style>
 <link href="windows98.css" rel="stylesheet"/>
 <style>
 /* Shared aqua desktop background across the portfolio.
@@ -414,7 +424,23 @@ body {
 <p>
 <a href="https://doi.org/10.1038/s42003-025-08632-5" rel="noopener noreferrer" target="_blank">[Alam El Din et al., 2025]</a>
 </p>
-<div class="question">
+<div class="plasticity-methods">
+<h3>How can researchers measure plasticity?</h3>
+<p class="methods-intro">Changes in firing activity do not automatically demonstrate learning or synaptic plasticity. Combining molecular, electrophysiological and controlled functional experiments helps distinguish short-lived responses from lasting network changes.</p>
+<div class="plasticity-method"><h4>01 / Molecular and synaptic markers</h4>
+<p>Activity-regulated genes such as <em>FOS</em>, <em>EGR1</em> and <em>ARC</em> can reveal cellular responses to stimulation. RT-qPCR, immunostaining and transcriptomic analyses can help quantify these changes, while proteins such as PSD-95 and synaptophysin provide complementary information about synaptic organization.</p>
+<p>These measurements indicate activity-dependent molecular or structural changes; on their own, they do not prove that a network has learned.</p></div>
+<div class="plasticity-method"><h4>02 / High-density microelectrode arrays (HD-MEAs)</h4>
+<p>HD-MEAs record extracellular activity from many spatially distributed sites, making it possible to compare spontaneous and stimulus-evoked network responses over time. Useful readouts include firing rates, burst patterns, response reliability, spatial propagation and inferred functional connectivity.</p>
+<p>Recordings before stimulation, immediately afterward and at later time points can help identify persistent changes. However, extracellular spikes do not directly measure synaptic strength, and inferred functional connectivity is not the same as anatomical connectivity.</p></div>
+<div class="plasticity-method"><h4>03 / Criticality and neuronal avalanches</h4>
+<p>Neuronal avalanches are cascades of network activity. Their sizes, durations and propagation patterns can be analyzed to investigate whether collective dynamics resemble a near-critical regime, sometimes described as a balance between activity that dies out and activity that spreads excessively.</p>
+<p>Researchers examine branching ratios, avalanche distributions and related measures. Such analyses are sensitive to recording coverage, binning and other methodological choices. Critical-like dynamics may describe network organization or maturation, but are not direct proof of plasticity or learning.</p></div>
+<div class="plasticity-method"><h4>04 / Causal tests and retention</h4>
+<p>A stronger design combines baseline recordings, a defined stimulation or training protocol, matched control conditions and follow-up measurements. Comparing trained and untrained inputs, testing retention and using targeted pharmacological manipulations can help determine whether observed changes are specific, persistent and mechanistically meaningful.</p>
+<p>In closed-loop experiments, improved task performance must also be separated from changes in the software decoder, simple adaptation or nonspecific changes in excitability.</p></div>
+<p class="method-reference">An example combining molecular markers, HD-MEA recordings and network dynamics is <a href="https://doi.org/10.1038/s42003-025-08632-5" rel="noopener noreferrer" target="_blank">[Alam El Din et al., 2025]</a>.</p>
+</div><div class="question">
 <strong>
          Something I'd love to test:
         </strong>
