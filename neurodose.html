@@ -431,15 +431,41 @@ body {
 </span>
 </div>
 </div><div class="window-content">
-<h2>Could Living Neural Networks Transform Preclinical Drug Testing?</h2>
-<p class="lead">A proposed closed-loop organoid intelligence framework for Dravet syndrome.</p>
-<p class="status">Conceptual research proposal; biological experiments have not yet been conducted.</p>
-<section id="question"><h3>01 / Research question</h3>
-<p><strong>Can pharmacological treatment restore adaptive learning in human neural networks modelling Dravet syndrome?</strong></p>
-<p><strong>Hypothesis:</strong> SCN1A-associated changes in neuronal activity may affect performance in a closed-loop task. A suitable treatment might improve adaptive performance while preserving physiological network activity.</p>
-<p><strong>Aim:</strong> Compare network activity and task-related adaptation in healthy control, Dravet, and drug-treated Dravet neural models.</p>
+<h2>Can a cultured neural network learn from feedback?</h2>
+
+<p class="lead">
+  NeuroDose explores how to measure learning in a dish and whether
+  it differs in human neural cultures modelling Dravet syndrome.
+</p>
+
+<p class="status">Independent research proposal · Experimental design stage</p>
+
+<section id="question">
+  <h3>01 / Research question</h3>
+
+  <p>
+    If a neural culture receives electrical feedback after each move
+    in a simple maze, does it become more likely to make the correct
+    move when it encounters the same cue again? Does that improvement
+    persist when feedback stops?
+  </p>
+
+  <p>
+    I would first compare two control cultures. One would receive
+    feedback based on its own moves. The other would receive a replay
+    of the same stimulation sequence, regardless of its moves. The rule
+    that translates recorded spikes into moves would stay fixed throughout.
+  </p>
+
+  <p>
+    If that comparison shows reproducible learning, I would ask whether
+    cultures carrying a Dravet-associated <em>SCN1A</em> variant differ
+    in how quickly they learn or how well they retain the response.
+    A reproducible difference would give me a specific outcome to test
+    in the drug experiment.
+  </p>
 </section>
-<section id="dravet"><h3>02 / Why Dravet syndrome?</h3>
+  <h3>02 / Why Dravet syndrome?</h3>
 <p>Dravet syndrome is a developmental and epileptic encephalopathy frequently associated with pathogenic variants in <em>SCN1A</em>, which encodes the NaV1.1 sodium-channel subunit.</p>
 <p>It is a useful candidate because human iPSC-derived Dravet models, electrophysiological studies, and pharmacological studies already exist. These provide a starting point for selecting disease-relevant measurements and treatment conditions.</p>
 <p>However, a reproducible learning deficit in a Dravet organoid has <strong>not</strong> been established for our proposed task. Demonstrating that difference would be part of the research.</p>
@@ -488,7 +514,13 @@ body {
 <h4>Biological foundations / From synaptic plasticity to learning</h4>
 <p><a href="https://doi.org/10.1038/s42003-025-08632-5" rel="noopener" target="_blank">Alam El Din et al. (2025)</a> investigated mechanisms associated with learning and memory in human iPSC-derived neural organoids. Using HD-MEAs, calcium imaging, molecular characterization, and pharmacological interventions, the study examined neuronal network dynamics, functional connectivity, criticality, and synaptic plasticity.</p>
 <p>Through input-specific theta-burst stimulation, the researchers demonstrated short- and long-term changes in synaptic responses, providing evidence of activity-dependent plasticity. While these mechanisms are fundamental to learning and memory, they do not independently establish behavioural learning.</p>
-<p>Building on these findings, NeuroDose proposes investigating whether closed-loop feedback produces measurable network adaptation, whether SCN1A-associated Dravet syndrome alters this capacity, and whether pharmacological intervention can restore it.</p>
+<p>
+  NeuroDose asks whether those changes in neural responses can support
+  a specific task. After training, does the same cue more often evoke
+  the response that moves the cursor in the correct direction? Measuring
+  that change alongside firing rate and bursting would help distinguish
+  improved task performance from a drug’s broader effect on excitability.
+</p>
 <h4>Learning analysis / From repeated decisions to a measurable phenotype</h4>
 <p>The proposed learning endpoint is a change in the network’s cue-dependent decisions over repeated trials, assessed with an unchanged decoder. Acquisition curves would describe the evolution of task performance; retention tests would examine whether changes persist without ongoing training feedback. Contingent-feedback and yoked-replay conditions would help distinguish experience-dependent adaptation from stimulation exposure, spontaneous drift and changes in overall excitability.</p>
 <p><a href="https://github.com/SpikeInterface/spikeinterface" rel="noopener" target="_blank">SpikeInterface</a> provides open-source tools for extracellular recording analysis, while <a href="https://github.com/SpikeInterface/MEArec" rel="noopener" target="_blank">MEArec</a> generates simulated extracellular recordings useful for evaluating a decoder before biological experiments. Simulated spike trains could illustrate the analysis workflow, but would not be presented as evidence that healthy, Dravet or drug-treated networks have learned.</p>
