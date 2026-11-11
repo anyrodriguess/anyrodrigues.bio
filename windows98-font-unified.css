@@ -1,0 +1,10 @@
+/* Consistent Windows 98-inspired typography across the portfolio.
+   Original MS Sans Serif is not available on every modern device.
+   Arial is a stable fallback; no third-party font files required. */
+html, body, body *:not(code):not(pre):not(kbd):not(samp) {
+  font-family: "MS Sans Serif", Arial, Helvetica, sans-serif !important;
+}
+/* Keep literal code and technical readouts monospaced. */
+code, pre, kbd, samp, code *, pre * {
+  font-family: "Courier New", Courier, monospace !important;
+}
