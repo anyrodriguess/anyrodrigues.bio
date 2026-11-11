@@ -115,11 +115,40 @@ html,body{background:#008080!important;color:#000!important;font:14px/1.55 Tahom
 </style><style>.pilot-guide{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}.pilot-guide>div{border:1px solid #999;background:#f6f7fa;padding:14px;line-height:1.55}.pilot-guide p{margin:8px 0 0}.pilot-key{background:#e8edf5;border-left:4px solid #17365D;padding:13px 16px;margin:16px 0;line-height:1.65}.pilot-note{border-top:1px solid #aaa;padding-top:12px;margin-top:16px;line-height:1.55}@media(max-width:700px){.pilot-guide{grid-template-columns:1fr}}</style><style>
 .pilot-lead{max-width:900px;line-height:1.65}.pilot-summary{display:grid;grid-template-columns:1.3fr 1fr;gap:14px;margin:18px 0}.pilot-summary>div{background:#f7f8fa;border:1px solid #b4bac5;padding:16px}.pilot-kicker{font-weight:700;letter-spacing:.08em;color:#17365d;font-size:11px}.pilot-instruction{margin:18px 0 10px}.pilot-tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:0}.pilot-phase{border:1px solid #8e98a8;background:#f4f4f4;color:#17365d;padding:11px 16px;font:inherit;font-weight:bold;cursor:pointer}.pilot-phase span{margin-right:9px;opacity:.7}.pilot-phase.active{background:#17365d;color:#fff;border-color:#17365d}.pilot-phase:focus-visible{outline:3px solid #366aab;outline-offset:2px}.pilot-panel{border:1px solid #8e98a8;padding:20px;min-height:195px;background:white}.pilot-panel h3{margin-top:0;color:#17365d}.pilot-decision{border-left:3px solid #17365d;background:#f4f6f8;padding:11px 14px;margin-top:14px}.pilot-endpoints{margin:24px 0;overflow-x:auto}.pilot-endpoints table{width:100%;border-collapse:collapse;font-size:13px}.pilot-endpoints th,.pilot-endpoints td{border:1px solid #aab2bd;padding:10px;text-align:left;vertical-align:top}.pilot-endpoints th{background:#17365d;color:white}@media(max-width:720px){.pilot-summary{grid-template-columns:1fr}.pilot-phase{flex:1 1 42%}}
 </style><link rel="stylesheet" href="windows98-font-unified.css">
-</head><body><script src="shared-header.js"></script><div class="page"><div class="window"><div class="window-title">📄 neural_interfaces_research_plan.html</div><main class="window-content">
+<style>
+/* Research proposal details: each label stays beside its value. */
+.meta.research-meta {
+  display: block !important;
+  padding: 8px 20px !important;
+  margin: 26px 0 32px !important;
+  background: #f3f3f3 !important;
+  border: 1px solid #808080 !important;
+}
+.research-meta .research-meta-row {
+  display: grid !important;
+  grid-template-columns: 145px minmax(0, 1fr) !important;
+  align-items: start !important;
+  gap: 18px !important;
+  min-width: 0 !important;
+  padding: 12px 0 !important;
+  margin: 0 !important;
+  border-bottom: 1px solid #d0d0d0;
+}
+.research-meta .research-meta-row:last-child { border-bottom: 0; }
+.research-meta .research-meta-row strong { color: #17365d; }
+.research-meta .research-meta-row span { min-width: 0; overflow-wrap: break-word; }
+@media (max-width: 520px) {
+  .research-meta .research-meta-row { grid-template-columns: 1fr !important; gap: 3px !important; }
+}
+</style></head><body><script src="shared-header.js"></script><div class="page"><div class="window"><div class="window-title">📄 neural_interfaces_research_plan.html</div><main class="window-content">
 <div class="eyebrow">OPEN APPLICATION / RESEARCH CONCEPT / NOVEMBER 2026</div>
 <h1>From stem cells to a living neural interface</h1>
 <p class="lead">A proposed research direction for Axo Neurotech, grounded in published muscle-cell programming, flexible microelectrode arrays and peripheral nerve electrophysiology.</p>
-<div class="meta"><strong>Applicant</strong> Any Rodrigues   |   <strong>Focus</strong> Cell engineering, electrophysiology and reproducibility   |   <strong>Status</strong> Independent proposal, not completed Axo research</div>
+<div class="meta research-meta" aria-label="Proposal details">
+  <div class="research-meta-row"><strong>Applicant</strong><span>Any Rodrigues</span></div>
+  <div class="research-meta-row"><strong>Focus</strong><span>Cell engineering, electrophysiology and reproducibility</span></div>
+  <div class="research-meta-row"><strong>Status</strong><span>Independent research proposal, not completed Axo research</span></div>
+</div>
 <h2>Why this interests me</h2>
 <p>My experience maintaining neural cultures at DZNE and preparing adult zebrafish retina for high-density MEA recordings at CRTD made me interested in how biological preparation determines whether an electrical measurement is meaningful. The work by Rochford and colleagues [2] offers a different kind of interface: living muscle cells are incorporated into flexible electronics to create a biological target for peripheral nerve inputs. I would like to contribute to the preparation, recording quality and experimental reproducibility of systems like this, while learning the methods specific to Axo.</p>
 <h2>How the published approach works</h2>
