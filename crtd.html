@@ -51,6 +51,16 @@ body {
 /* Separate experimental paradigms */
 #stimulation .two{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:750px){#stimulation .two{grid-template-columns:1fr}}
+</style><style>
+/* Compact, consistent original-data figure presentation */
+.crtd-results-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:14px 0 20px}
+.crtd-results-figure{margin:12px 0 18px;padding:9px;background:#f7f7f7;border:1px solid #aaa;min-width:0}
+.crtd-results-figure img{display:block;width:100%;height:auto;max-height:255px;object-fit:contain;background:white;margin:auto}
+.crtd-results-figure figcaption{font:12px/1.55 Tahoma,Arial,sans-serif;margin-top:9px}
+.crtd-results-figure figcaption strong{color:#000080}
+.crtd-results-figure--single{max-width:530px;margin:12px auto 20px}
+.crtd-results-figure--single img{max-height:270px}
+@media(max-width:680px){.crtd-results-grid{grid-template-columns:1fr}.crtd-results-figure img{max-height:280px}}
 </style></head>
 <body><script src="shared-header.js"></script>
 <main class="desktop">
@@ -116,7 +126,7 @@ body {
         PREPARATION
        </strong>
 <span>
-        <em>Ex vivo</em> adult zebrafish retina under perfusion
+<em>Ex vivo</em> adult zebrafish retina under perfusion
        </span>
 </div>
 <div class="fact">
@@ -154,16 +164,15 @@ body {
 <tr><td>Spike sorting</td><td>PCA (5 features), K-means clustering; minimum 18 spikes; maximum 5 clusters</td></tr>
 </tbody></table></div>
 <div class="two"><div class="item"><h3>Activity metrics</h3><p>Mean firing rate, spike count, inter-spike intervals, burst activity and peak-to-peak amplitudes were used to describe spontaneous and evoked activity. Raster plots and firing-rate distributions supported comparisons between experimental conditions.</p></div><div class="item"><h3>Visual response classification</h3><p>Responses around light onset and offset were classified as ON, OFF or ON–OFF. The polarity index (PI) summarizes the relative onset and offset response amplitudes: <strong>PI = (A<sub>ON</sub> − A<sub>OFF</sub>) / (A<sub>ON</sub> + A<sub>OFF</sub>).</strong></p></div></div>
-
 </section>
 <section class="section" id="findings"><h2>04 / Results &amp; discussion</h2>
 <div class="crtd-detail"><h3>Improving retinal recordings</h3><p>Refinement of tissue preparation and stabilization improved the detection of extracellular activity. Reliable tissue–electrode contact was central to obtaining spatially distributed recordings from adult retinal explants.</p></div>
-<div class="crtd-detail"><h3>Heterogeneous light responses</h3><p>White-light stimulation revealed distinct retinal response patterns, including ON, OFF and ON–OFF activity. Response magnitude and temporal dynamics varied between recorded units and stimulation intervals, supporting a preliminary functional characterization of retinal ganglion-cell activity.</p></div>
-<div class="crtd-detail"><h3>Pharmacological modulation</h3><p>MFA exposure altered retinal spiking activity, demonstrating pharmacological sensitivity of the recorded retinal preparation. These effects alone do not establish a uniquely gap-junction-mediated mechanism.</p></div><div class="crtd-detail"><h3>Light-induced retinal injury</h3><p>In a separate light-injury experiment, spontaneous activity increased at the later recording point while visually evoked responses were markedly reduced. This distinction illustrates why elevated spontaneous firing cannot be interpreted as preserved visual function.</p></div>
+<div class="crtd-detail"><h3>Heterogeneous light responses</h3><p>White-light stimulation revealed distinct retinal response patterns, including ON, OFF and ON–OFF activity. Response magnitude and temporal dynamics varied between recorded units and stimulation intervals, supporting a preliminary functional characterization of retinal ganglion-cell activity.</p></div><div class="crtd-results-grid"><figure class="crtd-results-figure"><img alt="Representative spike-rate profiles illustrating ON, OFF and ON–OFF responses to full-field light stimulation." loading="lazy" src="CRTD_ON_OFF_responses.png"/><figcaption><strong>Figure 3. </strong>Representative spike-rate profiles illustrating ON, OFF and ON–OFF responses to full-field light stimulation.</figcaption></figure><figure class="crtd-results-figure"><img alt="Heatmap of firing responses from 50 selected units across light-step durations, illustrating heterogeneous temporal sensitivity." loading="lazy" src="CRTD_light_response_heatmap.png"/><figcaption><strong>Figure 4. </strong>Heatmap of firing responses from 50 selected units across light-step durations, illustrating heterogeneous temporal sensitivity.</figcaption></figure></div>
+<div class="crtd-detail"><h3>Pharmacological modulation</h3><p>MFA exposure altered retinal spiking activity, demonstrating pharmacological sensitivity of the recorded retinal preparation. These effects alone do not establish a uniquely gap-junction-mediated mechanism.</p><figure class="crtd-results-figure crtd-results-figure--single"><img alt="Mean firing-rate trajectories across sequential recordings in the MFA experiment, illustrating changes in retinal activity over time." loading="lazy" src="CRTD_MFA_firing_rate.png"/><figcaption><strong>Figure 5. </strong>Mean firing-rate trajectories across sequential recordings in the MFA experiment, illustrating changes in retinal activity over time.</figcaption></figure></div><div class="crtd-detail"><h3>Light-induced retinal injury</h3><p>In a separate light-injury experiment, spontaneous activity increased at the later recording point while visually evoked responses were markedly reduced. This distinction illustrates why elevated spontaneous firing cannot be interpreted as preserved visual function.</p><figure class="crtd-results-figure crtd-results-figure--single"><img alt="Comparison of baseline and light-stimulated firing rates before and after acute light exposure." loading="lazy" src="CRTD_light_injury_responses.png"/><figcaption><strong>Figure 6. </strong>Comparison of baseline and light-stimulated firing rates before and after acute light exposure.</figcaption></figure></div>
 <p>These experiments established a practical workflow for recording and characterizing adult zebrafish retinal activity. Interpretation remains dependent on preparation quality, the number of independent retinas and the distinction between putative extracellular units and definitively identified cell types.</p>
 </section>
 <section class="section" id="archive"><h2>05 / Experimental media</h2><p>Selected original experimental material from the retinal CMOS-MEA project.</p>
-<figure class="crtd-figure crtd-figure--small"><img alt="Original CRTD retinal experiment image" loading="lazy" src="CRTD_artifact.jpeg"/><figcaption><strong>Figure 3. Retinal CMOS-MEA experiment.</strong> Experimental image from the <em>ex vivo</em> recording workflow.</figcaption></figure>
+<figure class="crtd-figure crtd-figure--small"><img alt="Original CRTD retinal experiment image" loading="lazy" src="CRTD_artifact.jpeg"/><figcaption><strong>Figure 7. Retinal CMOS-MEA experiment.</strong> Experimental image from the <em>ex vivo</em> recording workflow.</figcaption></figure>
 <video controls="" preload="metadata" style="display:block;width:100%;max-width:680px;margin:16px auto;border:2px inset #aaa;background:#000"><source src="CRTD_video.mp4" type="video/mp4"/>Your browser does not support HTML video.</video>
 </section><section class="section" id="improvements"><h2>06 / What I would improve in a follow-up study</h2>
 <div class="crtd-detail"><h3>01 — Standardized light stimulation</h3><p>I would build on the existing LEGO-based apparatus with programmable LED control, calibrated irradiance and synchronized stimulus timestamps. This would enable more reproducible intensity and temporal-response comparisons between retinal preparations <a href="#references">[2]</a>.</p></div>
