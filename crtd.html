@@ -29,8 +29,29 @@ html, body {
 body {
     background-image: none !important;
 }
-</style><link href="shared-header.css" rel="stylesheet"/><link href="portfolio-hierarchy.css" rel="stylesheet"/><link rel="stylesheet" href="windows98-font-unified.css">
-</head>
+</style><link href="shared-header.css" rel="stylesheet"/><link href="portfolio-hierarchy.css" rel="stylesheet"/><link href="windows98-font-unified.css" rel="stylesheet"/>
+<style>
+/* CRTD additions — preserve existing desktop theme */
+.crtd-figure{max-width:620px;margin:18px auto;background:#fff;border:1px solid #aaa;padding:9px}
+.crtd-figure img{display:block;width:100%;height:auto;object-fit:contain}
+.crtd-figure figcaption{font:13px/1.55 Tahoma,Arial,sans-serif;padding:9px 3px 3px}
+.crtd-figure figcaption strong{color:#000080}
+.crtd-figure--small{max-width:520px}
+.crtd-figure--lego{max-width:470px}
+.crtd-detail{background:#fafafa;border:1px solid #bbb;padding:12px 15px;margin:14px 0}
+.crtd-detail h3{margin:0 0 6px;color:#000080}
+.crtd-detail p{margin:0 0 8px}
+.crtd-detail p:last-child{margin-bottom:0}
+.crtd-refs{padding-left:22px;line-height:1.65}
+.crtd-refs li{margin-bottom:9px;overflow-wrap:anywhere}
+.crtd-refs a{overflow-wrap:anywhere}
+.crtd-methods{font-size:13px}
+@media(max-width:650px){.crtd-figure,.crtd-figure--small,.crtd-figure--lego{max-width:100%}}
+</style><style>
+/* Separate experimental paradigms */
+#stimulation .two{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:750px){#stimulation .two{grid-template-columns:1fr}}
+</style></head>
 <body><script src="shared-header.js"></script>
 <main class="desktop">
 <div class="app">
@@ -87,9 +108,7 @@ body {
 <span class="chip">
        Light stimulation
       </span>
-<span class="chip">
-       Python / R
-      </span>
+<span class="chip">BrainWave5 / R</span>
 </div>
 <div class="facts">
 <div class="fact">
@@ -97,7 +116,7 @@ body {
         PREPARATION
        </strong>
 <span>
-        Ex vivo adult zebrafish retina under perfusion
+        <em>Ex vivo</em> adult zebrafish retina under perfusion
        </span>
 </div>
 <div class="fact">
@@ -117,151 +136,46 @@ body {
        </span>
 </div>
 </div>
-<div class="toc">
-<strong>
-       Contents
-      </strong>
-<a href="#preparation">
-       01 / Recording preparation
-      </a>
-<a href="#stimulation">
-       02 / Visual stimulation &amp; experimental conditions
-      </a>
-<a href="#analysis">
-       03 / Signal processing
-      </a>
-<a href="#findings">
-       04 / Main findings &amp; limitations
-      </a>
-<a href="#archive">
-       05 / Media archive
-      </a>
-</div>
-<section class="section" id="preparation">
-<h2>
-       01 / Recording preparation
-      </h2>
-<div class="two">
-<div class="item">
-<h3>
-         Ex vivo preparation
-        </h3>
-<p>
-         Adult zebrafish retina was dissected and maintained under perfusion. I investigated tissue positioning, contact with the electrode array, and recording conditions to improve signal detection.
-        </p>
-</div>
-<div class="item">
-<h3>
-         Electrode platform
-        </h3>
-<p>
-         Recordings used the 3Brain Accura CMOS-MEA with 4,096 electrodes, enabling spatially distributed measurements across the retinal tissue.
-        </p>
-</div>
-</div>
-<figure class="setup-viewer">
-<div class="setup-viewer__bar">
-        ▣ CRTD_perfusion_setup.jpeg — Experimental setup
-       </div>
-<div class="setup-viewer__photo">
-<img alt="Original retinal CMOS-MEA perfusion setup photographed under red laboratory illumination" loading="lazy" src="CRTD_perfusion_setup.jpeg"/>
-</div>
-<figcaption>
-<strong>
-         Long recording sessions under red light.
-        </strong>
-        During the extended ex vivo retinal experiments, I worked under red illumination to limit unintended visual stimulation while preparing and maintaining the tissue on the CMOS-MEA. The photograph shows the perfusion tubing and recording setup used during these sessions.
-       </figcaption>
-</figure>
+<div class="toc"><strong>Contents</strong><a href="#preparation">01 / Recording preparation</a><a href="#stimulation">02 / Visual stimulation &amp; experimental conditions</a><a href="#analysis">03 / Data &amp; signal analysis</a><a href="#findings">04 / Results &amp; discussion</a><a href="#archive">05 / Experimental media</a><a href="#improvements">06 / What I would improve</a><a href="#references">07 / References</a></div>
+<section class="section" id="preparation"><h2>01 / Recording preparation</h2>
+<div class="two"><div class="item"><h3><em>Ex vivo</em> retinal preparation</h3><p>Adult zebrafish retinas were isolated and positioned ganglion-cell-side down on the electrode array. I optimized tissue dissection and mounting to improve electrode contact, including vitreous removal and controlled mechanical stabilization.</p></div><div class="item"><h3>CMOS-MEA recording platform</h3><p>Recordings were performed using the 3Brain BioCAM DupleX and Accura CMOS-MEA chips (4,096 electrodes; 64 × 64 array). Retinal tissue was maintained in carbogenated Ames' medium under continuous perfusion.</p></div></div>
+<figure class="setup-viewer"><div class="setup-viewer__bar">▣ Recording preparation</div><div class="setup-viewer__photo"><img alt="Ex vivo retina recording and perfusion setup under red illumination" loading="lazy" src="CRTD_perfusion_setup.jpeg"/></div><figcaption><strong>Figure 1. <em>Ex vivo</em> retinal recording setup.</strong> CMOS-MEA acquisition and perfusion apparatus used for adult zebrafish retina experiments under low-light conditions.</figcaption></figure>
 </section>
-<section class="section" id="stimulation">
-<h2>
-       02 / Visual stimulation &amp; experimental conditions
-      </h2>
-<div class="two">
-<div class="item">
-<h3>
-         Light responses
-        </h3>
-<p>
-         Constant light and chirp paradigms were used to examine visually evoked activity, including ON, OFF and ON–OFF response patterns.
-        </p>
-</div>
-<div class="item">
-<h3>
-         Pharmacology and injury
-        </h3>
-<p>
-         Meclofenamic acid (MFA) was used to investigate pharmacological modulation. Light-induced retinal injury was also explored to assess changes in responsiveness.
-        </p>
-</div>
-</div>
+<section class="section" id="stimulation"><h2>02 / Visual stimulation &amp; experimental conditions</h2>
+<div class="two"><div class="item"><h3>Full-field light stimulation</h3><p>White-light flashes with matched light and dark intervals (0.1–1.0 s) were presented from the photoreceptor side of the retina. Repeated cycles allowed comparison of stimulus-locked spiking, temporal response patterns and ON/OFF activity.</p></div><div class="item"><h3>Pharmacological stimulation</h3><p>Meclofenamic acid (MFA) was applied in a pharmacological experiment to examine changes in retinal spiking activity.</p></div><div class="item"><h3>Light-induced injury</h3><p>In a separate experiment, intense white-light exposure was used to investigate changes in spontaneous activity and light responsiveness following acute retinal injury.</p></div></div>
+<figure class="crtd-figure crtd-figure--lego"><img alt="Original LEGO-based light-stimulation structure positioned over the retinal CMOS-MEA setup" loading="lazy" src="CRTD_LEGO_light_stimulation.png"/><figcaption><strong>Figure 2. Light-stimulation apparatus.</strong> LEGO-based support structure used to position the light source above the retinal recording platform.</figcaption></figure>
 </section>
-<section class="section" id="analysis">
-<h2>
-       03 / Signal processing
-      </h2>
-<div class="two">
-<div class="item">
-<h3>
-         Analysis workflow
-        </h3>
-<p>
-         Using Python and R, I worked with spike activity, firing rates, inter-spike intervals, peristimulus time histograms (PSTHs), and comparisons across experimental conditions.
-        </p>
-</div>
-<div class="item">
-<h3>
-         Response classification
-        </h3>
-<p>
-         Visually responsive units were characterized through changes in activity relative to baseline, including ON, OFF and ON–OFF patterns.
-        </p>
-</div>
-</div>
+<section class="section" id="analysis"><h2>03 / Data &amp; signal analysis</h2>
+<p>Extracellular recordings were acquired and processed in BrainWave5 (3Brain). Detected spikes were sorted into putative units before extracting firing statistics and evaluating light-evoked responses. Subsequent statistical analysis and visualization were performed in R.</p>
+<div class="crtd-detail"><h3>Spike detection and sorting</h3><table class="data crtd-methods"><thead><tr><th>Processing stage</th><th>Analysis parameters</th></tr></thead><tbody>
+<tr><td>Signal acquisition</td><td>20 kHz sampling; 50 Hz high-pass filter</td></tr>
+<tr><td>Spike detection</td><td>Precise Timing Spike Detection (PTSD); threshold 8 SD; 2 ms peak lifetime; 1 ms refractory period</td></tr>
+<tr><td>Waveform extraction</td><td>1 ms pre-peak and 1.5 ms post-peak</td></tr>
+<tr><td>Spike sorting</td><td>PCA (5 features), K-means clustering; minimum 18 spikes; maximum 5 clusters</td></tr>
+</tbody></table></div>
+<div class="two"><div class="item"><h3>Activity metrics</h3><p>Mean firing rate, spike count, inter-spike intervals, burst activity and peak-to-peak amplitudes were used to describe spontaneous and evoked activity. Raster plots and firing-rate distributions supported comparisons between experimental conditions.</p></div><div class="item"><h3>Visual response classification</h3><p>Responses around light onset and offset were classified as ON, OFF or ON–OFF. The polarity index (PI) summarizes the relative onset and offset response amplitudes: <strong>PI = (A<sub>ON</sub> − A<sub>OFF</sub>) / (A<sub>ON</sub> + A<sub>OFF</sub>).</strong></p></div></div>
+
 </section>
-<section class="section" id="findings">
-<h2>
-       04 / Main findings &amp; limitations
-      </h2>
-<div class="two">
-<div class="item">
-<h3>
-         Functional recordings
-        </h3>
-<p>
-         Optimizing the preparation enabled detection of spontaneous and visually evoked retinal activity on the CMOS-MEA.
-        </p>
-</div>
-<div class="item">
-<h3>
-         Experimental effects
-        </h3>
-<p>
-         MFA experiments showed changes in light-associated spiking, while injury experiments revealed loss of clear light responsiveness at the later recording point. These results were exploratory and depended on recording conditions.
-        </p>
-</div>
-</div>
+<section class="section" id="findings"><h2>04 / Results &amp; discussion</h2>
+<div class="crtd-detail"><h3>Improving retinal recordings</h3><p>Refinement of tissue preparation and stabilization improved the detection of extracellular activity. Reliable tissue–electrode contact was central to obtaining spatially distributed recordings from adult retinal explants.</p></div>
+<div class="crtd-detail"><h3>Heterogeneous light responses</h3><p>White-light stimulation revealed distinct retinal response patterns, including ON, OFF and ON–OFF activity. Response magnitude and temporal dynamics varied between recorded units and stimulation intervals, supporting a preliminary functional characterization of retinal ganglion-cell activity.</p></div>
+<div class="crtd-detail"><h3>Pharmacological modulation</h3><p>MFA exposure altered retinal spiking activity, demonstrating pharmacological sensitivity of the recorded retinal preparation. These effects alone do not establish a uniquely gap-junction-mediated mechanism.</p></div><div class="crtd-detail"><h3>Light-induced retinal injury</h3><p>In a separate light-injury experiment, spontaneous activity increased at the later recording point while visually evoked responses were markedly reduced. This distinction illustrates why elevated spontaneous firing cannot be interpreted as preserved visual function.</p></div>
+<p>These experiments established a practical workflow for recording and characterizing adult zebrafish retinal activity. Interpretation remains dependent on preparation quality, the number of independent retinas and the distinction between putative extracellular units and definitively identified cell types.</p>
 </section>
-<section class="section" id="archive">
-<h2>
-       05 / Experimental media
-      </h2>
-<p>
-       Original experimental image and recording video from the retinal CMOS-MEA project.
-      </p>
-<img alt="Experimental image from the CRTD retinal electrophysiology project" loading="lazy" src="CRTD_artifact.jpeg" style="display:block;max-width:100%;height:auto;border:2px inset #aaa;background:#fff;margin:14px auto"/>
-<video controls="True" preload="metadata" style="display:block;width:100%;max-width:780px;margin:16px auto;border:2px inset #aaa;background:#000">
-<source src="CRTD_video.mp4" type="video/mp4"/>
-       Your browser does not support HTML video.
-      </video>
+<section class="section" id="archive"><h2>05 / Experimental media</h2><p>Selected original experimental material from the retinal CMOS-MEA project.</p>
+<figure class="crtd-figure crtd-figure--small"><img alt="Original CRTD retinal experiment image" loading="lazy" src="CRTD_artifact.jpeg"/><figcaption><strong>Figure 3. Retinal CMOS-MEA experiment.</strong> Experimental image from the <em>ex vivo</em> recording workflow.</figcaption></figure>
+<video controls="" preload="metadata" style="display:block;width:100%;max-width:680px;margin:16px auto;border:2px inset #aaa;background:#000"><source src="CRTD_video.mp4" type="video/mp4"/>Your browser does not support HTML video.</video>
+</section><section class="section" id="improvements"><h2>06 / What I would improve in a follow-up study</h2>
+<div class="crtd-detail"><h3>01 — Standardized light stimulation</h3><p>I would build on the existing LEGO-based apparatus with programmable LED control, calibrated irradiance and synchronized stimulus timestamps. This would enable more reproducible intensity and temporal-response comparisons between retinal preparations <a href="#references">[2]</a>.</p></div>
+<div class="crtd-detail"><h3>02 — Spectral response characterization</h3><p>I would extend white-light stimulation to calibrated ultraviolet, blue, green and red wavelengths to investigate spectral sensitivity and ON/OFF response properties. This approach is motivated by the tetrachromatic photoreceptor system of zebrafish <a href="#references">[3]</a>.</p></div>
+<div class="crtd-detail"><h3>03 — Functional recovery during retinal regeneration</h3><p>I would apply the CMOS-MEA workflow to retinas collected at defined intervals after a validated injury-and-regeneration paradigm. Comparing healthy, injured and regenerating tissue would help assess recovery of stimulus-locked firing, response polarity and temporal reliability, rather than relying on spontaneous activity alone <a href="#references">[4]</a>.</p></div>
 </section>
-<div class="notice">
-<strong>
-       Research note:
-      </strong>
-      These descriptions summarize the experimental work and its limitations; they do not imply a validated diagnostic application or clinical result.
-     </div>
+<section class="section" id="references"><h2>07 / References</h2><ol class="crtd-refs">
+<li>Seifert M. et al. (2023). Birds multiplex spectral and temporal visual information via retinal On- and Off-channels. <em>Nature Communications</em>. <a href="https://doi.org/10.1038/s41467-023-41032-z" rel="noopener noreferrer" target="_blank">doi:10.1038/s41467-023-41032-z</a></li>
+<li>Chou T. H., Toft-Nielsen J. &amp; Porciatti V. (2019). Adaptation of retinal ganglion cell function during flickering light in the mouse. <em>Scientific Reports</em>. <a href="https://doi.org/10.1038/s41598-019-54930-4" rel="noopener noreferrer" target="_blank">doi:10.1038/s41598-019-54930-4</a></li>
+<li>Chhetri J., Jacobson G. &amp; Gueven N. (2014). Zebrafish—on the move towards ophthalmological research. <em>Eye</em>. <a href="https://doi.org/10.1038/eye.2014.19" rel="noopener noreferrer" target="_blank">doi:10.1038/eye.2014.19</a></li>
+<li>Goldman D. (2014). Müller glial cell reprogramming and retina regeneration. <em>Nature Reviews Neuroscience</em>. <a href="https://doi.org/10.1038/nrn3723" rel="noopener noreferrer" target="_blank">doi:10.1038/nrn3723</a></li>
+</ol></section>
 <p>
 <a class="btn" href="research.html">
        ◀ Return to Research Archive
