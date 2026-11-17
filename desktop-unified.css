@@ -55,3 +55,22 @@ body > main.desktop > .app > .document { margin:0 7px 7px !important; }
  body > .page.interest-page .article {padding:6px !important;}
  body > main.desktop > .app {padding:5px !important;}
 }
+
+/* 2026-11: solid Windows 98 title bars and unified teal desktop. */
+html, body { background-color:#008080 !important; background-image:none !important; }
+body > .page, body > main.desktop, body > .site-wrapper { background-color:transparent !important; }
+/* Uniform solid title bar across Projects, NeuroDose, research and interests. */
+body .titlebar, body .bar, body .window-titlebar, body .win-titlebar,
+body .setup-viewer__bar, body .window-header, body .app-titlebar,
+body > .page.interest-page .article .bar, body > main.desktop > .app > .titlebar {
+ background:#000080 !important; background-image:none !important; color:#fff !important;
+}
+
+/* Final cross-page desktop consistency: solid title bars and shared alignment. */
+html, body {background:#008080 !important;background-image:none !important;}
+#global-site-header, body > .page, body > .site-wrapper, body > main.desktop {max-width:1050px !important;}
+body .titlebar, body .bar, body .window-titlebar, body .win-titlebar,
+body .window-header, body .app-titlebar, body .setup-viewer__bar,
+body .nt-title, body .nd-titlebar, body .project-titlebar {
+ background:#000080 !important;background-image:none !important;color:#fff !important;
+}
