@@ -1,0 +1,57 @@
+/* Portfolio-wide Windows 98 alignment and desktop theme. Loaded last. */
+:root { --desktop-teal:#008080; --desktop-width:1050px; --desktop-gutter:15px; }
+html,body { background:#008080 !important; background-color:#008080 !important; background-image:none !important; }
+body { margin:0 !important; }
+/* Header, navigation and the app windows use one horizontal grid. */
+#global-site-header { box-sizing:border-box !important; width:min(var(--desktop-width),calc(100% - 30px)) !important; max-width:var(--desktop-width) !important; margin:24px auto 0 !important; }
+body > .page:not(.construction-page),
+body > .site-wrapper,
+body > main.desktop,
+body > main.nt-wrap,
+body > .construction-page {
+ box-sizing:border-box !important;
+ width:min(var(--desktop-width),calc(100% - 30px)) !important;
+ max-width:var(--desktop-width) !important;
+ margin-left:auto !important; margin-right:auto !important;
+}
+/* Same width as the header, including the folder-based research apps. */
+body > main.desktop { padding:0 !important; margin-top:28px !important; }
+body > .page.interest-page { padding:0 !important; margin-top:26px !important; }
+body > .page:not(.interest-page) { margin-top:26px !important; }
+body > .site-wrapper { margin-top:26px !important; }
+/* Main content windows: Win98 raised grey frame, blue bar, inset white content. */
+body > main.desktop > .app,
+body > .page.interest-page .article {
+ box-sizing:border-box !important;
+ border:3px outset #fff !important;
+ background:#c8c8c8 !important;
+ box-shadow:3px 3px 0 #555 !important;
+ padding:12px !important;
+}
+body > .page.interest-page .article { margin:0 0 22px !important; overflow:hidden; }
+body > .page.interest-page .article .bar,
+body > main.desktop > .app > .titlebar {
+ background:linear-gradient(90deg,#101a83,#4775ae) !important;
+ color:#fff !important;
+ font-family:Tahoma,Arial,sans-serif !important;
+ font-size:13px !important;
+ font-weight:700 !important;
+ min-height:31px !important;
+ padding:5px 9px !important;
+}
+body > .page.interest-page .article .inside {
+ border:2px inset #eee !important;
+ background:#fff !important;
+ padding:clamp(18px,3vw,32px) !important;
+}
+body > .page.interest-page .article .inside h1 { font-size:clamp(25px,3.3vw,36px) !important; }
+body > .page.interest-page .article .inside h2 { font-size:clamp(20px,2.4vw,26px) !important; }
+body > .page.interest-page .article .inside p,
+body > .page.interest-page .article .inside li { font-family:Tahoma,Arial,sans-serif !important; font-size:15px !important; line-height:1.65 !important; }
+body > main.desktop > .app > .document { margin:0 7px 7px !important; }
+/* Preserve the original folder controls, project windows, experiments and media. */
+@media(max-width:600px){
+ #global-site-header,body > .page:not(.construction-page),body > .site-wrapper,body > main.desktop,body > main.nt-wrap,body > .construction-page { width:calc(100% - 20px) !important; }
+ body > .page.interest-page .article {padding:6px !important;}
+ body > main.desktop > .app {padding:5px !important;}
+}
