@@ -31,7 +31,7 @@ body > .page.interest-page .article {
 body > .page.interest-page .article { margin:0 0 22px !important; overflow:hidden; }
 body > .page.interest-page .article .bar,
 body > main.desktop > .app > .titlebar {
- background:linear-gradient(90deg,#101a83,#4775ae) !important;
+ background:#000080 !important;
  color:#fff !important;
  font-family:Tahoma,Arial,sans-serif !important;
  font-size:13px !important;
@@ -74,3 +74,6 @@ body .window-header, body .app-titlebar, body .setup-viewer__bar,
 body .nt-title, body .nd-titlebar, body .project-titlebar {
  background:#000080 !important;background-image:none !important;color:#fff !important;
 }
+
+/* Final unified title-bar rule: no gradients on any application window. */
+.titlebar, .title-bar, .window-titlebar, .window-title-bar, .win98-titlebar, .win98-title-bar, .article > .bar, .app > .titlebar, .window > .titlebar, .window-header, .xp-titlebar, .folder-titlebar { background:#000080 !important; background-image:none !important; }
