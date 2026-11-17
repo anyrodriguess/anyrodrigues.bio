@@ -22,8 +22,24 @@ html, body {
 body {
     background-image: none !important;
 }
-</style><link href="shared-header.css" rel="stylesheet"/><link href="science-pages.css" rel="stylesheet"/><link href="portfolio-hierarchy.css" rel="stylesheet"/><link rel="stylesheet" href="windows98-font-unified.css">
-</head>
+</style><link href="shared-header.css" rel="stylesheet"/><link href="science-pages.css" rel="stylesheet"/><link href="portfolio-hierarchy.css" rel="stylesheet"/><link href="windows98-font-unified.css" rel="stylesheet"/>
+<style>
+/* MAGI conceptual panel: inherits the portfolio's Windows-style layout */
+.magi-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem;margin:1.15rem 0}
+.magi-unit{border:2px solid #183d79;background:#edf3fb;padding:.9rem .45rem;text-align:center;box-shadow:3px 3px 0 #c4d3e6}
+.magi-unit strong{display:block;font:.95rem monospace;letter-spacing:.05em;color:#183d79}
+.magi-unit span{display:block;margin-top:.35rem;font-size:.85rem;color:#40556f}
+@media(max-width:560px){.magi-grid{grid-template-columns:1fr}.magi-unit{padding:.6rem}}
+</style><style>/* Match typography of the DZNE and CRTD research pages. */
+body, .interest-page, .article, .inside {font-family:Tahoma, "MS Sans Serif", Arial, sans-serif; font-size:14px; line-height:1.55;}
+.inside p, .inside li {line-height:1.65;}
+.inside h1 {font-family:Tahoma, "MS Sans Serif", Arial, sans-serif; font-size:clamp(1.7rem,3.4vw,2.3rem); line-height:1.2;}
+.inside h2 {font-family:Tahoma, "MS Sans Serif", Arial, sans-serif; font-size:1.4rem; line-height:1.3;}
+.inside h3 {font-family:Tahoma, "MS Sans Serif", Arial, sans-serif; font-size:1.08rem;}
+.subtitle2 {font-size:1rem;}
+.bar, .kicker, .toc a, .citation, .quote-credit, .more a {font-family:Tahoma, "MS Sans Serif", Arial, sans-serif;}
+.citation {font-size:.85rem; font-weight:600;}
+</style></head>
 <body><script src="shared-header.js"></script>
 <div class="page interest-page">
 <main>
@@ -78,8 +94,8 @@ body {
         Where the evidence stands:
        </strong>
        There is no convincing evidence that current laboratory-grown brain organoids are conscious, and no validated organoid consciousness test. Their biological limitations matter; so does the possibility that future systems will differ. This is an unresolved scientific and ethical question, not evidence of present-day sentience.
-       <a class="citation" href="https://doi.org/10.1016/j.patter.2024.101011" rel="noopener noreferrer" target="_blank">[DOI]</a>
-<a class="citation" href="https://doi.org/10.1007/s12152-024-09548-3" rel="noopener noreferrer" target="_blank">[DOI]</a>
+       <a class="citation" href="#ref1">[1]</a>
+<a class="citation" href="#ref2">[2]</a>
 </div>
 <div class="toc">
 <a href="#definitions">
@@ -94,7 +110,7 @@ body {
 <a href="#organoids">
         04 / OI experiments
        </a>
-<a href="#testing">
+<a href="#magi">04A / MAGI thought experiment</a><a href="#testing">
         05 / How could we test it?
        </a>
 <a href="#voices">
@@ -222,7 +238,7 @@ body {
 </table>
 <p>
        These are working distinctions, not universally agreed definitions. Even the terminology used in brain-organoid ethics varies considerably.
-       <a class="citation" href="https://doi.org/10.1080/21507740.2025.2519459" rel="noopener noreferrer" target="_blank">[DOI]</a>
+       <a class="citation" href="#ref3">[3]</a>
 </p>
 </div>
 </article>
@@ -248,7 +264,7 @@ body {
         a spike train is not a readout of subjective experience
        </strong>
        . Neither synchronized bursts nor complex-looking activity establish consciousness on their own. Even when neural dynamics resemble patterns observed in brains, the interpretation depends on circuit architecture, sensory integration, task design and the theory being tested.
-       <a class="citation" href="https://doi.org/10.1016/j.patter.2024.101011" rel="noopener noreferrer" target="_blank">[DOI]</a>
+       <a class="citation" href="#ref1">[1]</a>
 </p>
 <div class="question">
 <strong>
@@ -288,8 +304,8 @@ body {
         homeostatic feelings
        </strong>
        and the subjectivity they generate. Their related account describes the continuous interplay of interoceptive feelings, sensory images and a perspective on those images. This is a biologically explicit hypothesis, not a universally accepted definition of consciousness.
-       <a class="citation" href="https://doi.org/10.1098/rstb.2023.0243" rel="noopener noreferrer" target="_blank">[DOI]</a>
-<a class="citation" href="https://doi.org/10.1162/jocn_a_02119" rel="noopener noreferrer" target="_blank">[DOI]</a>
+       <a class="citation" href="#ref9">[9]</a>
+<a class="citation" href="#ref10">[10]</a>
 </p>
 <blockquote class="research-quote">
        “consciousness which is based on homeostatic feelings”
@@ -300,7 +316,7 @@ body {
         Sensing, feeling and consciousness
        </em>
        (2024), abstract.
-       <a href="https://doi.org/10.1098/rstb.2023.0243" rel="noopener noreferrer" target="_blank">[DOI]</a>
+       <a class="citation" href="#ref9">[9]</a>
 </p>
 <p>
        The implication for OI is provocative. An organoid is living neural tissue, but it does not regulate a complete organism, receive ordinary body-wide interoceptive signals or participate in the same physiological loops as an intact brain.
@@ -370,7 +386,7 @@ body {
 </table>
 <p>
        These approaches disagree about what would count as relevant evidence. A burst pattern, a learning curve or a connectivity graph cannot decide among them. Lavazza and Massimini proposed exploring neurophysiological complexity in organoids, but the interpretation remains theoretical and unvalidated for this purpose.
-       <a class="citation" href="https://doi.org/10.1136/medethics-2017-104555" rel="noopener noreferrer" target="_blank">[DOI]</a>
+       <a class="citation" href="#ref11">[11]</a>
 </p>
 <div class="question">
 <strong>
@@ -407,12 +423,12 @@ body {
         sentience
        </em>
        should not be treated as a demonstration of phenomenal consciousness or felt pain.
-       <a class="citation" href="https://doi.org/10.1016/j.neuron.2022.09.001" rel="noopener noreferrer" target="_blank">[DOI]</a>
+       <a class="citation" href="#ref12">[12]</a>
 </p>
 <p>
        Organoid intelligence research aims to extend functional investigations of living neural tissue, including learning, memory-related plasticity and computation. Organoids can generate action potentials, network bursts and responses to stimulation, but they are not miniature complete brains. Most lack the organized architecture, maturation, bodily inputs and sensory–motor systems of intact organisms.
-       <a class="citation" href="https://doi.org/10.1016/j.patter.2024.101011" rel="noopener noreferrer" target="_blank">[DOI]</a>
-<a class="citation" href="https://doi.org/10.3389/fsci.2023.1017235" rel="noopener noreferrer" target="_blank">[DOI]</a>
+       <a class="citation" href="#ref1">[1]</a>
+<a class="citation" href="#ref8">[8]</a>
 </p>
 <div class="note">
 <strong>
@@ -433,6 +449,30 @@ body {
        </strong>
        refers to an unpleasant subjective experience. A culture's electrical response to stimulation does not establish either a functioning pain system or an experience of suffering. In vitro organoids lack many organized peripheral and central pathways involved in pain in intact organisms. Ethical discussion should therefore focus on credible biological capabilities and uncertainty, not on describing ordinary stimulation as painful.
       </p>
+</div>
+</article><article class="article" id="magi-section">
+<div class="bar"><span>04A / magi_system.ini</span><span>FICTION &amp; COGNITION</span></div>
+<div class="inside" id="magi">
+<div class="kicker">SCIENCE FICTION AS A THOUGHT EXPERIMENT</div>
+<h2>The MAGI System: can a biological computer reproduce a mind?</h2>
+<p>In <em>Neon Genesis Evangelion</em>, the fictional MAGI System combines biological computing with three distinct representations of its creator, Dr. Naoko Akagi: MELCHIOR, BALTHASAR and CASPER. Their differing perspectives contribute to a collective decision-making process.</p>
+<figure class="magi-anime-figure" style="max-width:640px;margin:1.2rem auto;text-align:center">
+<img src="MAGI.gif" alt="Animated MAGI interface from Neon Genesis Evangelion, showing the three computer units in a decision sequence" width="640" height="480" loading="lazy" style="display:block;width:100%;height:auto;border:2px solid #183d79;background:#000"/>
+<figcaption class="fine" style="margin-top:.55rem;line-height:1.5"><em>Neon Genesis Evangelion</em> (1995–1996): MAGI decision interface. Original anime footage, included for commentary on fictional biological computing.</figcaption>
+</figure>
+<div aria-label="The three fictional MAGI components" class="magi-grid">
+<div class="magi-unit"><strong>MELCHIOR</strong><span>Scientist</span></div>
+<div class="magi-unit"><strong>BALTHASAR</strong><span>Mother</span></div>
+<div class="magi-unit"><strong>CASPER</strong><span>Woman</span></div>
+</div>
+<p>MAGI is an intriguing fictional contrast to organoid intelligence. A living neural network might process information, adapt to feedback or contribute to a decision without reproducing a person's memories, identity or conscious experience. These are separate claims requiring different kinds of evidence.</p>
+<table class="compare"><thead><tr><th>Question</th><th>What would need to be demonstrated?</th></tr></thead><tbody>
+<tr><td><strong>Biological computation</strong></td><td>Reliable information processing by living neural tissue under controlled inputs and outputs.</td></tr>
+<tr><td><strong>Cognitive emulation</strong></td><td>Reproduction of specified cognitive functions, tested beyond superficial similarities in output.</td></tr>
+<tr><td><strong>Conscious experience</strong></td><td>Evidence relevant to a defensible theory of subjective experience; successful task performance alone is insufficient.</td></tr>
+</tbody></table>
+<div class="question"><strong>The MAGI question:</strong> If three biological networks could reach a collective decision, would we have created intelligence, simulated aspects of cognition, or merely built a different kind of information-processing system?</div>
+<p class="fine">MAGI is a fictional system, not an existing organoid-intelligence technology. Its value here is conceptual: it makes the gap between computation and consciousness unusually vivid. For the scientific distinction, see the discussions of neural activity and organoid consciousness in <a href="#ref1">[1]</a> and learning-related adaptation in <a href="#ref12">[12]</a>.</p>
 </div>
 </article>
 <article class="article">
@@ -513,7 +553,7 @@ body {
         ALTEX
        </em>
        (2023).
-       <a href="https://doi.org/10.14573/altex.2303261" rel="noopener noreferrer" target="_blank">[DOI]</a>
+       <a class="citation" href="#ref6">[6]</a>
 </p>
 <p>
        The authors raise this as an open ethical question, alongside donor rights, rather than as a claim that their organoids possess sentience.
@@ -527,7 +567,7 @@ body {
         The Baltimore Declaration
        </em>
        (2023).
-       <a href="https://doi.org/10.3389/fsci.2023.1068159" rel="noopener noreferrer" target="_blank">[Declaration]</a>
+       <a class="citation" href="#ref13">[13]</a>
 </p>
 <p>
        This is a call for anticipatory safeguards, not a report of conscious organoids.
@@ -541,7 +581,7 @@ body {
         Frontiers
        </em>
        interview (2023).
-       <a href="https://www.frontiersin.org/news/2023/02/28/thomas-hartung-organoid-intelligence/" rel="noopener noreferrer" target="_blank">[Interview]</a>
+       <a class="citation" href="#ref7">[7]</a>
 </p>
 <p>
        The question highlights how limited environmental interaction complicates claims about the capabilities of isolated neural tissue.
@@ -570,19 +610,19 @@ body {
         Baltimore Declaration toward the Exploration of Organoid Intelligence
        </em>
        called for progress in OI alongside sustained ethical discussion. It explicitly raises the possibility of consciousness, as well as the rights and interests of stem-cell donors. The declaration is a research-community statement, not evidence that consciousness has been observed.
-       <a class="citation" href="https://doi.org/10.3389/fsci.2023.1068159" rel="noopener noreferrer" target="_blank">[Declaration]</a>
+       <a class="citation" href="#ref13">[13]</a>
 </p>
 <h3>
        From precaution to practical governance
       </h3>
 <p>
        Lavazza and Massimini (2018) asked whether neurophysiological assessments could eventually inform questions about organoid consciousness. Koplin and Savulescu (2019/2020) proposed tiered protections if organoids ever became plausible candidates for consciousness or more advanced cognitive capacities. Both approaches are proposals; neither supplies a validated test.
-       <a class="citation" href="https://doi.org/10.1136/medethics-2017-104555" rel="noopener noreferrer" target="_blank">[DOI]</a>
-<a class="citation" href="https://doi.org/10.1177/1073110519897789" rel="noopener noreferrer" target="_blank">[DOI]</a>
+       <a class="citation" href="#ref11">[11]</a>
+<a class="citation" href="#ref14">[14]</a>
 </p>
 <p>
        In May 2026, the Nuffield Council on Bioethics published recommendations calling for coordinated guidance on sentience-related indicators, donor consent and animal welfare where neural organoids are transplanted into animals. These are concrete governance concerns even in the absence of evidence for current organoid consciousness.
-       <a class="citation" href="https://www.nuffieldbioethics.org/publication/neural-organoids-ethical-and-governance-considerations/" rel="noopener noreferrer" target="_blank">[Report]</a>
+       <a class="citation" href="#ref15">[15]</a>
 </p>
 <h3>
        What would responsible OI research look like?
