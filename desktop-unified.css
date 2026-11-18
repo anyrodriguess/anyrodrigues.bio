@@ -77,3 +77,64 @@ body .nt-title, body .nd-titlebar, body .project-titlebar {
 
 /* Final unified title-bar rule: no gradients on any application window. */
 .titlebar, .title-bar, .window-titlebar, .window-title-bar, .win98-titlebar, .win98-title-bar, .article > .bar, .app > .titlebar, .window > .titlebar, .window-header, .xp-titlebar, .folder-titlebar { background:#000080 !important; background-image:none !important; }
+
+
+/* 2026-11-18: Window content flush with its application frame.
+   Removes the nested grey gutters/white inset frames while retaining Win98 chrome. */
+html, body { max-width:100%; overflow-x:clip; }
+body > .page, body > .site-wrapper, body > main.desktop,
+body > main.nt-wrap { min-width:0; }
+body > .page *, body > .site-wrapper *, body > main.desktop *,
+body > main.nt-wrap * { min-width:0; }
+/* Folder pages (Research, Projects, NeuroDose), and Neural Interfaces. */
+body > .page .window { overflow:hidden; }
+body > .page .window > .window-content,
+body > .page .window > main.window-content {
+  box-sizing:border-box !important;
+  width:100% !important;
+  max-width:100% !important;
+  margin:0 !important;
+  border:0 !important;
+  padding:clamp(18px,3vw,30px) !important;
+  background:#fff !important;
+}
+/* Topic pages: blue title bar sits directly above the white document. */
+body > .page.interest-page .article {
+  padding:0 !important;
+  overflow:hidden !important;
+}
+body > .page.interest-page .article > .inside {
+  box-sizing:border-box !important;
+  width:100% !important;
+  margin:0 !important;
+  border:0 !important;
+  padding:clamp(18px,3vw,32px) !important;
+}
+/* CRTD and DZNE: eliminate the broad grey mat around the paper. */
+body > main.desktop > .app { padding:0 !important; overflow:hidden; }
+body > main.desktop > .app > .document {
+  box-sizing:border-box !important;
+  width:100% !important;
+  max-width:100% !important;
+  margin:0 !important;
+  border:0 !important;
+  padding:clamp(18px,3vw,34px) !important;
+  background:#fff !important;
+}
+/* Keep navigation/toolbars functional and retain window borders/titlebars. */
+body > .page img, body > main.desktop img, body > .site-wrapper img {
+  max-width:100%; height:auto;
+}
+body > .page .window-content, body > .page.interest-page .inside,
+body > main.desktop .document { overflow-wrap:break-word; }
+@media (max-width:600px) {
+ body > .page .window > .window-content,
+ body > .page .window > main.window-content,
+ body > .page.interest-page .article > .inside,
+ body > main.desktop > .app > .document { padding:16px !important; }
+}
+@media print {
+ body > .page .window > .window-content,
+ body > .page .window > main.window-content,
+ body > main.desktop > .app > .document { padding:0 !important; }
+}
