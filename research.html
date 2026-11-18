@@ -399,14 +399,14 @@ body {
 <link rel="stylesheet" href="desktop-unified.css"/>
 <style id="archive-window-frame-fix">
 /* Research and Projects: the application window IS the content frame. */
-body > .page > section.window:first-of-type {
+body > .page > main > section.window:first-of-type {
   box-sizing:border-box !important;
   padding:0 !important;
   border:3px outset #fff !important;
   background:#fff !important;
   overflow:hidden !important;
 }
-body > .page > section.window:first-of-type > .window-title {
+body > .page > main > section.window:first-of-type > .window-title {
   box-sizing:border-box !important;
   width:100% !important;
   margin:0 !important;
@@ -415,7 +415,7 @@ body > .page > section.window:first-of-type > .window-title {
   background:#000080 !important;
   background-image:none !important;
 }
-body > .page > section.window:first-of-type > .window-content {
+body > .page > main > section.window:first-of-type > .window-content {
   box-sizing:border-box !important;
   width:100% !important;
   max-width:100% !important;
@@ -426,13 +426,20 @@ body > .page > section.window:first-of-type > .window-content {
   background:#fff !important;
   padding:20px 22px !important;
 }
-body > .page > section.window:first-of-type > .window-content > :first-child {margin-top:0 !important;}
-body > .page > section.window:first-of-type > .window-content .file-grid {min-width:0;max-width:100%;}
+body > .page > main > section.window:first-of-type > .window-content > :first-child {margin-top:0 !important;}
+body > .page > main > section.window:first-of-type > .window-content .file-grid {min-width:0;max-width:100%;}
 @media(max-width:600px){
-  body > .page > section.window:first-of-type > .window-content {padding:14px !important;}
+  body > .page > main > section.window:first-of-type > .window-content {padding:14px !important;}
 }
 </style>
-</head>
+<style id="archive-window-actual-structure-fix">
+/* Match the real DOM: .page > main > section.window */
+body > .page > main > section.window { padding:0 !important; background:#fff !important; border:3px outset #fff !important; overflow:hidden !important; }
+body > .page > main > section.window > .window-title { margin:0 !important; width:100% !important; background:#000080 !important; background-image:none !important; }
+body > .page > main > section.window > .window-content { margin:0 !important; border:0 !important; width:100% !important; max-width:100% !important; box-shadow:none !important; padding:20px 22px !important; background:#fff !important; overflow-wrap:anywhere !important; }
+body > .page > main > section.window .file-grid {min-width:0 !important;max-width:100% !important;}
+@media(max-width:600px){body > .page > main > section.window > .window-content{padding:14px !important;}}
+</style></head>
 <body><script src="shared-header.js"></script>
 <div class="page">
 <main>
