@@ -1,0 +1,34 @@
+/* Unified application alignment: all pages match the shared Windows 98 header. */
+:root { --portfolio-width:1050px; }
+html,body { max-width:100%; overflow-x:clip; }
+#global-site-header,
+body > .page,
+body > .site-wrapper,
+body > main.desktop,
+body > main.nt-wrap,
+body > .construction-page {
+  box-sizing:border-box !important;
+  width:min(var(--portfolio-width), calc(100% - 30px)) !important;
+  max-width:var(--portfolio-width) !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+/* Remove the old homepage's cream background, border and inner width constraint. */
+body > .page { background:transparent !important; border:0 !important; padding-left:0 !important; padding-right:0 !important; }
+body > .page.interest-page { width:min(var(--portfolio-width), calc(100% - 30px)) !important; max-width:var(--portfolio-width) !important; padding:0 !important; }
+body > .page.interest-page .article { width:100% !important; max-width:100% !important; margin-left:0 !important; margin-right:0 !important; padding:0 !important; }
+body > .page.interest-page .article > .bar { margin:0 !important; }
+body > .page.interest-page .article > .inside { width:100% !important; margin:0 !important; border:0 !important; }
+/* The homepage hero and its content should use the same desktop grid. */
+body > .page > main, body > .page > .hero { box-sizing:border-box !important; max-width:100% !important; }
+/* The About page should not introduce a second narrower canvas. */
+body > .site-wrapper { padding-left:0 !important; padding-right:0 !important; }
+/* Preserve a single contiguous application window for Research and Projects. */
+body > .page .window { box-sizing:border-box !important; width:100% !important; max-width:100% !important; padding:0 !important; }
+body > .page .window > .window-content { margin:0 !important; border:0 !important; width:100% !important; }
+body > .page .window > .window-title { margin:0 !important; }
+/* No content can force horizontal scrolling beyond the frame. */
+body > .page img,body > .site-wrapper img,body > main.desktop img {max-width:100%;height:auto;}
+@media(max-width:600px){
+ #global-site-header,body > .page,body > .site-wrapper,body > main.desktop,body > main.nt-wrap,body > .construction-page {width:calc(100% - 20px) !important;}
+}
