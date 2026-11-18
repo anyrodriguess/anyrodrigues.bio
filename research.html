@@ -397,6 +397,41 @@ body {
 }
 </style><link href="shared-header.css" rel="stylesheet"/><link href="portfolio-hierarchy.css" rel="stylesheet"/><link rel="stylesheet" href="windows98-font-unified.css">
 <link rel="stylesheet" href="desktop-unified.css"/>
+<style id="archive-window-frame-fix">
+/* Research and Projects: the application window IS the content frame. */
+body > .page > section.window:first-of-type {
+  box-sizing:border-box !important;
+  padding:0 !important;
+  border:3px outset #fff !important;
+  background:#fff !important;
+  overflow:hidden !important;
+}
+body > .page > section.window:first-of-type > .window-title {
+  box-sizing:border-box !important;
+  width:100% !important;
+  margin:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:#000080 !important;
+  background-image:none !important;
+}
+body > .page > section.window:first-of-type > .window-content {
+  box-sizing:border-box !important;
+  width:100% !important;
+  max-width:100% !important;
+  margin:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:#fff !important;
+  padding:20px 22px !important;
+}
+body > .page > section.window:first-of-type > .window-content > :first-child {margin-top:0 !important;}
+body > .page > section.window:first-of-type > .window-content .file-grid {min-width:0;max-width:100%;}
+@media(max-width:600px){
+  body > .page > section.window:first-of-type > .window-content {padding:14px !important;}
+}
+</style>
 </head>
 <body><script src="shared-header.js"></script>
 <div class="page">
