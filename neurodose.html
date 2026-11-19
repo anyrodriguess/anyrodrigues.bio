@@ -478,7 +478,8 @@ body > .page .nd-flow {grid-template-columns:repeat(3,minmax(0,1fr));}
 .nd-demo.maze-inline {background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;margin:14px 0 22px!important;}
 .nd-demo.maze-inline iframe {display:block;width:100%;max-width:660px;margin:0 auto;height:440px;border:0!important;background:#fff!important;overflow:hidden;}
 @media(max-width:680px){.nd-demo.maze-inline iframe{height:380px;}}
-</style></head>
+</style><link rel="stylesheet" href="portfolio-unified-final.css"/>
+</head>
 <body><script src="shared-header.js"></script>
 <div class="page">
 <main>
@@ -613,26 +614,6 @@ body > .page .nd-flow {grid-template-columns:repeat(3,minmax(0,1fr));}
 </main>
 <footer>© 2026 Any Rodrigues · Independent research proposal</footer>
 </div>
-<script>
-// Measure the game content without listening to iframe resize events.
-// This avoids a parent/child resize feedback loop.
-(function () {
-  const frame = document.querySelector('.maze-inline iframe');
-  if (!frame) return;
-  function fitMaze() {
-    try {
-      const doc = frame.contentDocument;
-      const main = doc && doc.querySelector('main');
-      if (!main) return;
-      // main's natural height is independent of the iframe's viewport height.
-      const height = Math.ceil(main.scrollHeight + 2);
-      if (height > 0 && height < 1200) frame.style.height = height + 'px';
-    } catch (e) { /* Keep CSS fallback if cross-origin. */ }
-  }
-  frame.addEventListener('load', fitMaze);
-  window.addEventListener('resize', fitMaze);
-  if (frame.contentDocument && frame.contentDocument.readyState === 'complete') fitMaze();
-})();
-</script>
+
 </body>
 </html>
