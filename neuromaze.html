@@ -153,7 +153,7 @@ render();
 // Keep the embedded demonstration fitted to its content without an inner scrollbar.
 function reportHeight(){
   if(window.parent !== window){
-    window.parent.postMessage({type:'neurodose-maze-height',height:Math.ceil(document.documentElement.scrollHeight)},window.location.origin);
+    window.parent.postMessage({type:'neurodose-maze-height',height:Math.ceil(document.querySelector('main').getBoundingClientRect().bottom)},window.location.origin);
   }
 }
 window.addEventListener('load',reportHeight);
