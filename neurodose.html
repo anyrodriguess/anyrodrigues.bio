@@ -614,11 +614,25 @@ body > .page .nd-flow {grid-template-columns:repeat(3,minmax(0,1fr));}
 <footer>© 2026 Any Rodrigues · Independent research proposal</footer>
 </div>
 <script>
-window.addEventListener('message', function(event) {
-  if (event.origin !== window.location.origin || !event.data || event.data.type !== 'neurodose-maze-height') return;
+// Measure the game content without listening to iframe resize events.
+// This avoids a parent/child resize feedback loop.
+(function () {
   const frame = document.querySelector('.maze-inline iframe');
-  if (frame && event.source === frame.contentWindow) frame.style.height = Math.max(240, Math.min(850, event.data.height + 4)) + 'px';
-});
+  if (!frame) return;
+  function fitMaze() {
+    try {
+      const doc = frame.contentDocument;
+      const main = doc && doc.querySelector('main');
+      if (!main) return;
+      // main's natural height is independent of the iframe's viewport height.
+      const height = Math.ceil(main.scrollHeight + 2);
+      if (height > 0 && height < 1200) frame.style.height = height + 'px';
+    } catch (e) { /* Keep CSS fallback if cross-origin. */ }
+  }
+  frame.addEventListener('load', fitMaze);
+  window.addEventListener('resize', fitMaze);
+  if (frame.contentDocument && frame.contentDocument.readyState === 'complete') fitMaze();
+})();
 </script>
 </body>
 </html>

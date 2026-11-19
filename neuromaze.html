@@ -150,15 +150,6 @@ document.addEventListener('keydown', e => {
   }
 });
 render();
-// Keep the embedded demonstration fitted to its content without an inner scrollbar.
-function reportHeight(){
-  if(window.parent !== window){
-    window.parent.postMessage({type:'neurodose-maze-height',height:Math.ceil(document.querySelector('main').getBoundingClientRect().bottom)},window.location.origin);
-  }
-}
-window.addEventListener('load',reportHeight);
-window.addEventListener('resize',reportHeight);
-if('ResizeObserver' in window) new ResizeObserver(reportHeight).observe(document.querySelector('main'));
 </script>
 </body>
 </html>
